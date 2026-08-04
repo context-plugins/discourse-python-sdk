@@ -17,7 +17,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.access_control import AccessControl
+from discourse.models.access_control import AccessControl
 
 access_control = AccessControl(
     mandatory_acl=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),

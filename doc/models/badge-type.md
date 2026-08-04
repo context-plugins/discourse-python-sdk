@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.badge_type import BadgeType
+from discourse.models.badge_type import BadgeType
 
 badge_type = BadgeType(
     id=164,

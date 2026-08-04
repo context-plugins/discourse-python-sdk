@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.post_actions_json_request import PostActionsJsonRequest
+from discourse.models.post_actions_json_request import PostActionsJsonRequest
 
 post_actions_json_request = PostActionsJsonRequest(
     id=16,

@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.created_by import CreatedBy
+from discourse.models.created_by import CreatedBy
 
 created_by = CreatedBy(
     id=188,

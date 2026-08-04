@@ -71,8 +71,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary_2 import ActionsSummary2
-from discourseapidocumentation.models.posts_json_response_2 import PostsJsonResponse2
+from discourse.models.actions_summary_2 import ActionsSummary2
+from discourse.models.posts_json_response_2 import PostsJsonResponse2
 
 posts_json_response_2 = PostsJsonResponse2(
     id=164,

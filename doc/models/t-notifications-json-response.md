@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_notifications_json_response import TNotificationsJsonResponse
+from discourse.models.t_notifications_json_response import TNotificationsJsonResponse
 
 t_notifications_json_response = TNotificationsJsonResponse(
     success='OK',

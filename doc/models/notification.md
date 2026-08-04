@@ -27,7 +27,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.notification import Notification
+from discourse.models.notification import Notification
 
 notification = Notification(
     id=88,

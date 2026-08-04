@@ -17,9 +17,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.metadata import Metadata
-from discourseapidocumentation.models.upload_type_1 import UploadType1
-from discourseapidocumentation.models.uploads_create_multipart_json_request import UploadsCreateMultipartJsonRequest
+from discourse.models.metadata import Metadata
+from discourse.models.upload_type_1 import UploadType1
+from discourse.models.uploads_create_multipart_json_request import UploadsCreateMultipartJsonRequest
 
 uploads_create_multipart_json_request = UploadsCreateMultipartJsonRequest(
     upload_type=UploadType1.AVATAR,

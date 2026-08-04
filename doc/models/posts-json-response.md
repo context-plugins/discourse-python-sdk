@@ -16,9 +16,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.latest_post import LatestPost
-from discourseapidocumentation.models.posts_json_response import PostsJsonResponse
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.latest_post import LatestPost
+from discourse.models.posts_json_response import PostsJsonResponse
 
 posts_json_response = PostsJsonResponse(
     latest_posts=[

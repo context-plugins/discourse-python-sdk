@@ -14,8 +14,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_action import UserAction
-from discourseapidocumentation.models.user_actions_json_response import UserActionsJsonResponse
+from discourse.models.user_action import UserAction
+from discourse.models.user_actions_json_response import UserActionsJsonResponse
 
 user_actions_json_response = UserActionsJsonResponse(
     user_actions=[

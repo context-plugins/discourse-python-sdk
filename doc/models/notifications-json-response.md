@@ -22,8 +22,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.notification import Notification
-from discourseapidocumentation.models.notifications_json_response import NotificationsJsonResponse
+from discourse.models.notification import Notification
+from discourse.models.notifications_json_response import NotificationsJsonResponse
 
 notifications_json_response = NotificationsJsonResponse(
     notifications=[

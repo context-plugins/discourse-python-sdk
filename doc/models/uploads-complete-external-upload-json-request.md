@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.uploads_complete_external_upload_json_request import UploadsCompleteExternalUploadJsonRequest
+from discourse.models.uploads_complete_external_upload_json_request import UploadsCompleteExternalUploadJsonRequest
 
 uploads_complete_external_upload_json_request = UploadsCompleteExternalUploadJsonRequest(
     unique_identifier='66e86218-80d9-4bda-b4d5-2b6def968705',

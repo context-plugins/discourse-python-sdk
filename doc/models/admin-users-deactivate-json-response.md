@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_deactivate_json_response import AdminUsersDeactivateJsonResponse
+from discourse.models.admin_users_deactivate_json_response import AdminUsersDeactivateJsonResponse
 
 admin_users_deactivate_json_response = AdminUsersDeactivateJsonResponse(
     success='OK'

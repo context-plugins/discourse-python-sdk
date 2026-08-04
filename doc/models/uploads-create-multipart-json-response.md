@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.uploads_create_multipart_json_response import UploadsCreateMultipartJsonResponse
+from discourse.models.uploads_create_multipart_json_response import UploadsCreateMultipartJsonResponse
 
 uploads_create_multipart_json_response = UploadsCreateMultipartJsonResponse(
     key='temp/site/uploads/default/12345/67890.jpg',

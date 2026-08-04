@@ -66,20 +66,20 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.archetype import Archetype
-from discourseapidocumentation.models.category_4 import Category4
-from discourseapidocumentation.models.group_5 import Group5
-from discourseapidocumentation.models.notification_types import NotificationTypes
-from discourseapidocumentation.models.post_action_type import PostActionType
-from discourseapidocumentation.models.post_types import PostTypes
-from discourseapidocumentation.models.required_tag_group import RequiredTagGroup
-from discourseapidocumentation.models.site_json_response import SiteJsonResponse
-from discourseapidocumentation.models.top_tag import TopTag
-from discourseapidocumentation.models.topic_flag_type import TopicFlagType
-from discourseapidocumentation.models.trust_levels import TrustLevels
-from discourseapidocumentation.models.user_color_scheme import UserColorScheme
-from discourseapidocumentation.models.user_theme import UserTheme
-from discourseapidocumentation.models.user_tips import UserTips
+from discourse.models.archetype import Archetype
+from discourse.models.category_4 import Category4
+from discourse.models.group_5 import Group5
+from discourse.models.notification_types import NotificationTypes
+from discourse.models.post_action_type import PostActionType
+from discourse.models.post_types import PostTypes
+from discourse.models.required_tag_group import RequiredTagGroup
+from discourse.models.site_json_response import SiteJsonResponse
+from discourse.models.top_tag import TopTag
+from discourse.models.topic_flag_type import TopicFlagType
+from discourse.models.trust_levels import TrustLevels
+from discourse.models.user_color_scheme import UserColorScheme
+from discourse.models.user_theme import UserTheme
+from discourse.models.user_tips import UserTips
 
 site_json_response = SiteJsonResponse(
     default_archetype='default_archetype8',

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.u_emails_json_response import UEmailsJsonResponse
+from discourse.models.u_emails_json_response import UEmailsJsonResponse
 
 u_emails_json_response = UEmailsJsonResponse(
     email='email2',

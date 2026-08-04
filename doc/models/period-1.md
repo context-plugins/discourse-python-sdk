@@ -19,7 +19,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.period_1 import Period1
+from discourse.models.period_1 import Period1
 
 period_1 = Period1.YEARLY
 ```

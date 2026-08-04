@@ -37,10 +37,10 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.created_by import CreatedBy
-from discourseapidocumentation.models.details import Details
-from discourseapidocumentation.models.last_poster import LastPoster
-from discourseapidocumentation.models.participant_1 import Participant1
+from discourse.models.created_by import CreatedBy
+from discourse.models.details import Details
+from discourse.models.last_poster import LastPoster
+from discourse.models.participant_1 import Participant1
 
 details = Details(
     can_edit=False,

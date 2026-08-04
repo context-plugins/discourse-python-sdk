@@ -23,7 +23,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.data import Data
+from discourse.models.data import Data
 
 data = Data(
     badge_id=98,

@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group_user import GroupUser
+from discourse.models.group_user import GroupUser
 
 group_user = GroupUser(
     group_id=116,

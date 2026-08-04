@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_tips import UserTips
+from discourse.models.user_tips import UserTips
 
 user_tips = UserTips(
     first_notification=66,

@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.basic_topic import BasicTopic
-from discourseapidocumentation.models.t_json_response_1 import TJsonResponse1
+from discourse.models.basic_topic import BasicTopic
+from discourse.models.t_json_response_1 import TJsonResponse1
 
 t_json_response_1 = TJsonResponse1(
     basic_topic=BasicTopic(

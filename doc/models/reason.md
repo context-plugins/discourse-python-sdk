@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.reason import Reason
+from discourse.models.reason import Reason
 
 reason = Reason.ENABLED_FOR_EVERYONE
 ```

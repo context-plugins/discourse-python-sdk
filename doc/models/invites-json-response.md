@@ -30,7 +30,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.invites_json_response import InvitesJsonResponse
+from discourse.models.invites_json_response import InvitesJsonResponse
 
 invites_json_response = InvitesJsonResponse(
     id=42,

@@ -18,8 +18,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.category_1 import Category1
-from discourseapidocumentation.models.category_list import CategoryList
+from discourse.models.category_1 import Category1
+from discourse.models.category_list import CategoryList
 
 category_list = CategoryList(
     can_create_category=False,

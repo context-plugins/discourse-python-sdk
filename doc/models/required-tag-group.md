@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.required_tag_group import RequiredTagGroup
+from discourse.models.required_tag_group import RequiredTagGroup
 
 required_tag_group = RequiredTagGroup(
     name='name6',

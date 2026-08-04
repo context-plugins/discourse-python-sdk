@@ -60,7 +60,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.category_1 import Category1
+from discourse.models.category_1 import Category1
 
 category_1 = Category1(
     id=192,

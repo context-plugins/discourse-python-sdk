@@ -42,7 +42,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.admin_users_json_response_2 import AdminUsersJsonResponse2
+from discourse.models.admin_users_json_response_2 import AdminUsersJsonResponse2
 
 admin_users_json_response_2 = AdminUsersJsonResponse2(
     id=104,

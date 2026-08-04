@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.thumbnail import Thumbnail
+from discourse.models.thumbnail import Thumbnail
 
 thumbnail = Thumbnail(
     id=154,

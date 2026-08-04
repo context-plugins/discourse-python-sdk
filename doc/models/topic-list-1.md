@@ -24,7 +24,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.topic_list_1 import TopicList1
+from discourse.models.topic_list_1 import TopicList1
 
 topic_list_1 = TopicList1(
     can_create_topic=False,

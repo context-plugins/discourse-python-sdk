@@ -25,7 +25,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.site_basic_info_json_response import SiteBasicInfoJsonResponse
+from discourse.models.site_basic_info_json_response import SiteBasicInfoJsonResponse
 
 site_basic_info_json_response = SiteBasicInfoJsonResponse(
     logo_url='logo_url2',

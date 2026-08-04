@@ -62,7 +62,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.notification_types import NotificationTypes
+from discourse.models.notification_types import NotificationTypes
 
 notification_types = NotificationTypes(
     mentioned=10,

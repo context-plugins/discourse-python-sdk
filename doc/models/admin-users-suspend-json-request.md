@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_suspend_json_request import AdminUsersSuspendJsonRequest
+from discourse.models.admin_users_suspend_json_request import AdminUsersSuspendJsonRequest
 
 admin_users_suspend_json_request = AdminUsersSuspendJsonRequest(
     suspend_until='2121-02-22',

@@ -44,10 +44,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.poster_4 import Poster4
-from discourseapidocumentation.models.suggested_topic import SuggestedTopic
-from discourseapidocumentation.models.tag import Tag
-from discourseapidocumentation.models.user import User
+from discourse.models.poster_4 import Poster4
+from discourse.models.suggested_topic import SuggestedTopic
+from discourse.models.tag import Tag
+from discourse.models.user import User
 
 suggested_topic = SuggestedTopic(
     id=98,

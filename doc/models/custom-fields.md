@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.custom_fields import CustomFields
+from discourse.models.custom_fields import CustomFields
 
 custom_fields = CustomFields(
     first_name='first_name2'

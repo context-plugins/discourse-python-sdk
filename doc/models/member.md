@@ -22,7 +22,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.member import Member
+from discourse.models.member import Member
 
 member = Member(
     id=196,

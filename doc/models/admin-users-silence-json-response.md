@@ -14,9 +14,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_silence_json_response import AdminUsersSilenceJsonResponse
-from discourseapidocumentation.models.silence import Silence
-from discourseapidocumentation.models.silenced_by import SilencedBy
+from discourse.models.admin_users_silence_json_response import AdminUsersSilenceJsonResponse
+from discourse.models.silence import Silence
+from discourse.models.silenced_by import SilencedBy
 
 admin_users_silence_json_response = AdminUsersSilenceJsonResponse(
     silence=Silence(

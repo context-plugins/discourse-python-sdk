@@ -52,7 +52,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.topic_3 import Topic3
+from discourse.models.topic_3 import Topic3
 
 topic_3 = Topic3(
     id=208,

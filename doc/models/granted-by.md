@@ -21,7 +21,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.granted_by import GrantedBy
+from discourse.models.granted_by import GrantedBy
 
 granted_by = GrantedBy(
     id=106,

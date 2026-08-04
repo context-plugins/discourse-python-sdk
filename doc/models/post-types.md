@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.post_types import PostTypes
+from discourse.models.post_types import PostTypes
 
 post_types = PostTypes(
     regular=174,

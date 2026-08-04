@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_avatar_refresh_gravatar_json_response import UserAvatarRefreshGravatarJsonResponse
+from discourse.models.user_avatar_refresh_gravatar_json_response import UserAvatarRefreshGravatarJsonResponse
 
 user_avatar_refresh_gravatar_json_response = UserAvatarRefreshGravatarJsonResponse(
     gravatar_upload_id=8,

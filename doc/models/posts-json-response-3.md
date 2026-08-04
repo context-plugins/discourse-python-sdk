@@ -16,9 +16,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.post_2 import Post2
-from discourseapidocumentation.models.posts_json_response_3 import PostsJsonResponse3
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.post_2 import Post2
+from discourse.models.posts_json_response_3 import PostsJsonResponse3
 
 posts_json_response_3 = PostsJsonResponse3(
     post=Post2(

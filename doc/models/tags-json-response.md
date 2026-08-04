@@ -20,9 +20,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extras_3 import Extras3
-from discourseapidocumentation.models.tag_3 import Tag3
-from discourseapidocumentation.models.tags_json_response import TagsJsonResponse
+from discourse.models.extras_3 import Extras3
+from discourse.models.tag_3 import Tag3
+from discourse.models.tags_json_response import TagsJsonResponse
 
 tags_json_response = TagsJsonResponse(
     tags=[

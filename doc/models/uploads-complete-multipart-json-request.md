@@ -17,7 +17,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.uploads_complete_multipart_json_request import UploadsCompleteMultipartJsonRequest
+from discourse.models.uploads_complete_multipart_json_request import UploadsCompleteMultipartJsonRequest
 
 uploads_complete_multipart_json_request = UploadsCompleteMultipartJsonRequest(
     unique_identifier='66e86218-80d9-4bda-b4d5-2b6def968705',

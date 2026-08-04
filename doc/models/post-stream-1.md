@@ -17,10 +17,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.link_count import LinkCount
-from discourseapidocumentation.models.post_4 import Post4
-from discourseapidocumentation.models.post_stream_1 import PostStream1
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.link_count import LinkCount
+from discourse.models.post_4 import Post4
+from discourse.models.post_stream_1 import PostStream1
 
 post_stream_1 = PostStream1(
     posts=[

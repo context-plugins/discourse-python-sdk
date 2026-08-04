@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_json_request import AdminUsersJsonRequest
+from discourse.models.admin_users_json_request import AdminUsersJsonRequest
 
 admin_users_json_request = AdminUsersJsonRequest(
     delete_posts=False,

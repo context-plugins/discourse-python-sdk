@@ -15,8 +15,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.post_1 import Post1
-from discourseapidocumentation.models.posts_json_request_1 import PostsJsonRequest1
+from discourse.models.post_1 import Post1
+from discourse.models.posts_json_request_1 import PostsJsonRequest1
 
 posts_json_request_1 = PostsJsonRequest1(
     post=Post1(

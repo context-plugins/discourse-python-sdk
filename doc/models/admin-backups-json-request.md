@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_backups_json_request import AdminBackupsJsonRequest
+from discourse.models.admin_backups_json_request import AdminBackupsJsonRequest
 
 admin_backups_json_request = AdminBackupsJsonRequest(
     with_uploads=False

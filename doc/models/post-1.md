@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.post_1 import Post1
+from discourse.models.post_1 import Post1
 
 post_1 = Post1(
     raw='raw8',

@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.user_1 import User1
+from discourse.models.user_1 import User1
 
 user_1 = User1(
     id=238,

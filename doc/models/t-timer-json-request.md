@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_timer_json_request import TTimerJsonRequest
+from discourse.models.t_timer_json_request import TTimerJsonRequest
 
 t_timer_json_request = TTimerJsonRequest(
     time='time6',

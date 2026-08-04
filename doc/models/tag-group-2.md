@@ -24,7 +24,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.tag_group_2 import TagGroup2
+from discourse.models.tag_group_2 import TagGroup2
 
 tag_group_2 = TagGroup2(
     id=108,

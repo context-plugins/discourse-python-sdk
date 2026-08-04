@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.tag_groups_json_request import TagGroupsJsonRequest
+from discourse.models.tag_groups_json_request import TagGroupsJsonRequest
 
 tag_groups_json_request = TagGroupsJsonRequest(
     name='name4'

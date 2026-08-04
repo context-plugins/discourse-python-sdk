@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.group_6 import Group6
-from discourseapidocumentation.models.t_invite_group_json_response import TInviteGroupJsonResponse
+from discourse.models.group_6 import Group6
+from discourse.models.t_invite_group_json_response import TInviteGroupJsonResponse
 
 t_invite_group_json_response = TInviteGroupJsonResponse(
     group=Group6(

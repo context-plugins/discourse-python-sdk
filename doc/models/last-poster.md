@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.last_poster import LastPoster
+from discourse.models.last_poster import LastPoster
 
 last_poster = LastPoster(
     id=254,

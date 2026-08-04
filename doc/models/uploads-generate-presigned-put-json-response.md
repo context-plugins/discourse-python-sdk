@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.uploads_generate_presigned_put_json_response import UploadsGeneratePresignedPutJsonResponse
+from discourse.models.uploads_generate_presigned_put_json_response import UploadsGeneratePresignedPutJsonResponse
 
 uploads_generate_presigned_put_json_response = UploadsGeneratePresignedPutJsonResponse(
     key='temp/site/uploads/default/12345/67890.jpg',

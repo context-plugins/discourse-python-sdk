@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.upload_type_1 import UploadType1
+from discourse.models.upload_type_1 import UploadType1
 
 upload_type_1 = UploadType1.COMPOSER
 ```

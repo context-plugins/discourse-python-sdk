@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_log_out_json_response import AdminUsersLogOutJsonResponse
+from discourse.models.admin_users_log_out_json_response import AdminUsersLogOutJsonResponse
 
 admin_users_log_out_json_response = AdminUsersLogOutJsonResponse(
     success='OK'

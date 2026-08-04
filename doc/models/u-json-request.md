@@ -17,7 +17,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.u_json_request import UJsonRequest
+from discourse.models.u_json_request import UJsonRequest
 
 u_json_request = UJsonRequest(
     name='name4',

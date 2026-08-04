@@ -60,11 +60,11 @@
 import dateutil.parser
 import jsonpickle
 
-from discourseapidocumentation.models.event import Event
-from discourseapidocumentation.models.occurrence import Occurrence
-from discourseapidocumentation.models.post import Post
-from discourseapidocumentation.models.status import Status
-from discourseapidocumentation.models.topic import Topic
+from discourse.models.event import Event
+from discourse.models.occurrence import Occurrence
+from discourse.models.post import Post
+from discourse.models.status import Status
+from discourse.models.topic import Topic
 
 event = Event(
     id=242,

@@ -28,7 +28,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.post_action_type import PostActionType
+from discourse.models.post_action_type import PostActionType
 
 post_action_type = PostActionType(
     id=14,

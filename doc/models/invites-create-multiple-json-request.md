@@ -26,7 +26,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.invites_create_multiple_json_request import InvitesCreateMultipleJsonRequest
+from discourse.models.invites_create_multiple_json_request import InvitesCreateMultipleJsonRequest
 
 invites_create_multiple_json_request = InvitesCreateMultipleJsonRequest(
     email='[\n  "not-a-user-yet-1@example.com",\n  "not-a-user-yet-2@example.com"\n]',

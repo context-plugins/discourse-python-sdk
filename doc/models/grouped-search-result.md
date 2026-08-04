@@ -29,8 +29,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extra import Extra
-from discourseapidocumentation.models.grouped_search_result import GroupedSearchResult
+from discourse.models.extra import Extra
+from discourse.models.grouped_search_result import GroupedSearchResult
 
 grouped_search_result = GroupedSearchResult(
     more_posts='more_posts4',

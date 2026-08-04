@@ -15,9 +15,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_badges_json_response_1 import AdminBadgesJsonResponse1
-from discourseapidocumentation.models.badge_1 import Badge1
-from discourseapidocumentation.models.badge_type import BadgeType
+from discourse.models.admin_badges_json_response_1 import AdminBadgesJsonResponse1
+from discourse.models.badge_1 import Badge1
+from discourse.models.badge_type import BadgeType
 
 admin_badges_json_response_1 = AdminBadgesJsonResponse1(
     badge_types=[

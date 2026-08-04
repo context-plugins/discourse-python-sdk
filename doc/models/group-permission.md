@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group_permission import GroupPermission
+from discourse.models.group_permission import GroupPermission
 
 group_permission = GroupPermission(
     permission_type=196,

@@ -23,7 +23,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.available_category_type import AvailableCategoryType
+from discourse.models.available_category_type import AvailableCategoryType
 
 available_category_type = AvailableCategoryType(
     id='id2',

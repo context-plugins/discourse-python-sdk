@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.mtype import Type
+from discourse.models.mtype import Type
 
 mtype = Type.COMPOSER
 ```

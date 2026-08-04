@@ -18,7 +18,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.groups_members_json_response_1 import GroupsMembersJsonResponse1
+from discourse.models.groups_members_json_response_1 import GroupsMembersJsonResponse1
 
 groups_members_json_response_1 = GroupsMembersJsonResponse1(
     success='success6',

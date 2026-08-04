@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.users_json_response import UsersJsonResponse
+from discourse.models.users_json_response import UsersJsonResponse
 
 users_json_response = UsersJsonResponse(
     success=False,

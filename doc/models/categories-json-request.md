@@ -27,7 +27,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.categories_json_request import CategoriesJsonRequest
+from discourse.models.categories_json_request import CategoriesJsonRequest
 
 categories_json_request = CategoriesJsonRequest(
     name='name6',

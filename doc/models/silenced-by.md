@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.silenced_by import SilencedBy
+from discourse.models.silenced_by import SilencedBy
 
 silenced_by = SilencedBy(
     id=46,

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extras_3 import Extras3
+from discourse.models.extras_3 import Extras3
 
 extras_3 = Extras3(
     categories=[

@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.penalty_counts_1 import PenaltyCounts1
+from discourse.models.penalty_counts_1 import PenaltyCounts1
 
 penalty_counts_1 = PenaltyCounts1(
     silenced=76,

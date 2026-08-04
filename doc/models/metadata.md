@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.metadata import Metadata
+from discourse.models.metadata import Metadata
 
 metadata = Metadata(
     sha_1_checksum='sha1-checksum2'

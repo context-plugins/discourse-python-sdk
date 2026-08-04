@@ -29,9 +29,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.optimized_video import OptimizedVideo
-from discourseapidocumentation.models.thumbnail import Thumbnail
-from discourseapidocumentation.models.uploads_json_response import UploadsJsonResponse
+from discourse.models.optimized_video import OptimizedVideo
+from discourse.models.thumbnail import Thumbnail
+from discourse.models.uploads_json_response import UploadsJsonResponse
 
 uploads_json_response = UploadsJsonResponse(
     id=162,

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_change_timestamp_json_response import TChangeTimestampJsonResponse
+from discourse.models.t_change_timestamp_json_response import TChangeTimestampJsonResponse
 
 t_change_timestamp_json_response = TChangeTimestampJsonResponse(
     success='OK',

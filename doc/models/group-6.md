@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.group_6 import Group6
+from discourse.models.group_6 import Group6
 
 group_6 = Group6(
     id=178,

@@ -21,7 +21,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group_5 import Group5
+from discourse.models.group_5 import Group5
 
 group_5 = Group5(
     id=94,

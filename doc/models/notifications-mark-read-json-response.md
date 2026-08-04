@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.notifications_mark_read_json_response import NotificationsMarkReadJsonResponse
+from discourse.models.notifications_mark_read_json_response import NotificationsMarkReadJsonResponse
 
 notifications_mark_read_json_response = NotificationsMarkReadJsonResponse(
     success='success8',

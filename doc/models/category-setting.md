@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.category_setting import CategorySetting
+from discourse.models.category_setting import CategorySetting
 
 category_setting = CategorySetting(
     auto_bump_cooldown_days=170,

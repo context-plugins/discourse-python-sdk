@@ -65,20 +65,20 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.actions_summary_8 import ActionsSummary8
-from discourseapidocumentation.models.created_by import CreatedBy
-from discourseapidocumentation.models.details import Details
-from discourseapidocumentation.models.last_poster import LastPoster
-from discourseapidocumentation.models.link_count import LinkCount
-from discourseapidocumentation.models.participant_1 import Participant1
-from discourseapidocumentation.models.post_4 import Post4
-from discourseapidocumentation.models.post_stream_1 import PostStream1
-from discourseapidocumentation.models.poster_4 import Poster4
-from discourseapidocumentation.models.suggested_topic import SuggestedTopic
-from discourseapidocumentation.models.t_json_response import TJsonResponse
-from discourseapidocumentation.models.tag import Tag
-from discourseapidocumentation.models.user import User
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.actions_summary_8 import ActionsSummary8
+from discourse.models.created_by import CreatedBy
+from discourse.models.details import Details
+from discourse.models.last_poster import LastPoster
+from discourse.models.link_count import LinkCount
+from discourse.models.participant_1 import Participant1
+from discourse.models.post_4 import Post4
+from discourse.models.post_stream_1 import PostStream1
+from discourse.models.poster_4 import Poster4
+from discourse.models.suggested_topic import SuggestedTopic
+from discourse.models.t_json_response import TJsonResponse
+from discourse.models.tag import Tag
+from discourse.models.user import User
 
 t_json_response = TJsonResponse(
     post_stream=PostStream1(

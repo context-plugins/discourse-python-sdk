@@ -23,7 +23,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.users_json_request import UsersJsonRequest
+from discourse.models.users_json_request import UsersJsonRequest
 
 users_json_request = UsersJsonRequest(
     name='name2',

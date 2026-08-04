@@ -73,8 +73,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.latest_post import LatestPost
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.latest_post import LatestPost
 
 latest_post = LatestPost(
     id=140,

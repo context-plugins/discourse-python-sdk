@@ -65,7 +65,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.post_3 import Post3
+from discourse.models.post_3 import Post3
 
 post_3 = Post3(
     id=118,

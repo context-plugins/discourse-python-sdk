@@ -81,9 +81,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.category_2 import Category2
-from discourseapidocumentation.models.group_permission import GroupPermission
-from discourseapidocumentation.models.required_tag_group import RequiredTagGroup
+from discourse.models.category_2 import Category2
+from discourse.models.group_permission import GroupPermission
+from discourse.models.required_tag_group import RequiredTagGroup
 
 category_2 = Category2(
     id=42,

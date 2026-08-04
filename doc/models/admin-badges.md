@@ -20,8 +20,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.admin_badges import AdminBadges
-from discourseapidocumentation.models.triggers import Triggers
+from discourse.models.admin_badges import AdminBadges
+from discourse.models.triggers import Triggers
 
 admin_badges = AdminBadges(
     protected_system_fields=[

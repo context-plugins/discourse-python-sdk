@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.optimized_video import OptimizedVideo
+from discourse.models.optimized_video import OptimizedVideo
 
 optimized_video = OptimizedVideo(
     id=182,

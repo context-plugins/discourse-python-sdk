@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.users_password_reset_json_request import UsersPasswordResetJsonRequest
+from discourse.models.users_password_reset_json_request import UsersPasswordResetJsonRequest
 
 users_password_reset_json_request = UsersPasswordResetJsonRequest(
     username='username4',

@@ -65,7 +65,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.user_option import UserOption
+from discourse.models.user_option import UserOption
 
 user_option = UserOption(
     user_id=122,

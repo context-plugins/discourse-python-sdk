@@ -25,7 +25,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.posts_json_request import PostsJsonRequest
+from discourse.models.posts_json_request import PostsJsonRequest
 
 posts_json_request = PostsJsonRequest(
     raw='raw8',

@@ -43,8 +43,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.poster import Poster
-from discourseapidocumentation.models.topic_1 import Topic1
+from discourse.models.poster import Poster
+from discourse.models.topic_1 import Topic1
 
 topic_1 = Topic1(
     id=56,

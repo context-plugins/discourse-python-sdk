@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.order_2 import Order2
+from discourse.models.order_2 import Order2
 
 order_2 = Order2.LIKES_GIVEN
 ```

@@ -43,8 +43,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.penalty_counts_1 import PenaltyCounts1
-from discourseapidocumentation.models.tl_3_requirements import Tl3Requirements
+from discourse.models.penalty_counts_1 import PenaltyCounts1
+from discourse.models.tl_3_requirements import Tl3Requirements
 
 tl_3_requirements = Tl3Requirements(
     time_period=82,

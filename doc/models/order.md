@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.order import Order
+from discourse.models.order import Order
 
 order = Order.ASC
 ```

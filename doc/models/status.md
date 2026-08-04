@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.status import Status
+from discourse.models.status import Status
 
 status = Status.STANDALONE
 ```

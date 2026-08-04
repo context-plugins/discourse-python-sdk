@@ -28,7 +28,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_notification_schedule import UserNotificationSchedule
+from discourse.models.user_notification_schedule import UserNotificationSchedule
 
 user_notification_schedule = UserNotificationSchedule(
     enabled=False,

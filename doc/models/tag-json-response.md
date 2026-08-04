@@ -21,9 +21,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.tag_json_response import TagJsonResponse
-from discourseapidocumentation.models.topic_list_3 import TopicList3
-from discourseapidocumentation.models.user_2 import User2
+from discourse.models.tag_json_response import TagJsonResponse
+from discourse.models.topic_list_3 import TopicList3
+from discourse.models.user_2 import User2
 
 tag_json_response = TagJsonResponse(
     users=[

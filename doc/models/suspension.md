@@ -18,8 +18,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.suspended_by import SuspendedBy
-from discourseapidocumentation.models.suspension import Suspension
+from discourse.models.suspended_by import SuspendedBy
+from discourse.models.suspension import Suspension
 
 suspension = Suspension(
     suspend_reason='suspend_reason4',

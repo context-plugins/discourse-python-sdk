@@ -37,7 +37,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.badge import Badge
+from discourse.models.badge import Badge
 
 badge = Badge(
     id=184,

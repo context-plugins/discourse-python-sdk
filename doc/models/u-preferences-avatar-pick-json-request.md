@@ -15,8 +15,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.type_1 import Type1
-from discourseapidocumentation.models.u_preferences_avatar_pick_json_request import UPreferencesAvatarPickJsonRequest
+from discourse.models.type_1 import Type1
+from discourse.models.u_preferences_avatar_pick_json_request import UPreferencesAvatarPickJsonRequest
 
 u_preferences_avatar_pick_json_request = UPreferencesAvatarPickJsonRequest(
     upload_id=206,

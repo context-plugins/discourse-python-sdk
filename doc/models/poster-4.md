@@ -16,8 +16,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.poster_4 import Poster4
-from discourseapidocumentation.models.user import User
+from discourse.models.poster_4 import Poster4
+from discourse.models.user import User
 
 poster_4 = Poster4(
     extras='extras0',

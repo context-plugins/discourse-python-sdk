@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.category_localization import CategoryLocalization
+from discourse.models.category_localization import CategoryLocalization
 
 category_localization = CategoryLocalization(
     locale='locale8',

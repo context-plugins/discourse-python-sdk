@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary_6 import ActionsSummary6
+from discourse.models.actions_summary_6 import ActionsSummary6
 
 actions_summary_6 = ActionsSummary6(
     id=108,

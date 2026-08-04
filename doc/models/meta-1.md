@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.meta_1 import Meta1
+from discourse.models.meta_1 import Meta1
 
 meta_1 = Meta1(
     last_updated_at='last_updated_at4',

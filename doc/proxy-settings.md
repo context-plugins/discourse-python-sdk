@@ -15,10 +15,10 @@ Represents the proxy server configurations for API calls.
 ## Usage Example
 
 ```python
-from discourseapidocumentation.discourseapidocumentation_client import DiscourseapidocumentationClient
-from discourseapidocumentation.http.proxy_settings import ProxySettings
+from discourse.discourse_client import DiscourseClient
+from discourse.http.proxy_settings import ProxySettings
 
-client = DiscourseapidocumentationClient(
+client = DiscourseClient(
     proxy_settings=ProxySettings(
         address='http://localhost',
         port=8888,

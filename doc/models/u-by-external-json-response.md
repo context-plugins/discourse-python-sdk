@@ -17,15 +17,15 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.custom_fields import CustomFields
-from discourseapidocumentation.models.featured_topic import FeaturedTopic
-from discourseapidocumentation.models.group_7 import Group7
-from discourseapidocumentation.models.group_user import GroupUser
-from discourseapidocumentation.models.u_by_external_json_response import UByExternalJsonResponse
-from discourseapidocumentation.models.user_8 import User8
-from discourseapidocumentation.models.user_auth_token import UserAuthToken
-from discourseapidocumentation.models.user_notification_schedule import UserNotificationSchedule
-from discourseapidocumentation.models.user_option import UserOption
+from discourse.models.custom_fields import CustomFields
+from discourse.models.featured_topic import FeaturedTopic
+from discourse.models.group_7 import Group7
+from discourse.models.group_user import GroupUser
+from discourse.models.u_by_external_json_response import UByExternalJsonResponse
+from discourse.models.user_8 import User8
+from discourse.models.user_auth_token import UserAuthToken
+from discourse.models.user_notification_schedule import UserNotificationSchedule
+from discourse.models.user_option import UserOption
 
 u_by_external_json_response = UByExternalJsonResponse(
     user_badges=[

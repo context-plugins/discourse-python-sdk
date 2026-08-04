@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.suspended_by import SuspendedBy
+from discourse.models.suspended_by import SuspendedBy
 
 suspended_by = SuspendedBy(
     id=146,

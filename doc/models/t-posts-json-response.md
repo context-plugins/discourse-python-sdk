@@ -20,9 +20,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.post_3 import Post3
-from discourseapidocumentation.models.post_stream import PostStream
-from discourseapidocumentation.models.t_posts_json_response import TPostsJsonResponse
+from discourse.models.post_3 import Post3
+from discourse.models.post_stream import PostStream
+from discourse.models.t_posts_json_response import TPostsJsonResponse
 
 t_posts_json_response = TPostsJsonResponse(
     post_stream=PostStream(

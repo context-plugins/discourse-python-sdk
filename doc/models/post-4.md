@@ -63,9 +63,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.link_count import LinkCount
-from discourseapidocumentation.models.post_4 import Post4
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.link_count import LinkCount
+from discourse.models.post_4 import Post4
 
 post_4 = Post4(
     id=128,

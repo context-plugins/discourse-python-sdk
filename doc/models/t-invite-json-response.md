@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_invite_json_response import TInviteJsonResponse
-from discourseapidocumentation.models.user_1 import User1
+from discourse.models.t_invite_json_response import TInviteJsonResponse
+from discourse.models.user_1 import User1
 
 t_invite_json_response = TInviteJsonResponse(
     user=User1(

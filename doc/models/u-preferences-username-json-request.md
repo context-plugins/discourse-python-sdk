@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.u_preferences_username_json_request import UPreferencesUsernameJsonRequest
+from discourse.models.u_preferences_username_json_request import UPreferencesUsernameJsonRequest
 
 u_preferences_username_json_request = UPreferencesUsernameJsonRequest(
     new_username='new_username6'

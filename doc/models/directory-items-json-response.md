@@ -15,10 +15,10 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.directory_item import DirectoryItem
-from discourseapidocumentation.models.directory_items_json_response import DirectoryItemsJsonResponse
-from discourseapidocumentation.models.meta_1 import Meta1
-from discourseapidocumentation.models.user_11 import User11
+from discourse.models.directory_item import DirectoryItem
+from discourse.models.directory_items_json_response import DirectoryItemsJsonResponse
+from discourse.models.meta_1 import Meta1
+from discourse.models.user_11 import User11
 
 directory_items_json_response = DirectoryItemsJsonResponse(
     directory_items=[

@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.parent_tag import ParentTag
+from discourse.models.parent_tag import ParentTag
 
 parent_tag = ParentTag(
     id=110,

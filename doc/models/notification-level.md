@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.notification_level import NotificationLevel
+from discourse.models.notification_level import NotificationLevel
 
 notification_level = NotificationLevel.ENUM_0
 ```

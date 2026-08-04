@@ -22,7 +22,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.owner import Owner
+from discourse.models.owner import Owner
 
 owner = Owner(
     id=84,

@@ -39,7 +39,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_action import UserAction
+from discourse.models.user_action import UserAction
 
 user_action = UserAction(
     excerpt='excerpt4',

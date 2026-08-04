@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.invites_create_multiple_json_response import InvitesCreateMultipleJsonResponse
+from discourse.models.invites_create_multiple_json_response import InvitesCreateMultipleJsonResponse
 
 invites_create_multiple_json_response = InvitesCreateMultipleJsonResponse(
     num_successfully_created_invitations=42,

@@ -22,8 +22,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.directory_item import DirectoryItem
-from discourseapidocumentation.models.user_11 import User11
+from discourse.models.directory_item import DirectoryItem
+from discourse.models.user_11 import User11
 
 directory_item = DirectoryItem(
     id=230,

@@ -17,11 +17,11 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.badge_3 import Badge3
-from discourseapidocumentation.models.badge_type import BadgeType
-from discourseapidocumentation.models.granted_by import GrantedBy
-from discourseapidocumentation.models.user_badge import UserBadge
-from discourseapidocumentation.models.user_badges_json_response import UserBadgesJsonResponse
+from discourse.models.badge_3 import Badge3
+from discourse.models.badge_type import BadgeType
+from discourse.models.granted_by import GrantedBy
+from discourse.models.user_badge import UserBadge
+from discourse.models.user_badges_json_response import UserBadgesJsonResponse
 
 user_badges_json_response = UserBadgesJsonResponse(
     user_badges=[

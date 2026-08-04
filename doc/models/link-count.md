@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.link_count import LinkCount
+from discourse.models.link_count import LinkCount
 
 link_count = LinkCount(
     url='url8',

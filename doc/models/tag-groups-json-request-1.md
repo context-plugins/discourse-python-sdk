@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.tag_groups_json_request_1 import TagGroupsJsonRequest1
+from discourse.models.tag_groups_json_request_1 import TagGroupsJsonRequest1
 
 tag_groups_json_request_1 = TagGroupsJsonRequest1(
     name='name4',

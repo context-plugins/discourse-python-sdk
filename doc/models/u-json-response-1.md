@@ -17,7 +17,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.u_json_response_1 import UJsonResponse1
+from discourse.models.u_json_response_1 import UJsonResponse1
 
 u_json_response_1 = UJsonResponse1(
     success='success2',

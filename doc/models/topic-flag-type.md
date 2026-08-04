@@ -28,7 +28,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.topic_flag_type import TopicFlagType
+from discourse.models.topic_flag_type import TopicFlagType
 
 topic_flag_type = TopicFlagType(
     id=48,

@@ -25,13 +25,13 @@ The API client can be initialized as follows:
 ```python
 import logging
 
-from discourseapidocumentation.configuration import Environment
-from discourseapidocumentation.discourseapidocumentation_client import DiscourseapidocumentationClient
-from discourseapidocumentation.logging.configuration.api_logging_configuration import LoggingConfiguration
-from discourseapidocumentation.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
-from discourseapidocumentation.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
+from discourse.configuration import Environment
+from discourse.discourse_client import DiscourseClient
+from discourse.logging.configuration.api_logging_configuration import LoggingConfiguration
+from discourse.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
+from discourse.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
 
-client = DiscourseapidocumentationClient(
+client = DiscourseClient(
     environment=Environment.PRODUCTION,
     default_host='discourse.example.com',
     logging_configuration=LoggingConfiguration(
@@ -49,10 +49,10 @@ client = DiscourseapidocumentationClient(
 ## Environment-Based Client Initialization
 
 ```python
-from discourseapidocumentation.discourseapidocumentation_client import DiscourseapidocumentationClient
+from discourse.discourse_client import DiscourseClient
 
 # Specify the path to your .env file if it’s located outside the project’s root directory.
-client = DiscourseapidocumentationClient.from_environment(dotenv_path='/path/to/.env')
+client = DiscourseClient.from_environment(dotenv_path='/path/to/.env')
 ```
 
 See the [Environment-Based Client Initialization](../doc/environment-based-client-initialization.md) section for details.

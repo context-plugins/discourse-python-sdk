@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.include_subcategories import IncludeSubcategories
+from discourse.models.include_subcategories import IncludeSubcategories
 
 include_subcategories = IncludeSubcategories.TRUE
 ```

@@ -45,7 +45,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group_4 import Group4
+from discourse.models.group_4 import Group4
 
 group_4 = Group4(
     id=98,

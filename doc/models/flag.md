@@ -19,7 +19,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.flag import Flag
+from discourse.models.flag import Flag
 
 flag = Flag.STAFF
 ```

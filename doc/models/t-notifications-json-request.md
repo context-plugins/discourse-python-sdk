@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.notification_level import NotificationLevel
-from discourseapidocumentation.models.t_notifications_json_request import TNotificationsJsonRequest
+from discourse.models.notification_level import NotificationLevel
+from discourse.models.t_notifications_json_request import TNotificationsJsonRequest
 
 t_notifications_json_request = TNotificationsJsonRequest(
     notification_level=NotificationLevel.ENUM_2,

@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_badges_json_request import AdminBadgesJsonRequest
+from discourse.models.admin_badges_json_request import AdminBadgesJsonRequest
 
 admin_badges_json_request = AdminBadgesJsonRequest(
     name='name8',

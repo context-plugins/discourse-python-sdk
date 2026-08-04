@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.upload_type import UploadType
+from discourse.models.upload_type import UploadType
 
 upload_type = UploadType.CUSTOM_EMOJI
 ```

@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.user_color_scheme import UserColorScheme
+from discourse.models.user_color_scheme import UserColorScheme
 
 user_color_scheme = UserColorScheme(
     id=108,

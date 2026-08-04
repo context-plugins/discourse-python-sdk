@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.occurrence import Occurrence
+from discourse.models.occurrence import Occurrence
 
 occurrence = Occurrence(
     starts_at='starts_at2',

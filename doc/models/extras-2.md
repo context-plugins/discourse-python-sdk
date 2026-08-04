@@ -16,7 +16,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extras_2 import Extras2
+from discourse.models.extras_2 import Extras2
 
 extras_2 = Extras2(
     type_filters=[

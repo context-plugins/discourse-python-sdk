@@ -16,9 +16,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.categories_json_response_1 import CategoriesJsonResponse1
-from discourseapidocumentation.models.category_1 import Category1
-from discourseapidocumentation.models.category_list import CategoryList
+from discourse.models.categories_json_response_1 import CategoriesJsonResponse1
+from discourse.models.category_1 import Category1
+from discourse.models.category_list import CategoryList
 
 categories_json_response_1 = CategoriesJsonResponse1(
     category_list=CategoryList(

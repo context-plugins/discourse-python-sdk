@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.asc import Asc
+from discourse.models.asc import Asc
 
 asc = Asc.TRUE
 ```

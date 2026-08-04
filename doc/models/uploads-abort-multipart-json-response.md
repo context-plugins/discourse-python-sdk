@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.uploads_abort_multipart_json_response import UploadsAbortMultipartJsonResponse
+from discourse.models.uploads_abort_multipart_json_response import UploadsAbortMultipartJsonResponse
 
 uploads_abort_multipart_json_response = UploadsAbortMultipartJsonResponse(
     success='OK'

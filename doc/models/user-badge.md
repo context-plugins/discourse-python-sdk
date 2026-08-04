@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_badge import UserBadge
+from discourse.models.user_badge import UserBadge
 
 user_badge = UserBadge(
     id=38,

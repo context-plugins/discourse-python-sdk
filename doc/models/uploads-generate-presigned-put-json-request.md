@@ -17,9 +17,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.metadata import Metadata
-from discourseapidocumentation.models.mtype import Type
-from discourseapidocumentation.models.uploads_generate_presigned_put_json_request import UploadsGeneratePresignedPutJsonRequest
+from discourse.models.metadata import Metadata
+from discourse.models.mtype import Type
+from discourse.models.uploads_generate_presigned_put_json_request import UploadsGeneratePresignedPutJsonRequest
 
 uploads_generate_presigned_put_json_request = UploadsGeneratePresignedPutJsonRequest(
     mtype=Type.CUSTOM_EMOJI,

@@ -16,10 +16,10 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.groups_members_json_response import GroupsMembersJsonResponse
-from discourseapidocumentation.models.member import Member
-from discourseapidocumentation.models.meta import Meta
-from discourseapidocumentation.models.owner import Owner
+from discourse.models.groups_members_json_response import GroupsMembersJsonResponse
+from discourse.models.member import Member
+from discourse.models.meta import Meta
+from discourse.models.owner import Owner
 
 groups_members_json_response = GroupsMembersJsonResponse(
     members=[

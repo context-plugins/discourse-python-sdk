@@ -16,7 +16,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extras import Extras
+from discourse.models.extras import Extras
 
 extras = Extras(
     visible_group_names=[

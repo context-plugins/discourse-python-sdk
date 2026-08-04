@@ -24,7 +24,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_timer_json_response import TTimerJsonResponse
+from discourse.models.t_timer_json_response import TTimerJsonResponse
 
 t_timer_json_response = TTimerJsonResponse(
     success='OK',

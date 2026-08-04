@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.post_3 import Post3
-from discourseapidocumentation.models.post_stream import PostStream
+from discourse.models.post_3 import Post3
+from discourse.models.post_stream import PostStream
 
 post_stream = PostStream(
     posts=[

@@ -32,7 +32,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group import Group
+from discourse.models.group import Group
 
 group = Group(
     name='name8',

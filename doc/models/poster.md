@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.poster import Poster
+from discourse.models.poster import Poster
 
 poster = Poster(
     extras='extras8',

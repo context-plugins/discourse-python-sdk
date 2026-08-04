@@ -19,12 +19,12 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.admin_badges import AdminBadges
-from discourseapidocumentation.models.admin_badges_json_response import AdminBadgesJsonResponse
-from discourseapidocumentation.models.badge import Badge
-from discourseapidocumentation.models.badge_grouping import BadgeGrouping
-from discourseapidocumentation.models.badge_type import BadgeType
-from discourseapidocumentation.models.triggers import Triggers
+from discourse.models.admin_badges import AdminBadges
+from discourse.models.admin_badges_json_response import AdminBadgesJsonResponse
+from discourse.models.badge import Badge
+from discourse.models.badge_grouping import BadgeGrouping
+from discourse.models.badge_type import BadgeType
+from discourse.models.triggers import Triggers
 
 admin_badges_json_response = AdminBadgesJsonResponse(
     badges=[

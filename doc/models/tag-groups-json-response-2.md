@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.tag_group_2 import TagGroup2
-from discourseapidocumentation.models.tag_groups_json_response_2 import TagGroupsJsonResponse2
+from discourse.models.tag_group_2 import TagGroup2
+from discourse.models.tag_groups_json_response_2 import TagGroupsJsonResponse2
 
 tag_groups_json_response_2 = TagGroupsJsonResponse2(
     tag_group=TagGroup2(

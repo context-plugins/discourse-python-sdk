@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_json_request import TJsonRequest
-from discourseapidocumentation.models.topic_5 import Topic5
+from discourse.models.t_json_request import TJsonRequest
+from discourse.models.topic_5 import Topic5
 
 t_json_request = TJsonRequest(
     topic=Topic5(

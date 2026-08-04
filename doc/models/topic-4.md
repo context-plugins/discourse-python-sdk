@@ -51,7 +51,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.topic_4 import Topic4
+from discourse.models.topic_4 import Topic4
 
 topic_4 = Topic4(
     id=0,

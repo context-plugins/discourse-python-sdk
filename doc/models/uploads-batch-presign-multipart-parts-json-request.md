@@ -17,7 +17,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.uploads_batch_presign_multipart_parts_json_request import UploadsBatchPresignMultipartPartsJsonRequest
+from discourse.models.uploads_batch_presign_multipart_parts_json_request import UploadsBatchPresignMultipartPartsJsonRequest
 
 uploads_batch_presign_multipart_parts_json_request = UploadsBatchPresignMultipartPartsJsonRequest(
     part_numbers=[

@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.permissions import Permissions
+from discourse.models.permissions import Permissions
 
 permissions = Permissions(
     everyone=1,

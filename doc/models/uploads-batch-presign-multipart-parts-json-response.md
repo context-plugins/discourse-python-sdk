@@ -16,7 +16,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.uploads_batch_presign_multipart_parts_json_response import UploadsBatchPresignMultipartPartsJsonResponse
+from discourse.models.uploads_batch_presign_multipart_parts_json_response import UploadsBatchPresignMultipartPartsJsonResponse
 
 uploads_batch_presign_multipart_parts_json_response = UploadsBatchPresignMultipartPartsJsonResponse(
     presigned_urls=jsonpickle.decode('{"1":"https://discourse-martin-uploads-test.s3.us-east-2.amazonaws.com/temp/uploads/default/123abc/123abc.jpg?partNumber=1&uploadId=123456abcd&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test&X-Amz-Date=20211222T012336Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=abc123"}')

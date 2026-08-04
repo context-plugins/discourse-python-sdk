@@ -14,8 +14,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_groups_json_request import AdminGroupsJsonRequest
-from discourseapidocumentation.models.group import Group
+from discourse.models.admin_groups_json_request import AdminGroupsJsonRequest
+from discourse.models.group import Group
 
 admin_groups_json_request = AdminGroupsJsonRequest(
     group=Group(

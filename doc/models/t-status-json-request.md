@@ -21,9 +21,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.enabled import Enabled
-from discourseapidocumentation.models.status_1 import Status1
-from discourseapidocumentation.models.t_status_json_request import TStatusJsonRequest
+from discourse.models.enabled import Enabled
+from discourse.models.status_1 import Status1
+from discourse.models.t_status_json_request import TStatusJsonRequest
 
 t_status_json_request = TStatusJsonRequest(
     status=Status1.VISIBLE,

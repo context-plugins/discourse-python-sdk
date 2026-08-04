@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.featured_topic import FeaturedTopic
+from discourse.models.featured_topic import FeaturedTopic
 
 featured_topic = FeaturedTopic(
     id=50,

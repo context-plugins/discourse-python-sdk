@@ -19,7 +19,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_theme import UserTheme
+from discourse.models.user_theme import UserTheme
 
 user_theme = UserTheme(
     theme_id=42,

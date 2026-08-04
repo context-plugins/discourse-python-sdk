@@ -16,10 +16,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.c_show_json_response import CShowJsonResponse
-from discourseapidocumentation.models.category import Category
-from discourseapidocumentation.models.group_permission import GroupPermission
-from discourseapidocumentation.models.required_tag_group import RequiredTagGroup
+from discourse.models.c_show_json_response import CShowJsonResponse
+from discourse.models.category import Category
+from discourse.models.group_permission import GroupPermission
+from discourse.models.required_tag_group import RequiredTagGroup
 
 c_show_json_response = CShowJsonResponse(
     category=Category(

@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_invite_json_request import TInviteJsonRequest
+from discourse.models.t_invite_json_request import TInviteJsonRequest
 
 t_invite_json_request = TInviteJsonRequest(
     user='user6',

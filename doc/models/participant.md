@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.participant import Participant
+from discourse.models.participant import Participant
 
 participant = Participant(
     extras='extras0',

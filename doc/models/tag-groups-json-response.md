@@ -16,10 +16,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.parent_tag import ParentTag
-from discourseapidocumentation.models.tag import Tag
-from discourseapidocumentation.models.tag_group import TagGroup
-from discourseapidocumentation.models.tag_groups_json_response import TagGroupsJsonResponse
+from discourse.models.parent_tag import ParentTag
+from discourse.models.tag import Tag
+from discourse.models.tag_group import TagGroup
+from discourse.models.tag_groups_json_response import TagGroupsJsonResponse
 
 tag_groups_json_response = TagGroupsJsonResponse(
     tag_groups=[

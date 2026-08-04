@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.t_status_json_response import TStatusJsonResponse
+from discourse.models.t_status_json_response import TStatusJsonResponse
 
 t_status_json_response = TStatusJsonResponse(
     success='OK',

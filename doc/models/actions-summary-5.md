@@ -23,7 +23,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary_5 import ActionsSummary5
+from discourse.models.actions_summary_5 import ActionsSummary5
 
 actions_summary_5 = ActionsSummary5(
     id=146,

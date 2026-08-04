@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_anonymize_json_response import AdminUsersAnonymizeJsonResponse
+from discourse.models.admin_users_anonymize_json_response import AdminUsersAnonymizeJsonResponse
 
 admin_users_anonymize_json_response = AdminUsersAnonymizeJsonResponse(
     success='success8',

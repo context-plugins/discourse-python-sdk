@@ -21,7 +21,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.invites_json_request import InvitesJsonRequest
+from discourse.models.invites_json_request import InvitesJsonRequest
 
 invites_json_request = InvitesJsonRequest(
     email='not-a-user-yet@example.com',

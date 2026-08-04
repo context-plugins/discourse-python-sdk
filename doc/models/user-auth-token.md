@@ -23,7 +23,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.user_auth_token import UserAuthToken
+from discourse.models.user_auth_token import UserAuthToken
 
 user_auth_token = UserAuthToken(
     id=4,

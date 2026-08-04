@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.u_preferences_avatar_pick_json_response import UPreferencesAvatarPickJsonResponse
+from discourse.models.u_preferences_avatar_pick_json_response import UPreferencesAvatarPickJsonResponse
 
 u_preferences_avatar_pick_json_response = UPreferencesAvatarPickJsonResponse(
     success='OK'

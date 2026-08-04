@@ -19,8 +19,8 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.reason import Reason
-from discourseapidocumentation.models.upcoming_changes_stat import UpcomingChangesStat
+from discourse.models.reason import Reason
+from discourse.models.upcoming_changes_stat import UpcomingChangesStat
 
 upcoming_changes_stat = UpcomingChangesStat(
     name='name2',

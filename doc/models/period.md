@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.period import Period
+from discourse.models.period import Period
 
 period = Period.BEFORE
 ```

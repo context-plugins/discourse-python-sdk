@@ -43,7 +43,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.group_10 import Group10
+from discourse.models.group_10 import Group10
 
 group_10 = Group10(
     id=196,

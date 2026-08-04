@@ -20,8 +20,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.post import Post
-from discourseapidocumentation.models.topic import Topic
+from discourse.models.post import Post
+from discourse.models.topic import Topic
 
 post = Post(
     id=236,

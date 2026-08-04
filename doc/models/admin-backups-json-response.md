@@ -21,7 +21,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.admin_backups_json_response import AdminBackupsJsonResponse
+from discourse.models.admin_backups_json_response import AdminBackupsJsonResponse
 
 admin_backups_json_response = AdminBackupsJsonResponse(
     filename='filename0',

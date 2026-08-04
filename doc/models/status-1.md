@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.status_1 import Status1
+from discourse.models.status_1 import Status1
 
 status_1 = Status1.CLOSED
 ```

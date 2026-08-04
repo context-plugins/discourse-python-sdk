@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.posts_json_request_2 import PostsJsonRequest2
+from discourse.models.posts_json_request_2 import PostsJsonRequest2
 
 posts_json_request_2 = PostsJsonRequest2(
     force_destroy=True

@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.triggers import Triggers
+from discourse.models.triggers import Triggers
 
 triggers = Triggers(
     user_change=26,

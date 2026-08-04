@@ -19,10 +19,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.poster import Poster
-from discourseapidocumentation.models.top_tag import TopTag
-from discourseapidocumentation.models.topic_1 import Topic1
-from discourseapidocumentation.models.topic_list import TopicList
+from discourse.models.poster import Poster
+from discourse.models.top_tag import TopTag
+from discourse.models.topic_1 import Topic1
+from discourse.models.topic_list import TopicList
 
 topic_list = TopicList(
     can_create_topic=False,

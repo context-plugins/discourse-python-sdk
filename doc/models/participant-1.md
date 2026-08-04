@@ -27,7 +27,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.participant_1 import Participant1
+from discourse.models.participant_1 import Participant1
 
 participant_1 = Participant1(
     id=240,

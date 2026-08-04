@@ -16,7 +16,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.meta import Meta
+from discourse.models.meta import Meta
 
 meta = Meta(
     total=36,

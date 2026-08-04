@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_silence_json_request import AdminUsersSilenceJsonRequest
+from discourse.models.admin_users_silence_json_request import AdminUsersSilenceJsonRequest
 
 admin_users_silence_json_request = AdminUsersSilenceJsonRequest(
     silenced_till='2022-06-01T08:00:00.000Z',

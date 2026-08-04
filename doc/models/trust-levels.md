@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.trust_levels import TrustLevels
+from discourse.models.trust_levels import TrustLevels
 
 trust_levels = TrustLevels(
     newuser=196,

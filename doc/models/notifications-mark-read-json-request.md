@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.notifications_mark_read_json_request import NotificationsMarkReadJsonRequest
+from discourse.models.notifications_mark_read_json_request import NotificationsMarkReadJsonRequest
 
 notifications_mark_read_json_request = NotificationsMarkReadJsonRequest(
     id=82,

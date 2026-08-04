@@ -85,9 +85,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.admin_users_json_response import AdminUsersJsonResponse
-from discourseapidocumentation.models.approved_by import ApprovedBy
-from discourseapidocumentation.models.group_10 import Group10
+from discourse.models.admin_users_json_response import AdminUsersJsonResponse
+from discourse.models.approved_by import ApprovedBy
+from discourse.models.group_10 import Group10
 
 admin_users_json_response = AdminUsersJsonResponse(
     id=0,

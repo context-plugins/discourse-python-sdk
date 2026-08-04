@@ -21,9 +21,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.topic_list_1 import TopicList1
-from discourseapidocumentation.models.topics_private_messages_json_response import TopicsPrivateMessagesJsonResponse
-from discourseapidocumentation.models.user_1 import User1
+from discourse.models.topic_list_1 import TopicList1
+from discourse.models.topics_private_messages_json_response import TopicsPrivateMessagesJsonResponse
+from discourse.models.user_1 import User1
 
 topics_private_messages_json_response = TopicsPrivateMessagesJsonResponse(
     users=[

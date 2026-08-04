@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.approved_by import ApprovedBy
+from discourse.models.approved_by import ApprovedBy
 
 approved_by = ApprovedBy(
     id=188,

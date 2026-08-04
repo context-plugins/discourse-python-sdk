@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.session_forgot_password_json_request import SessionForgotPasswordJsonRequest
+from discourse.models.session_forgot_password_json_request import SessionForgotPasswordJsonRequest
 
 session_forgot_password_json_request = SessionForgotPasswordJsonRequest(
     login='login2'

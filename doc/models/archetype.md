@@ -18,7 +18,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.archetype import Archetype
+from discourse.models.archetype import Archetype
 
 archetype = Archetype(
     id='id4',

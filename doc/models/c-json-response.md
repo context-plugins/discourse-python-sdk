@@ -18,12 +18,12 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.c_json_response import CJsonResponse
-from discourseapidocumentation.models.poster import Poster
-from discourseapidocumentation.models.top_tag import TopTag
-from discourseapidocumentation.models.topic_1 import Topic1
-from discourseapidocumentation.models.topic_list import TopicList
-from discourseapidocumentation.models.user import User
+from discourse.models.c_json_response import CJsonResponse
+from discourse.models.poster import Poster
+from discourse.models.top_tag import TopTag
+from discourse.models.topic_1 import Topic1
+from discourse.models.topic_list import TopicList
+from discourse.models.user import User
 
 c_json_response = CJsonResponse(
     topic_list=TopicList(

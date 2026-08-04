@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.posts_locked_json_response import PostsLockedJsonResponse
+from discourse.models.posts_locked_json_response import PostsLockedJsonResponse
 
 posts_locked_json_response = PostsLockedJsonResponse(
     locked=False,

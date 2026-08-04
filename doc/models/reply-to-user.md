@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.reply_to_user import ReplyToUser
+from discourse.models.reply_to_user import ReplyToUser
 
 reply_to_user = ReplyToUser(
     username='username6',

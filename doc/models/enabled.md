@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.enabled import Enabled
+from discourse.models.enabled import Enabled
 
 enabled = Enabled.TRUE
 ```

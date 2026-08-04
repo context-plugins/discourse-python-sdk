@@ -14,9 +14,9 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.admin_users_suspend_json_response import AdminUsersSuspendJsonResponse
-from discourseapidocumentation.models.suspended_by import SuspendedBy
-from discourseapidocumentation.models.suspension import Suspension
+from discourse.models.admin_users_suspend_json_response import AdminUsersSuspendJsonResponse
+from discourse.models.suspended_by import SuspendedBy
+from discourse.models.suspension import Suspension
 
 admin_users_suspend_json_response = AdminUsersSuspendJsonResponse(
     suspension=Suspension(

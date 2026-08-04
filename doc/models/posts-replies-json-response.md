@@ -70,9 +70,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.actions_summary import ActionsSummary
-from discourseapidocumentation.models.posts_replies_json_response import PostsRepliesJsonResponse
-from discourseapidocumentation.models.reply_to_user import ReplyToUser
+from discourse.models.actions_summary import ActionsSummary
+from discourse.models.posts_replies_json_response import PostsRepliesJsonResponse
+from discourse.models.reply_to_user import ReplyToUser
 
 posts_replies_json_response = PostsRepliesJsonResponse(
     id=16,

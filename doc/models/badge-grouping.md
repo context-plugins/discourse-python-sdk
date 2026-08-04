@@ -18,7 +18,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.badge_grouping import BadgeGrouping
+from discourse.models.badge_grouping import BadgeGrouping
 
 badge_grouping = BadgeGrouping(
     id=200,

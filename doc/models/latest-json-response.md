@@ -21,9 +21,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.latest_json_response import LatestJsonResponse
-from discourseapidocumentation.models.topic_list_4 import TopicList4
-from discourseapidocumentation.models.user_2 import User2
+from discourse.models.latest_json_response import LatestJsonResponse
+from discourse.models.topic_list_4 import TopicList4
+from discourse.models.user_2 import User2
 
 latest_json_response = LatestJsonResponse(
     users=[

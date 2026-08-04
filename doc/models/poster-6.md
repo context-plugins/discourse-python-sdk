@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.poster_6 import Poster6
+from discourse.models.poster_6 import Poster6
 
 poster_6 = Poster6(
     extras='extras6',

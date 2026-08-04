@@ -17,9 +17,9 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extras import Extras
-from discourseapidocumentation.models.group_1 import Group1
-from discourseapidocumentation.models.groups_json_response import GroupsJsonResponse
+from discourse.models.extras import Extras
+from discourse.models.group_1 import Group1
+from discourse.models.groups_json_response import GroupsJsonResponse
 
 groups_json_response = GroupsJsonResponse(
     group=Group1(

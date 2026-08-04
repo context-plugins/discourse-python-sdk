@@ -21,10 +21,10 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.extra import Extra
-from discourseapidocumentation.models.grouped_search_result import GroupedSearchResult
-from discourseapidocumentation.models.search_json_response import SearchJsonResponse
-from discourseapidocumentation.models.tag import Tag
+from discourse.models.extra import Extra
+from discourse.models.grouped_search_result import GroupedSearchResult
+from discourse.models.search_json_response import SearchJsonResponse
+from discourse.models.tag import Tag
 
 search_json_response = SearchJsonResponse(
     posts=[

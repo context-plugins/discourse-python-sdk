@@ -24,7 +24,7 @@
 ## Example
 
 ```python
-from discourseapidocumentation.models.order_3 import Order3
+from discourse.models.order_3 import Order3
 
 order_3 = Order3.CREATED
 ```

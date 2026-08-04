@@ -22,8 +22,8 @@
 ```python
 import jsonpickle
 
-from discourseapidocumentation.models.period import Period
-from discourseapidocumentation.models.reminder import Reminder
+from discourse.models.period import Period
+from discourse.models.reminder import Reminder
 
 reminder = Reminder(
     value=88,
