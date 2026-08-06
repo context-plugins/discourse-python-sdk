@@ -71,8 +71,8 @@ class SiteJsonResponse(object):
         default_dark_color_scheme (Any): The model property of type Any.
         censored_regexp (List[Any]): The model property of type List[Any].
         custom_emoji_translation (Any): The model property of type Any.
-        watched_words_replace (str): The model property of type str.
-        watched_words_link (str): The model property of type str.
+        watched_words_replace (Any): The model property of type Any.
+        watched_words_link (Any): The model property of type Any.
         markdown_additional_options (Any): The model property of type Any.
         hashtag_configurations (Any): The model property of type Any.
         hashtag_icons (Any): The model property of type Any.

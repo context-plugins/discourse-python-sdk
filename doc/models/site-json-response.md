@@ -40,8 +40,8 @@
 | `default_dark_color_scheme` | `Any` | Required | - |
 | `censored_regexp` | `List[Any]` | Required | - |
 | `custom_emoji_translation` | `Any` | Required | - |
-| `watched_words_replace` | `str` | Required | - |
-| `watched_words_link` | `str` | Required | - |
+| `watched_words_replace` | `Any` | Required | - |
+| `watched_words_link` | `Any` | Required | - |
 | `markdown_additional_options` | `Any` | Optional | - |
 | `hashtag_configurations` | `Any` | Optional | - |
 | `hashtag_icons` | `Any` | Optional | - |
@@ -256,8 +256,8 @@ site_json_response = SiteJsonResponse(
         jsonpickle.decode('{"key1":"val1","key2":"val2"}')
     ],
     custom_emoji_translation=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
-    watched_words_replace='watched_words_replace6',
-    watched_words_link='watched_words_link8',
+    watched_words_replace=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
+    watched_words_link=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
     categories=[
         Category4(
             id=16,
@@ -277,7 +277,7 @@ site_json_response = SiteJsonResponse(
             has_children=False,
             subcategory_count=74,
             sort_order='sort_order8',
-            sort_ascending='sort_ascending8',
+            sort_ascending=False,
             show_subcategory_list=False,
             num_featured_topics=140,
             default_view='default_view2',
@@ -286,13 +286,6 @@ site_json_response = SiteJsonResponse(
             default_list_filter='default_list_filter6',
             minimum_required_tags=172,
             navigate_to_first_post_after_read=False,
-            allowed_tags=[
-                jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            ],
-            allowed_tag_groups=[
-                jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
-                jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            ],
             allow_global_tags=False,
             required_tag_groups=[
                 RequiredTagGroup(

@@ -37,7 +37,7 @@ class Category4(object):
         has_children (bool): The model property of type bool.
         subcategory_count (int): The model property of type int.
         sort_order (str): The model property of type str.
-        sort_ascending (str): The model property of type str.
+        sort_ascending (bool): The model property of type bool.
         show_subcategory_list (bool): The model property of type bool.
         num_featured_topics (int): The model property of type int.
         default_view (str): The model property of type str.
@@ -92,8 +92,6 @@ class Category4(object):
         "default_list_filter": "default_list_filter",
         "minimum_required_tags": "minimum_required_tags",
         "navigate_to_first_post_after_read": "navigate_to_first_post_after_read",
-        "allowed_tags": "allowed_tags",
-        "allowed_tag_groups": "allowed_tag_groups",
         "allow_global_tags": "allow_global_tags",
         "required_tag_groups": "required_tag_groups",
         "read_only_banner": "read_only_banner",
@@ -108,6 +106,8 @@ class Category4(object):
         "description": "description",
         "description_text": "description_text",
         "description_excerpt": "description_excerpt",
+        "allowed_tags": "allowed_tags",
+        "allowed_tag_groups": "allowed_tag_groups",
         "custom_fields": "custom_fields",
         "parent_category_id": "parent_category_id",
         "form_template_ids": "form_template_ids",
@@ -121,6 +121,8 @@ class Category4(object):
         "description",
         "description_text",
         "description_excerpt",
+        "allowed_tags",
+        "allowed_tag_groups",
         "custom_fields",
         "parent_category_id",
         "form_template_ids",
@@ -133,6 +135,7 @@ class Category4(object):
         "description",
         "description_text",
         "description_excerpt",
+        "permission",
         "topic_template",
         "topic_title_placeholder",
         "subcategory_count",
@@ -175,8 +178,6 @@ class Category4(object):
         default_list_filter=None,
         minimum_required_tags=None,
         navigate_to_first_post_after_read=None,
-        allowed_tags=None,
-        allowed_tag_groups=None,
         allow_global_tags=None,
         required_tag_groups=None,
         read_only_banner=None,
@@ -191,6 +192,8 @@ class Category4(object):
         description=APIHelper.SKIP,
         description_text=APIHelper.SKIP,
         description_excerpt=APIHelper.SKIP,
+        allowed_tags=APIHelper.SKIP,
+        allowed_tag_groups=APIHelper.SKIP,
         custom_fields=APIHelper.SKIP,
         parent_category_id=APIHelper.SKIP,
         form_template_ids=APIHelper.SKIP,
@@ -235,8 +238,10 @@ class Category4(object):
         self.default_list_filter = default_list_filter
         self.minimum_required_tags = minimum_required_tags
         self.navigate_to_first_post_after_read = navigate_to_first_post_after_read
-        self.allowed_tags = allowed_tags
-        self.allowed_tag_groups = allowed_tag_groups
+        if allowed_tags is not APIHelper.SKIP:
+            self.allowed_tags = allowed_tags
+        if allowed_tag_groups is not APIHelper.SKIP:
+            self.allowed_tag_groups = allowed_tag_groups
         self.allow_global_tags = allow_global_tags
         self.required_tag_groups = required_tag_groups
         self.read_only_banner = read_only_banner
@@ -342,7 +347,7 @@ class Category4(object):
                 else None
         sort_ascending =\
             dictionary.get("sort_ascending")\
-            if dictionary.get("sort_ascending")\
+            if "sort_ascending" in dictionary.keys()\
                 else None
         show_subcategory_list =\
             dictionary.get("show_subcategory_list")\
@@ -375,14 +380,6 @@ class Category4(object):
         navigate_to_first_post_after_read =\
             dictionary.get("navigate_to_first_post_after_read")\
             if "navigate_to_first_post_after_read" in dictionary.keys()\
-                else None
-        allowed_tags =\
-            dictionary.get("allowed_tags")\
-            if dictionary.get("allowed_tags")\
-                else None
-        allowed_tag_groups =\
-            dictionary.get("allowed_tag_groups")\
-            if dictionary.get("allowed_tag_groups")\
                 else None
         allow_global_tags =\
             dictionary.get("allow_global_tags")\
@@ -442,6 +439,14 @@ class Category4(object):
             dictionary.get("description_excerpt")\
             if "description_excerpt" in dictionary.keys()\
                 else APIHelper.SKIP
+        allowed_tags =\
+            dictionary.get("allowed_tags")\
+            if dictionary.get("allowed_tags")\
+                else APIHelper.SKIP
+        allowed_tag_groups =\
+            dictionary.get("allowed_tag_groups")\
+            if dictionary.get("allowed_tag_groups")\
+                else APIHelper.SKIP
         custom_fields =\
             dictionary.get("custom_fields")\
             if "custom_fields" in dictionary.keys()\
@@ -486,8 +491,6 @@ class Category4(object):
                    default_list_filter,
                    minimum_required_tags,
                    navigate_to_first_post_after_read,
-                   allowed_tags,
-                   allowed_tag_groups,
                    allow_global_tags,
                    required_tag_groups,
                    read_only_banner,
@@ -502,6 +505,8 @@ class Category4(object):
                    description,
                    description_text,
                    description_excerpt,
+                   allowed_tags,
+                   allowed_tag_groups,
                    custom_fields,
                    parent_category_id,
                    form_template_ids,
@@ -565,8 +570,16 @@ class Category4(object):
         _default_list_filter=self.default_list_filter
         _minimum_required_tags=self.minimum_required_tags
         _navigate_to_first_post_after_read=self.navigate_to_first_post_after_read
-        _allowed_tags=self.allowed_tags
-        _allowed_tag_groups=self.allowed_tag_groups
+        _allowed_tags=(
+            self.allowed_tags
+            if hasattr(self, "allowed_tags")
+            else None
+        )
+        _allowed_tag_groups=(
+            self.allowed_tag_groups
+            if hasattr(self, "allowed_tag_groups")
+            else None
+        )
         _allow_global_tags=self.allow_global_tags
         _required_tag_groups=self.required_tag_groups
         _read_only_banner=self.read_only_banner
@@ -704,8 +717,16 @@ class Category4(object):
         _default_list_filter=self.default_list_filter
         _minimum_required_tags=self.minimum_required_tags
         _navigate_to_first_post_after_read=self.navigate_to_first_post_after_read
-        _allowed_tags=self.allowed_tags
-        _allowed_tag_groups=self.allowed_tag_groups
+        _allowed_tags=(
+            self.allowed_tags
+            if hasattr(self, "allowed_tags")
+            else None
+        )
+        _allowed_tag_groups=(
+            self.allowed_tag_groups
+            if hasattr(self, "allowed_tag_groups")
+            else None
+        )
         _allow_global_tags=self.allow_global_tags
         _required_tag_groups=self.required_tag_groups
         _read_only_banner=self.read_only_banner

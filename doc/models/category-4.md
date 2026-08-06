@@ -32,7 +32,7 @@
 | `has_children` | `bool` | Required | - |
 | `subcategory_count` | `int` | Required | - |
 | `sort_order` | `str` | Required | - |
-| `sort_ascending` | `str` | Required | - |
+| `sort_ascending` | `bool` | Required | - |
 | `show_subcategory_list` | `bool` | Required | - |
 | `num_featured_topics` | `int` | Required | - |
 | `default_view` | `str` | Required | - |
@@ -41,8 +41,8 @@
 | `default_list_filter` | `str` | Required | - |
 | `minimum_required_tags` | `int` | Required | - |
 | `navigate_to_first_post_after_read` | `bool` | Required | - |
-| `allowed_tags` | `List[Any]` | Required | - |
-| `allowed_tag_groups` | `List[Any]` | Required | - |
+| `allowed_tags` | `List[Any]` | Optional | - |
+| `allowed_tag_groups` | `List[Any]` | Optional | - |
 | `allow_global_tags` | `bool` | Required | - |
 | `required_tag_groups` | [`List[RequiredTagGroup]`](../../doc/models/required-tag-group.md) | Required | - |
 | `read_only_banner` | `str` | Required | - |
@@ -59,8 +59,6 @@
 ## Example
 
 ```python
-import jsonpickle
-
 from discourse.models.category_4 import Category4
 from discourse.models.required_tag_group import RequiredTagGroup
 
@@ -82,7 +80,7 @@ category_4 = Category4(
     has_children=False,
     subcategory_count=130,
     sort_order='sort_order0',
-    sort_ascending='sort_ascending0',
+    sort_ascending=False,
     show_subcategory_list=False,
     num_featured_topics=196,
     default_view='default_view6',
@@ -91,13 +89,6 @@ category_4 = Category4(
     default_list_filter='default_list_filter8',
     minimum_required_tags=228,
     navigate_to_first_post_after_read=False,
-    allowed_tags=[
-        jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
-        jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    ],
-    allowed_tag_groups=[
-        jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    ],
     allow_global_tags=False,
     required_tag_groups=[
         RequiredTagGroup(
