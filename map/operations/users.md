@@ -2,7 +2,7 @@
 
 # Users — operations
 
-Accessor: `client.users` · Source: `discourse_api_documentation/apis/users.py` · 25 operations
+Accessor: `client.users` · Source: `discourse/apis/users.py` · 25 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -18,7 +18,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersActivateJsonResponse` | `discourse_api_documentation/models/admin_users_activate_json_response.py` |
+| `AdminUsersActivateJsonResponse` | `discourse/models/admin_users_activate_json_response.py` |
 
 ### client.users.admin_get_user
 
@@ -32,7 +32,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersJsonResponse` | `discourse_api_documentation/models/admin_users_json_response.py` |
+| `AdminUsersJsonResponse` | `discourse/models/admin_users_json_response.py` |
 
 ### client.users.admin_list_users
 
@@ -45,9 +45,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Order3OrStr` | `discourse_api_documentation/models/enums/order3.py` |
-| `AscOrStr` | `discourse_api_documentation/models/enums/asc.py` |
-| `AdminUsersJsonResponse2` | `discourse_api_documentation/models/admin_users_json_response2.py` |
+| `Order3OrStr` | `discourse/models/enums/order3.py` |
+| `AscOrStr` | `discourse/models/enums/asc.py` |
+| `AdminUsersJsonResponse2` | `discourse/models/admin_users_json_response2.py` |
 
 ### client.users.admin_list_users_flag
 
@@ -61,10 +61,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `FlagOrStr` | `discourse_api_documentation/models/enums/flag.py` |
-| `Order3OrStr` | `discourse_api_documentation/models/enums/order3.py` |
-| `AscOrStr` | `discourse_api_documentation/models/enums/asc.py` |
-| `AdminUsersListJsonResponse` | `discourse_api_documentation/models/admin_users_list_json_response.py` |
+| `FlagOrStr` | `discourse/models/enums/flag.py` |
+| `Order3OrStr` | `discourse/models/enums/order3.py` |
+| `AscOrStr` | `discourse/models/enums/asc.py` |
+| `AdminUsersListJsonResponse` | `discourse/models/admin_users_list_json_response.py` |
 
 ### client.users.anonymize_user
 
@@ -78,7 +78,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersAnonymizeJsonResponse` | `discourse_api_documentation/models/admin_users_anonymize_json_response.py` |
+| `AdminUsersAnonymizeJsonResponse` | `discourse/models/admin_users_anonymize_json_response.py` |
 
 ### client.users.change_password
 
@@ -92,8 +92,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UsersPasswordResetJsonRequest` | `discourse_api_documentation/models/users_password_reset_json_request.py` |
-| `UsersPasswordResetJsonRequestDict` | `discourse_api_documentation/models/users_password_reset_json_request.py` |
+| `UsersPasswordResetJsonRequest` | `discourse/models/users_password_reset_json_request.py` |
+| `UsersPasswordResetJsonRequestDict` | `discourse/models/users_password_reset_json_request.py` |
 
 ### client.users.create_user
 
@@ -107,9 +107,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UsersJsonRequest` | `discourse_api_documentation/models/users_json_request.py` |
-| `UsersJsonRequestDict` | `discourse_api_documentation/models/users_json_request.py` |
-| `UsersJsonResponse` | `discourse_api_documentation/models/users_json_response.py` |
+| `UsersJsonRequest` | `discourse/models/users_json_request.py` |
+| `UsersJsonRequestDict` | `discourse/models/users_json_request.py` |
+| `UsersJsonResponse` | `discourse/models/users_json_response.py` |
 
 ### client.users.deactivate_user
 
@@ -123,7 +123,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersDeactivateJsonResponse` | `discourse_api_documentation/models/admin_users_deactivate_json_response.py` |
+| `AdminUsersDeactivateJsonResponse` | `discourse/models/admin_users_deactivate_json_response.py` |
 
 ### client.users.delete_user
 
@@ -137,9 +137,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersJsonRequest` | `discourse_api_documentation/models/admin_users_json_request.py` |
-| `AdminUsersJsonRequestDict` | `discourse_api_documentation/models/admin_users_json_request.py` |
-| `AdminUsersJsonResponse1` | `discourse_api_documentation/models/admin_users_json_response1.py` |
+| `AdminUsersJsonRequest` | `discourse/models/admin_users_json_request.py` |
+| `AdminUsersJsonRequestDict` | `discourse/models/admin_users_json_request.py` |
+| `AdminUsersJsonResponse1` | `discourse/models/admin_users_json_response1.py` |
 
 ### client.users.get_user
 
@@ -153,7 +153,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UJsonResponse` | `discourse_api_documentation/models/u_json_response.py` |
+| `UJsonResponse` | `discourse/models/u_json_response.py` |
 
 ### client.users.get_user_emails
 
@@ -167,7 +167,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UEmailsJsonResponse` | `discourse_api_documentation/models/u_emails_json_response.py` |
+| `UEmailsJsonResponse` | `discourse/models/u_emails_json_response.py` |
 
 ### client.users.get_user_external_id
 
@@ -181,7 +181,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UByExternalJsonResponse` | `discourse_api_documentation/models/u_by_external_json_response.py` |
+| `UByExternalJsonResponse` | `discourse/models/u_by_external_json_response.py` |
 
 ### client.users.get_user_identiy_provider_external_id
 
@@ -195,7 +195,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UByExternalJsonResponse` | `discourse_api_documentation/models/u_by_external_json_response.py` |
+| `UByExternalJsonResponse` | `discourse/models/u_by_external_json_response.py` |
 
 ### client.users.list_user_actions
 
@@ -209,7 +209,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UserActionsJsonResponse` | `discourse_api_documentation/models/user_actions_json_response.py` |
+| `UserActionsJsonResponse` | `discourse/models/user_actions_json_response.py` |
 
 ### client.users.list_user_badges
 
@@ -223,7 +223,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UserBadgesJsonResponse` | `discourse_api_documentation/models/user_badges_json_response.py` |
+| `UserBadgesJsonResponse` | `discourse/models/user_badges_json_response.py` |
 
 ### client.users.list_users_public
 
@@ -237,10 +237,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Period1OrStr` | `discourse_api_documentation/models/enums/period1.py` |
-| `Order2OrStr` | `discourse_api_documentation/models/enums/order2.py` |
-| `AscOrStr` | `discourse_api_documentation/models/enums/asc.py` |
-| `DirectoryItemsJsonResponse` | `discourse_api_documentation/models/directory_items_json_response.py` |
+| `Period1OrStr` | `discourse/models/enums/period1.py` |
+| `Order2OrStr` | `discourse/models/enums/order2.py` |
+| `AscOrStr` | `discourse/models/enums/asc.py` |
+| `DirectoryItemsJsonResponse` | `discourse/models/directory_items_json_response.py` |
 
 ### client.users.log_out_user
 
@@ -254,7 +254,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersLogOutJsonResponse` | `discourse_api_documentation/models/admin_users_log_out_json_response.py` |
+| `AdminUsersLogOutJsonResponse` | `discourse/models/admin_users_log_out_json_response.py` |
 
 ### client.users.refresh_gravatar
 
@@ -268,7 +268,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UserAvatarRefreshGravatarJsonResponse` | `discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py` |
+| `UserAvatarRefreshGravatarJsonResponse` | `discourse/models/user_avatar_refresh_gravatar_json_response.py` |
 
 ### client.users.send_password_reset_email
 
@@ -281,9 +281,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SessionForgotPasswordJsonRequest` | `discourse_api_documentation/models/session_forgot_password_json_request.py` |
-| `SessionForgotPasswordJsonRequestDict` | `discourse_api_documentation/models/session_forgot_password_json_request.py` |
-| `SessionForgotPasswordJsonResponse` | `discourse_api_documentation/models/session_forgot_password_json_response.py` |
+| `SessionForgotPasswordJsonRequest` | `discourse/models/session_forgot_password_json_request.py` |
+| `SessionForgotPasswordJsonRequestDict` | `discourse/models/session_forgot_password_json_request.py` |
+| `SessionForgotPasswordJsonResponse` | `discourse/models/session_forgot_password_json_response.py` |
 
 ### client.users.silence_user
 
@@ -297,9 +297,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersSilenceJsonRequest` | `discourse_api_documentation/models/admin_users_silence_json_request.py` |
-| `AdminUsersSilenceJsonRequestDict` | `discourse_api_documentation/models/admin_users_silence_json_request.py` |
-| `AdminUsersSilenceJsonResponse` | `discourse_api_documentation/models/admin_users_silence_json_response.py` |
+| `AdminUsersSilenceJsonRequest` | `discourse/models/admin_users_silence_json_request.py` |
+| `AdminUsersSilenceJsonRequestDict` | `discourse/models/admin_users_silence_json_request.py` |
+| `AdminUsersSilenceJsonResponse` | `discourse/models/admin_users_silence_json_response.py` |
 
 ### client.users.suspend_user
 
@@ -313,9 +313,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminUsersSuspendJsonRequest` | `discourse_api_documentation/models/admin_users_suspend_json_request.py` |
-| `AdminUsersSuspendJsonRequestDict` | `discourse_api_documentation/models/admin_users_suspend_json_request.py` |
-| `AdminUsersSuspendJsonResponse` | `discourse_api_documentation/models/admin_users_suspend_json_response.py` |
+| `AdminUsersSuspendJsonRequest` | `discourse/models/admin_users_suspend_json_request.py` |
+| `AdminUsersSuspendJsonRequestDict` | `discourse/models/admin_users_suspend_json_request.py` |
+| `AdminUsersSuspendJsonResponse` | `discourse/models/admin_users_suspend_json_response.py` |
 
 ### client.users.update_avatar
 
@@ -329,9 +329,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UPreferencesAvatarPickJsonRequest` | `discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py` |
-| `UPreferencesAvatarPickJsonRequestDict` | `discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py` |
-| `UPreferencesAvatarPickJsonResponse` | `discourse_api_documentation/models/u_preferences_avatar_pick_json_response.py` |
+| `UPreferencesAvatarPickJsonRequest` | `discourse/models/u_preferences_avatar_pick_json_request.py` |
+| `UPreferencesAvatarPickJsonRequestDict` | `discourse/models/u_preferences_avatar_pick_json_request.py` |
+| `UPreferencesAvatarPickJsonResponse` | `discourse/models/u_preferences_avatar_pick_json_response.py` |
 
 ### client.users.update_email
 
@@ -345,8 +345,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UPreferencesEmailJsonRequest` | `discourse_api_documentation/models/u_preferences_email_json_request.py` |
-| `UPreferencesEmailJsonRequestDict` | `discourse_api_documentation/models/u_preferences_email_json_request.py` |
+| `UPreferencesEmailJsonRequest` | `discourse/models/u_preferences_email_json_request.py` |
+| `UPreferencesEmailJsonRequestDict` | `discourse/models/u_preferences_email_json_request.py` |
 
 ### client.users.update_user
 
@@ -360,9 +360,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UJsonRequest` | `discourse_api_documentation/models/u_json_request.py` |
-| `UJsonRequestDict` | `discourse_api_documentation/models/u_json_request.py` |
-| `UJsonResponse1` | `discourse_api_documentation/models/u_json_response1.py` |
+| `UJsonRequest` | `discourse/models/u_json_request.py` |
+| `UJsonRequestDict` | `discourse/models/u_json_request.py` |
+| `UJsonResponse1` | `discourse/models/u_json_response1.py` |
 
 ### client.users.update_username
 
@@ -376,6 +376,6 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UPreferencesUsernameJsonRequest` | `discourse_api_documentation/models/u_preferences_username_json_request.py` |
-| `UPreferencesUsernameJsonRequestDict` | `discourse_api_documentation/models/u_preferences_username_json_request.py` |
+| `UPreferencesUsernameJsonRequest` | `discourse/models/u_preferences_username_json_request.py` |
+| `UPreferencesUsernameJsonRequestDict` | `discourse/models/u_preferences_username_json_request.py` |
 

@@ -2,7 +2,7 @@
 
 # Tags — operations
 
-Accessor: `client.tags` · Source: `discourse_api_documentation/apis/tags.py` · 6 operations
+Accessor: `client.tags` · Source: `discourse/apis/tags.py` · 6 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -17,9 +17,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagGroupsJsonRequest` | `discourse_api_documentation/models/tag_groups_json_request.py` |
-| `TagGroupsJsonRequestDict` | `discourse_api_documentation/models/tag_groups_json_request.py` |
-| `TagGroupsJsonResponse1` | `discourse_api_documentation/models/tag_groups_json_response1.py` |
+| `TagGroupsJsonRequest` | `discourse/models/tag_groups_json_request.py` |
+| `TagGroupsJsonRequestDict` | `discourse/models/tag_groups_json_request.py` |
+| `TagGroupsJsonResponse1` | `discourse/models/tag_groups_json_response1.py` |
 
 ### client.tags.get_tag
 
@@ -33,7 +33,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagJsonResponse` | `discourse_api_documentation/models/tag_json_response.py` |
+| `TagJsonResponse` | `discourse/models/tag_json_response.py` |
 
 ### client.tags.get_tag_group
 
@@ -47,7 +47,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagGroupsJsonResponse2` | `discourse_api_documentation/models/tag_groups_json_response2.py` |
+| `TagGroupsJsonResponse2` | `discourse/models/tag_groups_json_response2.py` |
 
 ### client.tags.list_tag_groups
 
@@ -59,7 +59,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagGroupsJsonResponse` | `discourse_api_documentation/models/tag_groups_json_response.py` |
+| `TagGroupsJsonResponse` | `discourse/models/tag_groups_json_response.py` |
 
 ### client.tags.list_tags
 
@@ -71,7 +71,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagsJsonResponse` | `discourse_api_documentation/models/tags_json_response.py` |
+| `TagsJsonResponse` | `discourse/models/tags_json_response.py` |
 
 ### client.tags.update_tag_group
 
@@ -85,7 +85,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TagGroupsJsonRequest1` | `discourse_api_documentation/models/tag_groups_json_request1.py` |
-| `TagGroupsJsonRequest1Dict` | `discourse_api_documentation/models/tag_groups_json_request1.py` |
-| `TagGroupsJsonResponse3` | `discourse_api_documentation/models/tag_groups_json_response3.py` |
+| `TagGroupsJsonRequest1` | `discourse/models/tag_groups_json_request1.py` |
+| `TagGroupsJsonRequest1Dict` | `discourse/models/tag_groups_json_request1.py` |
+| `TagGroupsJsonResponse3` | `discourse/models/tag_groups_json_response3.py` |
 

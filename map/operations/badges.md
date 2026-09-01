@@ -2,7 +2,7 @@
 
 # Badges — operations
 
-Accessor: `client.badges` · Source: `discourse_api_documentation/apis/badges.py` · 5 operations
+Accessor: `client.badges` · Source: `discourse/apis/badges.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded, and an operation with no table mentions nothing but builtins and those.
 
@@ -16,7 +16,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminBadgesJsonResponse` | `discourse_api_documentation/models/admin_badges_json_response.py` |
+| `AdminBadgesJsonResponse` | `discourse/models/admin_badges_json_response.py` |
 
 ### client.badges.create_badge
 
@@ -29,9 +29,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminBadgesJsonRequest` | `discourse_api_documentation/models/admin_badges_json_request.py` |
-| `AdminBadgesJsonRequestDict` | `discourse_api_documentation/models/admin_badges_json_request.py` |
-| `AdminBadgesJsonResponse1` | `discourse_api_documentation/models/admin_badges_json_response1.py` |
+| `AdminBadgesJsonRequest` | `discourse/models/admin_badges_json_request.py` |
+| `AdminBadgesJsonRequestDict` | `discourse/models/admin_badges_json_request.py` |
+| `AdminBadgesJsonResponse1` | `discourse/models/admin_badges_json_response1.py` |
 
 ### client.badges.delete_badge
 
@@ -55,7 +55,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UserBadgesJsonResponse` | `discourse_api_documentation/models/user_badges_json_response.py` |
+| `UserBadgesJsonResponse` | `discourse/models/user_badges_json_response.py` |
 
 ### client.badges.update_badge
 
@@ -69,7 +69,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminBadgesJsonRequest1` | `discourse_api_documentation/models/admin_badges_json_request1.py` |
-| `AdminBadgesJsonRequest1Dict` | `discourse_api_documentation/models/admin_badges_json_request1.py` |
-| `AdminBadgesJsonResponse2` | `discourse_api_documentation/models/admin_badges_json_response2.py` |
+| `AdminBadgesJsonRequest1` | `discourse/models/admin_badges_json_request1.py` |
+| `AdminBadgesJsonRequest1Dict` | `discourse/models/admin_badges_json_request1.py` |
+| `AdminBadgesJsonResponse2` | `discourse/models/admin_badges_json_response2.py` |
 

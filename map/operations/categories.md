@@ -2,7 +2,7 @@
 
 # Categories — operations
 
-Accessor: `client.categories` · Source: `discourse_api_documentation/apis/categories.py` · 6 operations
+Accessor: `client.categories` · Source: `discourse/apis/categories.py` · 6 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -17,9 +17,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CategoriesJsonRequest` | `discourse_api_documentation/models/categories_json_request.py` |
-| `CategoriesJsonRequestDict` | `discourse_api_documentation/models/categories_json_request.py` |
-| `CategoriesJsonResponse` | `discourse_api_documentation/models/categories_json_response.py` |
+| `CategoriesJsonRequest` | `discourse/models/categories_json_request.py` |
+| `CategoriesJsonRequestDict` | `discourse/models/categories_json_request.py` |
+| `CategoriesJsonResponse` | `discourse/models/categories_json_response.py` |
 
 ### client.categories.get_category
 
@@ -33,7 +33,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CShowJsonResponse` | `discourse_api_documentation/models/c_show_json_response.py` |
+| `CShowJsonResponse` | `discourse/models/c_show_json_response.py` |
 
 ### client.categories.get_site
 
@@ -45,7 +45,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SiteJsonResponse` | `discourse_api_documentation/models/site_json_response.py` |
+| `SiteJsonResponse` | `discourse/models/site_json_response.py` |
 
 ### client.categories.list_categories
 
@@ -58,7 +58,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CategoriesJsonResponse1` | `discourse_api_documentation/models/categories_json_response1.py` |
+| `CategoriesJsonResponse1` | `discourse/models/categories_json_response1.py` |
 
 ### client.categories.list_category_topics
 
@@ -72,7 +72,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CJsonResponse` | `discourse_api_documentation/models/c_json_response.py` |
+| `CJsonResponse` | `discourse/models/c_json_response.py` |
 
 ### client.categories.update_category
 
@@ -86,7 +86,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CategoriesJsonRequest1` | `discourse_api_documentation/models/categories_json_request1.py` |
-| `CategoriesJsonRequest1Dict` | `discourse_api_documentation/models/categories_json_request1.py` |
-| `CategoriesJsonResponse2` | `discourse_api_documentation/models/categories_json_response2.py` |
+| `CategoriesJsonRequest1` | `discourse/models/categories_json_request1.py` |
+| `CategoriesJsonRequest1Dict` | `discourse/models/categories_json_request1.py` |
+| `CategoriesJsonResponse2` | `discourse/models/categories_json_response2.py` |
 

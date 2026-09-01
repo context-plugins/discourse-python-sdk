@@ -2,7 +2,7 @@
 
 # Uploads — operations
 
-Accessor: `client.uploads` · Source: `discourse_api_documentation/apis/uploads.py` · 7 operations
+Accessor: `client.uploads` · Source: `discourse/apis/uploads.py` · 7 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -17,9 +17,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsAbortMultipartJsonRequest` | `discourse_api_documentation/models/uploads_abort_multipart_json_request.py` |
-| `UploadsAbortMultipartJsonRequestDict` | `discourse_api_documentation/models/uploads_abort_multipart_json_request.py` |
-| `UploadsAbortMultipartJsonResponse` | `discourse_api_documentation/models/uploads_abort_multipart_json_response.py` |
+| `UploadsAbortMultipartJsonRequest` | `discourse/models/uploads_abort_multipart_json_request.py` |
+| `UploadsAbortMultipartJsonRequestDict` | `discourse/models/uploads_abort_multipart_json_request.py` |
+| `UploadsAbortMultipartJsonResponse` | `discourse/models/uploads_abort_multipart_json_response.py` |
 
 ### client.uploads.batch_presign_multipart_parts
 
@@ -32,9 +32,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsBatchPresignMultipartPartsJsonRequest` | `discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py` |
-| `UploadsBatchPresignMultipartPartsJsonRequestDict` | `discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py` |
-| `UploadsBatchPresignMultipartPartsJsonResponse` | `discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_response.py` |
+| `UploadsBatchPresignMultipartPartsJsonRequest` | `discourse/models/uploads_batch_presign_multipart_parts_json_request.py` |
+| `UploadsBatchPresignMultipartPartsJsonRequestDict` | `discourse/models/uploads_batch_presign_multipart_parts_json_request.py` |
+| `UploadsBatchPresignMultipartPartsJsonResponse` | `discourse/models/uploads_batch_presign_multipart_parts_json_response.py` |
 
 ### client.uploads.complete_external_upload
 
@@ -47,9 +47,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsCompleteExternalUploadJsonRequest` | `discourse_api_documentation/models/uploads_complete_external_upload_json_request.py` |
-| `UploadsCompleteExternalUploadJsonRequestDict` | `discourse_api_documentation/models/uploads_complete_external_upload_json_request.py` |
-| `UploadsCompleteExternalUploadJsonResponse` | `discourse_api_documentation/models/uploads_complete_external_upload_json_response.py` |
+| `UploadsCompleteExternalUploadJsonRequest` | `discourse/models/uploads_complete_external_upload_json_request.py` |
+| `UploadsCompleteExternalUploadJsonRequestDict` | `discourse/models/uploads_complete_external_upload_json_request.py` |
+| `UploadsCompleteExternalUploadJsonResponse` | `discourse/models/uploads_complete_external_upload_json_response.py` |
 
 ### client.uploads.complete_multipart
 
@@ -62,9 +62,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsCompleteMultipartJsonRequest` | `discourse_api_documentation/models/uploads_complete_multipart_json_request.py` |
-| `UploadsCompleteMultipartJsonRequestDict` | `discourse_api_documentation/models/uploads_complete_multipart_json_request.py` |
-| `UploadsCompleteMultipartJsonResponse` | `discourse_api_documentation/models/uploads_complete_multipart_json_response.py` |
+| `UploadsCompleteMultipartJsonRequest` | `discourse/models/uploads_complete_multipart_json_request.py` |
+| `UploadsCompleteMultipartJsonRequestDict` | `discourse/models/uploads_complete_multipart_json_request.py` |
+| `UploadsCompleteMultipartJsonResponse` | `discourse/models/uploads_complete_multipart_json_response.py` |
 
 ### client.uploads.create_multipart_upload
 
@@ -77,9 +77,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsCreateMultipartJsonRequest` | `discourse_api_documentation/models/uploads_create_multipart_json_request.py` |
-| `UploadsCreateMultipartJsonRequestDict` | `discourse_api_documentation/models/uploads_create_multipart_json_request.py` |
-| `UploadsCreateMultipartJsonResponse` | `discourse_api_documentation/models/uploads_create_multipart_json_response.py` |
+| `UploadsCreateMultipartJsonRequest` | `discourse/models/uploads_create_multipart_json_request.py` |
+| `UploadsCreateMultipartJsonRequestDict` | `discourse/models/uploads_create_multipart_json_request.py` |
+| `UploadsCreateMultipartJsonResponse` | `discourse/models/uploads_create_multipart_json_response.py` |
 
 ### client.uploads.create_upload
 
@@ -93,8 +93,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadTypeOrStr` | `discourse_api_documentation/models/enums/upload_type.py` |
-| `UploadsJsonResponse` | `discourse_api_documentation/models/uploads_json_response.py` |
+| `UploadTypeOrStr` | `discourse/models/enums/upload_type.py` |
+| `UploadsJsonResponse` | `discourse/models/uploads_json_response.py` |
 
 ### client.uploads.generate_presigned_put
 
@@ -107,7 +107,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UploadsGeneratePresignedPutJsonRequest` | `discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py` |
-| `UploadsGeneratePresignedPutJsonRequestDict` | `discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py` |
-| `UploadsGeneratePresignedPutJsonResponse` | `discourse_api_documentation/models/uploads_generate_presigned_put_json_response.py` |
+| `UploadsGeneratePresignedPutJsonRequest` | `discourse/models/uploads_generate_presigned_put_json_request.py` |
+| `UploadsGeneratePresignedPutJsonRequestDict` | `discourse/models/uploads_generate_presigned_put_json_request.py` |
+| `UploadsGeneratePresignedPutJsonResponse` | `discourse/models/uploads_generate_presigned_put_json_response.py` |
 

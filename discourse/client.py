@@ -21,11 +21,11 @@ from .apis.tags import Tags
 from .apis.topics import Topics
 from .apis.uploads import Uploads
 from .apis.users import Users
-from .base_client import DEFAULT_TIMEOUT, BaseDiscourseApiDocumentationClient
+from .base_client import DEFAULT_TIMEOUT, BaseDiscourseClient
 from .core import OPERATING_SYSTEM, PYTHON_RUNTIME, HttpClient, HttpxClient, RawClient, param
 
 
-class DiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[RawClient]):
+class DiscourseClient(BaseDiscourseClient[RawClient]):
     def __init__(
         self,
         *,
@@ -37,7 +37,7 @@ class DiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[RawCli
         self._raw_client = RawClient(
             http_client=custom_http_client if custom_http_client is not None else HttpxClient(timeout=timeout),
             global_headers=[
-                param[str]("User-Agent", "DiscourseApiDocumentationClient/0.1.0 Python"),
+                param[str]("User-Agent", "DiscourseClient/0.1.0 Python"),
                 param[str]("X-APIMatic-Lang", "Python"),
                 param[str]("X-APIMatic-Package-Version", "0.1.0"),
                 param[str]("X-APIMatic-Gen-Version", "4.0.0"),
@@ -122,4 +122,4 @@ class DiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[RawCli
         self.close()
 
 
-Client = DiscourseApiDocumentationClient
+Client = DiscourseClient

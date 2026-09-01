@@ -2,7 +2,7 @@
 
 # DiscourseCalendarEvents — operations
 
-Accessor: `client.discourse_calendar_events` · Source: `discourse_api_documentation/apis/discourse_calendar_events.py` · 2 operations
+Accessor: `client.discourse_calendar_events` · Source: `discourse/apis/discourse_calendar_events.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -17,8 +17,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `IncludeSubcategoriesOrStr` | `discourse_api_documentation/models/enums/include_subcategories.py` |
-| `OrderOrStr` | `discourse_api_documentation/models/enums/order.py` |
+| `IncludeSubcategoriesOrStr` | `discourse/models/enums/include_subcategories.py` |
+| `OrderOrStr` | `discourse/models/enums/order.py` |
 
 ### client.discourse_calendar_events.list_events
 
@@ -31,8 +31,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `IncludeDetailsOrStr` | `discourse_api_documentation/models/enums/include_details.py` |
-| `IncludeSubcategoriesOrStr` | `discourse_api_documentation/models/enums/include_subcategories.py` |
-| `OrderOrStr` | `discourse_api_documentation/models/enums/order.py` |
-| `DiscoursePostEventEventsJsonResponse` | `discourse_api_documentation/models/discourse_post_event_events_json_response.py` |
+| `IncludeDetailsOrStr` | `discourse/models/enums/include_details.py` |
+| `IncludeSubcategoriesOrStr` | `discourse/models/enums/include_subcategories.py` |
+| `OrderOrStr` | `discourse/models/enums/order.py` |
+| `DiscoursePostEventEventsJsonResponse` | `discourse/models/discourse_post_event_events_json_response.py` |
 

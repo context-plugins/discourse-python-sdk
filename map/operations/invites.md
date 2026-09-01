@@ -2,7 +2,7 @@
 
 # Invites — operations
 
-Accessor: `client.invites` · Source: `discourse_api_documentation/apis/invites.py` · 4 operations
+Accessor: `client.invites` · Source: `discourse/apis/invites.py` · 4 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -18,9 +18,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `InvitesJsonRequest` | `discourse_api_documentation/models/invites_json_request.py` |
-| `InvitesJsonRequestDict` | `discourse_api_documentation/models/invites_json_request.py` |
-| `InvitesJsonResponse` | `discourse_api_documentation/models/invites_json_response.py` |
+| `InvitesJsonRequest` | `discourse/models/invites_json_request.py` |
+| `InvitesJsonRequestDict` | `discourse/models/invites_json_request.py` |
+| `InvitesJsonResponse` | `discourse/models/invites_json_response.py` |
 
 ### client.invites.create_multiple_invites
 
@@ -34,9 +34,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `InvitesCreateMultipleJsonRequest` | `discourse_api_documentation/models/invites_create_multiple_json_request.py` |
-| `InvitesCreateMultipleJsonRequestDict` | `discourse_api_documentation/models/invites_create_multiple_json_request.py` |
-| `InvitesCreateMultipleJsonResponse` | `discourse_api_documentation/models/invites_create_multiple_json_response.py` |
+| `InvitesCreateMultipleJsonRequest` | `discourse/models/invites_create_multiple_json_request.py` |
+| `InvitesCreateMultipleJsonRequestDict` | `discourse/models/invites_create_multiple_json_request.py` |
+| `InvitesCreateMultipleJsonResponse` | `discourse/models/invites_create_multiple_json_response.py` |
 
 ### client.invites.invite_group_to_topic
 
@@ -50,9 +50,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TInviteGroupJsonRequest` | `discourse_api_documentation/models/t_invite_group_json_request.py` |
-| `TInviteGroupJsonRequestDict` | `discourse_api_documentation/models/t_invite_group_json_request.py` |
-| `TInviteGroupJsonResponse` | `discourse_api_documentation/models/t_invite_group_json_response.py` |
+| `TInviteGroupJsonRequest` | `discourse/models/t_invite_group_json_request.py` |
+| `TInviteGroupJsonRequestDict` | `discourse/models/t_invite_group_json_request.py` |
+| `TInviteGroupJsonResponse` | `discourse/models/t_invite_group_json_response.py` |
 
 ### client.invites.invite_to_topic
 
@@ -66,7 +66,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TInviteJsonRequest` | `discourse_api_documentation/models/t_invite_json_request.py` |
-| `TInviteJsonRequestDict` | `discourse_api_documentation/models/t_invite_json_request.py` |
-| `TInviteJsonResponse` | `discourse_api_documentation/models/t_invite_json_response.py` |
+| `TInviteJsonRequest` | `discourse/models/t_invite_json_request.py` |
+| `TInviteJsonRequestDict` | `discourse/models/t_invite_json_request.py` |
+| `TInviteJsonResponse` | `discourse/models/t_invite_json_response.py` |
 

@@ -2,11 +2,11 @@
 
 **Raw** endpoints, reached through `with_raw_response`, return `ApiResult[T, E]` and never raise for an API error. For the parsed endpoints, see [API Reference](api-reference.md).
 
-> Source: [DiscourseApiDocumentationClient](discourse_api_documentation/client.py)
+> Source: [DiscourseClient](discourse/client.py)
 
 ## Admin
 
-> Source: [Admin](discourse_api_documentation/apis/admin.py)
+> Source: [Admin](discourse/apis/admin.py)
 
 <details>
 <summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
@@ -62,7 +62,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -72,11 +72,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse/models/admin_users_activate_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse/models/admin_users_activate_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -140,7 +140,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -150,11 +150,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersJsonResponse](discourse/models/admin_users_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse/models/admin_users_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -217,14 +217,14 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[Order3OrStr](discourse/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -234,11 +234,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse/models/admin_users_json_response2.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;</code> -- users response
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse/models/admin_users_json_response2.py)&#93;</code> -- users response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -301,15 +301,15 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>flag</code> | <code>[FlagOrStr](discourse_api_documentation/models/enums/flag.py)</code> | Value sent with the request. |
-| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>flag</code> | <code>[FlagOrStr](discourse/models/enums/flag.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order3OrStr](discourse/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -319,11 +319,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse/models/admin_users_list_json_response.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;</code> -- response
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse/models/admin_users_list_json_response.py)&#93;</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -387,7 +387,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -397,11 +397,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse/models/admin_users_anonymize_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse/models/admin_users_anonymize_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -465,7 +465,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -475,11 +475,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse/models/admin_users_deactivate_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse/models/admin_users_deactivate_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -543,8 +543,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersJsonRequest](discourse_api_documentation/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse_api_documentation/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -554,11 +554,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersJsonResponse1](discourse/models/admin_users_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse/models/admin_users_json_response1.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -622,7 +622,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -632,11 +632,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse/models/admin_users_log_out_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse/models/admin_users_log_out_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -700,7 +700,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -710,11 +710,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -778,8 +778,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse_api_documentation/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse_api_documentation/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -789,11 +789,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse/models/admin_users_silence_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse/models/admin_users_silence_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -857,8 +857,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -868,11 +868,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse/models/admin_users_suspend_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse/models/admin_users_suspend_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -884,7 +884,7 @@ match result:
 
 ## Backups
 
-> Source: [Backups](discourse_api_documentation/apis/backups.py)
+> Source: [Backups](discourse/apis/backups.py)
 
 <details>
 <summary><code>def create_backup(*, body: AdminBackupsJsonRequest | AdminBackupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBackupsJsonResponse1, RawError]</code></summary>
@@ -939,8 +939,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[AdminBackupsJsonRequest](discourse_api_documentation/models/admin_backups_json_request.py) \| [AdminBackupsJsonRequestDict](discourse_api_documentation/models/admin_backups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminBackupsJsonRequest](discourse/models/admin_backups_json_request.py) \| [AdminBackupsJsonRequestDict](discourse/models/admin_backups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -950,11 +950,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBackupsJsonResponse1](discourse_api_documentation/models/admin_backups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminBackupsJsonResponse1](discourse/models/admin_backups_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminBackupsJsonResponse1](discourse_api_documentation/models/admin_backups_json_response1.py)</code> -- success response
+**On `Success`**: `payload` is <code>[AdminBackupsJsonResponse1](discourse/models/admin_backups_json_response1.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1019,7 +1019,7 @@ match result:
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1029,11 +1029,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1096,7 +1096,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1106,11 +1106,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminBackupsJsonResponse](discourse_api_documentation/models/admin_backups_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[AdminBackupsJsonResponse](discourse/models/admin_backups_json_response.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[AdminBackupsJsonResponse](discourse_api_documentation/models/admin_backups_json_response.py)&#93;</code> -- success response
+**On `Success`**: `payload` is <code>list&#91;[AdminBackupsJsonResponse](discourse/models/admin_backups_json_response.py)&#93;</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1174,7 +1174,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1184,11 +1184,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1200,7 +1200,7 @@ match result:
 
 ## Badges
 
-> Source: [Badges](discourse_api_documentation/apis/badges.py)
+> Source: [Badges](discourse/apis/badges.py)
 
 <details>
 <summary><code>def admin_list_badges(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse, RawError]</code></summary>
@@ -1255,7 +1255,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1265,11 +1265,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse](discourse_api_documentation/models/admin_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminBadgesJsonResponse](discourse/models/admin_badges_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse](discourse_api_documentation/models/admin_badges_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse](discourse/models/admin_badges_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1332,8 +1332,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[AdminBadgesJsonRequest](discourse_api_documentation/models/admin_badges_json_request.py) \| [AdminBadgesJsonRequestDict](discourse_api_documentation/models/admin_badges_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminBadgesJsonRequest](discourse/models/admin_badges_json_request.py) \| [AdminBadgesJsonRequestDict](discourse/models/admin_badges_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1343,11 +1343,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse1](discourse_api_documentation/models/admin_badges_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminBadgesJsonResponse1](discourse/models/admin_badges_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse1](discourse_api_documentation/models/admin_badges_json_response1.py)</code> -- success response
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse1](discourse/models/admin_badges_json_response1.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1411,7 +1411,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1421,11 +1421,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1489,7 +1489,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1499,11 +1499,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UserBadgesJsonResponse](discourse/models/user_badges_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse/models/user_badges_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1567,8 +1567,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminBadgesJsonRequest1](discourse_api_documentation/models/admin_badges_json_request1.py) \| [AdminBadgesJsonRequest1Dict](discourse_api_documentation/models/admin_badges_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminBadgesJsonRequest1](discourse/models/admin_badges_json_request1.py) \| [AdminBadgesJsonRequest1Dict](discourse/models/admin_badges_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1578,11 +1578,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse2](discourse_api_documentation/models/admin_badges_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminBadgesJsonResponse2](discourse/models/admin_badges_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse2](discourse_api_documentation/models/admin_badges_json_response2.py)</code> -- success response
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse2](discourse/models/admin_badges_json_response2.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1594,7 +1594,7 @@ match result:
 
 ## Categories
 
-> Source: [Categories](discourse_api_documentation/apis/categories.py)
+> Source: [Categories](discourse/apis/categories.py)
 
 <details>
 <summary><code>def create_category(*, body: CategoriesJsonRequest | CategoriesJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse, RawError]</code></summary>
@@ -1649,8 +1649,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CategoriesJsonRequest](discourse_api_documentation/models/categories_json_request.py) \| [CategoriesJsonRequestDict](discourse_api_documentation/models/categories_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CategoriesJsonRequest](discourse/models/categories_json_request.py) \| [CategoriesJsonRequestDict](discourse/models/categories_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1660,11 +1660,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse](discourse_api_documentation/models/categories_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[CategoriesJsonResponse](discourse/models/categories_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CategoriesJsonResponse](discourse_api_documentation/models/categories_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse](discourse/models/categories_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1728,7 +1728,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1738,11 +1738,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CShowJsonResponse](discourse_api_documentation/models/c_show_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[CShowJsonResponse](discourse/models/c_show_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CShowJsonResponse](discourse_api_documentation/models/c_show_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[CShowJsonResponse](discourse/models/c_show_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1805,7 +1805,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1815,11 +1815,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[SiteJsonResponse](discourse/models/site_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse/models/site_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1883,7 +1883,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>include_subcategories</code> | <code>bool \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1893,11 +1893,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse1](discourse_api_documentation/models/categories_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[CategoriesJsonResponse1](discourse/models/categories_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CategoriesJsonResponse1](discourse_api_documentation/models/categories_json_response1.py)</code> -- success response
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse1](discourse/models/categories_json_response1.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1962,7 +1962,7 @@ match result:
 | --- | --- | --- |
 | <code>slug</code> | <code>str</code> | Value sent with the request. |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1972,11 +1972,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CJsonResponse](discourse_api_documentation/models/c_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[CJsonResponse](discourse/models/c_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CJsonResponse](discourse_api_documentation/models/c_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[CJsonResponse](discourse/models/c_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2040,8 +2040,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[CategoriesJsonRequest1](discourse_api_documentation/models/categories_json_request1.py) \| [CategoriesJsonRequest1Dict](discourse_api_documentation/models/categories_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CategoriesJsonRequest1](discourse/models/categories_json_request1.py) \| [CategoriesJsonRequest1Dict](discourse/models/categories_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2051,11 +2051,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse2](discourse_api_documentation/models/categories_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[CategoriesJsonResponse2](discourse/models/categories_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CategoriesJsonResponse2](discourse_api_documentation/models/categories_json_response2.py)</code> -- success response
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse2](discourse/models/categories_json_response2.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2067,7 +2067,7 @@ match result:
 
 ## DiscourseCalendarEvents
 
-> Source: [DiscourseCalendarEvents](discourse_api_documentation/apis/discourse_calendar_events.py)
+> Source: [DiscourseCalendarEvents](discourse/apis/discourse_calendar_events.py)
 
 <details>
 <summary><code>def export_events_ics(*, category_id: int | None = None, include_subcategories: IncludeSubcategoriesOrStr | None = None, attending_user: str | None = None, before: RFC3339DateTime | None = None, after: RFC3339DateTime | None = None, order: OrderOrStr | None = None, limit: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
@@ -2123,13 +2123,13 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>category_id</code> | <code>int \| None</code> | Filter events by category ID<br>**Default**: <code>None</code> |
-| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse_api_documentation/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
+| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
 | <code>attending_user</code> | <code>str \| None</code> | Filter to events where the specified user (username) has RSVP'd<br>as going<br>**Default**: <code>None</code> |
 | <code>before</code> | <code>RFC3339DateTime \| None</code> | Return events starting before this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
-| <code>order</code> | <code>[OrderOrStr](discourse_api_documentation/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2139,11 +2139,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2206,16 +2206,16 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>include_details</code> | <code>[IncludeDetailsOrStr](discourse_api_documentation/models/enums/include_details.py) \| None</code> | Include detailed event information (creator, invitees, stats,<br>etc.)<br>**Default**: <code>None</code> |
+| <code>include_details</code> | <code>[IncludeDetailsOrStr](discourse/models/enums/include_details.py) \| None</code> | Include detailed event information (creator, invitees, stats,<br>etc.)<br>**Default**: <code>None</code> |
 | <code>category_id</code> | <code>int \| None</code> | Filter events by category ID<br>**Default**: <code>None</code> |
-| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse_api_documentation/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
+| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
 | <code>post_id</code> | <code>int \| None</code> | Filter to events associated with a specific post ID<br>**Default**: <code>None</code> |
 | <code>attending_user</code> | <code>str \| None</code> | Filter to events where the specified user (username) has RSVP'd<br>as going<br>**Default**: <code>None</code> |
 | <code>before</code> | <code>RFC3339DateTime \| None</code> | Return events starting before this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
-| <code>order</code> | <code>[OrderOrStr](discourse_api_documentation/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2225,11 +2225,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[DiscoursePostEventEventsJsonResponse](discourse_api_documentation/models/discourse_post_event_events_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[DiscoursePostEventEventsJsonResponse](discourse/models/discourse_post_event_events_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DiscoursePostEventEventsJsonResponse](discourse_api_documentation/models/discourse_post_event_events_json_response.py)</code> -- success response (detailed)
+**On `Success`**: `payload` is <code>[DiscoursePostEventEventsJsonResponse](discourse/models/discourse_post_event_events_json_response.py)</code> -- success response (detailed)
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2241,7 +2241,7 @@ match result:
 
 ## Groups
 
-> Source: [Groups](discourse_api_documentation/apis/groups.py)
+> Source: [Groups](discourse/apis/groups.py)
 
 <details>
 <summary><code>def add_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse1, RawError]</code></summary>
@@ -2297,8 +2297,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse_api_documentation/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse_api_documentation/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2308,11 +2308,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse1](discourse_api_documentation/models/groups_members_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsMembersJsonResponse1](discourse/models/groups_members_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse1](discourse_api_documentation/models/groups_members_json_response1.py)</code> -- success response
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse1](discourse/models/groups_members_json_response1.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2375,8 +2375,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[AdminGroupsJsonRequest](discourse_api_documentation/models/admin_groups_json_request.py) \| [AdminGroupsJsonRequestDict](discourse_api_documentation/models/admin_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminGroupsJsonRequest](discourse/models/admin_groups_json_request.py) \| [AdminGroupsJsonRequestDict](discourse/models/admin_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2386,11 +2386,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminGroupsJsonResponse](discourse_api_documentation/models/admin_groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminGroupsJsonResponse](discourse/models/admin_groups_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse](discourse_api_documentation/models/admin_groups_json_response.py)</code> -- group created
+**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse](discourse/models/admin_groups_json_response.py)</code> -- group created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2454,7 +2454,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2464,11 +2464,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminGroupsJsonResponse1](discourse_api_documentation/models/admin_groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminGroupsJsonResponse1](discourse/models/admin_groups_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse1](discourse_api_documentation/models/admin_groups_json_response1.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse1](discourse/models/admin_groups_json_response1.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2532,7 +2532,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2542,11 +2542,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse](discourse_api_documentation/models/groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsJsonResponse](discourse/models/groups_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsJsonResponse](discourse_api_documentation/models/groups_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[GroupsJsonResponse](discourse/models/groups_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2610,7 +2610,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2620,11 +2620,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsByIdJsonResponse](discourse_api_documentation/models/groups_by_id_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsByIdJsonResponse](discourse/models/groups_by_id_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsByIdJsonResponse](discourse_api_documentation/models/groups_by_id_json_response.py)</code> -- success response (by id)
+**On `Success`**: `payload` is <code>[GroupsByIdJsonResponse](discourse/models/groups_by_id_json_response.py)</code> -- success response (by id)
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2688,7 +2688,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2698,11 +2698,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse](discourse_api_documentation/models/groups_members_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsMembersJsonResponse](discourse/models/groups_members_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse](discourse_api_documentation/models/groups_members_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse](discourse/models/groups_members_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2765,7 +2765,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2775,11 +2775,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse2](discourse_api_documentation/models/groups_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsJsonResponse2](discourse/models/groups_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsJsonResponse2](discourse_api_documentation/models/groups_json_response2.py)</code> -- response
+**On `Success`**: `payload` is <code>[GroupsJsonResponse2](discourse/models/groups_json_response2.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2843,8 +2843,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse_api_documentation/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse_api_documentation/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2854,11 +2854,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse2](discourse_api_documentation/models/groups_members_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsMembersJsonResponse2](discourse/models/groups_members_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse2](discourse_api_documentation/models/groups_members_json_response2.py)</code> -- success response
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse2](discourse/models/groups_members_json_response2.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2922,8 +2922,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[GroupsJsonRequest](discourse_api_documentation/models/groups_json_request.py) \| [GroupsJsonRequestDict](discourse_api_documentation/models/groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[GroupsJsonRequest](discourse/models/groups_json_request.py) \| [GroupsJsonRequestDict](discourse/models/groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2933,11 +2933,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse1](discourse_api_documentation/models/groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[GroupsJsonResponse1](discourse/models/groups_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[GroupsJsonResponse1](discourse_api_documentation/models/groups_json_response1.py)</code> -- success response
+**On `Success`**: `payload` is <code>[GroupsJsonResponse1](discourse/models/groups_json_response1.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2949,7 +2949,7 @@ match result:
 
 ## Invites
 
-> Source: [Invites](discourse_api_documentation/apis/invites.py)
+> Source: [Invites](discourse/apis/invites.py)
 
 <details>
 <summary><code>def create_invite(api_key: str, api_username: str, *, body: InvitesJsonRequest | InvitesJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[InvitesJsonResponse, RawError]</code></summary>
@@ -3006,8 +3006,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[InvitesJsonRequest](discourse_api_documentation/models/invites_json_request.py) \| [InvitesJsonRequestDict](discourse_api_documentation/models/invites_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[InvitesJsonRequest](discourse/models/invites_json_request.py) \| [InvitesJsonRequestDict](discourse/models/invites_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3017,11 +3017,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[InvitesJsonResponse](discourse_api_documentation/models/invites_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[InvitesJsonResponse](discourse/models/invites_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InvitesJsonResponse](discourse_api_documentation/models/invites_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[InvitesJsonResponse](discourse/models/invites_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3086,8 +3086,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[InvitesCreateMultipleJsonRequest](discourse_api_documentation/models/invites_create_multiple_json_request.py) \| [InvitesCreateMultipleJsonRequestDict](discourse_api_documentation/models/invites_create_multiple_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[InvitesCreateMultipleJsonRequest](discourse/models/invites_create_multiple_json_request.py) \| [InvitesCreateMultipleJsonRequestDict](discourse/models/invites_create_multiple_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3097,11 +3097,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[InvitesCreateMultipleJsonResponse](discourse_api_documentation/models/invites_create_multiple_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[InvitesCreateMultipleJsonResponse](discourse/models/invites_create_multiple_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InvitesCreateMultipleJsonResponse](discourse_api_documentation/models/invites_create_multiple_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[InvitesCreateMultipleJsonResponse](discourse/models/invites_create_multiple_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3167,8 +3167,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse_api_documentation/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse_api_documentation/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3178,11 +3178,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TInviteGroupJsonResponse](discourse/models/t_invite_group_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py)</code> -- invites to a PM
+**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse/models/t_invite_group_json_response.py)</code> -- invites to a PM
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3248,8 +3248,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TInviteJsonRequest](discourse_api_documentation/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse_api_documentation/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3259,11 +3259,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TInviteJsonResponse](discourse/models/t_invite_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse/models/t_invite_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3275,7 +3275,7 @@ match result:
 
 ## Notifications
 
-> Source: [Notifications](discourse_api_documentation/apis/notifications.py)
+> Source: [Notifications](discourse/apis/notifications.py)
 
 <details>
 <summary><code>def get_notifications(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[NotificationsJsonResponse, RawError]</code></summary>
@@ -3330,7 +3330,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3340,11 +3340,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[NotificationsJsonResponse](discourse_api_documentation/models/notifications_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[NotificationsJsonResponse](discourse/models/notifications_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[NotificationsJsonResponse](discourse_api_documentation/models/notifications_json_response.py)</code> -- notifications
+**On `Success`**: `payload` is <code>[NotificationsJsonResponse](discourse/models/notifications_json_response.py)</code> -- notifications
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3407,8 +3407,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[NotificationsMarkReadJsonRequest](discourse_api_documentation/models/notifications_mark_read_json_request.py) \| [NotificationsMarkReadJsonRequestDict](discourse_api_documentation/models/notifications_mark_read_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[NotificationsMarkReadJsonRequest](discourse/models/notifications_mark_read_json_request.py) \| [NotificationsMarkReadJsonRequestDict](discourse/models/notifications_mark_read_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3418,11 +3418,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[NotificationsMarkReadJsonResponse](discourse_api_documentation/models/notifications_mark_read_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[NotificationsMarkReadJsonResponse](discourse/models/notifications_mark_read_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[NotificationsMarkReadJsonResponse](discourse_api_documentation/models/notifications_mark_read_json_response.py)</code> -- notifications marked read
+**On `Success`**: `payload` is <code>[NotificationsMarkReadJsonResponse](discourse/models/notifications_mark_read_json_response.py)</code> -- notifications marked read
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3434,7 +3434,7 @@ match result:
 
 ## Posts
 
-> Source: [Posts](discourse_api_documentation/apis/posts.py)
+> Source: [Posts](discourse/apis/posts.py)
 
 <details>
 <summary><code>def create_topic_post_pm(api_key: str, api_username: str, *, body: PostsJsonRequest | PostsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse1, RawError]</code></summary>
@@ -3491,8 +3491,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3502,11 +3502,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse1](discourse/models/posts_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse/models/posts_json_response1.py)</code> -- post created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3572,8 +3572,8 @@ match result:
 | <code>id</code> | <code>int</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsJsonRequest2](discourse_api_documentation/models/posts_json_request2.py) \| [PostsJsonRequest2Dict](discourse_api_documentation/models/posts_json_request2.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsJsonRequest2](discourse/models/posts_json_request2.py) \| [PostsJsonRequest2Dict](discourse/models/posts_json_request2.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3583,11 +3583,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3655,7 +3655,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3665,11 +3665,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse2](discourse_api_documentation/models/posts_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse2](discourse/models/posts_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse2](discourse_api_documentation/models/posts_json_response2.py)</code> -- single reviewable post
+**On `Success`**: `payload` is <code>[PostsJsonResponse2](discourse/models/posts_json_response2.py)</code> -- single reviewable post
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3733,7 +3733,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>before</code> | <code>int \| None</code> | Load posts with an id lower than this value. Useful for pagination.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3743,11 +3743,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse](discourse_api_documentation/models/posts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse](discourse/models/posts_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse](discourse_api_documentation/models/posts_json_response.py)</code> -- latest posts
+**On `Success`**: `payload` is <code>[PostsJsonResponse](discourse/models/posts_json_response.py)</code> -- latest posts
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3813,8 +3813,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsLockedJsonRequest](discourse_api_documentation/models/posts_locked_json_request.py) \| [PostsLockedJsonRequestDict](discourse_api_documentation/models/posts_locked_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsLockedJsonRequest](discourse/models/posts_locked_json_request.py) \| [PostsLockedJsonRequestDict](discourse/models/posts_locked_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3824,11 +3824,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsLockedJsonResponse](discourse_api_documentation/models/posts_locked_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsLockedJsonResponse](discourse/models/posts_locked_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsLockedJsonResponse](discourse_api_documentation/models/posts_locked_json_response.py)</code> -- post updated
+**On `Success`**: `payload` is <code>[PostsLockedJsonResponse](discourse/models/posts_locked_json_response.py)</code> -- post updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3893,8 +3893,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostActionsJsonRequest](discourse_api_documentation/models/post_actions_json_request.py) \| [PostActionsJsonRequestDict](discourse_api_documentation/models/post_actions_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostActionsJsonRequest](discourse/models/post_actions_json_request.py) \| [PostActionsJsonRequestDict](discourse/models/post_actions_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3904,11 +3904,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostActionsJsonResponse](discourse_api_documentation/models/post_actions_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostActionsJsonResponse](discourse/models/post_actions_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostActionsJsonResponse](discourse_api_documentation/models/post_actions_json_response.py)</code> -- post updated
+**On `Success`**: `payload` is <code>[PostActionsJsonResponse](discourse/models/post_actions_json_response.py)</code> -- post updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -3972,7 +3972,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3982,11 +3982,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[PostsRepliesJsonResponse](discourse_api_documentation/models/posts_replies_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[PostsRepliesJsonResponse](discourse/models/posts_replies_json_response.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[PostsRepliesJsonResponse](discourse_api_documentation/models/posts_replies_json_response.py)&#93;</code> -- post replies
+**On `Success`**: `payload` is <code>list&#91;[PostsRepliesJsonResponse](discourse/models/posts_replies_json_response.py)&#93;</code> -- post replies
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4052,8 +4052,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsJsonRequest1](discourse_api_documentation/models/posts_json_request1.py) \| [PostsJsonRequest1Dict](discourse_api_documentation/models/posts_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsJsonRequest1](discourse/models/posts_json_request1.py) \| [PostsJsonRequest1Dict](discourse/models/posts_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4063,11 +4063,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse3](discourse_api_documentation/models/posts_json_response3.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse3](discourse/models/posts_json_response3.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse3](discourse_api_documentation/models/posts_json_response3.py)</code> -- post updated
+**On `Success`**: `payload` is <code>[PostsJsonResponse3](discourse/models/posts_json_response3.py)</code> -- post updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4079,7 +4079,7 @@ match result:
 
 ## PrivateMessages
 
-> Source: [PrivateMessages](discourse_api_documentation/apis/private_messages.py)
+> Source: [PrivateMessages](discourse/apis/private_messages.py)
 
 <details>
 <summary><code>def create_topic_post_pm(api_key: str, api_username: str, *, body: PostsJsonRequest | PostsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse1, RawError]</code></summary>
@@ -4136,8 +4136,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4147,11 +4147,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse1](discourse/models/posts_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse/models/posts_json_response1.py)</code> -- post created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4215,7 +4215,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4225,11 +4225,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopicsPrivateMessagesSentJsonResponse](discourse_api_documentation/models/topics_private_messages_sent_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TopicsPrivateMessagesSentJsonResponse](discourse/models/topics_private_messages_sent_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TopicsPrivateMessagesSentJsonResponse](discourse_api_documentation/models/topics_private_messages_sent_json_response.py)</code> -- private messages
+**On `Success`**: `payload` is <code>[TopicsPrivateMessagesSentJsonResponse](discourse/models/topics_private_messages_sent_json_response.py)</code> -- private messages
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4293,7 +4293,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4303,11 +4303,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopicsPrivateMessagesJsonResponse](discourse_api_documentation/models/topics_private_messages_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TopicsPrivateMessagesJsonResponse](discourse/models/topics_private_messages_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TopicsPrivateMessagesJsonResponse](discourse_api_documentation/models/topics_private_messages_json_response.py)</code> -- private messages
+**On `Success`**: `payload` is <code>[TopicsPrivateMessagesJsonResponse](discourse/models/topics_private_messages_json_response.py)</code> -- private messages
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4319,7 +4319,7 @@ match result:
 
 ## Search
 
-> Source: [Search](discourse_api_documentation/apis/search.py)
+> Source: [Search](discourse/apis/search.py)
 
 <details>
 <summary><code>def search(*, q: str | None = None, page: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SearchJsonResponse, RawError]</code></summary>
@@ -4376,7 +4376,7 @@ match result:
 | --- | --- | --- |
 | <code>q</code> | <code>str \| None</code> | The query string needs to be url encoded and is made up of the following options:<br>- Search term. This is just a string. Usually it would be the first item in the query.<br>- `@<username>`: Use the `@` followed by the username to specify posts by this user.<br>- `#<category>`: Use the `#` followed by the category slug to search within this category.<br>- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.<br>- `before:`: `yyyy-mm-dd`<br>- `after:`: `yyyy-mm-dd`<br>- `order:`: `latest`, `likes`, `views`, `latest_topic`<br>- `assigned:`: username (without `@`)<br>- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`<br>- `with:`: `images`<br>- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`<br>- `group:`: group_name or group_id<br>- `group_messages:`: group_name or group_id<br>- `min_posts:`: 1<br>- `max_posts:`: 10<br>- `min_views:`: 1<br>- `max_views:`: 10<br><br>If you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:<br><br>``<br>curl -i -sS -X GET -G "http://localhost:3000/search.json" \<br>--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'<br>``<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4386,11 +4386,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SearchJsonResponse](discourse_api_documentation/models/search_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[SearchJsonResponse](discourse/models/search_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SearchJsonResponse](discourse_api_documentation/models/search_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[SearchJsonResponse](discourse/models/search_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4402,7 +4402,7 @@ match result:
 
 ## Site
 
-> Source: [Site](discourse_api_documentation/apis/site.py)
+> Source: [Site](discourse/apis/site.py)
 
 <details>
 <summary><code>def get_site(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SiteJsonResponse, RawError]</code></summary>
@@ -4457,7 +4457,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4467,11 +4467,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[SiteJsonResponse](discourse/models/site_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse/models/site_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4534,7 +4534,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4544,11 +4544,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteBasicInfoJsonResponse](discourse_api_documentation/models/site_basic_info_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[SiteBasicInfoJsonResponse](discourse/models/site_basic_info_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SiteBasicInfoJsonResponse](discourse_api_documentation/models/site_basic_info_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[SiteBasicInfoJsonResponse](discourse/models/site_basic_info_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4560,7 +4560,7 @@ match result:
 
 ## Tags
 
-> Source: [Tags](discourse_api_documentation/apis/tags.py)
+> Source: [Tags](discourse/apis/tags.py)
 
 <details>
 <summary><code>def create_tag_group(*, body: TagGroupsJsonRequest | TagGroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse1, RawError]</code></summary>
@@ -4615,8 +4615,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[TagGroupsJsonRequest](discourse_api_documentation/models/tag_groups_json_request.py) \| [TagGroupsJsonRequestDict](discourse_api_documentation/models/tag_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TagGroupsJsonRequest](discourse/models/tag_groups_json_request.py) \| [TagGroupsJsonRequestDict](discourse/models/tag_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4626,11 +4626,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse1](discourse_api_documentation/models/tag_groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagGroupsJsonResponse1](discourse/models/tag_groups_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagGroupsJsonResponse1](discourse_api_documentation/models/tag_groups_json_response1.py)</code> -- tag group created
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse1](discourse/models/tag_groups_json_response1.py)</code> -- tag group created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4694,7 +4694,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4704,11 +4704,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagJsonResponse](discourse_api_documentation/models/tag_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagJsonResponse](discourse/models/tag_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagJsonResponse](discourse_api_documentation/models/tag_json_response.py)</code> -- notifications
+**On `Success`**: `payload` is <code>[TagJsonResponse](discourse/models/tag_json_response.py)</code> -- notifications
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4772,7 +4772,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4782,11 +4782,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse2](discourse_api_documentation/models/tag_groups_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagGroupsJsonResponse2](discourse/models/tag_groups_json_response2.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagGroupsJsonResponse2](discourse_api_documentation/models/tag_groups_json_response2.py)</code> -- notifications
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse2](discourse/models/tag_groups_json_response2.py)</code> -- notifications
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4849,7 +4849,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4859,11 +4859,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse](discourse_api_documentation/models/tag_groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagGroupsJsonResponse](discourse/models/tag_groups_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagGroupsJsonResponse](discourse_api_documentation/models/tag_groups_json_response.py)</code> -- tags
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse](discourse/models/tag_groups_json_response.py)</code> -- tags
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -4926,7 +4926,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4936,11 +4936,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagsJsonResponse](discourse_api_documentation/models/tags_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagsJsonResponse](discourse/models/tags_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagsJsonResponse](discourse_api_documentation/models/tags_json_response.py)</code> -- notifications
+**On `Success`**: `payload` is <code>[TagsJsonResponse](discourse/models/tags_json_response.py)</code> -- notifications
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5004,8 +5004,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TagGroupsJsonRequest1](discourse_api_documentation/models/tag_groups_json_request1.py) \| [TagGroupsJsonRequest1Dict](discourse_api_documentation/models/tag_groups_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TagGroupsJsonRequest1](discourse/models/tag_groups_json_request1.py) \| [TagGroupsJsonRequest1Dict](discourse/models/tag_groups_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5015,11 +5015,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse3](discourse_api_documentation/models/tag_groups_json_response3.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TagGroupsJsonResponse3](discourse/models/tag_groups_json_response3.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TagGroupsJsonResponse3](discourse_api_documentation/models/tag_groups_json_response3.py)</code> -- Tag group updated
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse3](discourse/models/tag_groups_json_response3.py)</code> -- Tag group updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5031,7 +5031,7 @@ match result:
 
 ## Topics
 
-> Source: [Topics](discourse_api_documentation/apis/topics.py)
+> Source: [Topics](discourse/apis/topics.py)
 
 <details>
 <summary><code>def bookmark_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
@@ -5089,7 +5089,7 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5099,11 +5099,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5168,8 +5168,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5179,11 +5179,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[PostsJsonResponse1](discourse/models/posts_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse/models/posts_json_response1.py)</code> -- post created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5249,8 +5249,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TTimerJsonRequest](discourse_api_documentation/models/t_timer_json_request.py) \| [TTimerJsonRequestDict](discourse_api_documentation/models/t_timer_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TTimerJsonRequest](discourse/models/t_timer_json_request.py) \| [TTimerJsonRequestDict](discourse/models/t_timer_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5260,11 +5260,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TTimerJsonResponse](discourse_api_documentation/models/t_timer_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TTimerJsonResponse](discourse/models/t_timer_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TTimerJsonResponse](discourse_api_documentation/models/t_timer_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TTimerJsonResponse](discourse/models/t_timer_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5330,7 +5330,7 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5340,11 +5340,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TPostsJsonResponse](discourse_api_documentation/models/t_posts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TPostsJsonResponse](discourse/models/t_posts_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TPostsJsonResponse](discourse_api_documentation/models/t_posts_json_response.py)</code> -- specific posts
+**On `Success`**: `payload` is <code>[TPostsJsonResponse](discourse/models/t_posts_json_response.py)</code> -- specific posts
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5410,7 +5410,7 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5420,11 +5420,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TJsonResponse](discourse_api_documentation/models/t_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TJsonResponse](discourse/models/t_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TJsonResponse](discourse_api_documentation/models/t_json_response.py)</code> -- specific posts
+**On `Success`**: `payload` is <code>[TJsonResponse](discourse/models/t_json_response.py)</code> -- specific posts
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5488,7 +5488,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5498,11 +5498,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5568,8 +5568,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse_api_documentation/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse_api_documentation/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5579,11 +5579,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TInviteGroupJsonResponse](discourse/models/t_invite_group_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py)</code> -- invites to a PM
+**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse/models/t_invite_group_json_response.py)</code> -- invites to a PM
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5649,8 +5649,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TInviteJsonRequest](discourse_api_documentation/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse_api_documentation/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5660,11 +5660,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TInviteJsonResponse](discourse/models/t_invite_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse/models/t_invite_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5732,7 +5732,7 @@ match result:
 | <code>order</code> | <code>str \| None</code> | Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,<br>`likes`, `op_likes`, `posters`<br>**Default**: <code>None</code> |
 | <code>ascending</code> | <code>str \| None</code> | Defaults to `desc`, add `ascending=true` to sort asc<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5742,11 +5742,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[LatestJsonResponse](discourse_api_documentation/models/latest_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[LatestJsonResponse](discourse/models/latest_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[LatestJsonResponse](discourse_api_documentation/models/latest_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[LatestJsonResponse](discourse/models/latest_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5813,7 +5813,7 @@ match result:
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>period</code> | <code>str \| None</code> | Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5823,11 +5823,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopJsonResponse](discourse_api_documentation/models/top_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TopJsonResponse](discourse/models/top_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TopJsonResponse](discourse_api_documentation/models/top_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[TopJsonResponse](discourse/models/top_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5893,7 +5893,7 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5903,11 +5903,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -5973,8 +5973,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TNotificationsJsonRequest](discourse_api_documentation/models/t_notifications_json_request.py) \| [TNotificationsJsonRequestDict](discourse_api_documentation/models/t_notifications_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TNotificationsJsonRequest](discourse/models/t_notifications_json_request.py) \| [TNotificationsJsonRequestDict](discourse/models/t_notifications_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -5984,11 +5984,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TNotificationsJsonResponse](discourse_api_documentation/models/t_notifications_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TNotificationsJsonResponse](discourse/models/t_notifications_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TNotificationsJsonResponse](discourse_api_documentation/models/t_notifications_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TNotificationsJsonResponse](discourse/models/t_notifications_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6054,8 +6054,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TJsonRequest](discourse_api_documentation/models/t_json_request.py) \| [TJsonRequestDict](discourse_api_documentation/models/t_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TJsonRequest](discourse/models/t_json_request.py) \| [TJsonRequestDict](discourse/models/t_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6065,11 +6065,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TJsonResponse1](discourse_api_documentation/models/t_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TJsonResponse1](discourse/models/t_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TJsonResponse1](discourse_api_documentation/models/t_json_response1.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TJsonResponse1](discourse/models/t_json_response1.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6135,8 +6135,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TStatusJsonRequest](discourse_api_documentation/models/t_status_json_request.py) \| [TStatusJsonRequestDict](discourse_api_documentation/models/t_status_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TStatusJsonRequest](discourse/models/t_status_json_request.py) \| [TStatusJsonRequestDict](discourse/models/t_status_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6146,11 +6146,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TStatusJsonResponse](discourse_api_documentation/models/t_status_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TStatusJsonResponse](discourse/models/t_status_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TStatusJsonResponse](discourse_api_documentation/models/t_status_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TStatusJsonResponse](discourse/models/t_status_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6216,8 +6216,8 @@ match result:
 | <code>id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[TChangeTimestampJsonRequest](discourse_api_documentation/models/t_change_timestamp_json_request.py) \| [TChangeTimestampJsonRequestDict](discourse_api_documentation/models/t_change_timestamp_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TChangeTimestampJsonRequest](discourse/models/t_change_timestamp_json_request.py) \| [TChangeTimestampJsonRequestDict](discourse/models/t_change_timestamp_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6227,11 +6227,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TChangeTimestampJsonResponse](discourse_api_documentation/models/t_change_timestamp_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[TChangeTimestampJsonResponse](discourse/models/t_change_timestamp_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TChangeTimestampJsonResponse](discourse_api_documentation/models/t_change_timestamp_json_response.py)</code> -- topic updated
+**On `Success`**: `payload` is <code>[TChangeTimestampJsonResponse](discourse/models/t_change_timestamp_json_response.py)</code> -- topic updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6243,7 +6243,7 @@ match result:
 
 ## Uploads
 
-> Source: [Uploads](discourse_api_documentation/apis/uploads.py)
+> Source: [Uploads](discourse/apis/uploads.py)
 
 <details>
 <summary><code>def abort_multipart(*, body: UploadsAbortMultipartJsonRequest | UploadsAbortMultipartJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsAbortMultipartJsonResponse, RawError]</code></summary>
@@ -6308,8 +6308,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsAbortMultipartJsonRequest](discourse_api_documentation/models/uploads_abort_multipart_json_request.py) \| [UploadsAbortMultipartJsonRequestDict](discourse_api_documentation/models/uploads_abort_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsAbortMultipartJsonRequest](discourse/models/uploads_abort_multipart_json_request.py) \| [UploadsAbortMultipartJsonRequestDict](discourse/models/uploads_abort_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6319,11 +6319,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsAbortMultipartJsonResponse](discourse_api_documentation/models/uploads_abort_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsAbortMultipartJsonResponse](discourse/models/uploads_abort_multipart_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsAbortMultipartJsonResponse](discourse_api_documentation/models/uploads_abort_multipart_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsAbortMultipartJsonResponse](discourse/models/uploads_abort_multipart_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6405,8 +6405,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsBatchPresignMultipartPartsJsonRequest](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py) \| [UploadsBatchPresignMultipartPartsJsonRequestDict](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsBatchPresignMultipartPartsJsonRequest](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| [UploadsBatchPresignMultipartPartsJsonRequestDict](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6416,11 +6416,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsBatchPresignMultipartPartsJsonResponse](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsBatchPresignMultipartPartsJsonResponse](discourse/models/uploads_batch_presign_multipart_parts_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsBatchPresignMultipartPartsJsonResponse](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsBatchPresignMultipartPartsJsonResponse](discourse/models/uploads_batch_presign_multipart_parts_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6498,8 +6498,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsCompleteExternalUploadJsonRequest](discourse_api_documentation/models/uploads_complete_external_upload_json_request.py) \| [UploadsCompleteExternalUploadJsonRequestDict](discourse_api_documentation/models/uploads_complete_external_upload_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsCompleteExternalUploadJsonRequest](discourse/models/uploads_complete_external_upload_json_request.py) \| [UploadsCompleteExternalUploadJsonRequestDict](discourse/models/uploads_complete_external_upload_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6509,11 +6509,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCompleteExternalUploadJsonResponse](discourse_api_documentation/models/uploads_complete_external_upload_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsCompleteExternalUploadJsonResponse](discourse/models/uploads_complete_external_upload_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsCompleteExternalUploadJsonResponse](discourse_api_documentation/models/uploads_complete_external_upload_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsCompleteExternalUploadJsonResponse](discourse/models/uploads_complete_external_upload_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6588,8 +6588,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsCompleteMultipartJsonRequest](discourse_api_documentation/models/uploads_complete_multipart_json_request.py) \| [UploadsCompleteMultipartJsonRequestDict](discourse_api_documentation/models/uploads_complete_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsCompleteMultipartJsonRequest](discourse/models/uploads_complete_multipart_json_request.py) \| [UploadsCompleteMultipartJsonRequestDict](discourse/models/uploads_complete_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6599,11 +6599,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCompleteMultipartJsonResponse](discourse_api_documentation/models/uploads_complete_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsCompleteMultipartJsonResponse](discourse/models/uploads_complete_multipart_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsCompleteMultipartJsonResponse](discourse_api_documentation/models/uploads_complete_multipart_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsCompleteMultipartJsonResponse](discourse/models/uploads_complete_multipart_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6675,8 +6675,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsCreateMultipartJsonRequest](discourse_api_documentation/models/uploads_create_multipart_json_request.py) \| [UploadsCreateMultipartJsonRequestDict](discourse_api_documentation/models/uploads_create_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsCreateMultipartJsonRequest](discourse/models/uploads_create_multipart_json_request.py) \| [UploadsCreateMultipartJsonRequestDict](discourse/models/uploads_create_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6686,11 +6686,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCreateMultipartJsonResponse](discourse_api_documentation/models/uploads_create_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsCreateMultipartJsonResponse](discourse/models/uploads_create_multipart_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsCreateMultipartJsonResponse](discourse_api_documentation/models/uploads_create_multipart_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsCreateMultipartJsonResponse](discourse/models/uploads_create_multipart_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6753,11 +6753,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>upload_type</code> | <code>[UploadTypeOrStr](discourse_api_documentation/models/enums/upload_type.py)</code> | Value sent with the request. |
+| <code>upload_type</code> | <code>[UploadTypeOrStr](discourse/models/enums/upload_type.py)</code> | Value sent with the request. |
 | <code>user_id</code> | <code>int \| None</code> | required if uploading an avatar<br>**Default**: <code>None</code> |
 | <code>synchronous</code> | <code>bool \| None</code> | Use this flag to return an id and url<br>**Default**: <code>None</code> |
 | <code>file</code> | <code>bytes \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6767,11 +6767,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsJsonResponse](discourse_api_documentation/models/uploads_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsJsonResponse](discourse/models/uploads_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsJsonResponse](discourse_api_documentation/models/uploads_json_response.py)</code> -- file uploaded
+**On `Success`**: `payload` is <code>[UploadsJsonResponse](discourse/models/uploads_json_response.py)</code> -- file uploaded
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6852,8 +6852,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[UploadsGeneratePresignedPutJsonRequest](discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py) \| [UploadsGeneratePresignedPutJsonRequestDict](discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UploadsGeneratePresignedPutJsonRequest](discourse/models/uploads_generate_presigned_put_json_request.py) \| [UploadsGeneratePresignedPutJsonRequestDict](discourse/models/uploads_generate_presigned_put_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6863,11 +6863,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsGeneratePresignedPutJsonResponse](discourse_api_documentation/models/uploads_generate_presigned_put_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UploadsGeneratePresignedPutJsonResponse](discourse/models/uploads_generate_presigned_put_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UploadsGeneratePresignedPutJsonResponse](discourse_api_documentation/models/uploads_generate_presigned_put_json_response.py)</code> -- external upload initialized
+**On `Success`**: `payload` is <code>[UploadsGeneratePresignedPutJsonResponse](discourse/models/uploads_generate_presigned_put_json_response.py)</code> -- external upload initialized
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -6879,7 +6879,7 @@ match result:
 
 ## Users
 
-> Source: [Users](discourse_api_documentation/apis/users.py)
+> Source: [Users](discourse/apis/users.py)
 
 <details>
 <summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
@@ -6935,7 +6935,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -6945,11 +6945,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse/models/admin_users_activate_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse/models/admin_users_activate_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7013,7 +7013,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7023,11 +7023,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersJsonResponse](discourse/models/admin_users_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse/models/admin_users_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7090,14 +7090,14 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[Order3OrStr](discourse/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7107,11 +7107,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse/models/admin_users_json_response2.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;</code> -- users response
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse/models/admin_users_json_response2.py)&#93;</code> -- users response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7174,15 +7174,15 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>flag</code> | <code>[FlagOrStr](discourse_api_documentation/models/enums/flag.py)</code> | Value sent with the request. |
-| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>flag</code> | <code>[FlagOrStr](discourse/models/enums/flag.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order3OrStr](discourse/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7192,11 +7192,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse/models/admin_users_list_json_response.py)&#93;, [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;</code> -- response
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse/models/admin_users_list_json_response.py)&#93;</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7260,7 +7260,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7270,11 +7270,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse/models/admin_users_anonymize_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse/models/admin_users_anonymize_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7338,8 +7338,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UsersPasswordResetJsonRequest](discourse_api_documentation/models/users_password_reset_json_request.py) \| [UsersPasswordResetJsonRequestDict](discourse_api_documentation/models/users_password_reset_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UsersPasswordResetJsonRequest](discourse/models/users_password_reset_json_request.py) \| [UsersPasswordResetJsonRequestDict](discourse/models/users_password_reset_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7349,11 +7349,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7418,8 +7418,8 @@ match result:
 | --- | --- | --- |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UsersJsonRequest](discourse_api_documentation/models/users_json_request.py) \| [UsersJsonRequestDict](discourse_api_documentation/models/users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UsersJsonRequest](discourse/models/users_json_request.py) \| [UsersJsonRequestDict](discourse/models/users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7429,11 +7429,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UsersJsonResponse](discourse_api_documentation/models/users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UsersJsonResponse](discourse/models/users_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UsersJsonResponse](discourse_api_documentation/models/users_json_response.py)</code> -- user created
+**On `Success`**: `payload` is <code>[UsersJsonResponse](discourse/models/users_json_response.py)</code> -- user created
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7497,7 +7497,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7507,11 +7507,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse/models/admin_users_deactivate_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse/models/admin_users_deactivate_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7575,8 +7575,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersJsonRequest](discourse_api_documentation/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse_api_documentation/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7586,11 +7586,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersJsonResponse1](discourse/models/admin_users_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse/models/admin_users_json_response1.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7656,7 +7656,7 @@ match result:
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7666,11 +7666,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UJsonResponse](discourse_api_documentation/models/u_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UJsonResponse](discourse/models/u_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UJsonResponse](discourse_api_documentation/models/u_json_response.py)</code> -- user with primary group response
+**On `Success`**: `payload` is <code>[UJsonResponse](discourse/models/u_json_response.py)</code> -- user with primary group response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7734,7 +7734,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7744,11 +7744,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UEmailsJsonResponse](discourse_api_documentation/models/u_emails_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UEmailsJsonResponse](discourse/models/u_emails_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UEmailsJsonResponse](discourse_api_documentation/models/u_emails_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[UEmailsJsonResponse](discourse/models/u_emails_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7814,7 +7814,7 @@ match result:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7824,11 +7824,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UByExternalJsonResponse](discourse/models/u_by_external_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py)</code> -- user response
+**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse/models/u_by_external_json_response.py)</code> -- user response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7899,7 +7899,7 @@ match result:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7909,11 +7909,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UByExternalJsonResponse](discourse/models/u_by_external_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py)</code> -- user response
+**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse/models/u_by_external_json_response.py)</code> -- user response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -7979,7 +7979,7 @@ match result:
 | <code>offset</code> | <code>int</code> | Value sent with the request. |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>filter</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -7989,11 +7989,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserActionsJsonResponse](discourse_api_documentation/models/user_actions_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UserActionsJsonResponse](discourse/models/user_actions_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserActionsJsonResponse](discourse_api_documentation/models/user_actions_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[UserActionsJsonResponse](discourse/models/user_actions_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8057,7 +8057,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8067,11 +8067,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UserBadgesJsonResponse](discourse/models/user_badges_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse/models/user_badges_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8134,11 +8134,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>period</code> | <code>[Period1OrStr](discourse_api_documentation/models/enums/period1.py)</code> | Value sent with the request. |
-| <code>order</code> | <code>[Order2OrStr](discourse_api_documentation/models/enums/order2.py)</code> | Value sent with the request. |
-| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>period</code> | <code>[Period1OrStr](discourse/models/enums/period1.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order2OrStr](discourse/models/enums/order2.py)</code> | Value sent with the request. |
+| <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8148,11 +8148,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[DirectoryItemsJsonResponse](discourse_api_documentation/models/directory_items_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[DirectoryItemsJsonResponse](discourse/models/directory_items_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DirectoryItemsJsonResponse](discourse_api_documentation/models/directory_items_json_response.py)</code> -- directory items response
+**On `Success`**: `payload` is <code>[DirectoryItemsJsonResponse](discourse/models/directory_items_json_response.py)</code> -- directory items response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8216,7 +8216,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8226,11 +8226,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse/models/admin_users_log_out_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse/models/admin_users_log_out_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8294,7 +8294,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8304,11 +8304,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8371,8 +8371,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SessionForgotPasswordJsonRequest](discourse_api_documentation/models/session_forgot_password_json_request.py) \| [SessionForgotPasswordJsonRequestDict](discourse_api_documentation/models/session_forgot_password_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SessionForgotPasswordJsonRequest](discourse/models/session_forgot_password_json_request.py) \| [SessionForgotPasswordJsonRequestDict](discourse/models/session_forgot_password_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8382,11 +8382,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SessionForgotPasswordJsonResponse](discourse_api_documentation/models/session_forgot_password_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[SessionForgotPasswordJsonResponse](discourse/models/session_forgot_password_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SessionForgotPasswordJsonResponse](discourse_api_documentation/models/session_forgot_password_json_response.py)</code> -- success response
+**On `Success`**: `payload` is <code>[SessionForgotPasswordJsonResponse](discourse/models/session_forgot_password_json_response.py)</code> -- success response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8450,8 +8450,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse_api_documentation/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse_api_documentation/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8461,11 +8461,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse/models/admin_users_silence_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse/models/admin_users_silence_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8529,8 +8529,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8540,11 +8540,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse/models/admin_users_suspend_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py)</code> -- response
+**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse/models/admin_users_suspend_json_response.py)</code> -- response
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8608,8 +8608,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UPreferencesAvatarPickJsonRequest](discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py) \| [UPreferencesAvatarPickJsonRequestDict](discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UPreferencesAvatarPickJsonRequest](discourse/models/u_preferences_avatar_pick_json_request.py) \| [UPreferencesAvatarPickJsonRequestDict](discourse/models/u_preferences_avatar_pick_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8619,11 +8619,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UPreferencesAvatarPickJsonResponse](discourse_api_documentation/models/u_preferences_avatar_pick_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UPreferencesAvatarPickJsonResponse](discourse/models/u_preferences_avatar_pick_json_response.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UPreferencesAvatarPickJsonResponse](discourse_api_documentation/models/u_preferences_avatar_pick_json_response.py)</code> -- avatar updated
+**On `Success`**: `payload` is <code>[UPreferencesAvatarPickJsonResponse](discourse/models/u_preferences_avatar_pick_json_response.py)</code> -- avatar updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8687,8 +8687,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UPreferencesEmailJsonRequest](discourse_api_documentation/models/u_preferences_email_json_request.py) \| [UPreferencesEmailJsonRequestDict](discourse_api_documentation/models/u_preferences_email_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UPreferencesEmailJsonRequest](discourse/models/u_preferences_email_json_request.py) \| [UPreferencesEmailJsonRequestDict](discourse/models/u_preferences_email_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8698,11 +8698,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8768,8 +8768,8 @@ match result:
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UJsonRequest](discourse_api_documentation/models/u_json_request.py) \| [UJsonRequestDict](discourse_api_documentation/models/u_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UJsonRequest](discourse/models/u_json_request.py) \| [UJsonRequestDict](discourse/models/u_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8779,11 +8779,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UJsonResponse1](discourse_api_documentation/models/u_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;[UJsonResponse1](discourse/models/u_json_response1.py), [RawError](discourse/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[UJsonResponse1](discourse_api_documentation/models/u_json_response1.py)</code> -- user updated
+**On `Success`**: `payload` is <code>[UJsonResponse1](discourse/models/u_json_response1.py)</code> -- user updated
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>
@@ -8847,8 +8847,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>body</code> | <code>[UPreferencesUsernameJsonRequest](discourse_api_documentation/models/u_preferences_username_json_request.py) \| [UPreferencesUsernameJsonRequestDict](discourse_api_documentation/models/u_preferences_username_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[UPreferencesUsernameJsonRequest](discourse/models/u_preferences_username_json_request.py) \| [UPreferencesUsernameJsonRequestDict](discourse/models/u_preferences_username_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -8858,11 +8858,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](discourse/core/results.py)&#91;None, [RawError](discourse/core/results.py)&#93;</code>
 
 **On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
 
-**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](discourse/core/results.py)</code>
 
 </dd>
 </dl>

@@ -2,7 +2,7 @@
 
 # Groups — operations
 
-Accessor: `client.groups` · Source: `discourse_api_documentation/apis/groups.py` · 9 operations
+Accessor: `client.groups` · Source: `discourse/apis/groups.py` · 9 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -18,9 +18,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsMembersJsonRequest` | `discourse_api_documentation/models/groups_members_json_request.py` |
-| `GroupsMembersJsonRequestDict` | `discourse_api_documentation/models/groups_members_json_request.py` |
-| `GroupsMembersJsonResponse1` | `discourse_api_documentation/models/groups_members_json_response1.py` |
+| `GroupsMembersJsonRequest` | `discourse/models/groups_members_json_request.py` |
+| `GroupsMembersJsonRequestDict` | `discourse/models/groups_members_json_request.py` |
+| `GroupsMembersJsonResponse1` | `discourse/models/groups_members_json_response1.py` |
 
 ### client.groups.create_group
 
@@ -33,9 +33,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminGroupsJsonRequest` | `discourse_api_documentation/models/admin_groups_json_request.py` |
-| `AdminGroupsJsonRequestDict` | `discourse_api_documentation/models/admin_groups_json_request.py` |
-| `AdminGroupsJsonResponse` | `discourse_api_documentation/models/admin_groups_json_response.py` |
+| `AdminGroupsJsonRequest` | `discourse/models/admin_groups_json_request.py` |
+| `AdminGroupsJsonRequestDict` | `discourse/models/admin_groups_json_request.py` |
+| `AdminGroupsJsonResponse` | `discourse/models/admin_groups_json_response.py` |
 
 ### client.groups.delete_group
 
@@ -49,7 +49,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AdminGroupsJsonResponse1` | `discourse_api_documentation/models/admin_groups_json_response1.py` |
+| `AdminGroupsJsonResponse1` | `discourse/models/admin_groups_json_response1.py` |
 
 ### client.groups.get_group
 
@@ -63,7 +63,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsJsonResponse` | `discourse_api_documentation/models/groups_json_response.py` |
+| `GroupsJsonResponse` | `discourse/models/groups_json_response.py` |
 
 ### client.groups.get_group_by_id
 
@@ -77,7 +77,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsByIdJsonResponse` | `discourse_api_documentation/models/groups_by_id_json_response.py` |
+| `GroupsByIdJsonResponse` | `discourse/models/groups_by_id_json_response.py` |
 
 ### client.groups.list_group_members
 
@@ -91,7 +91,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsMembersJsonResponse` | `discourse_api_documentation/models/groups_members_json_response.py` |
+| `GroupsMembersJsonResponse` | `discourse/models/groups_members_json_response.py` |
 
 ### client.groups.list_groups
 
@@ -103,7 +103,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsJsonResponse2` | `discourse_api_documentation/models/groups_json_response2.py` |
+| `GroupsJsonResponse2` | `discourse/models/groups_json_response2.py` |
 
 ### client.groups.remove_group_members
 
@@ -117,9 +117,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsMembersJsonRequest` | `discourse_api_documentation/models/groups_members_json_request.py` |
-| `GroupsMembersJsonRequestDict` | `discourse_api_documentation/models/groups_members_json_request.py` |
-| `GroupsMembersJsonResponse2` | `discourse_api_documentation/models/groups_members_json_response2.py` |
+| `GroupsMembersJsonRequest` | `discourse/models/groups_members_json_request.py` |
+| `GroupsMembersJsonRequestDict` | `discourse/models/groups_members_json_request.py` |
+| `GroupsMembersJsonResponse2` | `discourse/models/groups_members_json_response2.py` |
 
 ### client.groups.update_group
 
@@ -133,7 +133,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GroupsJsonRequest` | `discourse_api_documentation/models/groups_json_request.py` |
-| `GroupsJsonRequestDict` | `discourse_api_documentation/models/groups_json_request.py` |
-| `GroupsJsonResponse1` | `discourse_api_documentation/models/groups_json_response1.py` |
+| `GroupsJsonRequest` | `discourse/models/groups_json_request.py` |
+| `GroupsJsonRequestDict` | `discourse/models/groups_json_request.py` |
+| `GroupsJsonResponse1` | `discourse/models/groups_json_response1.py` |
 

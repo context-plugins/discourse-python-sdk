@@ -2,7 +2,7 @@
 
 # Posts — operations
 
-Accessor: `client.posts` · Source: `discourse_api_documentation/apis/posts.py` · 8 operations
+Accessor: `client.posts` · Source: `discourse/apis/posts.py` · 8 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -18,9 +18,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonRequest` | `discourse_api_documentation/models/posts_json_request.py` |
-| `PostsJsonRequestDict` | `discourse_api_documentation/models/posts_json_request.py` |
-| `PostsJsonResponse1` | `discourse_api_documentation/models/posts_json_response1.py` |
+| `PostsJsonRequest` | `discourse/models/posts_json_request.py` |
+| `PostsJsonRequestDict` | `discourse/models/posts_json_request.py` |
+| `PostsJsonResponse1` | `discourse/models/posts_json_response1.py` |
 
 ### client.posts.delete_post
 
@@ -34,8 +34,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonRequest2` | `discourse_api_documentation/models/posts_json_request2.py` |
-| `PostsJsonRequest2Dict` | `discourse_api_documentation/models/posts_json_request2.py` |
+| `PostsJsonRequest2` | `discourse/models/posts_json_request2.py` |
+| `PostsJsonRequest2Dict` | `discourse/models/posts_json_request2.py` |
 
 ### client.posts.get_post
 
@@ -49,7 +49,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonResponse2` | `discourse_api_documentation/models/posts_json_response2.py` |
+| `PostsJsonResponse2` | `discourse/models/posts_json_response2.py` |
 
 ### client.posts.list_posts
 
@@ -62,7 +62,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonResponse` | `discourse_api_documentation/models/posts_json_response.py` |
+| `PostsJsonResponse` | `discourse/models/posts_json_response.py` |
 
 ### client.posts.lock_post
 
@@ -76,9 +76,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsLockedJsonRequest` | `discourse_api_documentation/models/posts_locked_json_request.py` |
-| `PostsLockedJsonRequestDict` | `discourse_api_documentation/models/posts_locked_json_request.py` |
-| `PostsLockedJsonResponse` | `discourse_api_documentation/models/posts_locked_json_response.py` |
+| `PostsLockedJsonRequest` | `discourse/models/posts_locked_json_request.py` |
+| `PostsLockedJsonRequestDict` | `discourse/models/posts_locked_json_request.py` |
+| `PostsLockedJsonResponse` | `discourse/models/posts_locked_json_response.py` |
 
 ### client.posts.perform_post_action
 
@@ -92,9 +92,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostActionsJsonRequest` | `discourse_api_documentation/models/post_actions_json_request.py` |
-| `PostActionsJsonRequestDict` | `discourse_api_documentation/models/post_actions_json_request.py` |
-| `PostActionsJsonResponse` | `discourse_api_documentation/models/post_actions_json_response.py` |
+| `PostActionsJsonRequest` | `discourse/models/post_actions_json_request.py` |
+| `PostActionsJsonRequestDict` | `discourse/models/post_actions_json_request.py` |
+| `PostActionsJsonResponse` | `discourse/models/post_actions_json_response.py` |
 
 ### client.posts.post_replies
 
@@ -108,7 +108,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsRepliesJsonResponse` | `discourse_api_documentation/models/posts_replies_json_response.py` |
+| `PostsRepliesJsonResponse` | `discourse/models/posts_replies_json_response.py` |
 
 ### client.posts.update_post
 
@@ -122,7 +122,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonRequest1` | `discourse_api_documentation/models/posts_json_request1.py` |
-| `PostsJsonRequest1Dict` | `discourse_api_documentation/models/posts_json_request1.py` |
-| `PostsJsonResponse3` | `discourse_api_documentation/models/posts_json_response3.py` |
+| `PostsJsonRequest1` | `discourse/models/posts_json_request1.py` |
+| `PostsJsonRequest1Dict` | `discourse/models/posts_json_request1.py` |
+| `PostsJsonResponse3` | `discourse/models/posts_json_response3.py` |
 

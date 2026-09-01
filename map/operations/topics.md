@@ -2,7 +2,7 @@
 
 # Topics — operations
 
-Accessor: `client.topics` · Source: `discourse_api_documentation/apis/topics.py` · 15 operations
+Accessor: `client.topics` · Source: `discourse/apis/topics.py` · 15 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded, and an operation with no table mentions nothing but builtins and those.
 
@@ -28,9 +28,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `PostsJsonRequest` | `discourse_api_documentation/models/posts_json_request.py` |
-| `PostsJsonRequestDict` | `discourse_api_documentation/models/posts_json_request.py` |
-| `PostsJsonResponse1` | `discourse_api_documentation/models/posts_json_response1.py` |
+| `PostsJsonRequest` | `discourse/models/posts_json_request.py` |
+| `PostsJsonRequestDict` | `discourse/models/posts_json_request.py` |
+| `PostsJsonResponse1` | `discourse/models/posts_json_response1.py` |
 
 ### client.topics.create_topic_timer
 
@@ -44,9 +44,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TTimerJsonRequest` | `discourse_api_documentation/models/t_timer_json_request.py` |
-| `TTimerJsonRequestDict` | `discourse_api_documentation/models/t_timer_json_request.py` |
-| `TTimerJsonResponse` | `discourse_api_documentation/models/t_timer_json_response.py` |
+| `TTimerJsonRequest` | `discourse/models/t_timer_json_request.py` |
+| `TTimerJsonRequestDict` | `discourse/models/t_timer_json_request.py` |
+| `TTimerJsonResponse` | `discourse/models/t_timer_json_response.py` |
 
 ### client.topics.get_specific_posts_from_topic
 
@@ -60,7 +60,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TPostsJsonResponse` | `discourse_api_documentation/models/t_posts_json_response.py` |
+| `TPostsJsonResponse` | `discourse/models/t_posts_json_response.py` |
 
 ### client.topics.get_topic
 
@@ -74,7 +74,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TJsonResponse` | `discourse_api_documentation/models/t_json_response.py` |
+| `TJsonResponse` | `discourse/models/t_json_response.py` |
 
 ### client.topics.get_topic_by_external_id
 
@@ -98,9 +98,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TInviteGroupJsonRequest` | `discourse_api_documentation/models/t_invite_group_json_request.py` |
-| `TInviteGroupJsonRequestDict` | `discourse_api_documentation/models/t_invite_group_json_request.py` |
-| `TInviteGroupJsonResponse` | `discourse_api_documentation/models/t_invite_group_json_response.py` |
+| `TInviteGroupJsonRequest` | `discourse/models/t_invite_group_json_request.py` |
+| `TInviteGroupJsonRequestDict` | `discourse/models/t_invite_group_json_request.py` |
+| `TInviteGroupJsonResponse` | `discourse/models/t_invite_group_json_response.py` |
 
 ### client.topics.invite_to_topic
 
@@ -114,9 +114,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TInviteJsonRequest` | `discourse_api_documentation/models/t_invite_json_request.py` |
-| `TInviteJsonRequestDict` | `discourse_api_documentation/models/t_invite_json_request.py` |
-| `TInviteJsonResponse` | `discourse_api_documentation/models/t_invite_json_response.py` |
+| `TInviteJsonRequest` | `discourse/models/t_invite_json_request.py` |
+| `TInviteJsonRequestDict` | `discourse/models/t_invite_json_request.py` |
+| `TInviteJsonResponse` | `discourse/models/t_invite_json_response.py` |
 
 ### client.topics.list_latest_topics
 
@@ -130,7 +130,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LatestJsonResponse` | `discourse_api_documentation/models/latest_json_response.py` |
+| `LatestJsonResponse` | `discourse/models/latest_json_response.py` |
 
 ### client.topics.list_top_topics
 
@@ -144,7 +144,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TopJsonResponse` | `discourse_api_documentation/models/top_json_response.py` |
+| `TopJsonResponse` | `discourse/models/top_json_response.py` |
 
 ### client.topics.remove_topic
 
@@ -168,9 +168,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TNotificationsJsonRequest` | `discourse_api_documentation/models/t_notifications_json_request.py` |
-| `TNotificationsJsonRequestDict` | `discourse_api_documentation/models/t_notifications_json_request.py` |
-| `TNotificationsJsonResponse` | `discourse_api_documentation/models/t_notifications_json_response.py` |
+| `TNotificationsJsonRequest` | `discourse/models/t_notifications_json_request.py` |
+| `TNotificationsJsonRequestDict` | `discourse/models/t_notifications_json_request.py` |
+| `TNotificationsJsonResponse` | `discourse/models/t_notifications_json_response.py` |
 
 ### client.topics.update_topic
 
@@ -184,9 +184,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TJsonRequest` | `discourse_api_documentation/models/t_json_request.py` |
-| `TJsonRequestDict` | `discourse_api_documentation/models/t_json_request.py` |
-| `TJsonResponse1` | `discourse_api_documentation/models/t_json_response1.py` |
+| `TJsonRequest` | `discourse/models/t_json_request.py` |
+| `TJsonRequestDict` | `discourse/models/t_json_request.py` |
+| `TJsonResponse1` | `discourse/models/t_json_response1.py` |
 
 ### client.topics.update_topic_status
 
@@ -200,9 +200,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TStatusJsonRequest` | `discourse_api_documentation/models/t_status_json_request.py` |
-| `TStatusJsonRequestDict` | `discourse_api_documentation/models/t_status_json_request.py` |
-| `TStatusJsonResponse` | `discourse_api_documentation/models/t_status_json_response.py` |
+| `TStatusJsonRequest` | `discourse/models/t_status_json_request.py` |
+| `TStatusJsonRequestDict` | `discourse/models/t_status_json_request.py` |
+| `TStatusJsonResponse` | `discourse/models/t_status_json_response.py` |
 
 ### client.topics.update_topic_timestamp
 
@@ -216,7 +216,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TChangeTimestampJsonRequest` | `discourse_api_documentation/models/t_change_timestamp_json_request.py` |
-| `TChangeTimestampJsonRequestDict` | `discourse_api_documentation/models/t_change_timestamp_json_request.py` |
-| `TChangeTimestampJsonResponse` | `discourse_api_documentation/models/t_change_timestamp_json_response.py` |
+| `TChangeTimestampJsonRequest` | `discourse/models/t_change_timestamp_json_request.py` |
+| `TChangeTimestampJsonRequestDict` | `discourse/models/t_change_timestamp_json_request.py` |
+| `TChangeTimestampJsonResponse` | `discourse/models/t_change_timestamp_json_response.py` |
 

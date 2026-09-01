@@ -21,11 +21,11 @@ from .apis.tags import AsyncTags
 from .apis.topics import AsyncTopics
 from .apis.uploads import AsyncUploads
 from .apis.users import AsyncUsers
-from .base_client import DEFAULT_TIMEOUT, BaseDiscourseApiDocumentationClient
+from .base_client import DEFAULT_TIMEOUT, BaseDiscourseClient
 from .core import OPERATING_SYSTEM, PYTHON_RUNTIME, AsyncHttpClient, AsyncHttpxClient, AsyncRawClient, param
 
 
-class AsyncDiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[AsyncRawClient]):
+class AsyncDiscourseClient(BaseDiscourseClient[AsyncRawClient]):
     def __init__(
         self,
         *,
@@ -39,7 +39,7 @@ class AsyncDiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[A
                 custom_async_http_client if custom_async_http_client is not None else AsyncHttpxClient(timeout=timeout)
             ),
             global_headers=[
-                param[str]("User-Agent", "DiscourseApiDocumentationClient/0.1.0 Python"),
+                param[str]("User-Agent", "DiscourseClient/0.1.0 Python"),
                 param[str]("X-APIMatic-Lang", "Python"),
                 param[str]("X-APIMatic-Package-Version", "0.1.0"),
                 param[str]("X-APIMatic-Gen-Version", "4.0.0"),
@@ -124,4 +124,4 @@ class AsyncDiscourseApiDocumentationClient(BaseDiscourseApiDocumentationClient[A
         await self.aclose()
 
 
-AsyncClient = AsyncDiscourseApiDocumentationClient
+AsyncClient = AsyncDiscourseClient

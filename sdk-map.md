@@ -1,14 +1,14 @@
 <!-- Generated file — do not edit; regenerated with the SDK. -->
 
-# SDK map — Discourse API Documentation (Python)
+# SDK map — Discourse (Python)
 
 > A generated table of contents for this SDK. Consult this map and its sub-pages to learn signatures, error types, and server/auth wiring **by lookup**. Model shapes and enum values are *not* duplicated here — the map names the module declaring each type; read the shape there. Every name is the emitted spelling, so a wrong one fails at import rather than working silently.
 
 |  |  |
 | --- | --- |
-| SDK display name | Discourse API Documentation |
-| Root package | `discourse_api_documentation` |
-| Distribution name | `discourse-api-documentation` |
+| SDK display name | Discourse |
+| Root package | `discourse` |
+| Distribution name | `discourse` |
 | Requires | Python 3.10 or later |
 | API spec version | `latest` |
 | Generator | APIMatic |
@@ -24,27 +24,27 @@ All `Source` paths on this map and its sub-pages are relative to the **SDK root*
 ### Synchronous client
 
 ```python
-from discourse_api_documentation import DiscourseApiDocumentationClient
+from discourse import DiscourseClient
 
-client = DiscourseApiDocumentationClient()
+client = DiscourseClient()
 
 # TODO: call endpoints here -- see api-reference.md
 
 client.close()
 ```
 
-Alternatively, scope it — `with DiscourseApiDocumentationClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `with DiscourseClient(...) as client:` closes the pool on exit.
 
 ### Asynchronous client
 
 ```python
 from asyncio import run
 
-from discourse_api_documentation import AsyncDiscourseApiDocumentationClient
+from discourse import AsyncDiscourseClient
 
 
 async def main() -> None:
-    client = AsyncDiscourseApiDocumentationClient()
+    client = AsyncDiscourseClient()
     # TODO: call endpoints here, awaiting each -- see api-reference.md
     await client.aclose()
 
@@ -52,15 +52,15 @@ async def main() -> None:
 run(main())
 ```
 
-Alternatively, scope it — `async with AsyncDiscourseApiDocumentationClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `async with AsyncDiscourseClient(...) as client:` closes the pool on exit.
 
-`AsyncClient` (`discourse_api_documentation/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
+`AsyncClient` (`discourse/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
 
-`Client` and `AsyncClient` are aliases of `DiscourseApiDocumentationClient` and `AsyncDiscourseApiDocumentationClient` — the names tracebacks and `repr()` show; all four import from the root.
+`Client` and `AsyncClient` are aliases of `DiscourseClient` and `AsyncDiscourseClient` — the names tracebacks and `repr()` show; all four import from the root.
 
 `close()` / `aclose()` closes the transport even when you supplied one via `custom_http_client=` / `custom_async_http_client=`, and a closed client cannot be reused.
 
-Every API group is a property on the client (e.g. `client.admin`). Every constructor argument is optional and keyword-only. Sources: `discourse_api_documentation/client.py`, `discourse_api_documentation/async_client.py`:
+Every API group is a property on the client (e.g. `client.admin`). Every constructor argument is optional and keyword-only. Sources: `discourse/client.py`, `discourse/async_client.py`:
 
 | Keyword | Sync Type | Async Type | Default |
 | --- | --- | --- | --- |
@@ -73,8 +73,8 @@ The types those columns name — where each imports from and, for a credentials 
 
 | Type | Import from | Shape |
 | --- | --- | --- |
-| `HttpClient` | `discourse_api_documentation.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
-| `AsyncHttpClient` | `discourse_api_documentation.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
+| `HttpClient` | `discourse.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
+| `AsyncHttpClient` | `discourse.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
 
 ---
 
@@ -87,21 +87,21 @@ Every operation is reached in two response modes:
 
 What `.error` holds is fixed per operation. There are two cases:
 
-- **Case A — typed error.** The operation documents at least one error status, so `discourse_api_documentation/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
-- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`discourse_api_documentation/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
+- **Case A — typed error.** The operation documents at least one error status, so `discourse/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
+- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`discourse/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
 
-Core runtime types (`discourse_api_documentation/core/`) — public members with their **declared types**, verbatim from source:
+Core runtime types (`discourse/core/`) — public members with their **declared types**, verbatim from source:
 
 | Type | Public members | Source |
 | --- | --- | --- |
-| `ApiError` — raised by every parsed call; `.error` is always `RawError` (no Case A alias in this SDK) | `error: E` · `status_code: int` · `response: HttpResponse` | `discourse_api_documentation/core/exceptions.py` |
-| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `discourse_api_documentation/core/results.py` |
-| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `discourse_api_documentation/core/results.py` |
+| `ApiError` — raised by every parsed call; `.error` is always `RawError` (no Case A alias in this SDK) | `error: E` · `status_code: int` · `response: HttpResponse` | `discourse/core/exceptions.py` |
+| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `discourse/core/results.py` |
+| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `discourse/core/results.py` |
 
 Typed error bodies (the arms of a Case A alias) are ordinary models — no special handling. The operation's **Type sources** table gives the module that declares each one; read field names, declared types and JSON aliases there, as for any other model.
 
 ```python
-from discourse_api_documentation.core import ApiError, RawError
+from discourse.core import ApiError, RawError
 
 try:
     response = client.admin.activate_user(id)
@@ -125,7 +125,7 @@ Each links to a sub-page with one block per operation, headed by its full access
 | **Four spellings, one signature** — the same method name and parameters on `Client` and `AsyncClient`, each also reachable through `.with_raw_response`; the async twin is a coroutine to `await`, with the same return types and error case, and where the **Async Type** column differs, pass the type it names | Getting a client |
 | **Parsed raises, raw returns** — `ApiError` versus `ApiResult` | Error-handling model |
 | **Case B error is always `RawError`** — also the last arm of every Case A alias, where a block's **Error arms** bullet ends in it | Error-handling model |
-| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`discourse_api_documentation/core/request_options.py`) |
+| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`discourse/core/request_options.py`) |
 | **Base URL `https://{defaultHost}`** — this SDK's only server; override it with `base_url="https://…"` | Servers & auth |
 | **Parameter names are literal** — signatures are generated code verbatim, and everything behind the bare `*` must be passed by name | here |
 | **A parameter's wire name is its Python name** — sent as-is on the path, query string, header or body, unless the block's **Params** bullet carries a wire name beside the role | here |
@@ -157,12 +157,12 @@ Sub-pages chunk per `###` block: each block is self-contained given the table ab
 
 ## Models — where they live, how to build them
 
-**Shapes live only in the source.** Every module under `discourse_api_documentation/models/` declares one type plus its input companion, and every module under `discourse_api_documentation/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AccessControl` ↔ `access_control.py`). Never grep for a type.
+**Shapes live only in the source.** Every module under `discourse/models/` declares one type plus its input companion, and every module under `discourse/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AccessControl` ↔ `access_control.py`). Never grep for a type.
 
 | Group | Count | Directory (module = `<type_name>.py`) |
 | --- | --- | --- |
-| Models (`SdkBaseModel` pydantic classes) | 250 | `discourse_api_documentation/models/` |
-| Enums (`Enum` over `str`) — Python member names + wire values | 18 | `discourse_api_documentation/models/enums/` |
+| Models (`SdkBaseModel` pydantic classes) | 250 | `discourse/models/` |
+| Enums (`Enum` over `str`) — Python member names + wire values | 18 | `discourse/models/enums/` |
 
 Conventions: a model is a `SdkBaseModel` (pydantic) class; a field whose wire name differs from its Python name carries it as `Field(alias=…)` (`sha1_checksum` ↔ `"sha1-checksum"`) — read the alias off the field rather than deriving it. An omittable field is annotated `Optional[T]` and defaults to `UNSET`, and one that may also be explicitly null is `OptionalNullable[T]`; both come from `core` and neither is `typing.Optional` — there is no `None` arm unless the spec declared the property nullable, so passing `None` to the first is a type error rather than a value that serializes.
 
@@ -172,11 +172,11 @@ Import paths by content type (`from <package> import <Name>`):
 
 | Contents | Import from |
 | --- | --- |
-| Client (root) | `discourse_api_documentation` |
-| Operation controllers | `discourse_api_documentation.apis` |
-| Models | `discourse_api_documentation.models` |
-| Enums | `discourse_api_documentation.models.enums` |
-| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `discourse_api_documentation.core` |
+| Client (root) | `discourse` |
+| Operation controllers | `discourse.apis` |
+| Models | `discourse.models` |
+| Enums | `discourse.models.enums` |
+| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `discourse.core` |
 
 ---
 
@@ -184,7 +184,7 @@ Import paths by content type (`from <package> import <Name>`):
 
 **Auth — none.** The spec declares no security scheme, so the client sends no credentials and takes no credential keyword.
 
-**One environment, one server** (`discourse_api_documentation/server/server_config.py`). The spec declares a single environment, so no `environment` keyword exists; the base URL and its override point:
+**One environment, one server** (`discourse/server/server_config.py`). The spec declares a single environment, so no `environment` keyword exists; the base URL and its override point:
 
 | Base URL | Override point |
 | --- | --- |

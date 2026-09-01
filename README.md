@@ -1,8 +1,8 @@
-# Discourse API Documentation SDK
+# Discourse SDK
 
 [![Built with APIMatic][apimatic-badge]][apimatic-url] [![License: MIT][license-badge]][license-url] [![Python 3.10+][python-badge]][python-url]
 
-The Discourse API Documentation SDK for Python provides access to the Discourse API Documentation REST APIs from Python applications.
+The Discourse SDK for Python provides access to the Discourse REST APIs from Python applications.
 
 > [!TIP]
 > **Looking for a specific signature, model, enum, or error type?** This SDK ships a generated
@@ -74,15 +74,15 @@ If an endpoint accepts a boolean be sure to specify it as a lowercase
 Install the Python SDK from PyPI, with whichever package manager your project uses:
 
 ```bash
-pip install discourse-api-documentation
+pip install discourse
 ```
 
 ```bash
-uv add discourse-api-documentation
+uv add discourse
 ```
 
 ```bash
-poetry add discourse-api-documentation
+poetry add discourse
 ```
 
 ---
@@ -91,36 +91,36 @@ poetry add discourse-api-documentation
 
 ### Synchronous client
 
-Construct `DiscourseApiDocumentationClient` with keyword arguments, and call `close()` when you are done. Every argument is optional; the full list is in the [SDK map](sdk-map.md).
+Construct `DiscourseClient` with keyword arguments, and call `close()` when you are done. Every argument is optional; the full list is in the [SDK map](sdk-map.md).
 
 ```python
-from discourse_api_documentation import DiscourseApiDocumentationClient
+from discourse import DiscourseClient
 
-client = DiscourseApiDocumentationClient()
+client = DiscourseClient()
 
 # TODO: call endpoints here -- see api-reference.md
 
 client.close()
 ```
 
-Alternatively, scope it -- `with DiscourseApiDocumentationClient(...) as client:` closes the pool on exit; see [Best Practices](#best-practices).
+Alternatively, scope it -- `with DiscourseClient(...) as client:` closes the pool on exit; see [Best Practices](#best-practices).
 
-`Client` is exported as an alias of `DiscourseApiDocumentationClient`, so `from discourse_api_documentation import Client` also works.
+`Client` is exported as an alias of `DiscourseClient`, so `from discourse import Client` also works.
 
 The SDK accepts every model-typed input in two interchangeable spellings, both type-checked: the typed model, or a plain dict with the same keys -- the `OrDict` and `Model | ModelDict` unions in the [SDK map](sdk-map.md). Pick whichever suits the call site: the dict form needs no import, while the model form adds a keyword-checked constructor and editor completion.
 
 ### Asynchronous client
 
-`AsyncDiscourseApiDocumentationClient` mirrors `DiscourseApiDocumentationClient` with **identical method names**, and every endpoint method is a coroutine. It takes the same arguments, with some differences -- for example, the transport argument is `custom_async_http_client`.
+`AsyncDiscourseClient` mirrors `DiscourseClient` with **identical method names**, and every endpoint method is a coroutine. It takes the same arguments, with some differences -- for example, the transport argument is `custom_async_http_client`.
 
 ```python
 from asyncio import run
 
-from discourse_api_documentation import AsyncDiscourseApiDocumentationClient
+from discourse import AsyncDiscourseClient
 
 
 async def main() -> None:
-    client = AsyncDiscourseApiDocumentationClient()
+    client = AsyncDiscourseClient()
     # TODO: call endpoints here, awaiting each -- see api-reference.md
     await client.aclose()
 
@@ -128,7 +128,7 @@ async def main() -> None:
 run(main())
 ```
 
-Alternatively, scope it -- `async with AsyncDiscourseApiDocumentationClient(...) as client:` closes the pool on exit. Only the async spelling is `aclose`, matching httpx; see [Best Practices](#best-practices).
+Alternatively, scope it -- `async with AsyncDiscourseClient(...) as client:` closes the pool on exit. Only the async spelling is `aclose`, matching httpx; see [Best Practices](#best-practices).
 
 `AsyncClient` is the exported alias. Each client accepts **only** its own transport argument; passing the other's is a `TypeError` at runtime and an error under mypy.
 
@@ -154,11 +154,11 @@ Consult the map before scanning or grepping the source: it answers call-level co
 ## Best Practices
 
 > [!TIP]
-> Use a **single `DiscourseApiDocumentationClient` instance** for the lifetime of your application and reuse it across
+> Use a **single `DiscourseClient` instance** for the lifetime of your application and reuse it across
 > all requests. Each instance owns its own connection pool, so an instance per request forfeits
 > connection reuse and leaks pools that are never closed.
 
-Match the disposal to the client's lifetime: an application-lifetime client is closed once at shutdown with `close()` / `aclose()`; where the lifetime fits a block, `with DiscourseApiDocumentationClient() as client:` / `async with AsyncDiscourseApiDocumentationClient() as client:` releases it automatically. Both are idempotent, but a closed client is not reusable: the next call raises. The client closes **whatever transport it holds**, including one you supplied via `custom_http_client` / `custom_async_http_client`; if you intend to reuse your own transport across clients, don't hand its lifetime to a `with` block.
+Match the disposal to the client's lifetime: an application-lifetime client is closed once at shutdown with `close()` / `aclose()`; where the lifetime fits a block, `with DiscourseClient() as client:` / `async with AsyncDiscourseClient() as client:` releases it automatically. Both are idempotent, but a closed client is not reusable: the next call raises. The client closes **whatever transport it holds**, including one you supplied via `custom_http_client` / `custom_async_http_client`; if you intend to reuse your own transport across clients, don't hand its lifetime to a `with` block.
 
 ## License
 

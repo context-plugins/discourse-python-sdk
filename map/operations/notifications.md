@@ -2,7 +2,7 @@
 
 # Notifications — operations
 
-Accessor: `client.notifications` · Source: `discourse_api_documentation/apis/notifications.py` · 2 operations
+Accessor: `client.notifications` · Source: `discourse/apis/notifications.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -16,7 +16,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `NotificationsJsonResponse` | `discourse_api_documentation/models/notifications_json_response.py` |
+| `NotificationsJsonResponse` | `discourse/models/notifications_json_response.py` |
 
 ### client.notifications.mark_notifications_as_read
 
@@ -29,7 +29,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `NotificationsMarkReadJsonRequest` | `discourse_api_documentation/models/notifications_mark_read_json_request.py` |
-| `NotificationsMarkReadJsonRequestDict` | `discourse_api_documentation/models/notifications_mark_read_json_request.py` |
-| `NotificationsMarkReadJsonResponse` | `discourse_api_documentation/models/notifications_mark_read_json_response.py` |
+| `NotificationsMarkReadJsonRequest` | `discourse/models/notifications_mark_read_json_request.py` |
+| `NotificationsMarkReadJsonRequestDict` | `discourse/models/notifications_mark_read_json_request.py` |
+| `NotificationsMarkReadJsonResponse` | `discourse/models/notifications_mark_read_json_response.py` |
 
