@@ -1,20 +1,84 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
 [project]
-name = "discourse"
-description = "This page contains the documentation on how to use Discourse through API calls.  > Note: For any endpoints not listed you can follow the [reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576) guide to figure out how to use an API endpoint.  ### Request Content-Type  The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`, `multipart/form-data`, or `application/json`.  ### Endpoint Names and Response Content-Type  Most API endpoints provide the same content as their HTML counterparts. For example the URL `/categories` serves a list of categories, the `/categories.json` API provides the same information in JSON format.  Instead of sending API requests to `/categories.json` you may also send them to `/categories` and add an `Accept: application/json` header to the request to get the JSON response. Sending requests with the `Accept` header is necessary if you want to use URLs for related endpoints returned by the API, such as pagination URLs. These URLs are returned without the `.json` prefix so you need to add the header in order to get the correct response format.  ### Authentication  Some endpoints do not require any authentication, pretty much anything else will require you to be authenticated.  To become authenticated you will need to create an API Key from the admin panel.  Once you have your API Key you can pass it in along with your API Username as an HTTP header like this:  ``` curl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\ -H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\ -H \"Api-Username: system\" ```  and this is how POST requests will look:  ``` curl -X POST \"http://127.0.0.1:3000/categories\" \\ -H \"Content-Type: multipart/form-data;\" \\ -H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\ -H \"Api-Username: system\" \\ -F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\ -F \"color=49d9e9\" \\ -F \"text_color=f0fcfd\" ```  ### Boolean values  If an endpoint accepts a boolean be sure to specify it as a lowercase `true` or `false` value unless noted otherwise. "
-version = "1.0.0"
-dependencies = ["apimatic-core~=0.2.0, >= 0.2.24", "apimatic-core-interfaces~=0.1.0, >= 0.1.8", "apimatic-requests-client-adapter~=0.1.0, >= 0.1.10", "python-dotenv>=0.21, <2.0"]
-requires-python = ">=3.7"
-[[project.authors]]
-name = "APIMatic Code Generator"
-email = "support@apimatic.io"
+name = "discourse-api-documentation"
+version = "0.1.0"
+description = "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n"
+maintainers = [
+    { name = "APIMatic", email = "support@apimatic.io" },
+]
+keywords = ["sdk", "api-client", "openapi", "rest", "http", "apimatic"]
+license = "MIT"                 # SPDX expression (PEP 639); poetry-core bundles the root LICENSE
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx (>=0.28.1,<1.0.0)",
+    # 2.11 added the alias-control `model_config` keys core/models.py names --
+    # validate_by_name, validate_by_alias and serialize_by_alias. No 2.12-only pydantic API
+    # is used anywhere.
+    "pydantic[email] (>=2.11.0,<3.0.0)",
+    # NotRequired / TypedDict backport for the 3.10 floor (both live in `typing` from 3.11),
+    # used by the model input companions; and TypeForm (PEP 747, added in 4.13.0), which
+    # core/ uses to type the runtime type expressions its factories accept. PEP 747 is Final
+    # and TypeForm reaches `typing` in 3.15, so both move when the floor does.
+    "typing-extensions (>=4.13.0,<5.0.0)",
+]
 
-[project.optional-dependencies]
-testutils = ["pytest>=7.2.2"]
-[tool]
-[tool.setuptools]
-[tool.setuptools.packages]
-[tool.setuptools.packages.find]
-exclude = ["tests", "tests.*"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[dependency-groups]
+dev = [
+    # 2.2 is where PEP 747 TypeForm became default-on; below it, core/'s signatures need an
+    # --enable-incomplete-feature flag.
+    "mypy (>=2.2.0,<3.0.0)",
+    "ruff (>=0.14.14,<0.15.0)",
+]
+
+
+[build-system]
+# 2.2.0 is the first release that understands PEP 639 -- below it the backend emits the
+# deprecated `License:` field, re-adds the license classifier and drops `:: 3.14`.
+requires = ["poetry-core>=2.2.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+# target-version is inferred from requires-python -- the floor is single-sourced there
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "RUF"]
+# Deliberately excluded:
+#   TC  - would move pydantic-validated imports under TYPE_CHECKING, breaking the
+#         runtime annotation resolution that pydantic depends on
+#   Q   - the CI-gated formatter normalizes quotes everywhere it runs
+ignore = [
+    # Typographic punctuation flagged as confusable. Every docstring here is the spec
+    # author's own description, copied verbatim -- normalizing their apostrophes and
+    # dashes would silently alter the API's documentation.
+    "RUF001", "RUF002", "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["RUF022"]   # curated, grouped __all__
+
+[tool.mypy]
+python_version = "3.10"         # the supported floor, not whichever interpreter is local
+files = ["discourse_api_documentation"]
+strict = true
+warn_unreachable = true
+enable_error_code = ["redundant-expr", "truthy-bool", "ignore-without-code", "possibly-undefined"]
+# already inside `strict` at mypy 2.3, pinned deliberately: `strict`'s flag set is versioned
+# and the dev floor spans >=2.2.0,<3.0.0
+warn_return_any = true
+pretty = true

@@ -1,0 +1,8874 @@
+# Raw Reference
+
+**Raw** endpoints, reached through `with_raw_response`, return `ApiResult[T, E]` and never raise for an API error. For the parsed endpoints, see [API Reference](api-reference.md).
+
+> Source: [DiscourseApiDocumentationClient](discourse_api_documentation/client.py)
+
+## Admin
+
+> Source: [Admin](discourse_api_documentation/apis/admin.py)
+
+<details>
+<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.activate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.activate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.admin_get_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.admin_get_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_list_users(*, order: Order3OrStr | None = None, asc: AscOrStr | None = None, page: int | None = None, show_emails: bool | None = None, stats: bool | None = None, email: str | None = None, ip: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[AdminUsersJsonResponse2], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.admin_list_users()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersJsonResponse2]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.admin_list_users()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersJsonResponse2]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
+| <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
+| <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
+| <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;</code> -- users response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_list_users_flag(flag: FlagOrStr, *, order: Order3OrStr | None = None, asc: AscOrStr | None = None, page: int | None = None, show_emails: bool | None = None, stats: bool | None = None, email: str | None = None, ip: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[AdminUsersListJsonResponse], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.admin_list_users_flag(flag)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.admin_list_users_flag(flag)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>flag</code> | <code>[FlagOrStr](discourse_api_documentation/models/enums/flag.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
+| <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
+| <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
+| <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.anonymize_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.anonymize_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.deactivate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.deactivate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.delete_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.delete_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersJsonRequest](discourse_api_documentation/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse_api_documentation/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.log_out_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.log_out_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def refresh_gravatar(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserAvatarRefreshGravatarJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.refresh_gravatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.refresh_gravatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.silence_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.silence_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse_api_documentation/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse_api_documentation/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.admin.with_raw_response.suspend_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.admin.with_raw_response.suspend_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Backups
+
+> Source: [Backups](discourse_api_documentation/apis/backups.py)
+
+<details>
+<summary><code>def create_backup(*, body: AdminBackupsJsonRequest | AdminBackupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBackupsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.backups.with_raw_response.create_backup()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBackupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.backups.with_raw_response.create_backup()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBackupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[AdminBackupsJsonRequest](discourse_api_documentation/models/admin_backups_json_request.py) \| [AdminBackupsJsonRequestDict](discourse_api_documentation/models/admin_backups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBackupsJsonResponse1](discourse_api_documentation/models/admin_backups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminBackupsJsonResponse1](discourse_api_documentation/models/admin_backups_json_response1.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def download_backup(filename: str, token: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.backups.with_raw_response.download_backup(filename, token)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.backups.with_raw_response.download_backup(filename, token)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>filename</code> | <code>str</code> | Value sent with the request. |
+| <code>token</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_backups(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[AdminBackupsJsonResponse], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.backups.with_raw_response.get_backups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminBackupsJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.backups.with_raw_response.get_backups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminBackupsJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminBackupsJsonResponse](discourse_api_documentation/models/admin_backups_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[AdminBackupsJsonResponse](discourse_api_documentation/models/admin_backups_json_response.py)&#93;</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def send_download_backup_email(filename: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.backups.with_raw_response.send_download_backup_email(filename)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.backups.with_raw_response.send_download_backup_email(filename)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>filename</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Badges
+
+> Source: [Badges](discourse_api_documentation/apis/badges.py)
+
+<details>
+<summary><code>def admin_list_badges(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.badges.with_raw_response.admin_list_badges()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.badges.with_raw_response.admin_list_badges()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse](discourse_api_documentation/models/admin_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse](discourse_api_documentation/models/admin_badges_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_badge(*, body: AdminBadgesJsonRequest | AdminBadgesJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.badges.with_raw_response.create_badge()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.badges.with_raw_response.create_badge()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[AdminBadgesJsonRequest](discourse_api_documentation/models/admin_badges_json_request.py) \| [AdminBadgesJsonRequestDict](discourse_api_documentation/models/admin_badges_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse1](discourse_api_documentation/models/admin_badges_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse1](discourse_api_documentation/models/admin_badges_json_response1.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def delete_badge(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.badges.with_raw_response.delete_badge(id)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.badges.with_raw_response.delete_badge(id)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_user_badges(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserBadgesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.badges.with_raw_response.list_user_badges(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.badges.with_raw_response.list_user_badges(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_badge(id: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.badges.with_raw_response.update_badge(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.badges.with_raw_response.update_badge(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminBadgesJsonRequest1](discourse_api_documentation/models/admin_badges_json_request1.py) \| [AdminBadgesJsonRequest1Dict](discourse_api_documentation/models/admin_badges_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminBadgesJsonResponse2](discourse_api_documentation/models/admin_badges_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminBadgesJsonResponse2](discourse_api_documentation/models/admin_badges_json_response2.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Categories
+
+> Source: [Categories](discourse_api_documentation/apis/categories.py)
+
+<details>
+<summary><code>def create_category(*, body: CategoriesJsonRequest | CategoriesJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.create_category()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.create_category()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[CategoriesJsonRequest](discourse_api_documentation/models/categories_json_request.py) \| [CategoriesJsonRequestDict](discourse_api_documentation/models/categories_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse](discourse_api_documentation/models/categories_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse](discourse_api_documentation/models/categories_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_category(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CShowJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.get_category(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CShowJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.get_category(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CShowJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CShowJsonResponse](discourse_api_documentation/models/c_show_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[CShowJsonResponse](discourse_api_documentation/models/c_show_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_site(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SiteJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Can be used to fetch all categories and subcategories
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.get_site()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.get_site()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_categories(*, include_subcategories: bool | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.list_categories()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.list_categories()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>include_subcategories</code> | <code>bool \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse1](discourse_api_documentation/models/categories_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse1](discourse_api_documentation/models/categories_json_response1.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_category_topics(slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.list_category_topics(slug, id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.list_category_topics(slug, id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>slug</code> | <code>str</code> | Value sent with the request. |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CJsonResponse](discourse_api_documentation/models/c_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[CJsonResponse](discourse_api_documentation/models/c_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_category(id: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.categories.with_raw_response.update_category(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.categories.with_raw_response.update_category(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type CategoriesJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[CategoriesJsonRequest1](discourse_api_documentation/models/categories_json_request1.py) \| [CategoriesJsonRequest1Dict](discourse_api_documentation/models/categories_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[CategoriesJsonResponse2](discourse_api_documentation/models/categories_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[CategoriesJsonResponse2](discourse_api_documentation/models/categories_json_response2.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## DiscourseCalendarEvents
+
+> Source: [DiscourseCalendarEvents](discourse_api_documentation/apis/discourse_calendar_events.py)
+
+<details>
+<summary><code>def export_events_ics(*, category_id: int | None = None, include_subcategories: IncludeSubcategoriesOrStr | None = None, attending_user: str | None = None, before: RFC3339DateTime | None = None, after: RFC3339DateTime | None = None, order: OrderOrStr | None = None, limit: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.discourse_calendar_events.with_raw_response.export_events_ics()
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.discourse_calendar_events.with_raw_response.export_events_ics()
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>category_id</code> | <code>int \| None</code> | Filter events by category ID<br>**Default**: <code>None</code> |
+| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse_api_documentation/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
+| <code>attending_user</code> | <code>str \| None</code> | Filter to events where the specified user (username) has RSVP'd<br>as going<br>**Default**: <code>None</code> |
+| <code>before</code> | <code>RFC3339DateTime \| None</code> | Return events starting before this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
+| <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[OrderOrStr](discourse_api_documentation/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
+| <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_events(*, include_details: IncludeDetailsOrStr | None = None, category_id: int | None = None, include_subcategories: IncludeSubcategoriesOrStr | None = None, post_id: int | None = None, attending_user: str | None = None, before: RFC3339DateTime | None = None, after: RFC3339DateTime | None = None, order: OrderOrStr | None = None, limit: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[DiscoursePostEventEventsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.discourse_calendar_events.with_raw_response.list_events()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type DiscoursePostEventEventsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.discourse_calendar_events.with_raw_response.list_events()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type DiscoursePostEventEventsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>include_details</code> | <code>[IncludeDetailsOrStr](discourse_api_documentation/models/enums/include_details.py) \| None</code> | Include detailed event information (creator, invitees, stats,<br>etc.)<br>**Default**: <code>None</code> |
+| <code>category_id</code> | <code>int \| None</code> | Filter events by category ID<br>**Default**: <code>None</code> |
+| <code>include_subcategories</code> | <code>[IncludeSubcategoriesOrStr](discourse_api_documentation/models/enums/include_subcategories.py) \| None</code> | Include events from subcategories when filtering by category<br>**Default**: <code>None</code> |
+| <code>post_id</code> | <code>int \| None</code> | Filter to events associated with a specific post ID<br>**Default**: <code>None</code> |
+| <code>attending_user</code> | <code>str \| None</code> | Filter to events where the specified user (username) has RSVP'd<br>as going<br>**Default**: <code>None</code> |
+| <code>before</code> | <code>RFC3339DateTime \| None</code> | Return events starting before this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
+| <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
+| <code>order</code> | <code>[OrderOrStr](discourse_api_documentation/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
+| <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[DiscoursePostEventEventsJsonResponse](discourse_api_documentation/models/discourse_post_event_events_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[DiscoursePostEventEventsJsonResponse](discourse_api_documentation/models/discourse_post_event_events_json_response.py)</code> -- success response (detailed)
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Groups
+
+> Source: [Groups](discourse_api_documentation/apis/groups.py)
+
+<details>
+<summary><code>def add_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.add_group_members(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.add_group_members(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse_api_documentation/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse_api_documentation/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse1](discourse_api_documentation/models/groups_members_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse1](discourse_api_documentation/models/groups_members_json_response1.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_group(*, body: AdminGroupsJsonRequest | AdminGroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminGroupsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.create_group()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.create_group()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[AdminGroupsJsonRequest](discourse_api_documentation/models/admin_groups_json_request.py) \| [AdminGroupsJsonRequestDict](discourse_api_documentation/models/admin_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminGroupsJsonResponse](discourse_api_documentation/models/admin_groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse](discourse_api_documentation/models/admin_groups_json_response.py)</code> -- group created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def delete_group(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminGroupsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.delete_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.delete_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminGroupsJsonResponse1](discourse_api_documentation/models/admin_groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminGroupsJsonResponse1](discourse_api_documentation/models/admin_groups_json_response1.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_group(name: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.get_group(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.get_group(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>name</code> | <code>str</code> | Use group name instead of id |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse](discourse_api_documentation/models/groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsJsonResponse](discourse_api_documentation/models/groups_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_group_by_id(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsByIdJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.get_group_by_id(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsByIdJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.get_group_by_id(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsByIdJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Use group name instead of id |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsByIdJsonResponse](discourse_api_documentation/models/groups_by_id_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsByIdJsonResponse](discourse_api_documentation/models/groups_by_id_json_response.py)</code> -- success response (by id)
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_group_members(name: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.list_group_members(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.list_group_members(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>name</code> | <code>str</code> | Use group name instead of id |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse](discourse_api_documentation/models/groups_members_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse](discourse_api_documentation/models/groups_members_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_groups(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.list_groups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.list_groups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse2](discourse_api_documentation/models/groups_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsJsonResponse2](discourse_api_documentation/models/groups_json_response2.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def remove_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.remove_group_members(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.remove_group_members(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[GroupsMembersJsonRequest](discourse_api_documentation/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse_api_documentation/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsMembersJsonResponse2](discourse_api_documentation/models/groups_members_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsMembersJsonResponse2](discourse_api_documentation/models/groups_members_json_response2.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_group(id: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.groups.with_raw_response.update_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.groups.with_raw_response.update_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type GroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[GroupsJsonRequest](discourse_api_documentation/models/groups_json_request.py) \| [GroupsJsonRequestDict](discourse_api_documentation/models/groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[GroupsJsonResponse1](discourse_api_documentation/models/groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[GroupsJsonResponse1](discourse_api_documentation/models/groups_json_response1.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Invites
+
+> Source: [Invites](discourse_api_documentation/apis/invites.py)
+
+<details>
+<summary><code>def create_invite(api_key: str, api_username: str, *, body: InvitesJsonRequest | InvitesJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[InvitesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.invites.with_raw_response.create_invite(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type InvitesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.invites.with_raw_response.create_invite(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type InvitesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[InvitesJsonRequest](discourse_api_documentation/models/invites_json_request.py) \| [InvitesJsonRequestDict](discourse_api_documentation/models/invites_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[InvitesJsonResponse](discourse_api_documentation/models/invites_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[InvitesJsonResponse](discourse_api_documentation/models/invites_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_multiple_invites(api_key: str, api_username: str, *, body: InvitesCreateMultipleJsonRequest | InvitesCreateMultipleJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[InvitesCreateMultipleJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.invites.with_raw_response.create_multiple_invites(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type InvitesCreateMultipleJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.invites.with_raw_response.create_multiple_invites(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type InvitesCreateMultipleJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[InvitesCreateMultipleJsonRequest](discourse_api_documentation/models/invites_create_multiple_json_request.py) \| [InvitesCreateMultipleJsonRequestDict](discourse_api_documentation/models/invites_create_multiple_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[InvitesCreateMultipleJsonResponse](discourse_api_documentation/models/invites_create_multiple_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[InvitesCreateMultipleJsonResponse](discourse_api_documentation/models/invites_create_multiple_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.invites.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.invites.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse_api_documentation/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse_api_documentation/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py)</code> -- invites to a PM
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.invites.with_raw_response.invite_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.invites.with_raw_response.invite_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TInviteJsonRequest](discourse_api_documentation/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse_api_documentation/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Notifications
+
+> Source: [Notifications](discourse_api_documentation/apis/notifications.py)
+
+<details>
+<summary><code>def get_notifications(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[NotificationsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.notifications.with_raw_response.get_notifications()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type NotificationsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.notifications.with_raw_response.get_notifications()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type NotificationsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[NotificationsJsonResponse](discourse_api_documentation/models/notifications_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[NotificationsJsonResponse](discourse_api_documentation/models/notifications_json_response.py)</code> -- notifications
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def mark_notifications_as_read(*, body: NotificationsMarkReadJsonRequest | NotificationsMarkReadJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[NotificationsMarkReadJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.notifications.with_raw_response.mark_notifications_as_read()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type NotificationsMarkReadJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.notifications.with_raw_response.mark_notifications_as_read()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type NotificationsMarkReadJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[NotificationsMarkReadJsonRequest](discourse_api_documentation/models/notifications_mark_read_json_request.py) \| [NotificationsMarkReadJsonRequestDict](discourse_api_documentation/models/notifications_mark_read_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[NotificationsMarkReadJsonResponse](discourse_api_documentation/models/notifications_mark_read_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[NotificationsMarkReadJsonResponse](discourse_api_documentation/models/notifications_mark_read_json_response.py)</code> -- notifications marked read
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Posts
+
+> Source: [Posts](discourse_api_documentation/apis/posts.py)
+
+<details>
+<summary><code>def create_topic_post_pm(api_key: str, api_username: str, *, body: PostsJsonRequest | PostsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def delete_post(id: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.delete_post(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.delete_post(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsJsonRequest2](discourse_api_documentation/models/posts_json_request2.py) \| [PostsJsonRequest2Dict](discourse_api_documentation/models/posts_json_request2.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_post(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+This endpoint can be used to get the number of likes on a post using the
+`actions_summary` property in the response. `actions_summary` responses
+with the id of `2` signify a `like`. If there are no `actions_summary`
+items with the id of `2`, that means there are 0 likes. Other ids likely
+refer to various different flag types.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.get_post(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.get_post(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse2](discourse_api_documentation/models/posts_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse2](discourse_api_documentation/models/posts_json_response2.py)</code> -- single reviewable post
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_posts(*, before: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.list_posts()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.list_posts()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>before</code> | <code>int \| None</code> | Load posts with an id lower than this value. Useful for pagination.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse](discourse_api_documentation/models/posts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse](discourse_api_documentation/models/posts_json_response.py)</code> -- latest posts
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def lock_post(id: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsLockedJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.lock_post(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsLockedJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.lock_post(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsLockedJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsLockedJsonRequest](discourse_api_documentation/models/posts_locked_json_request.py) \| [PostsLockedJsonRequestDict](discourse_api_documentation/models/posts_locked_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsLockedJsonResponse](discourse_api_documentation/models/posts_locked_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsLockedJsonResponse](discourse_api_documentation/models/posts_locked_json_response.py)</code> -- post updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def perform_post_action(api_key: str, api_username: str, *, body: PostActionsJsonRequest | PostActionsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostActionsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.perform_post_action(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostActionsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.perform_post_action(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostActionsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostActionsJsonRequest](discourse_api_documentation/models/post_actions_json_request.py) \| [PostActionsJsonRequestDict](discourse_api_documentation/models/post_actions_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostActionsJsonResponse](discourse_api_documentation/models/post_actions_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostActionsJsonResponse](discourse_api_documentation/models/post_actions_json_response.py)</code> -- post updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def post_replies(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[PostsRepliesJsonResponse], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.post_replies(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[PostsRepliesJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.post_replies(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[PostsRepliesJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[PostsRepliesJsonResponse](discourse_api_documentation/models/posts_replies_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[PostsRepliesJsonResponse](discourse_api_documentation/models/posts_replies_json_response.py)&#93;</code> -- post replies
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_post(id: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse3, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.posts.with_raw_response.update_post(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse3
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.posts.with_raw_response.update_post(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse3
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsJsonRequest1](discourse_api_documentation/models/posts_json_request1.py) \| [PostsJsonRequest1Dict](discourse_api_documentation/models/posts_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse3](discourse_api_documentation/models/posts_json_response3.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse3](discourse_api_documentation/models/posts_json_response3.py)</code> -- post updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## PrivateMessages
+
+> Source: [PrivateMessages](discourse_api_documentation/apis/private_messages.py)
+
+<details>
+<summary><code>def create_topic_post_pm(api_key: str, api_username: str, *, body: PostsJsonRequest | PostsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.private_messages.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.private_messages.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_user_sent_private_messages(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TopicsPrivateMessagesSentJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.private_messages.with_raw_response.get_user_sent_private_messages(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesSentJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.private_messages.with_raw_response.get_user_sent_private_messages(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesSentJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopicsPrivateMessagesSentJsonResponse](discourse_api_documentation/models/topics_private_messages_sent_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TopicsPrivateMessagesSentJsonResponse](discourse_api_documentation/models/topics_private_messages_sent_json_response.py)</code> -- private messages
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_user_private_messages(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TopicsPrivateMessagesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.private_messages.with_raw_response.list_user_private_messages(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.private_messages.with_raw_response.list_user_private_messages(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopicsPrivateMessagesJsonResponse](discourse_api_documentation/models/topics_private_messages_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TopicsPrivateMessagesJsonResponse](discourse_api_documentation/models/topics_private_messages_json_response.py)</code> -- private messages
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Search
+
+> Source: [Search](discourse_api_documentation/apis/search.py)
+
+<details>
+<summary><code>def search(*, q: str | None = None, page: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SearchJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.search.with_raw_response.search()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SearchJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.search.with_raw_response.search()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SearchJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>q</code> | <code>str \| None</code> | The query string needs to be url encoded and is made up of the following options:<br>- Search term. This is just a string. Usually it would be the first item in the query.<br>- `@<username>`: Use the `@` followed by the username to specify posts by this user.<br>- `#<category>`: Use the `#` followed by the category slug to search within this category.<br>- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.<br>- `before:`: `yyyy-mm-dd`<br>- `after:`: `yyyy-mm-dd`<br>- `order:`: `latest`, `likes`, `views`, `latest_topic`<br>- `assigned:`: username (without `@`)<br>- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`<br>- `with:`: `images`<br>- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`<br>- `group:`: group_name or group_id<br>- `group_messages:`: group_name or group_id<br>- `min_posts:`: 1<br>- `max_posts:`: 10<br>- `min_views:`: 1<br>- `max_views:`: 10<br><br>If you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:<br><br>``<br>curl -i -sS -X GET -G "http://localhost:3000/search.json" \<br>--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'<br>``<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SearchJsonResponse](discourse_api_documentation/models/search_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[SearchJsonResponse](discourse_api_documentation/models/search_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Site
+
+> Source: [Site](discourse_api_documentation/apis/site.py)
+
+<details>
+<summary><code>def get_site(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SiteJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Can be used to fetch all categories and subcategories
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.site.with_raw_response.get_site()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.site.with_raw_response.get_site()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[SiteJsonResponse](discourse_api_documentation/models/site_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_site_basic_info(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SiteBasicInfoJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Can be used to fetch basic info about a site
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.site.with_raw_response.get_site_basic_info()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteBasicInfoJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.site.with_raw_response.get_site_basic_info()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SiteBasicInfoJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SiteBasicInfoJsonResponse](discourse_api_documentation/models/site_basic_info_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[SiteBasicInfoJsonResponse](discourse_api_documentation/models/site_basic_info_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Tags
+
+> Source: [Tags](discourse_api_documentation/apis/tags.py)
+
+<details>
+<summary><code>def create_tag_group(*, body: TagGroupsJsonRequest | TagGroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.create_tag_group()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.create_tag_group()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[TagGroupsJsonRequest](discourse_api_documentation/models/tag_groups_json_request.py) \| [TagGroupsJsonRequestDict](discourse_api_documentation/models/tag_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse1](discourse_api_documentation/models/tag_groups_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse1](discourse_api_documentation/models/tag_groups_json_response1.py)</code> -- tag group created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_tag(name: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.get_tag(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.get_tag(name)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>name</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagJsonResponse](discourse_api_documentation/models/tag_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagJsonResponse](discourse_api_documentation/models/tag_json_response.py)</code> -- notifications
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_tag_group(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse2, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.get_tag_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.get_tag_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse2
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse2](discourse_api_documentation/models/tag_groups_json_response2.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse2](discourse_api_documentation/models/tag_groups_json_response2.py)</code> -- notifications
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_tag_groups(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.list_tag_groups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.list_tag_groups()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse](discourse_api_documentation/models/tag_groups_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse](discourse_api_documentation/models/tag_groups_json_response.py)</code> -- tags
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_tags(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.list_tags()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.list_tags()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagsJsonResponse](discourse_api_documentation/models/tags_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagsJsonResponse](discourse_api_documentation/models/tags_json_response.py)</code> -- notifications
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_tag_group(id: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse3, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.tags.with_raw_response.update_tag_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse3
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.tags.with_raw_response.update_tag_group(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse3
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TagGroupsJsonRequest1](discourse_api_documentation/models/tag_groups_json_request1.py) \| [TagGroupsJsonRequest1Dict](discourse_api_documentation/models/tag_groups_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TagGroupsJsonResponse3](discourse_api_documentation/models/tag_groups_json_response3.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TagGroupsJsonResponse3](discourse_api_documentation/models/tag_groups_json_response3.py)</code> -- Tag group updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Topics
+
+> Source: [Topics](discourse_api_documentation/apis/topics.py)
+
+<details>
+<summary><code>def bookmark_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.bookmark_topic(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.bookmark_topic(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_topic_post_pm(api_key: str, api_username: str, *, body: PostsJsonRequest | PostsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.create_topic_post_pm(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type PostsJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[PostsJsonRequest](discourse_api_documentation/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse_api_documentation/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[PostsJsonResponse1](discourse_api_documentation/models/posts_json_response1.py)</code> -- post created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_topic_timer(id: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TTimerJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.create_topic_timer(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TTimerJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.create_topic_timer(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TTimerJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TTimerJsonRequest](discourse_api_documentation/models/t_timer_json_request.py) \| [TTimerJsonRequestDict](discourse_api_documentation/models/t_timer_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TTimerJsonResponse](discourse_api_documentation/models/t_timer_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TTimerJsonResponse](discourse_api_documentation/models/t_timer_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_specific_posts_from_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TPostsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.get_specific_posts_from_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TPostsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.get_specific_posts_from_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TPostsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TPostsJsonResponse](discourse_api_documentation/models/t_posts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TPostsJsonResponse](discourse_api_documentation/models/t_posts_json_response.py)</code> -- specific posts
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.get_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.get_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TJsonResponse](discourse_api_documentation/models/t_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TJsonResponse](discourse_api_documentation/models/t_json_response.py)</code> -- specific posts
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_topic_by_external_id(external_id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.get_topic_by_external_id(external_id)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.get_topic_by_external_id(external_id)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>external_id</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TInviteGroupJsonRequest](discourse_api_documentation/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse_api_documentation/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TInviteGroupJsonResponse](discourse_api_documentation/models/t_invite_group_json_response.py)</code> -- invites to a PM
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.invite_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.invite_to_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TInviteJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TInviteJsonRequest](discourse_api_documentation/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse_api_documentation/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TInviteJsonResponse](discourse_api_documentation/models/t_invite_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_latest_topics(api_key: str, api_username: str, *, order: str | None = None, ascending: str | None = None, per_page: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[LatestJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.list_latest_topics(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type LatestJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.list_latest_topics(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type LatestJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>order</code> | <code>str \| None</code> | Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,<br>`likes`, `op_likes`, `posters`<br>**Default**: <code>None</code> |
+| <code>ascending</code> | <code>str \| None</code> | Defaults to `desc`, add `ascending=true` to sort asc<br>**Default**: <code>None</code> |
+| <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[LatestJsonResponse](discourse_api_documentation/models/latest_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[LatestJsonResponse](discourse_api_documentation/models/latest_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_top_topics(api_key: str, api_username: str, *, period: str | None = None, per_page: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TopJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.list_top_topics(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.list_top_topics(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TopJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>period</code> | <code>str \| None</code> | Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`<br>**Default**: <code>None</code> |
+| <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TopJsonResponse](discourse_api_documentation/models/top_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TopJsonResponse](discourse_api_documentation/models/top_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def remove_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.remove_topic(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.remove_topic(id, api_key, api_username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def set_notification_level(id: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TNotificationsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.set_notification_level(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TNotificationsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.set_notification_level(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TNotificationsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TNotificationsJsonRequest](discourse_api_documentation/models/t_notifications_json_request.py) \| [TNotificationsJsonRequestDict](discourse_api_documentation/models/t_notifications_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TNotificationsJsonResponse](discourse_api_documentation/models/t_notifications_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TNotificationsJsonResponse](discourse_api_documentation/models/t_notifications_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_topic(id: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.update_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.update_topic(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TJsonRequest](discourse_api_documentation/models/t_json_request.py) \| [TJsonRequestDict](discourse_api_documentation/models/t_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TJsonResponse1](discourse_api_documentation/models/t_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TJsonResponse1](discourse_api_documentation/models/t_json_response1.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_topic_status(id: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TStatusJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.update_topic_status(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TStatusJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.update_topic_status(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TStatusJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TStatusJsonRequest](discourse_api_documentation/models/t_status_json_request.py) \| [TStatusJsonRequestDict](discourse_api_documentation/models/t_status_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TStatusJsonResponse](discourse_api_documentation/models/t_status_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TStatusJsonResponse](discourse_api_documentation/models/t_status_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_topic_timestamp(id: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TChangeTimestampJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.topics.with_raw_response.update_topic_timestamp(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TChangeTimestampJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.topics.with_raw_response.update_topic_timestamp(id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type TChangeTimestampJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[TChangeTimestampJsonRequest](discourse_api_documentation/models/t_change_timestamp_json_request.py) \| [TChangeTimestampJsonRequestDict](discourse_api_documentation/models/t_change_timestamp_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[TChangeTimestampJsonResponse](discourse_api_documentation/models/t_change_timestamp_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[TChangeTimestampJsonResponse](discourse_api_documentation/models/t_change_timestamp_json_response.py)</code> -- topic updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Uploads
+
+> Source: [Uploads](discourse_api_documentation/apis/uploads.py)
+
+<details>
+<summary><code>def abort_multipart(*, body: UploadsAbortMultipartJsonRequest | UploadsAbortMultipartJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsAbortMultipartJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+This endpoint aborts the multipart upload initiated with /create-multipart.
+This should be used when cancelling the upload. It does not matter if parts
+were already uploaded into the external storage provider.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.abort_multipart()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsAbortMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.abort_multipart()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsAbortMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsAbortMultipartJsonRequest](discourse_api_documentation/models/uploads_abort_multipart_json_request.py) \| [UploadsAbortMultipartJsonRequestDict](discourse_api_documentation/models/uploads_abort_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsAbortMultipartJsonResponse](discourse_api_documentation/models/uploads_abort_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsAbortMultipartJsonResponse](discourse_api_documentation/models/uploads_abort_multipart_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def batch_presign_multipart_parts(*, body: UploadsBatchPresignMultipartPartsJsonRequest | UploadsBatchPresignMultipartPartsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsBatchPresignMultipartPartsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Multipart uploads are uploaded in chunks or parts to individual presigned
+URLs, similar to the one generated by /generate-presigned-put. The part
+numbers provided must be between 1 and 10000. The total number of parts
+will depend on the chunk size in bytes that you intend to use to upload
+each chunk. For example a 12MB file may have 2 5MB chunks and a final
+2MB chunk, for part numbers 1, 2, and 3.
+
+This endpoint will return a presigned URL for each part number provided,
+which you can then use to send PUT requests for the binary chunk corresponding
+to that part. When the part is uploaded, the provider should return an
+ETag for the part, and this should be stored along with the part number,
+because this is needed to complete the multipart upload.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.batch_presign_multipart_parts()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsBatchPresignMultipartPartsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.batch_presign_multipart_parts()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsBatchPresignMultipartPartsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsBatchPresignMultipartPartsJsonRequest](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py) \| [UploadsBatchPresignMultipartPartsJsonRequestDict](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsBatchPresignMultipartPartsJsonResponse](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsBatchPresignMultipartPartsJsonResponse](discourse_api_documentation/models/uploads_batch_presign_multipart_parts_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def complete_external_upload(*, body: UploadsCompleteExternalUploadJsonRequest | UploadsCompleteExternalUploadJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsCompleteExternalUploadJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Completes an external upload initialized with /get-presigned-put. The
+file will be moved from its temporary location in external storage to
+a final destination in the S3 bucket. An Upload record will also be
+created in the database in most cases.
+
+If a sha1-checksum was provided in the initial request it will also
+be compared with the uploaded file in storage to make sure the same
+file was uploaded. The file size will be compared for the same reason.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.complete_external_upload()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCompleteExternalUploadJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.complete_external_upload()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCompleteExternalUploadJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsCompleteExternalUploadJsonRequest](discourse_api_documentation/models/uploads_complete_external_upload_json_request.py) \| [UploadsCompleteExternalUploadJsonRequestDict](discourse_api_documentation/models/uploads_complete_external_upload_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCompleteExternalUploadJsonResponse](discourse_api_documentation/models/uploads_complete_external_upload_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsCompleteExternalUploadJsonResponse](discourse_api_documentation/models/uploads_complete_external_upload_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def complete_multipart(*, body: UploadsCompleteMultipartJsonRequest | UploadsCompleteMultipartJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsCompleteMultipartJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Completes the multipart upload in the external store, and copies the
+file from its temporary location to its final location in the store.
+All of the parts must have been uploaded to the external storage provider.
+An Upload record will be completed in most cases once the file is copied
+to its final location.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.complete_multipart()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCompleteMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.complete_multipart()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCompleteMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsCompleteMultipartJsonRequest](discourse_api_documentation/models/uploads_complete_multipart_json_request.py) \| [UploadsCompleteMultipartJsonRequestDict](discourse_api_documentation/models/uploads_complete_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCompleteMultipartJsonResponse](discourse_api_documentation/models/uploads_complete_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsCompleteMultipartJsonResponse](discourse_api_documentation/models/uploads_complete_multipart_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_multipart_upload(*, body: UploadsCreateMultipartJsonRequest | UploadsCreateMultipartJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsCreateMultipartJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Creates a multipart upload in the external storage provider, storing
+a temporary reference to the external upload similar to /get-presigned-put.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.create_multipart_upload()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCreateMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.create_multipart_upload()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsCreateMultipartJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsCreateMultipartJsonRequest](discourse_api_documentation/models/uploads_create_multipart_json_request.py) \| [UploadsCreateMultipartJsonRequestDict](discourse_api_documentation/models/uploads_create_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsCreateMultipartJsonResponse](discourse_api_documentation/models/uploads_create_multipart_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsCreateMultipartJsonResponse](discourse_api_documentation/models/uploads_create_multipart_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: bytes | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.create_upload(upload_type)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.create_upload(upload_type)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>upload_type</code> | <code>[UploadTypeOrStr](discourse_api_documentation/models/enums/upload_type.py)</code> | Value sent with the request. |
+| <code>user_id</code> | <code>int \| None</code> | required if uploading an avatar<br>**Default**: <code>None</code> |
+| <code>synchronous</code> | <code>bool \| None</code> | Use this flag to return an id and url<br>**Default**: <code>None</code> |
+| <code>file</code> | <code>bytes \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsJsonResponse](discourse_api_documentation/models/uploads_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsJsonResponse](discourse_api_documentation/models/uploads_json_response.py)</code> -- file uploaded
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def generate_presigned_put(*, body: UploadsGeneratePresignedPutJsonRequest | UploadsGeneratePresignedPutJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsGeneratePresignedPutJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Direct external uploads bypass the usual method of creating uploads
+via the POST /uploads route, and upload directly to an external provider,
+which by default is S3. This route begins the process, and will return
+a unique identifier for the external upload as well as a presigned URL
+which is where the file binary blob should be uploaded to.
+
+Once the upload is complete to the external service, you must call the
+POST /complete-external-upload route using the unique identifier returned
+by this route, which will create any required Upload record in the Discourse
+database and also move file from its temporary location to the final
+destination in the external storage service.
+
+You must have the correct permissions and CORS settings configured in your
+external provider. We support AWS S3 as the default. See:
+
+https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+An external file store must be set up and `enable_direct_s3_uploads` must
+be set to true for this endpoint to function.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.uploads.with_raw_response.generate_presigned_put()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsGeneratePresignedPutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.uploads.with_raw_response.generate_presigned_put()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UploadsGeneratePresignedPutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[UploadsGeneratePresignedPutJsonRequest](discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py) \| [UploadsGeneratePresignedPutJsonRequestDict](discourse_api_documentation/models/uploads_generate_presigned_put_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UploadsGeneratePresignedPutJsonResponse](discourse_api_documentation/models/uploads_generate_presigned_put_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UploadsGeneratePresignedPutJsonResponse](discourse_api_documentation/models/uploads_generate_presigned_put_json_response.py)</code> -- external upload initialized
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+## Users
+
+> Source: [Users](discourse_api_documentation/apis/users.py)
+
+<details>
+<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.activate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.activate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersActivateJsonResponse](discourse_api_documentation/models/admin_users_activate_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.admin_get_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.admin_get_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse](discourse_api_documentation/models/admin_users_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_list_users(*, order: Order3OrStr | None = None, asc: AscOrStr | None = None, page: int | None = None, show_emails: bool | None = None, stats: bool | None = None, email: str | None = None, ip: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[AdminUsersJsonResponse2], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.admin_list_users()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersJsonResponse2]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.admin_list_users()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersJsonResponse2]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
+| <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
+| <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
+| <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersJsonResponse2](discourse_api_documentation/models/admin_users_json_response2.py)&#93;</code> -- users response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def admin_list_users_flag(flag: FlagOrStr, *, order: Order3OrStr | None = None, asc: AscOrStr | None = None, page: int | None = None, show_emails: bool | None = None, stats: bool | None = None, email: str | None = None, ip: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[AdminUsersListJsonResponse], RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.admin_list_users_flag(flag)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.admin_list_users_flag(flag)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>flag</code> | <code>[FlagOrStr](discourse_api_documentation/models/enums/flag.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order3OrStr](discourse_api_documentation/models/enums/order3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>show_emails</code> | <code>bool \| None</code> | Include user email addresses in response. These requests will<br>be logged in the staff action logs.<br>**Default**: <code>None</code> |
+| <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
+| <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
+| <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>list&#91;[AdminUsersListJsonResponse](discourse_api_documentation/models/admin_users_list_json_response.py)&#93;</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.anonymize_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.anonymize_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersAnonymizeJsonResponse](discourse_api_documentation/models/admin_users_anonymize_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def change_password(token: str, *, body: UsersPasswordResetJsonRequest | UsersPasswordResetJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.change_password(token)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.change_password(token)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>token</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UsersPasswordResetJsonRequest](discourse_api_documentation/models/users_password_reset_json_request.py) \| [UsersPasswordResetJsonRequestDict](discourse_api_documentation/models/users_password_reset_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def create_user(api_key: str, api_username: str, *, body: UsersJsonRequest | UsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UsersJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.create_user(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.create_user(api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UsersJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UsersJsonRequest](discourse_api_documentation/models/users_json_request.py) \| [UsersJsonRequestDict](discourse_api_documentation/models/users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UsersJsonResponse](discourse_api_documentation/models/users_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UsersJsonResponse](discourse_api_documentation/models/users_json_response.py)</code> -- user created
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.deactivate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.deactivate_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersDeactivateJsonResponse](discourse_api_documentation/models/admin_users_deactivate_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `DELETE` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.delete_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.delete_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersJsonRequest](discourse_api_documentation/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse_api_documentation/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersJsonResponse1](discourse_api_documentation/models/admin_users_json_response1.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_user(username: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.get_user(username, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.get_user(username, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UJsonResponse](discourse_api_documentation/models/u_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UJsonResponse](discourse_api_documentation/models/u_json_response.py)</code> -- user with primary group response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_user_emails(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UEmailsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.get_user_emails(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UEmailsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.get_user_emails(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UEmailsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UEmailsJsonResponse](discourse_api_documentation/models/u_emails_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UEmailsJsonResponse](discourse_api_documentation/models/u_emails_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_user_external_id(external_id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UByExternalJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.get_user_external_id(external_id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.get_user_external_id(external_id, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>external_id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py)</code> -- user response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def get_user_identiy_provider_external_id(provider: str, external_id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UByExternalJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.get_user_identiy_provider_external_id(
+    provider, external_id, api_key, api_username
+)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.get_user_identiy_provider_external_id(
+    provider, external_id, api_key, api_username
+)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>provider</code> | <code>str</code> | Authentication provider name. Can be found in the provider callback<br>URL: `/auth/{provider}/callback` |
+| <code>external_id</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UByExternalJsonResponse](discourse_api_documentation/models/u_by_external_json_response.py)</code> -- user response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_user_actions(offset: int, username: str, filter: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserActionsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.list_user_actions(offset, username, filter)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserActionsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.list_user_actions(offset, username, filter)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserActionsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>offset</code> | <code>int</code> | Value sent with the request. |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>filter</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserActionsJsonResponse](discourse_api_documentation/models/user_actions_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UserActionsJsonResponse](discourse_api_documentation/models/user_actions_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_user_badges(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserBadgesJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.list_user_badges(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.list_user_badges(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UserBadgesJsonResponse](discourse_api_documentation/models/user_badges_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def list_users_public(period: Period1OrStr, order: Order2OrStr, *, asc: AscOrStr | None = None, page: int | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[DirectoryItemsJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `GET` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.list_users_public(period, order)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type DirectoryItemsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.list_users_public(period, order)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type DirectoryItemsJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>period</code> | <code>[Period1OrStr](discourse_api_documentation/models/enums/period1.py)</code> | Value sent with the request. |
+| <code>order</code> | <code>[Order2OrStr](discourse_api_documentation/models/enums/order2.py)</code> | Value sent with the request. |
+| <code>asc</code> | <code>[AscOrStr](discourse_api_documentation/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[DirectoryItemsJsonResponse](discourse_api_documentation/models/directory_items_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[DirectoryItemsJsonResponse](discourse_api_documentation/models/directory_items_json_response.py)</code> -- directory items response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.log_out_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.log_out_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersLogOutJsonResponse](discourse_api_documentation/models/admin_users_log_out_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def refresh_gravatar(username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserAvatarRefreshGravatarJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.refresh_gravatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.refresh_gravatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UserAvatarRefreshGravatarJsonResponse](discourse_api_documentation/models/user_avatar_refresh_gravatar_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def send_password_reset_email(*, body: SessionForgotPasswordJsonRequest | SessionForgotPasswordJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SessionForgotPasswordJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `POST` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.send_password_reset_email()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SessionForgotPasswordJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.send_password_reset_email()
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type SessionForgotPasswordJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>body</code> | <code>[SessionForgotPasswordJsonRequest](discourse_api_documentation/models/session_forgot_password_json_request.py) \| [SessionForgotPasswordJsonRequestDict](discourse_api_documentation/models/session_forgot_password_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[SessionForgotPasswordJsonResponse](discourse_api_documentation/models/session_forgot_password_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[SessionForgotPasswordJsonResponse](discourse_api_documentation/models/session_forgot_password_json_response.py)</code> -- success response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.silence_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.silence_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse_api_documentation/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse_api_documentation/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersSilenceJsonResponse](discourse_api_documentation/models/admin_users_silence_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.suspend_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.suspend_user(id)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse_api_documentation/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[AdminUsersSuspendJsonResponse](discourse_api_documentation/models/admin_users_suspend_json_response.py)</code> -- response
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_avatar(username: str, *, body: UPreferencesAvatarPickJsonRequest | UPreferencesAvatarPickJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UPreferencesAvatarPickJsonResponse, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.update_avatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UPreferencesAvatarPickJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.update_avatar(username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UPreferencesAvatarPickJsonResponse
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UPreferencesAvatarPickJsonRequest](discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py) \| [UPreferencesAvatarPickJsonRequestDict](discourse_api_documentation/models/u_preferences_avatar_pick_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UPreferencesAvatarPickJsonResponse](discourse_api_documentation/models/u_preferences_avatar_pick_json_response.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UPreferencesAvatarPickJsonResponse](discourse_api_documentation/models/u_preferences_avatar_pick_json_response.py)</code> -- avatar updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_email(username: str, *, body: UPreferencesEmailJsonRequest | UPreferencesEmailJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.update_email(username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.update_email(username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UPreferencesEmailJsonRequest](discourse_api_documentation/models/u_preferences_email_json_request.py) \| [UPreferencesEmailJsonRequestDict](discourse_api_documentation/models/u_preferences_email_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_user(username: str, api_key: str, api_username: str, *, body: UJsonRequest | UJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UJsonResponse1, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.update_user(username, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.update_user(username, api_key, api_username)
+match result:
+    case Success(payload=payload):
+        ...  # TODO: Handle 'payload' of type UJsonResponse1
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>api_key</code> | <code>str</code> | Value sent with the request. |
+| <code>api_username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UJsonRequest](discourse_api_documentation/models/u_json_request.py) \| [UJsonRequestDict](discourse_api_documentation/models/u_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;[UJsonResponse1](discourse_api_documentation/models/u_json_response1.py), [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: `payload` is <code>[UJsonResponse1](discourse_api_documentation/models/u_json_response1.py)</code> -- user updated
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
+<details>
+<summary><code>def update_username(username: str, *, body: UPreferencesUsernameJsonRequest | UPreferencesUsernameJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+
+<dl>
+<dd>
+
+### Description
+
+<dl>
+<dd>
+
+Send a `PUT` request.
+
+</dd>
+</dl>
+
+### Usage
+
+<dl>
+<dd>
+
+**Sync**
+
+```python
+result = client.users.with_raw_response.update_username(username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+**Async**
+
+```python
+result = await async_client.users.with_raw_response.update_username(username)
+match result:
+    case Success():
+        ...  # 2xx, no content
+    case Failure(error=error):
+        ...  # TODO: Handle 'error' of type RawError
+```
+
+</dd>
+</dl>
+
+### Parameters
+
+<dl>
+<dd>
+
+| Name | Type | Description |
+| --- | --- | --- |
+| <code>username</code> | <code>str</code> | Value sent with the request. |
+| <code>body</code> | <code>[UPreferencesUsernameJsonRequest](discourse_api_documentation/models/u_preferences_username_json_request.py) \| [UPreferencesUsernameJsonRequestDict](discourse_api_documentation/models/u_preferences_username_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse_api_documentation/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+
+</dd>
+</dl>
+
+### Response
+
+<dl>
+<dd>
+
+**Returns**: <code>[ApiResult](discourse_api_documentation/core/results.py)&#91;None, [RawError](discourse_api_documentation/core/results.py)&#93;</code>
+
+**On `Success`**: the 2xx carries no content; `payload` is <code>None</code>
+
+**On `Failure`**: `error` is <code>[RawError](discourse_api_documentation/core/results.py)</code>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</details>
+
