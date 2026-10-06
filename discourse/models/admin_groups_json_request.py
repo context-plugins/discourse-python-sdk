@@ -11,4 +11,4 @@ class AdminGroupsJsonRequest(SdkBaseModel):
 
 
 class AdminGroupsJsonRequestDict(TypedDict):
-    group: Group | GroupDict
+    group: GroupDict

@@ -13,4 +13,4 @@ class CategoriesJsonResponse2(SdkBaseModel):
 
 class CategoriesJsonResponse2Dict(TypedDict):
     success: str
-    category: Category2 | Category2Dict
+    category: Category2Dict

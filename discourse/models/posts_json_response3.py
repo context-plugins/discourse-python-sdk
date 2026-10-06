@@ -11,4 +11,4 @@ class PostsJsonResponse3(SdkBaseModel):
 
 
 class PostsJsonResponse3Dict(TypedDict):
-    post: Post2 | Post2Dict
+    post: Post2Dict

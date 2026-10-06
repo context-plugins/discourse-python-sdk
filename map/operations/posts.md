@@ -25,9 +25,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.posts.delete_post
 
 - **Route**: `DELETE /posts/{id}.json`
-- **Signature**: `def delete_post(id: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def delete_post(id_: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `None`
 - **Returns (raw)**: `ApiResult[None, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -40,9 +40,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.posts.get_post
 
 - **Route**: `GET /posts/{id}.json`
-- **Signature**: `def get_post(id: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def get_post(id_: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `PostsJsonResponse2`
 - **Returns (raw)**: `ApiResult[PostsJsonResponse2, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -67,9 +67,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.posts.lock_post
 
 - **Route**: `PUT /posts/{id}/locked.json`
-- **Signature**: `def lock_post(id: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def lock_post(id_: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `PostsLockedJsonResponse`
 - **Returns (raw)**: `ApiResult[PostsLockedJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -99,9 +99,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.posts.post_replies
 
 - **Route**: `GET /posts/{id}/replies.json`
-- **Signature**: `def post_replies(id: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def post_replies(id_: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `list[PostsRepliesJsonResponse]`
 - **Returns (raw)**: `ApiResult[list[PostsRepliesJsonResponse], RawError]`
 - **Error**: `RawError` — **Case B**
@@ -113,9 +113,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.posts.update_post
 
 - **Route**: `PUT /posts/{id}.json`
-- **Signature**: `def update_post(id: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def update_post(id_: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `PostsJsonResponse3`
 - **Returns (raw)**: `ApiResult[PostsJsonResponse3, RawError]`
 - **Error**: `RawError` — **Case B**

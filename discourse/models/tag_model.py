@@ -5,13 +5,13 @@ from typing_extensions import TypedDict
 from ..core import SdkBaseModel
 
 
-class Tag(SdkBaseModel):
+class TagModel(SdkBaseModel):
     id: int
     name: str
     slug: str
 
 
-class TagDict(TypedDict):
+class TagModelDict(TypedDict):
     id: int
     name: str
     slug: str

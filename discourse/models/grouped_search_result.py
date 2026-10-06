@@ -34,7 +34,7 @@ class GroupedSearchResultDict(TypedDict):
     more_full_page_results: str | None
     can_create_topic: bool
     error: str | None
-    extra: NotRequired[Extra | ExtraDict]
+    extra: NotRequired[ExtraDict]
     post_ids: list[Any]
     user_ids: list[Any]
     category_ids: list[Any]

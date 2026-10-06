@@ -110,7 +110,7 @@ class LatestPostDict(TypedDict):
     user_title: str | None
     bookmarked: bool
     raw: str
-    actions_summary: list[ActionsSummary | ActionsSummaryDict]
+    actions_summary: list[ActionsSummaryDict]
     moderator: bool
     admin: bool
     staff: bool

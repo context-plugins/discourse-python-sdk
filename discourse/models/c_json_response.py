@@ -16,6 +16,6 @@ class CJsonResponse(SdkBaseModel):
 
 
 class CJsonResponseDict(TypedDict):
-    users: NotRequired[list[User | UserDict]]
+    users: NotRequired[list[UserDict]]
     primary_groups: NotRequired[list[Any]]
-    topic_list: TopicList | TopicListDict
+    topic_list: TopicListDict

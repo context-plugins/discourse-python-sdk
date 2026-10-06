@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -39,7 +40,8 @@ class Categories:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -48,25 +50,27 @@ class Categories:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.create_category(body=body, request_options=request_options).unwrap()
 
-    def get_category(self, id: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
+    def get_category(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_category(id, request_options=request_options).unwrap()
+        return self._with_raw_response.get_category(id_, request_options=request_options).unwrap()
 
     def get_site(self, *, request_options: RequestOptionsOrDict | None = None) -> SiteJsonResponse:
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -82,7 +86,8 @@ class Categories:
 
         Args:
             include_subcategories: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -94,25 +99,26 @@ class Categories:
         ).unwrap()
 
     def list_category_topics(
-        self, slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> CJsonResponse:
         """Send a ``GET`` request.
 
         Args:
             slug: Value sent with the request.
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_category_topics(slug, id, request_options=request_options).unwrap()
+        return self._with_raw_response.list_category_topics(slug, id_, request_options=request_options).unwrap()
 
     def update_category(
         self,
-        id: int,
+        id_: int,
         *,
         body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -120,16 +126,17 @@ class Categories:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_category(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.update_category(id_, body=body, request_options=request_options).unwrap()
 
     @property
     def with_raw_response(self) -> CategoriesWithRawResponse:
@@ -150,7 +157,8 @@ class AsyncCategories:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -159,25 +167,27 @@ class AsyncCategories:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (await self._with_raw_response.create_category(body=body, request_options=request_options)).unwrap()
 
-    async def get_category(self, id: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
+    async def get_category(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_category(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.get_category(id_, request_options=request_options)).unwrap()
 
     async def get_site(self, *, request_options: RequestOptionsOrDict | None = None) -> SiteJsonResponse:
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -193,7 +203,8 @@ class AsyncCategories:
 
         Args:
             include_subcategories: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -207,25 +218,26 @@ class AsyncCategories:
         ).unwrap()
 
     async def list_category_topics(
-        self, slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> CJsonResponse:
         """Send a ``GET`` request.
 
         Args:
             slug: Value sent with the request.
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_category_topics(slug, id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.list_category_topics(slug, id_, request_options=request_options)).unwrap()
 
     async def update_category(
         self,
-        id: int,
+        id_: int,
         *,
         body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -233,16 +245,17 @@ class AsyncCategories:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_category(id, body=body, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.update_category(id_, body=body, request_options=request_options)).unwrap()
 
     @property
     def with_raw_response(self) -> AsyncCategoriesWithRawResponse:
@@ -260,7 +273,8 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -275,20 +289,21 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_category(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[CShowJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/c/{id}/show.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             decoder=json_decoder[CShowJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -298,7 +313,8 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -317,7 +333,8 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             include_subcategories: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -331,21 +348,22 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def list_category_topics(
-        self, slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[CJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
             slug: Value sent with the request.
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/c/{slug}/{id}.json"),
-            path_params=[param[str]("slug", slug), param[int]("id", id)],
+            path_params=[param[str]("slug", slug), param[int]("id", id_)],
             decoder=json_decoder[CJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -353,7 +371,7 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_category(
         self,
-        id: int,
+        id_: int,
         *,
         body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -361,16 +379,17 @@ class CategoriesWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/categories/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None](body),
             decoder=json_decoder[CategoriesJsonResponse2],
@@ -390,7 +409,8 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -399,27 +419,28 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/categories.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CategoriesJsonRequest | CategoriesJsonRequestDict | None](body),
-            decoder=json_decoder[CategoriesJsonResponse],
+            decoder=async_json_decoder[CategoriesJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_category(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[CShowJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/c/{id}/show.json"),
-            path_params=[param[int]("id", id)],
-            decoder=json_decoder[CShowJsonResponse],
+            path_params=[param[int]("id", id_)],
+            decoder=async_json_decoder[CShowJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -430,14 +451,15 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/site.json"),
-            decoder=json_decoder[SiteJsonResponse],
+            decoder=async_json_decoder[SiteJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -449,7 +471,8 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             include_subcategories: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -457,35 +480,36 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/categories.json"),
             query_params=[param[bool | None]("include_subcategories", include_subcategories)],
-            decoder=json_decoder[CategoriesJsonResponse1],
+            decoder=async_json_decoder[CategoriesJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def list_category_topics(
-        self, slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[CJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
             slug: Value sent with the request.
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/c/{slug}/{id}.json"),
-            path_params=[param[str]("slug", slug), param[int]("id", id)],
-            decoder=json_decoder[CJsonResponse],
+            path_params=[param[str]("slug", slug), param[int]("id", id_)],
+            decoder=async_json_decoder[CJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_category(
         self,
-        id: int,
+        id_: int,
         *,
         body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -493,19 +517,20 @@ class AsyncCategoriesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/categories/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None](body),
-            decoder=json_decoder[CategoriesJsonResponse2],
+            decoder=async_json_decoder[CategoriesJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

@@ -146,13 +146,13 @@ class AdminUsersJsonResponseDict(TypedDict):
     api_key_count: int
     similar_users_count: NotRequired[int]
     single_sign_on_record: str | None
-    approved_by: ApprovedBy | ApprovedByDict | None
+    approved_by: ApprovedByDict | None
     suspended_by: str | None
     silenced_by: str | None
-    penalty_counts: NotRequired[PenaltyCounts | PenaltyCountsDict]
+    penalty_counts: NotRequired[PenaltyCountsDict]
     next_penalty: NotRequired[str]
-    tl3_requirements: NotRequired[Tl3Requirements | Tl3RequirementsDict]
-    groups: list[Group10 | Group10Dict]
+    tl3_requirements: NotRequired[Tl3RequirementsDict]
+    groups: list[Group10Dict]
     external_ids: Any
     include_ip: bool
-    upcoming_changes_stats: NotRequired[list[UpcomingChangesStat | UpcomingChangesStatDict]]
+    upcoming_changes_stats: NotRequired[list[UpcomingChangesStatDict]]

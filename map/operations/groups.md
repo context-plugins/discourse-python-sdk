@@ -9,9 +9,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.groups.add_group_members
 
 - **Route**: `PUT /groups/{id}/members.json`
-- **Signature**: `def add_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def add_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `GroupsMembersJsonResponse1`
 - **Returns (raw)**: `ApiResult[GroupsMembersJsonResponse1, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -40,9 +40,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.groups.delete_group
 
 - **Route**: `DELETE /admin/groups/{id}.json`
-- **Signature**: `def delete_group(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def delete_group(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminGroupsJsonResponse1`
 - **Returns (raw)**: `ApiResult[AdminGroupsJsonResponse1, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -68,9 +68,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.groups.get_group_by_id
 
 - **Route**: `GET /groups/by-id/{id}.json`
-- **Signature**: `def get_group_by_id(id: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def get_group_by_id(id_: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `GroupsByIdJsonResponse`
 - **Returns (raw)**: `ApiResult[GroupsByIdJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -108,9 +108,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.groups.remove_group_members
 
 - **Route**: `DELETE /groups/{id}/members.json`
-- **Signature**: `def remove_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def remove_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `GroupsMembersJsonResponse2`
 - **Returns (raw)**: `ApiResult[GroupsMembersJsonResponse2, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -124,9 +124,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.groups.update_group
 
 - **Route**: `PUT /groups/{id}.json`
-- **Signature**: `def update_group(id: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def update_group(id_: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `GroupsJsonResponse1`
 - **Returns (raw)**: `ApiResult[GroupsJsonResponse1, RawError]`
 - **Error**: `RawError` — **Case B**

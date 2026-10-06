@@ -14,7 +14,7 @@ class NotificationsJsonResponse(SdkBaseModel):
 
 
 class NotificationsJsonResponseDict(TypedDict):
-    notifications: NotRequired[list[Notification | NotificationDict]]
+    notifications: NotRequired[list[NotificationDict]]
     total_rows_notifications: NotRequired[int]
     seen_notification_id: NotRequired[int]
     load_more_notifications: NotRequired[str]

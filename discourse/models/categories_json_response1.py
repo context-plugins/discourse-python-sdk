@@ -11,4 +11,4 @@ class CategoriesJsonResponse1(SdkBaseModel):
 
 
 class CategoriesJsonResponse1Dict(TypedDict):
-    category_list: CategoryList | CategoryListDict
+    category_list: CategoryListDict

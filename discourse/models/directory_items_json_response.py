@@ -13,5 +13,5 @@ class DirectoryItemsJsonResponse(SdkBaseModel):
 
 
 class DirectoryItemsJsonResponseDict(TypedDict):
-    directory_items: list[DirectoryItem | DirectoryItemDict]
-    meta: Meta1 | Meta1Dict
+    directory_items: list[DirectoryItemDict]
+    meta: Meta1Dict

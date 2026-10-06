@@ -38,9 +38,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.tags.get_tag_group
 
 - **Route**: `GET /tag_groups/{id}.json`
-- **Signature**: `def get_tag_group(id: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def get_tag_group(id_: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `TagGroupsJsonResponse2`
 - **Returns (raw)**: `ApiResult[TagGroupsJsonResponse2, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -76,9 +76,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.tags.update_tag_group
 
 - **Route**: `PUT /tag_groups/{id}.json`
-- **Signature**: `def update_tag_group(id: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def update_tag_group(id_: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `TagGroupsJsonResponse3`
 - **Returns (raw)**: `ApiResult[TagGroupsJsonResponse3, RawError]`
 - **Error**: `RawError` — **Case B**

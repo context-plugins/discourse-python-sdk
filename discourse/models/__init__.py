@@ -182,7 +182,6 @@ from .t_status_json_request import TStatusJsonRequest, TStatusJsonRequestDict
 from .t_status_json_response import TStatusJsonResponse, TStatusJsonResponseDict
 from .t_timer_json_request import TTimerJsonRequest, TTimerJsonRequestDict
 from .t_timer_json_response import TTimerJsonResponse, TTimerJsonResponseDict
-from .tag import Tag, TagDict
 from .tag3 import Tag3, Tag3Dict
 from .tag4 import Tag4, Tag4Dict
 from .tag_group import TagGroup, TagGroupDict
@@ -195,6 +194,7 @@ from .tag_groups_json_response1 import TagGroupsJsonResponse1, TagGroupsJsonResp
 from .tag_groups_json_response2 import TagGroupsJsonResponse2, TagGroupsJsonResponse2Dict
 from .tag_groups_json_response3 import TagGroupsJsonResponse3, TagGroupsJsonResponse3Dict
 from .tag_json_response import TagJsonResponse, TagJsonResponseDict
+from .tag_model import TagModel, TagModelDict
 from .tags_json_response import TagsJsonResponse, TagsJsonResponseDict
 from .thumbnail import Thumbnail, ThumbnailDict
 from .tl3_requirements import Tl3Requirements, Tl3RequirementsDict
@@ -654,12 +654,10 @@ __all__ = [
     "TTimerJsonRequestDict",
     "TTimerJsonResponse",
     "TTimerJsonResponseDict",
-    "Tag",
     "Tag3",
     "Tag3Dict",
     "Tag4",
     "Tag4Dict",
-    "TagDict",
     "TagGroup",
     "TagGroup1",
     "TagGroup1Dict",
@@ -680,6 +678,8 @@ __all__ = [
     "TagGroupsJsonResponseDict",
     "TagJsonResponse",
     "TagJsonResponseDict",
+    "TagModel",
+    "TagModelDict",
     "TagsJsonResponse",
     "TagsJsonResponseDict",
     "Thumbnail",

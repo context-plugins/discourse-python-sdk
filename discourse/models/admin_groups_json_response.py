@@ -11,4 +11,4 @@ class AdminGroupsJsonResponse(SdkBaseModel):
 
 
 class AdminGroupsJsonResponseDict(TypedDict):
-    basic_group: BasicGroup | BasicGroupDict
+    basic_group: BasicGroupDict

@@ -8,6 +8,8 @@ from ..core import (
     RawError,
     RequestOptionsOrDict,
     RFC3339DateTime,
+    async_empty_response,
+    async_json_decoder,
     empty_response,
     json_decoder,
     param,
@@ -46,7 +48,8 @@ class DiscourseCalendarEvents:
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             iCalendar file
@@ -90,7 +93,8 @@ class DiscourseCalendarEvents:
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response (detailed)
@@ -141,7 +145,8 @@ class AsyncDiscourseCalendarEvents:
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             iCalendar file
@@ -187,7 +192,8 @@ class AsyncDiscourseCalendarEvents:
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response (detailed)
@@ -237,7 +243,8 @@ class DiscourseCalendarEventsWithRawResponse(BaseRawResponse[RawClient, Server])
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -284,7 +291,8 @@ class DiscourseCalendarEventsWithRawResponse(BaseRawResponse[RawClient, Server])
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -331,7 +339,8 @@ class AsyncDiscourseCalendarEventsWithRawResponse(BaseRawResponse[AsyncRawClient
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -347,7 +356,7 @@ class AsyncDiscourseCalendarEventsWithRawResponse(BaseRawResponse[AsyncRawClient
                 param[OrderOrStr | None]("order", order),
                 param[int | None]("limit", limit),
             ],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -378,7 +387,8 @@ class AsyncDiscourseCalendarEventsWithRawResponse(BaseRawResponse[AsyncRawClient
             after: Return events starting after this date/time (ISO 8601 format)
             order: Sort order for events by start date (default: asc)
             limit: Maximum number of events to return (default: 200)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -396,7 +406,7 @@ class AsyncDiscourseCalendarEventsWithRawResponse(BaseRawResponse[AsyncRawClient
                 param[OrderOrStr | None]("order", order),
                 param[int | None]("limit", limit),
             ],
-            decoder=json_decoder[DiscoursePostEventEventsJsonResponse],
+            decoder=async_json_decoder[DiscoursePostEventEventsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

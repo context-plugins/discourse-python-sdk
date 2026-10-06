@@ -92,11 +92,11 @@ class Post4Dict(TypedDict):
     can_recover: bool
     can_see_hidden_post: NotRequired[bool]
     can_wiki: bool
-    link_counts: list[LinkCount | LinkCountDict]
+    link_counts: list[LinkCountDict]
     read: bool
     user_title: str | None
     bookmarked: bool
-    actions_summary: list[ActionsSummary | ActionsSummaryDict]
+    actions_summary: list[ActionsSummaryDict]
     moderator: bool
     admin: bool
     staff: bool

@@ -27,4 +27,4 @@ class DirectoryItemDict(TypedDict):
     post_count: int
     posts_read: int
     days_visited: int
-    user: User11 | User11Dict
+    user: User11Dict

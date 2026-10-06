@@ -17,5 +17,5 @@ class TopicList(SdkBaseModel):
 class TopicListDict(TypedDict):
     can_create_topic: bool
     per_page: int
-    top_tags: NotRequired[list[TopTag | TopTagDict]]
-    topics: list[Topic1 | Topic1Dict]
+    top_tags: NotRequired[list[TopTagDict]]
+    topics: list[Topic1Dict]

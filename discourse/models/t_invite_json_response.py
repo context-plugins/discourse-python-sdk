@@ -11,4 +11,4 @@ class TInviteJsonResponse(SdkBaseModel):
 
 
 class TInviteJsonResponseDict(TypedDict):
-    user: NotRequired[User1 | User1Dict]
+    user: NotRequired[User1Dict]

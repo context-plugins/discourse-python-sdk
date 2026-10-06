@@ -9,11 +9,11 @@ class InvitesJsonRequest(SdkBaseModel):
     email: Optional[str] = UNSET
     """required for email invites only"""
 
-    skip_email: Optional[bool] = UNSET
+    skip_email: bool = False
     custom_message: Optional[str] = UNSET
     """optional, for email invites"""
 
-    max_redemptions_allowed: Optional[int] = UNSET
+    max_redemptions_allowed: int = 1
     """optional, for link invites"""
 
     topic_id: Optional[int] = UNSET

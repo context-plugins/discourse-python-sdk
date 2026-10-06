@@ -11,4 +11,4 @@ class TInviteGroupJsonResponse(SdkBaseModel):
 
 
 class TInviteGroupJsonResponseDict(TypedDict):
-    group: NotRequired[Group6 | Group6Dict]
+    group: NotRequired[Group6Dict]

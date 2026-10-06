@@ -124,7 +124,7 @@ class User8Dict(TypedDict):
     badge_count: int
     second_factor_backup_enabled: NotRequired[bool]
     user_fields: NotRequired[dict[str, str]]
-    custom_fields: CustomFields | CustomFieldsDict
+    custom_fields: CustomFieldsDict
     time_read: int
     recent_time_read: int
     primary_group_id: int | None
@@ -134,7 +134,7 @@ class User8Dict(TypedDict):
     flair_url: str | None
     flair_bg_color: str | None
     flair_color: str | None
-    featured_topic: FeaturedTopic | FeaturedTopicDict
+    featured_topic: FeaturedTopicDict
     staged: bool
     can_edit: bool
     can_edit_username: bool
@@ -178,11 +178,11 @@ class User8Dict(TypedDict):
     sidebar_category_ids: NotRequired[list[Any]]
     display_sidebar_tags: NotRequired[bool]
     can_pick_theme_with_custom_homepage: NotRequired[bool]
-    user_auth_tokens: list[UserAuthToken | UserAuthTokenDict]
-    user_notification_schedule: UserNotificationSchedule | UserNotificationScheduleDict
+    user_auth_tokens: list[UserAuthTokenDict]
+    user_notification_schedule: UserNotificationScheduleDict
     use_logo_small_as_avatar: bool
     featured_user_badge_ids: list[Any]
     invited_by: str | None
-    groups: list[Group7 | Group7Dict]
-    group_users: list[GroupUser | GroupUserDict]
-    user_option: UserOption | UserOptionDict
+    groups: list[Group7Dict]
+    group_users: list[GroupUserDict]
+    user_option: UserOptionDict

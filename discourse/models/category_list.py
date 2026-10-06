@@ -15,4 +15,4 @@ class CategoryList(SdkBaseModel):
 class CategoryListDict(TypedDict):
     can_create_category: bool
     can_create_topic: bool
-    categories: list[Category1 | Category1Dict]
+    categories: list[Category1Dict]

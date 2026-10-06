@@ -9,7 +9,7 @@
 > Source: [Admin](discourse/apis/admin.py)
 
 <details>
-<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersActivateJsonResponse</code></summary>
+<summary><code>def activate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersActivateJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -33,7 +33,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.admin.activate_user(id)
+    response = client.admin.activate_user(1)
     # TODO: Handle 'response' of type AdminUsersActivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -43,7 +43,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.activate_user(id)
+    response = await async_client.admin.activate_user(1)
     # TODO: Handle 'response' of type AdminUsersActivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -59,8 +59,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -83,7 +83,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse</code></summary>
+<summary><code>def admin_get_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -107,7 +107,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.admin.admin_get_user(id)
+    response = client.admin.admin_get_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -117,7 +117,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.admin_get_user(id)
+    response = await async_client.admin.admin_get_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -133,8 +133,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -214,7 +214,7 @@ except ApiError as e:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -261,7 +261,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.admin.admin_list_users_flag(flag)
+    response = client.admin.admin_list_users_flag(Flag.ACTIVE)
     # TODO: Handle 'response' of type list[AdminUsersListJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -271,7 +271,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.admin_list_users_flag(flag)
+    response = await async_client.admin.admin_list_users_flag(Flag.ACTIVE)
     # TODO: Handle 'response' of type list[AdminUsersListJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -295,7 +295,7 @@ except ApiError as e:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -318,7 +318,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersAnonymizeJsonResponse</code></summary>
+<summary><code>def anonymize_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersAnonymizeJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -342,7 +342,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.admin.anonymize_user(id)
+    response = client.admin.anonymize_user(1)
     # TODO: Handle 'response' of type AdminUsersAnonymizeJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -352,7 +352,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.anonymize_user(id)
+    response = await async_client.admin.anonymize_user(1)
     # TODO: Handle 'response' of type AdminUsersAnonymizeJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -368,8 +368,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -392,7 +392,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersDeactivateJsonResponse</code></summary>
+<summary><code>def deactivate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersDeactivateJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -416,7 +416,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.admin.deactivate_user(id)
+    response = client.admin.deactivate_user(1)
     # TODO: Handle 'response' of type AdminUsersDeactivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -426,7 +426,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.deactivate_user(id)
+    response = await async_client.admin.deactivate_user(1)
     # TODO: Handle 'response' of type AdminUsersDeactivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -442,8 +442,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -466,7 +466,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse1</code></summary>
+<summary><code>def delete_user(id_: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -490,7 +490,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    response = client.admin.delete_user(id)
+    response = client.admin.delete_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -500,7 +500,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.delete_user(id)
+    response = await async_client.admin.delete_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -516,9 +516,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -541,7 +541,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersLogOutJsonResponse</code></summary>
+<summary><code>def log_out_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersLogOutJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -565,7 +565,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.admin.log_out_user(id)
+    response = client.admin.log_out_user(1)
     # TODO: Handle 'response' of type AdminUsersLogOutJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -575,7 +575,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.log_out_user(id)
+    response = await async_client.admin.log_out_user(1)
     # TODO: Handle 'response' of type AdminUsersLogOutJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -591,8 +591,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -639,7 +639,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.admin.refresh_gravatar(username)
+    response = client.admin.refresh_gravatar("some example string")
     # TODO: Handle 'response' of type UserAvatarRefreshGravatarJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -649,7 +649,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.refresh_gravatar(username)
+    response = await async_client.admin.refresh_gravatar("some example string")
     # TODO: Handle 'response' of type UserAvatarRefreshGravatarJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -666,7 +666,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -689,7 +689,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSilenceJsonResponse</code></summary>
+<summary><code>def silence_user(id_: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSilenceJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -713,7 +713,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.admin.silence_user(id)
+    response = client.admin.silence_user(1)
     # TODO: Handle 'response' of type AdminUsersSilenceJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -723,7 +723,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.silence_user(id)
+    response = await async_client.admin.silence_user(1)
     # TODO: Handle 'response' of type AdminUsersSilenceJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -739,9 +739,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -764,7 +764,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSuspendJsonResponse</code></summary>
+<summary><code>def suspend_user(id_: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSuspendJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -788,7 +788,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.admin.suspend_user(id)
+    response = client.admin.suspend_user(1)
     # TODO: Handle 'response' of type AdminUsersSuspendJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -798,7 +798,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.admin.suspend_user(id)
+    response = await async_client.admin.suspend_user(1)
     # TODO: Handle 'response' of type AdminUsersSuspendJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -814,9 +814,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -894,7 +894,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminBackupsJsonRequest](discourse/models/admin_backups_json_request.py) \| [AdminBackupsJsonRequestDict](discourse/models/admin_backups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -941,7 +941,7 @@ Send a `GET` request.
 
 ```python
 try:
-    client.backups.download_backup(filename, token)
+    client.backups.download_backup("some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -950,7 +950,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.backups.download_backup(filename, token)
+    await async_client.backups.download_backup("some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -967,7 +967,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1040,7 +1040,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1087,7 +1087,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    client.backups.send_download_backup_email(filename)
+    client.backups.send_download_backup_email("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -1096,7 +1096,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.backups.send_download_backup_email(filename)
+    await async_client.backups.send_download_backup_email("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -1112,7 +1112,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1189,7 +1189,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1263,7 +1263,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminBadgesJsonRequest](discourse/models/admin_badges_json_request.py) \| [AdminBadgesJsonRequestDict](discourse/models/admin_badges_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1286,7 +1286,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def delete_badge(id: int, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
+<summary><code>def delete_badge(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
 
 <dl>
 <dd>
@@ -1310,7 +1310,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    client.badges.delete_badge(id)
+    client.badges.delete_badge(1)
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -1319,7 +1319,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.badges.delete_badge(id)
+    await async_client.badges.delete_badge(1)
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -1334,8 +1334,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1382,7 +1382,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.badges.list_user_badges(username)
+    response = client.badges.list_user_badges("some example string")
     # TODO: Handle 'response' of type UserBadgesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1392,7 +1392,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.badges.list_user_badges(username)
+    response = await async_client.badges.list_user_badges("some example string")
     # TODO: Handle 'response' of type UserBadgesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1409,7 +1409,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1432,7 +1432,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_badge(id: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminBadgesJsonResponse2</code></summary>
+<summary><code>def update_badge(id_: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminBadgesJsonResponse2</code></summary>
 
 <dl>
 <dd>
@@ -1456,7 +1456,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.badges.update_badge(id)
+    response = client.badges.update_badge(1)
     # TODO: Handle 'response' of type AdminBadgesJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1466,7 +1466,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.badges.update_badge(id)
+    response = await async_client.badges.update_badge(1)
     # TODO: Handle 'response' of type AdminBadgesJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1482,9 +1482,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminBadgesJsonRequest1](discourse/models/admin_badges_json_request1.py) \| [AdminBadgesJsonRequest1Dict](discourse/models/admin_badges_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1562,7 +1562,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[CategoriesJsonRequest](discourse/models/categories_json_request.py) \| [CategoriesJsonRequestDict](discourse/models/categories_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1585,7 +1585,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_category(id: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse</code></summary>
+<summary><code>def get_category(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -1609,7 +1609,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.categories.get_category(id)
+    response = client.categories.get_category(1)
     # TODO: Handle 'response' of type CShowJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1619,7 +1619,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.categories.get_category(id)
+    response = await async_client.categories.get_category(1)
     # TODO: Handle 'response' of type CShowJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1635,8 +1635,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1709,7 +1709,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1783,7 +1783,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>include_subcategories</code> | <code>bool \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1806,7 +1806,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def list_category_topics(slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None) -> CJsonResponse</code></summary>
+<summary><code>def list_category_topics(slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -1830,7 +1830,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.categories.list_category_topics(slug, id)
+    response = client.categories.list_category_topics("some example string", 1)
     # TODO: Handle 'response' of type CJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1840,7 +1840,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.categories.list_category_topics(slug, id)
+    response = await async_client.categories.list_category_topics("some example string", 1)
     # TODO: Handle 'response' of type CJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1857,8 +1857,8 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>slug</code> | <code>str</code> | Value sent with the request. |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1881,7 +1881,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_category(id: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> CategoriesJsonResponse2</code></summary>
+<summary><code>def update_category(id_: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> CategoriesJsonResponse2</code></summary>
 
 <dl>
 <dd>
@@ -1905,7 +1905,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.categories.update_category(id)
+    response = client.categories.update_category(1)
     # TODO: Handle 'response' of type CategoriesJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1915,7 +1915,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.categories.update_category(id)
+    response = await async_client.categories.update_category(1)
     # TODO: Handle 'response' of type CategoriesJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -1931,9 +1931,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[CategoriesJsonRequest1](discourse/models/categories_json_request1.py) \| [CategoriesJsonRequest1Dict](discourse/models/categories_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2015,7 +2015,7 @@ except ApiError as e:
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2097,7 +2097,7 @@ except ApiError as e:
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2124,7 +2124,7 @@ except ApiError as e:
 > Source: [Groups](discourse/apis/groups.py)
 
 <details>
-<summary><code>def add_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsMembersJsonResponse1</code></summary>
+<summary><code>def add_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsMembersJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -2148,7 +2148,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.groups.add_group_members(id)
+    response = client.groups.add_group_members(1)
     # TODO: Handle 'response' of type GroupsMembersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2158,7 +2158,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.add_group_members(id)
+    response = await async_client.groups.add_group_members(1)
     # TODO: Handle 'response' of type GroupsMembersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2174,9 +2174,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2250,7 +2250,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminGroupsJsonRequest](discourse/models/admin_groups_json_request.py) \| [AdminGroupsJsonRequestDict](discourse/models/admin_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2273,7 +2273,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def delete_group(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminGroupsJsonResponse1</code></summary>
+<summary><code>def delete_group(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminGroupsJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -2297,7 +2297,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    response = client.groups.delete_group(id)
+    response = client.groups.delete_group(1)
     # TODO: Handle 'response' of type AdminGroupsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2307,7 +2307,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.delete_group(id)
+    response = await async_client.groups.delete_group(1)
     # TODO: Handle 'response' of type AdminGroupsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2323,8 +2323,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2371,7 +2371,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.groups.get_group(name)
+    response = client.groups.get_group("name")
     # TODO: Handle 'response' of type GroupsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2381,7 +2381,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.get_group(name)
+    response = await async_client.groups.get_group("name")
     # TODO: Handle 'response' of type GroupsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2398,7 +2398,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2421,7 +2421,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_group_by_id(id: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsByIdJsonResponse</code></summary>
+<summary><code>def get_group_by_id(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsByIdJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -2445,7 +2445,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.groups.get_group_by_id(id)
+    response = client.groups.get_group_by_id("name")
     # TODO: Handle 'response' of type GroupsByIdJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2455,7 +2455,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.get_group_by_id(id)
+    response = await async_client.groups.get_group_by_id("name")
     # TODO: Handle 'response' of type GroupsByIdJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2471,8 +2471,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Use group name instead of id |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2519,7 +2519,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.groups.list_group_members(name)
+    response = client.groups.list_group_members("name")
     # TODO: Handle 'response' of type GroupsMembersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2529,7 +2529,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.list_group_members(name)
+    response = await async_client.groups.list_group_members("name")
     # TODO: Handle 'response' of type GroupsMembersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2546,7 +2546,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2619,7 +2619,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2642,7 +2642,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def remove_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsMembersJsonResponse2</code></summary>
+<summary><code>def remove_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsMembersJsonResponse2</code></summary>
 
 <dl>
 <dd>
@@ -2666,7 +2666,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    response = client.groups.remove_group_members(id)
+    response = client.groups.remove_group_members(1)
     # TODO: Handle 'response' of type GroupsMembersJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2676,7 +2676,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.remove_group_members(id)
+    response = await async_client.groups.remove_group_members(1)
     # TODO: Handle 'response' of type GroupsMembersJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2692,9 +2692,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2717,7 +2717,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_group(id: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse1</code></summary>
+<summary><code>def update_group(id_: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -2741,7 +2741,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.groups.update_group(id)
+    response = client.groups.update_group(1)
     # TODO: Handle 'response' of type GroupsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2751,7 +2751,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.groups.update_group(id)
+    response = await async_client.groups.update_group(1)
     # TODO: Handle 'response' of type GroupsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2767,9 +2767,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsJsonRequest](discourse/models/groups_json_request.py) \| [GroupsJsonRequestDict](discourse/models/groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2820,7 +2820,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.invites.create_invite(api_key, api_username)
+    response = client.invites.create_invite("some example string", "some example string")
     # TODO: Handle 'response' of type InvitesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2830,7 +2830,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.invites.create_invite(api_key, api_username)
+    response = await async_client.invites.create_invite("some example string", "some example string")
     # TODO: Handle 'response' of type InvitesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2849,7 +2849,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[InvitesJsonRequest](discourse/models/invites_json_request.py) \| [InvitesJsonRequestDict](discourse/models/invites_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2896,7 +2896,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.invites.create_multiple_invites(api_key, api_username)
+    response = client.invites.create_multiple_invites("some example string", "some example string")
     # TODO: Handle 'response' of type InvitesCreateMultipleJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2906,7 +2906,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.invites.create_multiple_invites(api_key, api_username)
+    response = await async_client.invites.create_multiple_invites("some example string", "some example string")
     # TODO: Handle 'response' of type InvitesCreateMultipleJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2925,7 +2925,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[InvitesCreateMultipleJsonRequest](discourse/models/invites_create_multiple_json_request.py) \| [InvitesCreateMultipleJsonRequestDict](discourse/models/invites_create_multiple_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2948,7 +2948,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteGroupJsonResponse</code></summary>
+<summary><code>def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteGroupJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -2972,7 +2972,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.invites.invite_group_to_topic(id, api_key, api_username)
+    response = client.invites.invite_group_to_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TInviteGroupJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2982,7 +2982,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.invites.invite_group_to_topic(id, api_key, api_username)
+    response = await async_client.invites.invite_group_to_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TInviteGroupJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -2998,11 +3000,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3025,7 +3027,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteJsonResponse</code></summary>
+<summary><code>def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -3049,7 +3051,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.invites.invite_to_topic(id, api_key, api_username)
+    response = client.invites.invite_to_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TInviteJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3059,7 +3061,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.invites.invite_to_topic(id, api_key, api_username)
+    response = await async_client.invites.invite_to_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TInviteJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3075,11 +3079,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3156,7 +3160,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3230,7 +3234,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[NotificationsMarkReadJsonRequest](discourse/models/notifications_mark_read_json_request.py) \| [NotificationsMarkReadJsonRequestDict](discourse/models/notifications_mark_read_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3281,7 +3285,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.posts.create_topic_post_pm(api_key, api_username)
+    response = client.posts.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3291,7 +3295,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.create_topic_post_pm(api_key, api_username)
+    response = await async_client.posts.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3310,7 +3314,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3333,7 +3337,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def delete_post(id: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
+<summary><code>def delete_post(id_: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
 
 <dl>
 <dd>
@@ -3357,7 +3361,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    client.posts.delete_post(id, api_key, api_username)
+    client.posts.delete_post(1, "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -3366,7 +3370,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.posts.delete_post(id, api_key, api_username)
+    await async_client.posts.delete_post(1, "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -3381,11 +3385,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest2](discourse/models/posts_json_request2.py) \| [PostsJsonRequest2Dict](discourse/models/posts_json_request2.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3408,7 +3412,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_post(id: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2</code></summary>
+<summary><code>def get_post(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2</code></summary>
 
 <dl>
 <dd>
@@ -3436,7 +3440,7 @@ refer to various different flag types.
 
 ```python
 try:
-    response = client.posts.get_post(id)
+    response = client.posts.get_post("some example string")
     # TODO: Handle 'response' of type PostsJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3446,7 +3450,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.get_post(id)
+    response = await async_client.posts.get_post("some example string")
     # TODO: Handle 'response' of type PostsJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3462,8 +3466,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3537,7 +3541,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>before</code> | <code>int \| None</code> | Load posts with an id lower than this value. Useful for pagination.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3560,7 +3564,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def lock_post(id: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> PostsLockedJsonResponse</code></summary>
+<summary><code>def lock_post(id_: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> PostsLockedJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -3584,7 +3588,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.posts.lock_post(id, api_key, api_username)
+    response = client.posts.lock_post("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type PostsLockedJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3594,7 +3598,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.lock_post(id, api_key, api_username)
+    response = await async_client.posts.lock_post("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type PostsLockedJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3610,11 +3614,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsLockedJsonRequest](discourse/models/posts_locked_json_request.py) \| [PostsLockedJsonRequestDict](discourse/models/posts_locked_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3661,7 +3665,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.posts.perform_post_action(api_key, api_username)
+    response = client.posts.perform_post_action("some example string", "some example string")
     # TODO: Handle 'response' of type PostActionsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3671,7 +3675,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.perform_post_action(api_key, api_username)
+    response = await async_client.posts.perform_post_action("some example string", "some example string")
     # TODO: Handle 'response' of type PostActionsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3690,7 +3694,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostActionsJsonRequest](discourse/models/post_actions_json_request.py) \| [PostActionsJsonRequestDict](discourse/models/post_actions_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3713,7 +3717,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def post_replies(id: str, *, request_options: RequestOptionsOrDict | None = None) -> list[PostsRepliesJsonResponse]</code></summary>
+<summary><code>def post_replies(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> list[PostsRepliesJsonResponse]</code></summary>
 
 <dl>
 <dd>
@@ -3737,7 +3741,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.posts.post_replies(id)
+    response = client.posts.post_replies("some example string")
     # TODO: Handle 'response' of type list[PostsRepliesJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3747,7 +3751,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.post_replies(id)
+    response = await async_client.posts.post_replies("some example string")
     # TODO: Handle 'response' of type list[PostsRepliesJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3763,8 +3767,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3787,7 +3791,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_post(id: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse3</code></summary>
+<summary><code>def update_post(id_: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse3</code></summary>
 
 <dl>
 <dd>
@@ -3811,7 +3815,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.posts.update_post(id, api_key, api_username)
+    response = client.posts.update_post("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse3
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3821,7 +3825,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.posts.update_post(id, api_key, api_username)
+    response = await async_client.posts.update_post("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse3
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3837,11 +3841,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest1](discourse/models/posts_json_request1.py) \| [PostsJsonRequest1Dict](discourse/models/posts_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3892,7 +3896,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.private_messages.create_topic_post_pm(api_key, api_username)
+    response = client.private_messages.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3902,7 +3906,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.private_messages.create_topic_post_pm(api_key, api_username)
+    response = await async_client.private_messages.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3921,7 +3925,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3968,7 +3972,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.private_messages.get_user_sent_private_messages(username)
+    response = client.private_messages.get_user_sent_private_messages("some example string")
     # TODO: Handle 'response' of type TopicsPrivateMessagesSentJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3978,7 +3982,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.private_messages.get_user_sent_private_messages(username)
+    response = await async_client.private_messages.get_user_sent_private_messages("some example string")
     # TODO: Handle 'response' of type TopicsPrivateMessagesSentJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -3995,7 +3999,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4042,7 +4046,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.private_messages.list_user_private_messages(username)
+    response = client.private_messages.list_user_private_messages("some example string")
     # TODO: Handle 'response' of type TopicsPrivateMessagesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4052,7 +4056,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.private_messages.list_user_private_messages(username)
+    response = await async_client.private_messages.list_user_private_messages("some example string")
     # TODO: Handle 'response' of type TopicsPrivateMessagesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4069,7 +4073,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4120,7 +4124,9 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.search.search()
+    response = client.search.search(
+        q="api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic", page=1
+    )
     # TODO: Handle 'response' of type SearchJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4130,7 +4136,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.search.search()
+    response = await async_client.search.search(
+        q="api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic", page=1
+    )
     # TODO: Handle 'response' of type SearchJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4148,7 +4156,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>q</code> | <code>str \| None</code> | The query string needs to be url encoded and is made up of the following options:<br>- Search term. This is just a string. Usually it would be the first item in the query.<br>- `@<username>`: Use the `@` followed by the username to specify posts by this user.<br>- `#<category>`: Use the `#` followed by the category slug to search within this category.<br>- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.<br>- `before:`: `yyyy-mm-dd`<br>- `after:`: `yyyy-mm-dd`<br>- `order:`: `latest`, `likes`, `views`, `latest_topic`<br>- `assigned:`: username (without `@`)<br>- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`<br>- `with:`: `images`<br>- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`<br>- `group:`: group_name or group_id<br>- `group_messages:`: group_name or group_id<br>- `min_posts:`: 1<br>- `max_posts:`: 10<br>- `min_views:`: 1<br>- `max_views:`: 10<br><br>If you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:<br><br>``<br>curl -i -sS -X GET -G "http://localhost:3000/search.json" \<br>--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'<br>``<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4225,7 +4233,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4298,7 +4306,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4376,7 +4384,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[TagGroupsJsonRequest](discourse/models/tag_groups_json_request.py) \| [TagGroupsJsonRequestDict](discourse/models/tag_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4423,7 +4431,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.tags.get_tag(name)
+    response = client.tags.get_tag("some example string")
     # TODO: Handle 'response' of type TagJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4433,7 +4441,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.tags.get_tag(name)
+    response = await async_client.tags.get_tag("some example string")
     # TODO: Handle 'response' of type TagJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4450,7 +4458,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4473,7 +4481,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_tag_group(id: str, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse2</code></summary>
+<summary><code>def get_tag_group(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse2</code></summary>
 
 <dl>
 <dd>
@@ -4497,7 +4505,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.tags.get_tag_group(id)
+    response = client.tags.get_tag_group("some example string")
     # TODO: Handle 'response' of type TagGroupsJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4507,7 +4515,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.tags.get_tag_group(id)
+    response = await async_client.tags.get_tag_group("some example string")
     # TODO: Handle 'response' of type TagGroupsJsonResponse2
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4523,8 +4531,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4597,7 +4605,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4670,7 +4678,7 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4693,7 +4701,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_tag_group(id: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse3</code></summary>
+<summary><code>def update_tag_group(id_: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse3</code></summary>
 
 <dl>
 <dd>
@@ -4717,7 +4725,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.tags.update_tag_group(id)
+    response = client.tags.update_tag_group("some example string")
     # TODO: Handle 'response' of type TagGroupsJsonResponse3
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4727,7 +4735,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.tags.update_tag_group(id)
+    response = await async_client.tags.update_tag_group("some example string")
     # TODO: Handle 'response' of type TagGroupsJsonResponse3
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4743,9 +4751,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TagGroupsJsonRequest1](discourse/models/tag_groups_json_request1.py) \| [TagGroupsJsonRequest1Dict](discourse/models/tag_groups_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4772,7 +4780,7 @@ except ApiError as e:
 > Source: [Topics](discourse/apis/topics.py)
 
 <details>
-<summary><code>def bookmark_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
+<summary><code>def bookmark_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
 
 <dl>
 <dd>
@@ -4796,7 +4804,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    client.topics.bookmark_topic(id, api_key, api_username)
+    client.topics.bookmark_topic("some example string", "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -4805,7 +4813,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.topics.bookmark_topic(id, api_key, api_username)
+    await async_client.topics.bookmark_topic("some example string", "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -4820,10 +4828,10 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4870,7 +4878,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.topics.create_topic_post_pm(api_key, api_username)
+    response = client.topics.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4880,7 +4888,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.create_topic_post_pm(api_key, api_username)
+    response = await async_client.topics.create_topic_post_pm("some example string", "some example string")
     # TODO: Handle 'response' of type PostsJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4899,7 +4907,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4922,7 +4930,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def create_topic_timer(id: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TTimerJsonResponse</code></summary>
+<summary><code>def create_topic_timer(id_: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TTimerJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -4946,7 +4954,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.topics.create_topic_timer(id, api_key, api_username)
+    response = client.topics.create_topic_timer("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TTimerJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4956,7 +4964,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.create_topic_timer(id, api_key, api_username)
+    response = await async_client.topics.create_topic_timer(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TTimerJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -4972,11 +4982,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TTimerJsonRequest](discourse/models/t_timer_json_request.py) \| [TTimerJsonRequestDict](discourse/models/t_timer_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4999,7 +5009,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_specific_posts_from_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> TPostsJsonResponse</code></summary>
+<summary><code>def get_specific_posts_from_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> TPostsJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5023,7 +5033,9 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.topics.get_specific_posts_from_topic(id, api_key, api_username)
+    response = client.topics.get_specific_posts_from_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TPostsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5033,7 +5045,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.get_specific_posts_from_topic(id, api_key, api_username)
+    response = await async_client.topics.get_specific_posts_from_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TPostsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5049,10 +5063,10 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5075,7 +5089,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def get_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> TJsonResponse</code></summary>
+<summary><code>def get_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> TJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5099,7 +5113,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.topics.get_topic(id, api_key, api_username)
+    response = client.topics.get_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5109,7 +5123,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.get_topic(id, api_key, api_username)
+    response = await async_client.topics.get_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5125,10 +5139,10 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5175,7 +5189,7 @@ Send a `GET` request.
 
 ```python
 try:
-    client.topics.get_topic_by_external_id(external_id)
+    client.topics.get_topic_by_external_id("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -5184,7 +5198,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.topics.get_topic_by_external_id(external_id)
+    await async_client.topics.get_topic_by_external_id("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -5200,7 +5214,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5223,7 +5237,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteGroupJsonResponse</code></summary>
+<summary><code>def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteGroupJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5247,7 +5261,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.topics.invite_group_to_topic(id, api_key, api_username)
+    response = client.topics.invite_group_to_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TInviteGroupJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5257,7 +5271,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.invite_group_to_topic(id, api_key, api_username)
+    response = await async_client.topics.invite_group_to_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TInviteGroupJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5273,11 +5289,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5300,7 +5316,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteJsonResponse</code></summary>
+<summary><code>def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TInviteJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5324,7 +5340,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.topics.invite_to_topic(id, api_key, api_username)
+    response = client.topics.invite_to_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TInviteJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5334,7 +5350,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.invite_to_topic(id, api_key, api_username)
+    response = await async_client.topics.invite_to_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TInviteJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5350,11 +5368,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5401,7 +5419,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.topics.list_latest_topics(api_key, api_username)
+    response = client.topics.list_latest_topics("some example string", "some example string")
     # TODO: Handle 'response' of type LatestJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5411,7 +5429,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.list_latest_topics(api_key, api_username)
+    response = await async_client.topics.list_latest_topics("some example string", "some example string")
     # TODO: Handle 'response' of type LatestJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5432,7 +5450,7 @@ except ApiError as e:
 | <code>order</code> | <code>str \| None</code> | Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,<br>`likes`, `op_likes`, `posters`<br>**Default**: <code>None</code> |
 | <code>ascending</code> | <code>str \| None</code> | Defaults to `desc`, add `ascending=true` to sort asc<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5479,7 +5497,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.topics.list_top_topics(api_key, api_username)
+    response = client.topics.list_top_topics("some example string", "some example string")
     # TODO: Handle 'response' of type TopJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5489,7 +5507,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.list_top_topics(api_key, api_username)
+    response = await async_client.topics.list_top_topics("some example string", "some example string")
     # TODO: Handle 'response' of type TopJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5509,7 +5527,7 @@ except ApiError as e:
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>period</code> | <code>str \| None</code> | Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5532,7 +5550,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def remove_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
+<summary><code>def remove_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> None</code></summary>
 
 <dl>
 <dd>
@@ -5556,7 +5574,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    client.topics.remove_topic(id, api_key, api_username)
+    client.topics.remove_topic("some example string", "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -5565,7 +5583,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.topics.remove_topic(id, api_key, api_username)
+    await async_client.topics.remove_topic("some example string", "some example string", "some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -5580,10 +5598,10 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5606,7 +5624,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def set_notification_level(id: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TNotificationsJsonResponse</code></summary>
+<summary><code>def set_notification_level(id_: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TNotificationsJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5630,7 +5648,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.topics.set_notification_level(id, api_key, api_username)
+    response = client.topics.set_notification_level("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TNotificationsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5640,7 +5658,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.set_notification_level(id, api_key, api_username)
+    response = await async_client.topics.set_notification_level(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TNotificationsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5656,11 +5676,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TNotificationsJsonRequest](discourse/models/t_notifications_json_request.py) \| [TNotificationsJsonRequestDict](discourse/models/t_notifications_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5683,7 +5703,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_topic(id: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TJsonResponse1</code></summary>
+<summary><code>def update_topic(id_: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -5707,7 +5727,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.topics.update_topic(id, api_key, api_username)
+    response = client.topics.update_topic("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5717,7 +5737,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.update_topic(id, api_key, api_username)
+    response = await async_client.topics.update_topic(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5733,11 +5755,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TJsonRequest](discourse/models/t_json_request.py) \| [TJsonRequestDict](discourse/models/t_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5760,7 +5782,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_topic_status(id: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TStatusJsonResponse</code></summary>
+<summary><code>def update_topic_status(id_: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TStatusJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5784,7 +5806,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.topics.update_topic_status(id, api_key, api_username)
+    response = client.topics.update_topic_status("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TStatusJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5794,7 +5816,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.update_topic_status(id, api_key, api_username)
+    response = await async_client.topics.update_topic_status(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TStatusJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5810,11 +5834,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TStatusJsonRequest](discourse/models/t_status_json_request.py) \| [TStatusJsonRequestDict](discourse/models/t_status_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5837,7 +5861,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def update_topic_timestamp(id: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TChangeTimestampJsonResponse</code></summary>
+<summary><code>def update_topic_timestamp(id_: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> TChangeTimestampJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -5861,7 +5885,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.topics.update_topic_timestamp(id, api_key, api_username)
+    response = client.topics.update_topic_timestamp("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type TChangeTimestampJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5871,7 +5895,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.topics.update_topic_timestamp(id, api_key, api_username)
+    response = await async_client.topics.update_topic_timestamp(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type TChangeTimestampJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -5887,11 +5913,11 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TChangeTimestampJsonRequest](discourse/models/t_change_timestamp_json_request.py) \| [TChangeTimestampJsonRequestDict](discourse/models/t_change_timestamp_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5979,7 +6005,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsAbortMultipartJsonRequest](discourse/models/uploads_abort_multipart_json_request.py) \| [UploadsAbortMultipartJsonRequestDict](discourse/models/uploads_abort_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6072,7 +6098,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsBatchPresignMultipartPartsJsonRequest](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| [UploadsBatchPresignMultipartPartsJsonRequestDict](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6161,7 +6187,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCompleteExternalUploadJsonRequest](discourse/models/uploads_complete_external_upload_json_request.py) \| [UploadsCompleteExternalUploadJsonRequestDict](discourse/models/uploads_complete_external_upload_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6247,7 +6273,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCompleteMultipartJsonRequest](discourse/models/uploads_complete_multipart_json_request.py) \| [UploadsCompleteMultipartJsonRequestDict](discourse/models/uploads_complete_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6330,7 +6356,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCreateMultipartJsonRequest](discourse/models/uploads_create_multipart_json_request.py) \| [UploadsCreateMultipartJsonRequestDict](discourse/models/uploads_create_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6353,7 +6379,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: bytes | None = None, request_options: RequestOptionsOrDict | None = None) -> UploadsJsonResponse</code></summary>
+<summary><code>def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: FileInput | None = None, request_options: RequestOptionsOrDict | None = None) -> UploadsJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -6377,7 +6403,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.uploads.create_upload(upload_type)
+    response = client.uploads.create_upload(UploadType.AVATAR)
     # TODO: Handle 'response' of type UploadsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6387,7 +6413,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.uploads.create_upload(upload_type)
+    response = await async_client.uploads.create_upload(UploadType.AVATAR)
     # TODO: Handle 'response' of type UploadsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6406,8 +6432,8 @@ except ApiError as e:
 | <code>upload_type</code> | <code>[UploadTypeOrStr](discourse/models/enums/upload_type.py)</code> | Value sent with the request. |
 | <code>user_id</code> | <code>int \| None</code> | required if uploading an avatar<br>**Default**: <code>None</code> |
 | <code>synchronous</code> | <code>bool \| None</code> | Use this flag to return an id and url<br>**Default**: <code>None</code> |
-| <code>file</code> | <code>bytes \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>file</code> | <code>FileInput \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6499,7 +6525,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsGeneratePresignedPutJsonRequest](discourse/models/uploads_generate_presigned_put_json_request.py) \| [UploadsGeneratePresignedPutJsonRequestDict](discourse/models/uploads_generate_presigned_put_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6526,7 +6552,7 @@ except ApiError as e:
 > Source: [Users](discourse/apis/users.py)
 
 <details>
-<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersActivateJsonResponse</code></summary>
+<summary><code>def activate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersActivateJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -6550,7 +6576,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.activate_user(id)
+    response = client.users.activate_user(1)
     # TODO: Handle 'response' of type AdminUsersActivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6560,7 +6586,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.activate_user(id)
+    response = await async_client.users.activate_user(1)
     # TODO: Handle 'response' of type AdminUsersActivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6576,8 +6602,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6600,7 +6626,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse</code></summary>
+<summary><code>def admin_get_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -6624,7 +6650,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.admin_get_user(id)
+    response = client.users.admin_get_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6634,7 +6660,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.admin_get_user(id)
+    response = await async_client.users.admin_get_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6650,8 +6676,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6731,7 +6757,7 @@ except ApiError as e:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6778,7 +6804,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.admin_list_users_flag(flag)
+    response = client.users.admin_list_users_flag(Flag.ACTIVE)
     # TODO: Handle 'response' of type list[AdminUsersListJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6788,7 +6814,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.admin_list_users_flag(flag)
+    response = await async_client.users.admin_list_users_flag(Flag.ACTIVE)
     # TODO: Handle 'response' of type list[AdminUsersListJsonResponse]
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6812,7 +6838,7 @@ except ApiError as e:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6835,7 +6861,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersAnonymizeJsonResponse</code></summary>
+<summary><code>def anonymize_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersAnonymizeJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -6859,7 +6885,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.anonymize_user(id)
+    response = client.users.anonymize_user(1)
     # TODO: Handle 'response' of type AdminUsersAnonymizeJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6869,7 +6895,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.anonymize_user(id)
+    response = await async_client.users.anonymize_user(1)
     # TODO: Handle 'response' of type AdminUsersAnonymizeJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -6885,8 +6911,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6933,7 +6959,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    client.users.change_password(token)
+    client.users.change_password("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -6942,7 +6968,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.users.change_password(token)
+    await async_client.users.change_password("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -6959,7 +6985,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UsersPasswordResetJsonRequest](discourse/models/users_password_reset_json_request.py) \| [UsersPasswordResetJsonRequestDict](discourse/models/users_password_reset_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7006,7 +7032,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.users.create_user(api_key, api_username)
+    response = client.users.create_user("some example string", "some example string")
     # TODO: Handle 'response' of type UsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7016,7 +7042,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.create_user(api_key, api_username)
+    response = await async_client.users.create_user("some example string", "some example string")
     # TODO: Handle 'response' of type UsersJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7035,7 +7061,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UsersJsonRequest](discourse/models/users_json_request.py) \| [UsersJsonRequestDict](discourse/models/users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7058,7 +7084,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersDeactivateJsonResponse</code></summary>
+<summary><code>def deactivate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersDeactivateJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -7082,7 +7108,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.deactivate_user(id)
+    response = client.users.deactivate_user(1)
     # TODO: Handle 'response' of type AdminUsersDeactivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7092,7 +7118,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.deactivate_user(id)
+    response = await async_client.users.deactivate_user(1)
     # TODO: Handle 'response' of type AdminUsersDeactivateJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7108,8 +7134,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7132,7 +7158,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse1</code></summary>
+<summary><code>def delete_user(id_: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse1</code></summary>
 
 <dl>
 <dd>
@@ -7156,7 +7182,7 @@ Send a `DELETE` request.
 
 ```python
 try:
-    response = client.users.delete_user(id)
+    response = client.users.delete_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7166,7 +7192,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.delete_user(id)
+    response = await async_client.users.delete_user(1)
     # TODO: Handle 'response' of type AdminUsersJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7182,9 +7208,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7231,7 +7257,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.get_user(username, api_key, api_username)
+    response = client.users.get_user("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type UJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7241,7 +7267,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.get_user(username, api_key, api_username)
+    response = await async_client.users.get_user("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type UJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7260,7 +7286,7 @@ except ApiError as e:
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7307,7 +7333,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.get_user_emails(username)
+    response = client.users.get_user_emails("some example string")
     # TODO: Handle 'response' of type UEmailsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7317,7 +7343,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.get_user_emails(username)
+    response = await async_client.users.get_user_emails("some example string")
     # TODO: Handle 'response' of type UEmailsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7334,7 +7360,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7381,7 +7407,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.get_user_external_id(external_id, api_key, api_username)
+    response = client.users.get_user_external_id("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type UByExternalJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7391,7 +7417,9 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.get_user_external_id(external_id, api_key, api_username)
+    response = await async_client.users.get_user_external_id(
+        "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type UByExternalJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7410,7 +7438,7 @@ except ApiError as e:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7457,7 +7485,9 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.get_user_identiy_provider_external_id(provider, external_id, api_key, api_username)
+    response = client.users.get_user_identiy_provider_external_id(
+        "some example string", "some example string", "some example string", "some example string"
+    )
     # TODO: Handle 'response' of type UByExternalJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7468,7 +7498,7 @@ except ApiError as e:
 ```python
 try:
     response = await async_client.users.get_user_identiy_provider_external_id(
-        provider, external_id, api_key, api_username
+        "some example string", "some example string", "some example string", "some example string"
     )
     # TODO: Handle 'response' of type UByExternalJsonResponse
 except ApiError as e:
@@ -7489,7 +7519,7 @@ except ApiError as e:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7512,7 +7542,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def list_user_actions(offset: int, username: str, filter: str, *, request_options: RequestOptionsOrDict | None = None) -> UserActionsJsonResponse</code></summary>
+<summary><code>def list_user_actions(offset: int, username: str, filter_: str, *, request_options: RequestOptionsOrDict | None = None) -> UserActionsJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -7536,7 +7566,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.list_user_actions(offset, username, filter)
+    response = client.users.list_user_actions(1, "some example string", "some example string")
     # TODO: Handle 'response' of type UserActionsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7546,7 +7576,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.list_user_actions(offset, username, filter)
+    response = await async_client.users.list_user_actions(1, "some example string", "some example string")
     # TODO: Handle 'response' of type UserActionsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7564,8 +7594,8 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>offset</code> | <code>int</code> | Value sent with the request. |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>filter</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>filter_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7612,7 +7642,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.list_user_badges(username)
+    response = client.users.list_user_badges("some example string")
     # TODO: Handle 'response' of type UserBadgesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7622,7 +7652,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.list_user_badges(username)
+    response = await async_client.users.list_user_badges("some example string")
     # TODO: Handle 'response' of type UserBadgesJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7639,7 +7669,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7686,7 +7716,7 @@ Send a `GET` request.
 
 ```python
 try:
-    response = client.users.list_users_public(period, order)
+    response = client.users.list_users_public(Period1.DAILY, Order2.LIKES_RECEIVED)
     # TODO: Handle 'response' of type DirectoryItemsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7696,7 +7726,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.list_users_public(period, order)
+    response = await async_client.users.list_users_public(Period1.DAILY, Order2.LIKES_RECEIVED)
     # TODO: Handle 'response' of type DirectoryItemsJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7716,7 +7746,7 @@ except ApiError as e:
 | <code>order</code> | <code>[Order2OrStr](discourse/models/enums/order2.py)</code> | Value sent with the request. |
 | <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7739,7 +7769,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersLogOutJsonResponse</code></summary>
+<summary><code>def log_out_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersLogOutJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -7763,7 +7793,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.users.log_out_user(id)
+    response = client.users.log_out_user(1)
     # TODO: Handle 'response' of type AdminUsersLogOutJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7773,7 +7803,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.log_out_user(id)
+    response = await async_client.users.log_out_user(1)
     # TODO: Handle 'response' of type AdminUsersLogOutJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7789,8 +7819,8 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7837,7 +7867,7 @@ Send a `POST` request.
 
 ```python
 try:
-    response = client.users.refresh_gravatar(username)
+    response = client.users.refresh_gravatar("some example string")
     # TODO: Handle 'response' of type UserAvatarRefreshGravatarJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7847,7 +7877,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.refresh_gravatar(username)
+    response = await async_client.users.refresh_gravatar("some example string")
     # TODO: Handle 'response' of type UserAvatarRefreshGravatarJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7864,7 +7894,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7938,7 +7968,7 @@ except ApiError as e:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[SessionForgotPasswordJsonRequest](discourse/models/session_forgot_password_json_request.py) \| [SessionForgotPasswordJsonRequestDict](discourse/models/session_forgot_password_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7961,7 +7991,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSilenceJsonResponse</code></summary>
+<summary><code>def silence_user(id_: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSilenceJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -7985,7 +8015,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.silence_user(id)
+    response = client.users.silence_user(1)
     # TODO: Handle 'response' of type AdminUsersSilenceJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -7995,7 +8025,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.silence_user(id)
+    response = await async_client.users.silence_user(1)
     # TODO: Handle 'response' of type AdminUsersSilenceJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8011,9 +8041,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8036,7 +8066,7 @@ except ApiError as e:
 </details>
 
 <details>
-<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSuspendJsonResponse</code></summary>
+<summary><code>def suspend_user(id_: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> AdminUsersSuspendJsonResponse</code></summary>
 
 <dl>
 <dd>
@@ -8060,7 +8090,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.suspend_user(id)
+    response = client.users.suspend_user(1)
     # TODO: Handle 'response' of type AdminUsersSuspendJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8070,7 +8100,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.suspend_user(id)
+    response = await async_client.users.suspend_user(1)
     # TODO: Handle 'response' of type AdminUsersSuspendJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8086,9 +8116,9 @@ except ApiError as e:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8135,7 +8165,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.update_avatar(username)
+    response = client.users.update_avatar("some example string")
     # TODO: Handle 'response' of type UPreferencesAvatarPickJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8145,7 +8175,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.update_avatar(username)
+    response = await async_client.users.update_avatar("some example string")
     # TODO: Handle 'response' of type UPreferencesAvatarPickJsonResponse
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8163,7 +8193,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesAvatarPickJsonRequest](discourse/models/u_preferences_avatar_pick_json_request.py) \| [UPreferencesAvatarPickJsonRequestDict](discourse/models/u_preferences_avatar_pick_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8210,7 +8240,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    client.users.update_email(username)
+    client.users.update_email("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -8219,7 +8249,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.users.update_email(username)
+    await async_client.users.update_email("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -8236,7 +8266,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesEmailJsonRequest](discourse/models/u_preferences_email_json_request.py) \| [UPreferencesEmailJsonRequestDict](discourse/models/u_preferences_email_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8283,7 +8313,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    response = client.users.update_user(username, api_key, api_username)
+    response = client.users.update_user("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type UJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8293,7 +8323,7 @@ except ApiError as e:
 
 ```python
 try:
-    response = await async_client.users.update_user(username, api_key, api_username)
+    response = await async_client.users.update_user("some example string", "some example string", "some example string")
     # TODO: Handle 'response' of type UJsonResponse1
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
@@ -8313,7 +8343,7 @@ except ApiError as e:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UJsonRequest](discourse/models/u_json_request.py) \| [UJsonRequestDict](discourse/models/u_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8360,7 +8390,7 @@ Send a `PUT` request.
 
 ```python
 try:
-    client.users.update_username(username)
+    client.users.update_username("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -8369,7 +8399,7 @@ except ApiError as e:
 
 ```python
 try:
-    await async_client.users.update_username(username)
+    await async_client.users.update_username("some example string")
 except ApiError as e:
     ...  # TODO: Handle 'e.error' of type RawError
 ```
@@ -8386,7 +8416,7 @@ except ApiError as e:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesUsernameJsonRequest](discourse/models/u_preferences_username_json_request.py) \| [UPreferencesUsernameJsonRequestDict](discourse/models/u_preferences_username_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>

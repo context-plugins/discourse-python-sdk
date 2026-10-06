@@ -77,11 +77,11 @@ class SiteJsonResponse(SdkBaseModel):
 
 class SiteJsonResponseDict(TypedDict):
     default_archetype: str
-    notification_types: NotificationTypes | NotificationTypesDict
-    post_types: PostTypes | PostTypesDict
-    trust_levels: TrustLevels | TrustLevelsDict
-    user_tips: NotRequired[UserTips | UserTipsDict]
-    groups: list[Group5 | Group5Dict]
+    notification_types: NotificationTypesDict
+    post_types: PostTypesDict
+    trust_levels: TrustLevelsDict
+    user_tips: NotRequired[UserTipsDict]
+    groups: list[Group5Dict]
     filters: list[Any]
     homepage_choices: list[Any]
     periods: list[Any]
@@ -89,20 +89,20 @@ class SiteJsonResponseDict(TypedDict):
     anonymous_top_menu_items: list[Any]
     uncategorized_category_id: int
     user_field_max_length: int
-    post_action_types: list[PostActionType | PostActionTypeDict]
-    topic_flag_types: list[TopicFlagType | TopicFlagTypeDict]
+    post_action_types: list[PostActionTypeDict]
+    topic_flag_types: list[TopicFlagTypeDict]
     can_create_tag: bool
     can_tag_topics: bool
     can_tag_pms: bool
     tags_filter_regexp: str
-    top_tags: list[TopTag | TopTagDict]
+    top_tags: list[TopTagDict]
     wizard_required: NotRequired[bool]
     can_associate_groups: NotRequired[bool]
     email_configured: bool
     upcoming_changes_with_css: NotRequired[list[str]]
     topic_featured_link_allowed_category_ids: list[Any]
-    user_themes: list[UserTheme | UserThemeDict]
-    user_color_schemes: list[UserColorScheme | UserColorSchemeDict]
+    user_themes: list[UserThemeDict]
+    user_color_schemes: list[UserColorSchemeDict]
     default_light_color_scheme: Any | None
     default_dark_color_scheme: Any | None
     censored_regexp: list[Any]
@@ -113,8 +113,8 @@ class SiteJsonResponseDict(TypedDict):
     hashtag_configurations: NotRequired[Any]
     hashtag_icons: NotRequired[Any]
     displayed_about_plugin_stat_groups: NotRequired[list[Any]]
-    categories: list[Category4 | Category4Dict]
-    archetypes: list[Archetype | ArchetypeDict]
+    categories: list[Category4Dict]
+    archetypes: list[ArchetypeDict]
     user_fields: list[Any]
     auth_providers: list[Any]
     whispers_allowed_groups_names: NotRequired[list[Any]]
@@ -124,6 +124,6 @@ class SiteJsonResponseDict(TypedDict):
     full_name_required_for_signup: bool
     full_name_visible_in_signup: bool
     admin_config_login_routes: NotRequired[list[Any]]
-    access_control: NotRequired[AccessControl | AccessControlDict]
+    access_control: NotRequired[AccessControlDict]
     permanent_upcoming_change_names: NotRequired[list[str]]
-    category_types: NotRequired[list[CategoryType | CategoryTypeDict]]
+    category_types: NotRequired[list[CategoryTypeDict]]

@@ -9,7 +9,7 @@
 > Source: [Admin](discourse/apis/admin.py)
 
 <details>
-<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
+<summary><code>def activate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -32,7 +32,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.activate_user(id)
+result = client.admin.with_raw_response.activate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
@@ -43,7 +43,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.activate_user(id)
+result = await async_client.admin.with_raw_response.activate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
@@ -61,8 +61,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -87,7 +87,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
+<summary><code>def admin_get_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -110,7 +110,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.admin_get_user(id)
+result = client.admin.with_raw_response.admin_get_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
@@ -121,7 +121,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.admin_get_user(id)
+result = await async_client.admin.with_raw_response.admin_get_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
@@ -139,8 +139,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -224,7 +224,7 @@ match result:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -272,7 +272,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.admin_list_users_flag(flag)
+result = client.admin.with_raw_response.admin_list_users_flag(Flag.ACTIVE)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
@@ -283,7 +283,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.admin_list_users_flag(flag)
+result = await async_client.admin.with_raw_response.admin_list_users_flag(Flag.ACTIVE)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
@@ -309,7 +309,7 @@ match result:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -334,7 +334,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
+<summary><code>def anonymize_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -357,7 +357,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.anonymize_user(id)
+result = client.admin.with_raw_response.anonymize_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
@@ -368,7 +368,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.anonymize_user(id)
+result = await async_client.admin.with_raw_response.anonymize_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
@@ -386,8 +386,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -412,7 +412,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
+<summary><code>def deactivate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -435,7 +435,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.deactivate_user(id)
+result = client.admin.with_raw_response.deactivate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
@@ -446,7 +446,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.deactivate_user(id)
+result = await async_client.admin.with_raw_response.deactivate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
@@ -464,8 +464,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -490,7 +490,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
+<summary><code>def delete_user(id_: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -513,7 +513,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.delete_user(id)
+result = client.admin.with_raw_response.delete_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
@@ -524,7 +524,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.delete_user(id)
+result = await async_client.admin.with_raw_response.delete_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
@@ -542,9 +542,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -569,7 +569,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
+<summary><code>def log_out_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -592,7 +592,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.log_out_user(id)
+result = client.admin.with_raw_response.log_out_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
@@ -603,7 +603,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.log_out_user(id)
+result = await async_client.admin.with_raw_response.log_out_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
@@ -621,8 +621,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -670,7 +670,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.refresh_gravatar(username)
+result = client.admin.with_raw_response.refresh_gravatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
@@ -681,7 +681,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.refresh_gravatar(username)
+result = await async_client.admin.with_raw_response.refresh_gravatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
@@ -700,7 +700,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -725,7 +725,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
+<summary><code>def silence_user(id_: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -748,7 +748,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.silence_user(id)
+result = client.admin.with_raw_response.silence_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
@@ -759,7 +759,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.silence_user(id)
+result = await async_client.admin.with_raw_response.silence_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
@@ -777,9 +777,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -804,7 +804,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
+<summary><code>def suspend_user(id_: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -827,7 +827,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.admin.with_raw_response.suspend_user(id)
+result = client.admin.with_raw_response.suspend_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
@@ -838,7 +838,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.admin.with_raw_response.suspend_user(id)
+result = await async_client.admin.with_raw_response.suspend_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
@@ -856,9 +856,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -940,7 +940,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminBackupsJsonRequest](discourse/models/admin_backups_json_request.py) \| [AdminBackupsJsonRequestDict](discourse/models/admin_backups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -988,7 +988,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.backups.with_raw_response.download_backup(filename, token)
+result = client.backups.with_raw_response.download_backup("some example string", "some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -999,7 +999,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.backups.with_raw_response.download_backup(filename, token)
+result = await async_client.backups.with_raw_response.download_backup("some example string", "some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -1019,7 +1019,7 @@ match result:
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1096,7 +1096,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1144,7 +1144,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.backups.with_raw_response.send_download_backup_email(filename)
+result = client.backups.with_raw_response.send_download_backup_email("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -1155,7 +1155,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.backups.with_raw_response.send_download_backup_email(filename)
+result = await async_client.backups.with_raw_response.send_download_backup_email("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -1174,7 +1174,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>filename</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1255,7 +1255,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1333,7 +1333,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminBadgesJsonRequest](discourse/models/admin_badges_json_request.py) \| [AdminBadgesJsonRequestDict](discourse/models/admin_badges_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1358,7 +1358,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def delete_badge(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+<summary><code>def delete_badge(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -1381,7 +1381,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.badges.with_raw_response.delete_badge(id)
+result = client.badges.with_raw_response.delete_badge(1)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -1392,7 +1392,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.badges.with_raw_response.delete_badge(id)
+result = await async_client.badges.with_raw_response.delete_badge(1)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -1410,8 +1410,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1459,7 +1459,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.badges.with_raw_response.list_user_badges(username)
+result = client.badges.with_raw_response.list_user_badges("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
@@ -1470,7 +1470,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.badges.with_raw_response.list_user_badges(username)
+result = await async_client.badges.with_raw_response.list_user_badges("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
@@ -1489,7 +1489,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1514,7 +1514,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_badge(id: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse2, RawError]</code></summary>
+<summary><code>def update_badge(id_: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminBadgesJsonResponse2, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -1537,7 +1537,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.badges.with_raw_response.update_badge(id)
+result = client.badges.with_raw_response.update_badge(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse2
@@ -1548,7 +1548,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.badges.with_raw_response.update_badge(id)
+result = await async_client.badges.with_raw_response.update_badge(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminBadgesJsonResponse2
@@ -1566,9 +1566,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminBadgesJsonRequest1](discourse/models/admin_badges_json_request1.py) \| [AdminBadgesJsonRequest1Dict](discourse/models/admin_badges_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1650,7 +1650,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[CategoriesJsonRequest](discourse/models/categories_json_request.py) \| [CategoriesJsonRequestDict](discourse/models/categories_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1675,7 +1675,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_category(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CShowJsonResponse, RawError]</code></summary>
+<summary><code>def get_category(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CShowJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -1698,7 +1698,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.categories.with_raw_response.get_category(id)
+result = client.categories.with_raw_response.get_category(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CShowJsonResponse
@@ -1709,7 +1709,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.categories.with_raw_response.get_category(id)
+result = await async_client.categories.with_raw_response.get_category(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CShowJsonResponse
@@ -1727,8 +1727,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1805,7 +1805,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1883,7 +1883,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>include_subcategories</code> | <code>bool \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1908,7 +1908,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def list_category_topics(slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CJsonResponse, RawError]</code></summary>
+<summary><code>def list_category_topics(slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -1931,7 +1931,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.categories.with_raw_response.list_category_topics(slug, id)
+result = client.categories.with_raw_response.list_category_topics("some example string", 1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CJsonResponse
@@ -1942,7 +1942,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.categories.with_raw_response.list_category_topics(slug, id)
+result = await async_client.categories.with_raw_response.list_category_topics("some example string", 1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CJsonResponse
@@ -1961,8 +1961,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>slug</code> | <code>str</code> | Value sent with the request. |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1987,7 +1987,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_category(id: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse2, RawError]</code></summary>
+<summary><code>def update_category(id_: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CategoriesJsonResponse2, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2010,7 +2010,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.categories.with_raw_response.update_category(id)
+result = client.categories.with_raw_response.update_category(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CategoriesJsonResponse2
@@ -2021,7 +2021,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.categories.with_raw_response.update_category(id)
+result = await async_client.categories.with_raw_response.update_category(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CategoriesJsonResponse2
@@ -2039,9 +2039,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[CategoriesJsonRequest1](discourse/models/categories_json_request1.py) \| [CategoriesJsonRequest1Dict](discourse/models/categories_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2129,7 +2129,7 @@ match result:
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2215,7 +2215,7 @@ match result:
 | <code>after</code> | <code>RFC3339DateTime \| None</code> | Return events starting after this date/time (ISO 8601 format)<br>**Default**: <code>None</code> |
 | <code>order</code> | <code>[OrderOrStr](discourse/models/enums/order.py) \| None</code> | Sort order for events by start date (default: asc)<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of events to return (default: 200)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2244,7 +2244,7 @@ match result:
 > Source: [Groups](discourse/apis/groups.py)
 
 <details>
-<summary><code>def add_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse1, RawError]</code></summary>
+<summary><code>def add_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2267,7 +2267,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.add_group_members(id)
+result = client.groups.with_raw_response.add_group_members(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse1
@@ -2278,7 +2278,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.add_group_members(id)
+result = await async_client.groups.with_raw_response.add_group_members(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse1
@@ -2296,9 +2296,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2376,7 +2376,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[AdminGroupsJsonRequest](discourse/models/admin_groups_json_request.py) \| [AdminGroupsJsonRequestDict](discourse/models/admin_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2401,7 +2401,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def delete_group(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminGroupsJsonResponse1, RawError]</code></summary>
+<summary><code>def delete_group(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminGroupsJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2424,7 +2424,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.delete_group(id)
+result = client.groups.with_raw_response.delete_group(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse1
@@ -2435,7 +2435,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.delete_group(id)
+result = await async_client.groups.with_raw_response.delete_group(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminGroupsJsonResponse1
@@ -2453,8 +2453,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2502,7 +2502,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.get_group(name)
+result = client.groups.with_raw_response.get_group("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsJsonResponse
@@ -2513,7 +2513,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.get_group(name)
+result = await async_client.groups.with_raw_response.get_group("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsJsonResponse
@@ -2532,7 +2532,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2557,7 +2557,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_group_by_id(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsByIdJsonResponse, RawError]</code></summary>
+<summary><code>def get_group_by_id(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsByIdJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2580,7 +2580,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.get_group_by_id(id)
+result = client.groups.with_raw_response.get_group_by_id("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsByIdJsonResponse
@@ -2591,7 +2591,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.get_group_by_id(id)
+result = await async_client.groups.with_raw_response.get_group_by_id("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsByIdJsonResponse
@@ -2609,8 +2609,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Use group name instead of id |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2658,7 +2658,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.list_group_members(name)
+result = client.groups.with_raw_response.list_group_members("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse
@@ -2669,7 +2669,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.list_group_members(name)
+result = await async_client.groups.with_raw_response.list_group_members("name")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse
@@ -2688,7 +2688,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Use group name instead of id |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2765,7 +2765,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2790,7 +2790,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def remove_group_members(id: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse2, RawError]</code></summary>
+<summary><code>def remove_group_members(id_: int, *, body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsMembersJsonResponse2, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2813,7 +2813,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.remove_group_members(id)
+result = client.groups.with_raw_response.remove_group_members(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse2
@@ -2824,7 +2824,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.remove_group_members(id)
+result = await async_client.groups.with_raw_response.remove_group_members(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsMembersJsonResponse2
@@ -2842,9 +2842,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsMembersJsonRequest](discourse/models/groups_members_json_request.py) \| [GroupsMembersJsonRequestDict](discourse/models/groups_members_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2869,7 +2869,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_group(id: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsJsonResponse1, RawError]</code></summary>
+<summary><code>def update_group(id_: int, *, body: GroupsJsonRequest | GroupsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[GroupsJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -2892,7 +2892,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.groups.with_raw_response.update_group(id)
+result = client.groups.with_raw_response.update_group(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsJsonResponse1
@@ -2903,7 +2903,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.groups.with_raw_response.update_group(id)
+result = await async_client.groups.with_raw_response.update_group(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GroupsJsonResponse1
@@ -2921,9 +2921,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[GroupsJsonRequest](discourse/models/groups_json_request.py) \| [GroupsJsonRequestDict](discourse/models/groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2975,7 +2975,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.invites.with_raw_response.create_invite(api_key, api_username)
+result = client.invites.with_raw_response.create_invite("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type InvitesJsonResponse
@@ -2986,7 +2986,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.invites.with_raw_response.create_invite(api_key, api_username)
+result = await async_client.invites.with_raw_response.create_invite("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type InvitesJsonResponse
@@ -3007,7 +3007,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[InvitesJsonRequest](discourse/models/invites_json_request.py) \| [InvitesJsonRequestDict](discourse/models/invites_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3055,7 +3055,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.invites.with_raw_response.create_multiple_invites(api_key, api_username)
+result = client.invites.with_raw_response.create_multiple_invites("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type InvitesCreateMultipleJsonResponse
@@ -3066,7 +3066,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.invites.with_raw_response.create_multiple_invites(api_key, api_username)
+result = await async_client.invites.with_raw_response.create_multiple_invites(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type InvitesCreateMultipleJsonResponse
@@ -3087,7 +3089,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[InvitesCreateMultipleJsonRequest](discourse/models/invites_create_multiple_json_request.py) \| [InvitesCreateMultipleJsonRequestDict](discourse/models/invites_create_multiple_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3112,7 +3114,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
+<summary><code>def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3135,7 +3137,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.invites.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+result = client.invites.with_raw_response.invite_group_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
@@ -3146,7 +3150,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.invites.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+result = await async_client.invites.with_raw_response.invite_group_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
@@ -3164,11 +3170,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3193,7 +3199,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
+<summary><code>def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3216,7 +3222,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.invites.with_raw_response.invite_to_topic(id, api_key, api_username)
+result = client.invites.with_raw_response.invite_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteJsonResponse
@@ -3227,7 +3235,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.invites.with_raw_response.invite_to_topic(id, api_key, api_username)
+result = await async_client.invites.with_raw_response.invite_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteJsonResponse
@@ -3245,11 +3255,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3330,7 +3340,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3408,7 +3418,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[NotificationsMarkReadJsonRequest](discourse/models/notifications_mark_read_json_request.py) \| [NotificationsMarkReadJsonRequestDict](discourse/models/notifications_mark_read_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3460,7 +3470,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = client.posts.with_raw_response.create_topic_post_pm("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -3471,7 +3481,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = await async_client.posts.with_raw_response.create_topic_post_pm("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -3492,7 +3502,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3517,7 +3527,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def delete_post(id: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+<summary><code>def delete_post(id_: int, api_key: str, api_username: str, *, body: PostsJsonRequest2 | PostsJsonRequest2Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3540,7 +3550,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.delete_post(id, api_key, api_username)
+result = client.posts.with_raw_response.delete_post(1, "some example string", "some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -3551,7 +3561,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.delete_post(id, api_key, api_username)
+result = await async_client.posts.with_raw_response.delete_post(1, "some example string", "some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -3569,11 +3579,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest2](discourse/models/posts_json_request2.py) \| [PostsJsonRequest2Dict](discourse/models/posts_json_request2.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3598,7 +3608,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_post(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse2, RawError]</code></summary>
+<summary><code>def get_post(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse2, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3625,7 +3635,7 @@ refer to various different flag types.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.get_post(id)
+result = client.posts.with_raw_response.get_post("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse2
@@ -3636,7 +3646,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.get_post(id)
+result = await async_client.posts.with_raw_response.get_post("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse2
@@ -3654,8 +3664,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3733,7 +3743,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>before</code> | <code>int \| None</code> | Load posts with an id lower than this value. Useful for pagination.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3758,7 +3768,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def lock_post(id: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsLockedJsonResponse, RawError]</code></summary>
+<summary><code>def lock_post(id_: str, api_key: str, api_username: str, *, body: PostsLockedJsonRequest | PostsLockedJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsLockedJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3781,7 +3791,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.lock_post(id, api_key, api_username)
+result = client.posts.with_raw_response.lock_post("some example string", "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsLockedJsonResponse
@@ -3792,7 +3802,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.lock_post(id, api_key, api_username)
+result = await async_client.posts.with_raw_response.lock_post(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsLockedJsonResponse
@@ -3810,11 +3822,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsLockedJsonRequest](discourse/models/posts_locked_json_request.py) \| [PostsLockedJsonRequestDict](discourse/models/posts_locked_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3862,7 +3874,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.perform_post_action(api_key, api_username)
+result = client.posts.with_raw_response.perform_post_action("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostActionsJsonResponse
@@ -3873,7 +3885,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.perform_post_action(api_key, api_username)
+result = await async_client.posts.with_raw_response.perform_post_action("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostActionsJsonResponse
@@ -3894,7 +3906,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostActionsJsonRequest](discourse/models/post_actions_json_request.py) \| [PostActionsJsonRequestDict](discourse/models/post_actions_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3919,7 +3931,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def post_replies(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[PostsRepliesJsonResponse], RawError]</code></summary>
+<summary><code>def post_replies(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[list[PostsRepliesJsonResponse], RawError]</code></summary>
 
 <dl>
 <dd>
@@ -3942,7 +3954,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.post_replies(id)
+result = client.posts.with_raw_response.post_replies("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[PostsRepliesJsonResponse]
@@ -3953,7 +3965,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.post_replies(id)
+result = await async_client.posts.with_raw_response.post_replies("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[PostsRepliesJsonResponse]
@@ -3971,8 +3983,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3997,7 +4009,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_post(id: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse3, RawError]</code></summary>
+<summary><code>def update_post(id_: str, api_key: str, api_username: str, *, body: PostsJsonRequest1 | PostsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[PostsJsonResponse3, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -4020,7 +4032,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.posts.with_raw_response.update_post(id, api_key, api_username)
+result = client.posts.with_raw_response.update_post("some example string", "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse3
@@ -4031,7 +4043,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.posts.with_raw_response.update_post(id, api_key, api_username)
+result = await async_client.posts.with_raw_response.update_post(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse3
@@ -4049,11 +4063,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest1](discourse/models/posts_json_request1.py) \| [PostsJsonRequest1Dict](discourse/models/posts_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4105,7 +4119,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.private_messages.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = client.private_messages.with_raw_response.create_topic_post_pm("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -4116,7 +4130,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.private_messages.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = await async_client.private_messages.with_raw_response.create_topic_post_pm(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -4137,7 +4153,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4185,7 +4201,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.private_messages.with_raw_response.get_user_sent_private_messages(username)
+result = client.private_messages.with_raw_response.get_user_sent_private_messages("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesSentJsonResponse
@@ -4196,7 +4212,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.private_messages.with_raw_response.get_user_sent_private_messages(username)
+result = await async_client.private_messages.with_raw_response.get_user_sent_private_messages("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesSentJsonResponse
@@ -4215,7 +4231,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4263,7 +4279,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.private_messages.with_raw_response.list_user_private_messages(username)
+result = client.private_messages.with_raw_response.list_user_private_messages("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesJsonResponse
@@ -4274,7 +4290,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.private_messages.with_raw_response.list_user_private_messages(username)
+result = await async_client.private_messages.with_raw_response.list_user_private_messages("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopicsPrivateMessagesJsonResponse
@@ -4293,7 +4309,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4345,7 +4361,9 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.search.with_raw_response.search()
+result = client.search.with_raw_response.search(
+    q="api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic", page=1
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type SearchJsonResponse
@@ -4356,7 +4374,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.search.with_raw_response.search()
+result = await async_client.search.with_raw_response.search(
+    q="api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic", page=1
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type SearchJsonResponse
@@ -4376,7 +4396,7 @@ match result:
 | --- | --- | --- |
 | <code>q</code> | <code>str \| None</code> | The query string needs to be url encoded and is made up of the following options:<br>- Search term. This is just a string. Usually it would be the first item in the query.<br>- `@<username>`: Use the `@` followed by the username to specify posts by this user.<br>- `#<category>`: Use the `#` followed by the category slug to search within this category.<br>- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.<br>- `before:`: `yyyy-mm-dd`<br>- `after:`: `yyyy-mm-dd`<br>- `order:`: `latest`, `likes`, `views`, `latest_topic`<br>- `assigned:`: username (without `@`)<br>- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`<br>- `with:`: `images`<br>- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`<br>- `group:`: group_name or group_id<br>- `group_messages:`: group_name or group_id<br>- `min_posts:`: 1<br>- `max_posts:`: 10<br>- `min_views:`: 1<br>- `max_views:`: 10<br><br>If you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:<br><br>``<br>curl -i -sS -X GET -G "http://localhost:3000/search.json" \<br>--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'<br>``<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4457,7 +4477,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4534,7 +4554,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4616,7 +4636,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[TagGroupsJsonRequest](discourse/models/tag_groups_json_request.py) \| [TagGroupsJsonRequestDict](discourse/models/tag_groups_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4664,7 +4684,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.tags.with_raw_response.get_tag(name)
+result = client.tags.with_raw_response.get_tag("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagJsonResponse
@@ -4675,7 +4695,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.tags.with_raw_response.get_tag(name)
+result = await async_client.tags.with_raw_response.get_tag("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagJsonResponse
@@ -4694,7 +4714,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>name</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4719,7 +4739,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_tag_group(id: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse2, RawError]</code></summary>
+<summary><code>def get_tag_group(id_: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse2, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -4742,7 +4762,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.tags.with_raw_response.get_tag_group(id)
+result = client.tags.with_raw_response.get_tag_group("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse2
@@ -4753,7 +4773,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.tags.with_raw_response.get_tag_group(id)
+result = await async_client.tags.with_raw_response.get_tag_group("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse2
@@ -4771,8 +4791,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4849,7 +4869,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4926,7 +4946,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4951,7 +4971,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_tag_group(id: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse3, RawError]</code></summary>
+<summary><code>def update_tag_group(id_: str, *, body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TagGroupsJsonResponse3, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -4974,7 +4994,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.tags.with_raw_response.update_tag_group(id)
+result = client.tags.with_raw_response.update_tag_group("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse3
@@ -4985,7 +5005,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.tags.with_raw_response.update_tag_group(id)
+result = await async_client.tags.with_raw_response.update_tag_group("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TagGroupsJsonResponse3
@@ -5003,9 +5023,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TagGroupsJsonRequest1](discourse/models/tag_groups_json_request1.py) \| [TagGroupsJsonRequest1Dict](discourse/models/tag_groups_json_request1.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5034,7 +5054,7 @@ match result:
 > Source: [Topics](discourse/apis/topics.py)
 
 <details>
-<summary><code>def bookmark_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+<summary><code>def bookmark_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5057,7 +5077,9 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.bookmark_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.bookmark_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5068,7 +5090,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.bookmark_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.bookmark_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5086,10 +5110,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5137,7 +5161,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = client.topics.with_raw_response.create_topic_post_pm("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -5148,7 +5172,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.create_topic_post_pm(api_key, api_username)
+result = await async_client.topics.with_raw_response.create_topic_post_pm("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type PostsJsonResponse1
@@ -5169,7 +5193,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[PostsJsonRequest](discourse/models/posts_json_request.py) \| [PostsJsonRequestDict](discourse/models/posts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5194,7 +5218,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def create_topic_timer(id: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TTimerJsonResponse, RawError]</code></summary>
+<summary><code>def create_topic_timer(id_: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TTimerJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5217,7 +5241,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.create_topic_timer(id, api_key, api_username)
+result = client.topics.with_raw_response.create_topic_timer(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TTimerJsonResponse
@@ -5228,7 +5254,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.create_topic_timer(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.create_topic_timer(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TTimerJsonResponse
@@ -5246,11 +5274,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TTimerJsonRequest](discourse/models/t_timer_json_request.py) \| [TTimerJsonRequestDict](discourse/models/t_timer_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5275,7 +5303,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_specific_posts_from_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TPostsJsonResponse, RawError]</code></summary>
+<summary><code>def get_specific_posts_from_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TPostsJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5298,7 +5326,9 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.get_specific_posts_from_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.get_specific_posts_from_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TPostsJsonResponse
@@ -5309,7 +5339,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.get_specific_posts_from_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.get_specific_posts_from_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TPostsJsonResponse
@@ -5327,10 +5359,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5355,7 +5387,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def get_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse, RawError]</code></summary>
+<summary><code>def get_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5378,7 +5410,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.get_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.get_topic("some example string", "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TJsonResponse
@@ -5389,7 +5421,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.get_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.get_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TJsonResponse
@@ -5407,10 +5441,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5458,7 +5492,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.get_topic_by_external_id(external_id)
+result = client.topics.with_raw_response.get_topic_by_external_id("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5469,7 +5503,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.get_topic_by_external_id(external_id)
+result = await async_client.topics.with_raw_response.get_topic_by_external_id("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5488,7 +5522,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5513,7 +5547,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
+<summary><code>def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteGroupJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5536,7 +5570,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.invite_group_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
@@ -5547,7 +5583,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.invite_group_to_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.invite_group_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteGroupJsonResponse
@@ -5565,11 +5603,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteGroupJsonRequest](discourse/models/t_invite_group_json_request.py) \| [TInviteGroupJsonRequestDict](discourse/models/t_invite_group_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5594,7 +5632,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
+<summary><code>def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TInviteJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5617,7 +5655,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.invite_to_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.invite_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteJsonResponse
@@ -5628,7 +5668,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.invite_to_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.invite_to_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TInviteJsonResponse
@@ -5646,11 +5688,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TInviteJsonRequest](discourse/models/t_invite_json_request.py) \| [TInviteJsonRequestDict](discourse/models/t_invite_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5698,7 +5740,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.list_latest_topics(api_key, api_username)
+result = client.topics.with_raw_response.list_latest_topics("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type LatestJsonResponse
@@ -5709,7 +5751,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.list_latest_topics(api_key, api_username)
+result = await async_client.topics.with_raw_response.list_latest_topics("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type LatestJsonResponse
@@ -5732,7 +5774,7 @@ match result:
 | <code>order</code> | <code>str \| None</code> | Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,<br>`likes`, `op_likes`, `posters`<br>**Default**: <code>None</code> |
 | <code>ascending</code> | <code>str \| None</code> | Defaults to `desc`, add `ascending=true` to sort asc<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5780,7 +5822,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.list_top_topics(api_key, api_username)
+result = client.topics.with_raw_response.list_top_topics("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopJsonResponse
@@ -5791,7 +5833,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.list_top_topics(api_key, api_username)
+result = await async_client.topics.with_raw_response.list_top_topics("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TopJsonResponse
@@ -5813,7 +5855,7 @@ match result:
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>period</code> | <code>str \| None</code> | Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`<br>**Default**: <code>None</code> |
 | <code>per_page</code> | <code>int \| None</code> | Maximum number of topics returned, between 1-100<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5838,7 +5880,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def remove_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
+<summary><code>def remove_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[None, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5861,7 +5903,9 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.remove_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.remove_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5872,7 +5916,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.remove_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.remove_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success():
         ...  # 2xx, no content
@@ -5890,10 +5936,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5918,7 +5964,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def set_notification_level(id: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TNotificationsJsonResponse, RawError]</code></summary>
+<summary><code>def set_notification_level(id_: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TNotificationsJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -5941,7 +5987,9 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.set_notification_level(id, api_key, api_username)
+result = client.topics.with_raw_response.set_notification_level(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TNotificationsJsonResponse
@@ -5952,7 +6000,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.set_notification_level(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.set_notification_level(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TNotificationsJsonResponse
@@ -5970,11 +6020,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TNotificationsJsonRequest](discourse/models/t_notifications_json_request.py) \| [TNotificationsJsonRequestDict](discourse/models/t_notifications_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -5999,7 +6049,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_topic(id: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse1, RawError]</code></summary>
+<summary><code>def update_topic(id_: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6022,7 +6072,9 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.update_topic(id, api_key, api_username)
+result = client.topics.with_raw_response.update_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TJsonResponse1
@@ -6033,7 +6085,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.update_topic(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.update_topic(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TJsonResponse1
@@ -6051,11 +6105,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TJsonRequest](discourse/models/t_json_request.py) \| [TJsonRequestDict](discourse/models/t_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6080,7 +6134,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_topic_status(id: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TStatusJsonResponse, RawError]</code></summary>
+<summary><code>def update_topic_status(id_: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TStatusJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6103,7 +6157,9 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.update_topic_status(id, api_key, api_username)
+result = client.topics.with_raw_response.update_topic_status(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TStatusJsonResponse
@@ -6114,7 +6170,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.update_topic_status(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.update_topic_status(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TStatusJsonResponse
@@ -6132,11 +6190,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TStatusJsonRequest](discourse/models/t_status_json_request.py) \| [TStatusJsonRequestDict](discourse/models/t_status_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6161,7 +6219,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def update_topic_timestamp(id: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TChangeTimestampJsonResponse, RawError]</code></summary>
+<summary><code>def update_topic_timestamp(id_: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TChangeTimestampJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6184,7 +6242,9 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.topics.with_raw_response.update_topic_timestamp(id, api_key, api_username)
+result = client.topics.with_raw_response.update_topic_timestamp(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TChangeTimestampJsonResponse
@@ -6195,7 +6255,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.topics.with_raw_response.update_topic_timestamp(id, api_key, api_username)
+result = await async_client.topics.with_raw_response.update_topic_timestamp(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type TChangeTimestampJsonResponse
@@ -6213,11 +6275,11 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>str</code> | Value sent with the request. |
+| <code>id_</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[TChangeTimestampJsonRequest](discourse/models/t_change_timestamp_json_request.py) \| [TChangeTimestampJsonRequestDict](discourse/models/t_change_timestamp_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6309,7 +6371,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsAbortMultipartJsonRequest](discourse/models/uploads_abort_multipart_json_request.py) \| [UploadsAbortMultipartJsonRequestDict](discourse/models/uploads_abort_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6406,7 +6468,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsBatchPresignMultipartPartsJsonRequest](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| [UploadsBatchPresignMultipartPartsJsonRequestDict](discourse/models/uploads_batch_presign_multipart_parts_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6499,7 +6561,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCompleteExternalUploadJsonRequest](discourse/models/uploads_complete_external_upload_json_request.py) \| [UploadsCompleteExternalUploadJsonRequestDict](discourse/models/uploads_complete_external_upload_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6589,7 +6651,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCompleteMultipartJsonRequest](discourse/models/uploads_complete_multipart_json_request.py) \| [UploadsCompleteMultipartJsonRequestDict](discourse/models/uploads_complete_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6676,7 +6738,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsCreateMultipartJsonRequest](discourse/models/uploads_create_multipart_json_request.py) \| [UploadsCreateMultipartJsonRequestDict](discourse/models/uploads_create_multipart_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6701,7 +6763,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: bytes | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsJsonResponse, RawError]</code></summary>
+<summary><code>def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: FileInput | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UploadsJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6724,7 +6786,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.uploads.with_raw_response.create_upload(upload_type)
+result = client.uploads.with_raw_response.create_upload(UploadType.AVATAR)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UploadsJsonResponse
@@ -6735,7 +6797,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.uploads.with_raw_response.create_upload(upload_type)
+result = await async_client.uploads.with_raw_response.create_upload(UploadType.AVATAR)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UploadsJsonResponse
@@ -6756,8 +6818,8 @@ match result:
 | <code>upload_type</code> | <code>[UploadTypeOrStr](discourse/models/enums/upload_type.py)</code> | Value sent with the request. |
 | <code>user_id</code> | <code>int \| None</code> | required if uploading an avatar<br>**Default**: <code>None</code> |
 | <code>synchronous</code> | <code>bool \| None</code> | Use this flag to return an id and url<br>**Default**: <code>None</code> |
-| <code>file</code> | <code>bytes \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>file</code> | <code>FileInput \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6853,7 +6915,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[UploadsGeneratePresignedPutJsonRequest](discourse/models/uploads_generate_presigned_put_json_request.py) \| [UploadsGeneratePresignedPutJsonRequestDict](discourse/models/uploads_generate_presigned_put_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6882,7 +6944,7 @@ match result:
 > Source: [Users](discourse/apis/users.py)
 
 <details>
-<summary><code>def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
+<summary><code>def activate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersActivateJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6905,7 +6967,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.activate_user(id)
+result = client.users.with_raw_response.activate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
@@ -6916,7 +6978,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.activate_user(id)
+result = await async_client.users.with_raw_response.activate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersActivateJsonResponse
@@ -6934,8 +6996,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -6960,7 +7022,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
+<summary><code>def admin_get_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -6983,7 +7045,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.admin_get_user(id)
+result = client.users.with_raw_response.admin_get_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
@@ -6994,7 +7056,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.admin_get_user(id)
+result = await async_client.users.with_raw_response.admin_get_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse
@@ -7012,8 +7074,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7097,7 +7159,7 @@ match result:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7145,7 +7207,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.admin_list_users_flag(flag)
+result = client.users.with_raw_response.admin_list_users_flag(Flag.ACTIVE)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
@@ -7156,7 +7218,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.admin_list_users_flag(flag)
+result = await async_client.users.with_raw_response.admin_list_users_flag(Flag.ACTIVE)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type list[AdminUsersListJsonResponse]
@@ -7182,7 +7244,7 @@ match result:
 | <code>stats</code> | <code>bool \| None</code> | Include user stats information<br>**Default**: <code>None</code> |
 | <code>email</code> | <code>str \| None</code> | Filter to the user with this email address<br>**Default**: <code>None</code> |
 | <code>ip</code> | <code>str \| None</code> | Filter to users with this IP address<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7207,7 +7269,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
+<summary><code>def anonymize_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -7230,7 +7292,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.anonymize_user(id)
+result = client.users.with_raw_response.anonymize_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
@@ -7241,7 +7303,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.anonymize_user(id)
+result = await async_client.users.with_raw_response.anonymize_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersAnonymizeJsonResponse
@@ -7259,8 +7321,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7308,7 +7370,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.change_password(token)
+result = client.users.with_raw_response.change_password("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -7319,7 +7381,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.change_password(token)
+result = await async_client.users.with_raw_response.change_password("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -7339,7 +7401,7 @@ match result:
 | --- | --- | --- |
 | <code>token</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UsersPasswordResetJsonRequest](discourse/models/users_password_reset_json_request.py) \| [UsersPasswordResetJsonRequestDict](discourse/models/users_password_reset_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7387,7 +7449,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.create_user(api_key, api_username)
+result = client.users.with_raw_response.create_user("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsersJsonResponse
@@ -7398,7 +7460,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.create_user(api_key, api_username)
+result = await async_client.users.with_raw_response.create_user("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsersJsonResponse
@@ -7419,7 +7481,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UsersJsonRequest](discourse/models/users_json_request.py) \| [UsersJsonRequestDict](discourse/models/users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7444,7 +7506,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
+<summary><code>def deactivate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -7467,7 +7529,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.deactivate_user(id)
+result = client.users.with_raw_response.deactivate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
@@ -7478,7 +7540,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.deactivate_user(id)
+result = await async_client.users.with_raw_response.deactivate_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersDeactivateJsonResponse
@@ -7496,8 +7558,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7522,7 +7584,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
+<summary><code>def delete_user(id_: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersJsonResponse1, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -7545,7 +7607,7 @@ Send a `DELETE` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.delete_user(id)
+result = client.users.with_raw_response.delete_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
@@ -7556,7 +7618,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.delete_user(id)
+result = await async_client.users.with_raw_response.delete_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersJsonResponse1
@@ -7574,9 +7636,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersJsonRequest](discourse/models/admin_users_json_request.py) \| [AdminUsersJsonRequestDict](discourse/models/admin_users_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7624,7 +7686,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.get_user(username, api_key, api_username)
+result = client.users.with_raw_response.get_user("some example string", "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UJsonResponse
@@ -7635,7 +7697,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.get_user(username, api_key, api_username)
+result = await async_client.users.with_raw_response.get_user(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UJsonResponse
@@ -7656,7 +7720,7 @@ match result:
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7704,7 +7768,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.get_user_emails(username)
+result = client.users.with_raw_response.get_user_emails("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UEmailsJsonResponse
@@ -7715,7 +7779,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.get_user_emails(username)
+result = await async_client.users.with_raw_response.get_user_emails("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UEmailsJsonResponse
@@ -7734,7 +7798,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7782,7 +7846,9 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.get_user_external_id(external_id, api_key, api_username)
+result = client.users.with_raw_response.get_user_external_id(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
@@ -7793,7 +7859,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.get_user_external_id(external_id, api_key, api_username)
+result = await async_client.users.with_raw_response.get_user_external_id(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UByExternalJsonResponse
@@ -7814,7 +7882,7 @@ match result:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7863,7 +7931,7 @@ Send a `GET` request.
 
 ```python
 result = client.users.with_raw_response.get_user_identiy_provider_external_id(
-    provider, external_id, api_key, api_username
+    "some example string", "some example string", "some example string", "some example string"
 )
 match result:
     case Success(payload=payload):
@@ -7876,7 +7944,7 @@ match result:
 
 ```python
 result = await async_client.users.with_raw_response.get_user_identiy_provider_external_id(
-    provider, external_id, api_key, api_username
+    "some example string", "some example string", "some example string", "some example string"
 )
 match result:
     case Success(payload=payload):
@@ -7899,7 +7967,7 @@ match result:
 | <code>external_id</code> | <code>str</code> | Value sent with the request. |
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -7924,7 +7992,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def list_user_actions(offset: int, username: str, filter: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserActionsJsonResponse, RawError]</code></summary>
+<summary><code>def list_user_actions(offset: int, username: str, filter_: str, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[UserActionsJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -7947,7 +8015,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.list_user_actions(offset, username, filter)
+result = client.users.with_raw_response.list_user_actions(1, "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserActionsJsonResponse
@@ -7958,7 +8026,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.list_user_actions(offset, username, filter)
+result = await async_client.users.with_raw_response.list_user_actions(1, "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserActionsJsonResponse
@@ -7978,8 +8046,8 @@ match result:
 | --- | --- | --- |
 | <code>offset</code> | <code>int</code> | Value sent with the request. |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>filter</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>filter_</code> | <code>str</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8027,7 +8095,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.list_user_badges(username)
+result = client.users.with_raw_response.list_user_badges("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
@@ -8038,7 +8106,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.list_user_badges(username)
+result = await async_client.users.with_raw_response.list_user_badges("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserBadgesJsonResponse
@@ -8057,7 +8125,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8105,7 +8173,7 @@ Send a `GET` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.list_users_public(period, order)
+result = client.users.with_raw_response.list_users_public(Period1.DAILY, Order2.LIKES_RECEIVED)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DirectoryItemsJsonResponse
@@ -8116,7 +8184,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.list_users_public(period, order)
+result = await async_client.users.with_raw_response.list_users_public(Period1.DAILY, Order2.LIKES_RECEIVED)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DirectoryItemsJsonResponse
@@ -8138,7 +8206,7 @@ match result:
 | <code>order</code> | <code>[Order2OrStr](discourse/models/enums/order2.py)</code> | Value sent with the request. |
 | <code>asc</code> | <code>[AscOrStr](discourse/models/enums/asc.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
 | <code>page</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8163,7 +8231,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
+<summary><code>def log_out_user(id_: int, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -8186,7 +8254,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.log_out_user(id)
+result = client.users.with_raw_response.log_out_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
@@ -8197,7 +8265,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.log_out_user(id)
+result = await async_client.users.with_raw_response.log_out_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersLogOutJsonResponse
@@ -8215,8 +8283,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8264,7 +8332,7 @@ Send a `POST` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.refresh_gravatar(username)
+result = client.users.with_raw_response.refresh_gravatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
@@ -8275,7 +8343,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.refresh_gravatar(username)
+result = await async_client.users.with_raw_response.refresh_gravatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UserAvatarRefreshGravatarJsonResponse
@@ -8294,7 +8362,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8372,7 +8440,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[SessionForgotPasswordJsonRequest](discourse/models/session_forgot_password_json_request.py) \| [SessionForgotPasswordJsonRequestDict](discourse/models/session_forgot_password_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8397,7 +8465,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
+<summary><code>def silence_user(id_: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSilenceJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -8420,7 +8488,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.silence_user(id)
+result = client.users.with_raw_response.silence_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
@@ -8431,7 +8499,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.silence_user(id)
+result = await async_client.users.with_raw_response.silence_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSilenceJsonResponse
@@ -8449,9 +8517,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSilenceJsonRequest](discourse/models/admin_users_silence_json_request.py) \| [AdminUsersSilenceJsonRequestDict](discourse/models/admin_users_silence_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8476,7 +8544,7 @@ match result:
 </details>
 
 <details>
-<summary><code>def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
+<summary><code>def suspend_user(id_: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[AdminUsersSuspendJsonResponse, RawError]</code></summary>
 
 <dl>
 <dd>
@@ -8499,7 +8567,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.suspend_user(id)
+result = client.users.with_raw_response.suspend_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
@@ -8510,7 +8578,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.suspend_user(id)
+result = await async_client.users.with_raw_response.suspend_user(1)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AdminUsersSuspendJsonResponse
@@ -8528,9 +8596,9 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>id</code> | <code>int</code> | Value sent with the request. |
+| <code>id_</code> | <code>int</code> | Value sent with the request. |
 | <code>body</code> | <code>[AdminUsersSuspendJsonRequest](discourse/models/admin_users_suspend_json_request.py) \| [AdminUsersSuspendJsonRequestDict](discourse/models/admin_users_suspend_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8578,7 +8646,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.update_avatar(username)
+result = client.users.with_raw_response.update_avatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UPreferencesAvatarPickJsonResponse
@@ -8589,7 +8657,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.update_avatar(username)
+result = await async_client.users.with_raw_response.update_avatar("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UPreferencesAvatarPickJsonResponse
@@ -8609,7 +8677,7 @@ match result:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesAvatarPickJsonRequest](discourse/models/u_preferences_avatar_pick_json_request.py) \| [UPreferencesAvatarPickJsonRequestDict](discourse/models/u_preferences_avatar_pick_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8657,7 +8725,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.update_email(username)
+result = client.users.with_raw_response.update_email("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -8668,7 +8736,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.update_email(username)
+result = await async_client.users.with_raw_response.update_email("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -8688,7 +8756,7 @@ match result:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesEmailJsonRequest](discourse/models/u_preferences_email_json_request.py) \| [UPreferencesEmailJsonRequestDict](discourse/models/u_preferences_email_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8736,7 +8804,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.update_user(username, api_key, api_username)
+result = client.users.with_raw_response.update_user("some example string", "some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UJsonResponse1
@@ -8747,7 +8815,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.update_user(username, api_key, api_username)
+result = await async_client.users.with_raw_response.update_user(
+    "some example string", "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UJsonResponse1
@@ -8769,7 +8839,7 @@ match result:
 | <code>api_key</code> | <code>str</code> | Value sent with the request. |
 | <code>api_username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UJsonRequest](discourse/models/u_json_request.py) \| [UJsonRequestDict](discourse/models/u_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -8817,7 +8887,7 @@ Send a `PUT` request.
 **Sync**
 
 ```python
-result = client.users.with_raw_response.update_username(username)
+result = client.users.with_raw_response.update_username("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -8828,7 +8898,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.users.with_raw_response.update_username(username)
+result = await async_client.users.with_raw_response.update_username("some example string")
 match result:
     case Success():
         ...  # 2xx, no content
@@ -8848,7 +8918,7 @@ match result:
 | --- | --- | --- |
 | <code>username</code> | <code>str</code> | Value sent with the request. |
 | <code>body</code> | <code>[UPreferencesUsernameJsonRequest](discourse/models/u_preferences_username_json_request.py) \| [UPreferencesUsernameJsonRequestDict](discourse/models/u_preferences_username_json_request.py) \| None</code> | The request body.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](discourse/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>

@@ -11,4 +11,4 @@ class PostStream(SdkBaseModel):
 
 
 class PostStreamDict(TypedDict):
-    posts: NotRequired[list[Post3 | Post3Dict]]
+    posts: NotRequired[list[Post3Dict]]

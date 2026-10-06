@@ -105,7 +105,7 @@ class PostsJsonResponse1Dict(TypedDict):
     can_wiki: bool
     user_title: str | None
     bookmarked: bool
-    actions_summary: list[ActionsSummary | ActionsSummaryDict]
+    actions_summary: list[ActionsSummaryDict]
     moderator: bool
     admin: bool
     staff: bool

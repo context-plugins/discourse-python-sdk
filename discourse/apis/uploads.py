@@ -4,11 +4,15 @@ from uuid import UUID, uuid4
 
 from ..core import (
     ApiResult,
+    AsyncFileInput,
     AsyncRawClient,
     BaseRawResponse,
+    FileInput,
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
+    file_part,
     json_body,
     json_decoder,
     multipart_body,
@@ -73,7 +77,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -110,7 +115,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -144,7 +150,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -173,7 +180,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -201,7 +209,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -216,7 +225,7 @@ class Uploads:
         *,
         user_id: int | None = None,
         synchronous: bool | None = None,
-        file: bytes | None = None,
+        file: FileInput | None = None,
         request_options: RequestOptionsOrDict | None = None,
     ) -> UploadsJsonResponse:
         """Send a ``POST`` request.
@@ -226,7 +235,8 @@ class Uploads:
             user_id: required if uploading an avatar
             synchronous: Use this flag to return an id and url
             file: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             file uploaded
@@ -263,7 +273,8 @@ class Uploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -300,7 +311,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -337,7 +349,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -371,7 +384,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -402,7 +416,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -430,7 +445,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -447,7 +463,7 @@ class AsyncUploads:
         *,
         user_id: int | None = None,
         synchronous: bool | None = None,
-        file: bytes | None = None,
+        file: AsyncFileInput | None = None,
         request_options: RequestOptionsOrDict | None = None,
     ) -> UploadsJsonResponse:
         """Send a ``POST`` request.
@@ -457,7 +473,8 @@ class AsyncUploads:
             user_id: required if uploading an avatar
             synchronous: Use this flag to return an id and url
             file: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             file uploaded
@@ -496,7 +513,8 @@ class AsyncUploads:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             external upload initialized
@@ -532,7 +550,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -574,7 +593,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -613,7 +633,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -649,7 +670,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -682,7 +704,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -702,7 +725,7 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
         *,
         user_id: int | None = None,
         synchronous: bool | None = None,
-        file: bytes | None = None,
+        file: FileInput | None = None,
         request_options: RequestOptionsOrDict | None = None,
     ) -> ApiResult[UploadsJsonResponse, RawError]:
         """Send a ``POST`` request.
@@ -712,7 +735,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
             user_id: required if uploading an avatar
             synchronous: Use this flag to return an id and url
             file: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -721,12 +745,10 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
             url_template=self._server.default("/uploads.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=multipart_body(
-                [
-                    param[UploadTypeOrStr]("upload_type", upload_type),
-                    param[int | None]("user_id", user_id),
-                    param[bool | None]("synchronous", synchronous),
-                ],
-                {"file": file},
+                param[UploadTypeOrStr]("upload_type", upload_type),
+                param[int | None]("user_id", user_id),
+                param[bool | None]("synchronous", synchronous),
+                file_part("file", file) if file is not None else None,
             ),
             decoder=json_decoder[UploadsJsonResponse],
             error_mapper=raw_error_response,
@@ -759,7 +781,8 @@ class UploadsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -796,7 +819,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -805,7 +829,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/uploads/abort-multipart.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UploadsAbortMultipartJsonRequest | UploadsAbortMultipartJsonRequestDict | None](body),
-            decoder=json_decoder[UploadsAbortMultipartJsonResponse],
+            decoder=async_json_decoder[UploadsAbortMultipartJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -838,7 +862,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -849,7 +874,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             body=json_body[
                 UploadsBatchPresignMultipartPartsJsonRequest | UploadsBatchPresignMultipartPartsJsonRequestDict | None
             ](body),
-            decoder=json_decoder[UploadsBatchPresignMultipartPartsJsonResponse],
+            decoder=async_json_decoder[UploadsBatchPresignMultipartPartsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -877,7 +902,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -888,7 +914,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             body=json_body[
                 UploadsCompleteExternalUploadJsonRequest | UploadsCompleteExternalUploadJsonRequestDict | None
             ](body),
-            decoder=json_decoder[UploadsCompleteExternalUploadJsonResponse],
+            decoder=async_json_decoder[UploadsCompleteExternalUploadJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -913,7 +939,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -922,7 +949,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/uploads/complete-multipart.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UploadsCompleteMultipartJsonRequest | UploadsCompleteMultipartJsonRequestDict | None](body),
-            decoder=json_decoder[UploadsCompleteMultipartJsonResponse],
+            decoder=async_json_decoder[UploadsCompleteMultipartJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -946,7 +973,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -955,7 +983,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/uploads/create-multipart.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UploadsCreateMultipartJsonRequest | UploadsCreateMultipartJsonRequestDict | None](body),
-            decoder=json_decoder[UploadsCreateMultipartJsonResponse],
+            decoder=async_json_decoder[UploadsCreateMultipartJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -966,7 +994,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         *,
         user_id: int | None = None,
         synchronous: bool | None = None,
-        file: bytes | None = None,
+        file: AsyncFileInput | None = None,
         request_options: RequestOptionsOrDict | None = None,
     ) -> ApiResult[UploadsJsonResponse, RawError]:
         """Send a ``POST`` request.
@@ -976,7 +1004,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             user_id: required if uploading an avatar
             synchronous: Use this flag to return an id and url
             file: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -985,14 +1014,12 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/uploads.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=multipart_body(
-                [
-                    param[UploadTypeOrStr]("upload_type", upload_type),
-                    param[int | None]("user_id", user_id),
-                    param[bool | None]("synchronous", synchronous),
-                ],
-                {"file": file},
+                param[UploadTypeOrStr]("upload_type", upload_type),
+                param[int | None]("user_id", user_id),
+                param[bool | None]("synchronous", synchronous),
+                file_part("file", file) if file is not None else None,
             ),
-            decoder=json_decoder[UploadsJsonResponse],
+            decoder=async_json_decoder[UploadsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1023,7 +1050,8 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1034,7 +1062,7 @@ class AsyncUploadsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             body=json_body[UploadsGeneratePresignedPutJsonRequest | UploadsGeneratePresignedPutJsonRequestDict | None](
                 body
             ),
-            decoder=json_decoder[UploadsGeneratePresignedPutJsonResponse],
+            decoder=async_json_decoder[UploadsGeneratePresignedPutJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

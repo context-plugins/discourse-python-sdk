@@ -13,5 +13,5 @@ class GroupsJsonResponse(SdkBaseModel):
 
 
 class GroupsJsonResponseDict(TypedDict):
-    group: Group1 | Group1Dict
-    extras: Extras | ExtrasDict
+    group: Group1Dict
+    extras: ExtrasDict

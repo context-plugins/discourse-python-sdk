@@ -97,9 +97,9 @@ class PostsRepliesJsonResponseDict(TypedDict):
     can_see_hidden_post: bool
     can_wiki: bool
     user_title: str | None
-    reply_to_user: ReplyToUser | ReplyToUserDict
+    reply_to_user: ReplyToUserDict
     bookmarked: bool
-    actions_summary: list[ActionsSummary | ActionsSummaryDict]
+    actions_summary: list[ActionsSummaryDict]
     moderator: bool
     admin: bool
     staff: bool

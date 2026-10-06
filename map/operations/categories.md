@@ -24,9 +24,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.categories.get_category
 
 - **Route**: `GET /c/{id}/show.json`
-- **Signature**: `def get_category(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def get_category(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `CShowJsonResponse`
 - **Returns (raw)**: `ApiResult[CShowJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -63,9 +63,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.categories.list_category_topics
 
 - **Route**: `GET /c/{slug}/{id}.json`
-- **Signature**: `def list_category_topics(slug: str, id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `slug`, `id`
-- **Params**: `slug` — path · `id` — path
+- **Signature**: `def list_category_topics(slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `slug`, `id_`
+- **Params**: `slug` — path · `id_` — path `id`
 - **Returns (parsed)**: `CJsonResponse`
 - **Returns (raw)**: `ApiResult[CJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -77,9 +77,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.categories.update_category
 
 - **Route**: `PUT /categories/{id}.json`
-- **Signature**: `def update_category(id: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def update_category(id_: int, *, body: CategoriesJsonRequest1 | CategoriesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `CategoriesJsonResponse2`
 - **Returns (raw)**: `ApiResult[CategoriesJsonResponse2, RawError]`
 - **Error**: `RawError` — **Case B**

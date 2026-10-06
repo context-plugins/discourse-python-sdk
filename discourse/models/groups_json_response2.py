@@ -15,7 +15,7 @@ class GroupsJsonResponse2(SdkBaseModel):
 
 
 class GroupsJsonResponse2Dict(TypedDict):
-    groups: list[Group4 | Group4Dict]
-    extras: Extras2 | Extras2Dict
+    groups: list[Group4Dict]
+    extras: Extras2Dict
     total_rows_groups: int
     load_more_groups: str

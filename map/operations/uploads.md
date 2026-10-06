@@ -84,7 +84,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.uploads.create_upload
 
 - **Route**: `POST /uploads.json`
-- **Signature**: `def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: bytes | None = None, request_options: RequestOptionsOrDict | None = None)`
+- **Signature**: `def create_upload(upload_type: UploadTypeOrStr, *, user_id: int | None = None, synchronous: bool | None = None, file: FileInput | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `upload_type`
 - **Params**: `upload_type` — multipart field · `user_id` — multipart field · `synchronous` — multipart field · `file` — multipart file
 - **Returns (parsed)**: `UploadsJsonResponse`

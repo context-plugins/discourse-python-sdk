@@ -9,6 +9,8 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_empty_response,
+    async_json_decoder,
     empty_response,
     json_body,
     json_decoder,
@@ -43,15 +45,16 @@ class Topics:
         self._with_raw_response = TopicsWithRawResponse(client, server)
 
     def bookmark_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> None:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -59,7 +62,7 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.bookmark_topic(
-            id, api_key, api_username, request_options=request_options
+            id_, api_key, api_username, request_options=request_options
         ).unwrap()
 
     def create_topic_post_pm(
@@ -76,7 +79,8 @@ class Topics:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -89,7 +93,7 @@ class Topics:
 
     def create_topic_timer(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -99,11 +103,12 @@ class Topics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -111,19 +116,20 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.create_topic_timer(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def get_specific_posts_from_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> TPostsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
@@ -131,26 +137,27 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.get_specific_posts_from_topic(
-            id, api_key, api_username, request_options=request_options
+            id_, api_key, api_username, request_options=request_options
         ).unwrap()
 
     def get_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> TJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_topic(id, api_key, api_username, request_options=request_options).unwrap()
+        return self._with_raw_response.get_topic(id_, api_key, api_username, request_options=request_options).unwrap()
 
     def get_topic_by_external_id(
         self, external_id: str, *, request_options: RequestOptionsOrDict | None = None
@@ -159,7 +166,8 @@ class Topics:
 
         Args:
             external_id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
@@ -167,7 +175,7 @@ class Topics:
 
     def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -177,11 +185,12 @@ class Topics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             invites to a PM
@@ -189,12 +198,12 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.invite_group_to_topic(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -204,11 +213,12 @@ class Topics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -216,7 +226,7 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.invite_to_topic(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def list_latest_topics(
@@ -238,7 +248,8 @@ class Topics:
                 ``op_likes``, ``posters``
             ascending: Defaults to ``desc``, add ``ascending=true`` to sort asc
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -265,7 +276,8 @@ class Topics:
             api_username: Value sent with the request.
             period: Enum: ``all``, ``yearly``, ``quarterly``, ``monthly``, ``weekly``, ``daily``
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -277,26 +289,29 @@ class Topics:
         ).unwrap()
 
     def remove_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> None:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.remove_topic(id, api_key, api_username, request_options=request_options).unwrap()
+        return self._with_raw_response.remove_topic(
+            id_, api_key, api_username, request_options=request_options
+        ).unwrap()
 
     def set_notification_level(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -306,11 +321,12 @@ class Topics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -318,12 +334,12 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.set_notification_level(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def update_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -333,11 +349,12 @@ class Topics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -345,12 +362,12 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.update_topic(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def update_topic_status(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -360,11 +377,12 @@ class Topics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -372,12 +390,12 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.update_topic_status(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def update_topic_timestamp(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -387,11 +405,12 @@ class Topics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -399,7 +418,7 @@ class Topics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.update_topic_timestamp(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     @property
@@ -412,15 +431,16 @@ class AsyncTopics:
         self._with_raw_response = AsyncTopicsWithRawResponse(client, server)
 
     async def bookmark_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> None:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -428,7 +448,7 @@ class AsyncTopics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
-            await self._with_raw_response.bookmark_topic(id, api_key, api_username, request_options=request_options)
+            await self._with_raw_response.bookmark_topic(id_, api_key, api_username, request_options=request_options)
         ).unwrap()
 
     async def create_topic_post_pm(
@@ -445,7 +465,8 @@ class AsyncTopics:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -460,7 +481,7 @@ class AsyncTopics:
 
     async def create_topic_timer(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -470,11 +491,12 @@ class AsyncTopics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -483,20 +505,21 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.create_topic_timer(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def get_specific_posts_from_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> TPostsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
@@ -505,20 +528,21 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.get_specific_posts_from_topic(
-                id, api_key, api_username, request_options=request_options
+                id_, api_key, api_username, request_options=request_options
             )
         ).unwrap()
 
     async def get_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> TJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
@@ -526,7 +550,7 @@ class AsyncTopics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
-            await self._with_raw_response.get_topic(id, api_key, api_username, request_options=request_options)
+            await self._with_raw_response.get_topic(id_, api_key, api_username, request_options=request_options)
         ).unwrap()
 
     async def get_topic_by_external_id(
@@ -536,7 +560,8 @@ class AsyncTopics:
 
         Args:
             external_id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
@@ -546,7 +571,7 @@ class AsyncTopics:
 
     async def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -556,11 +581,12 @@ class AsyncTopics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             invites to a PM
@@ -569,13 +595,13 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.invite_group_to_topic(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -585,11 +611,12 @@ class AsyncTopics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -598,7 +625,7 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.invite_to_topic(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
@@ -621,7 +648,8 @@ class AsyncTopics:
                 ``op_likes``, ``posters``
             ascending: Defaults to ``desc``, add ``ascending=true`` to sort asc
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -655,7 +683,8 @@ class AsyncTopics:
             api_username: Value sent with the request.
             period: Enum: ``all``, ``yearly``, ``quarterly``, ``monthly``, ``weekly``, ``daily``
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -669,15 +698,16 @@ class AsyncTopics:
         ).unwrap()
 
     async def remove_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> None:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             specific posts
@@ -685,12 +715,12 @@ class AsyncTopics:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
-            await self._with_raw_response.remove_topic(id, api_key, api_username, request_options=request_options)
+            await self._with_raw_response.remove_topic(id_, api_key, api_username, request_options=request_options)
         ).unwrap()
 
     async def set_notification_level(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -700,11 +730,12 @@ class AsyncTopics:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -713,13 +744,13 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.set_notification_level(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def update_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -729,11 +760,12 @@ class AsyncTopics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -742,13 +774,13 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.update_topic(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def update_topic_status(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -758,11 +790,12 @@ class AsyncTopics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -771,13 +804,13 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.update_topic_status(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def update_topic_timestamp(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -787,11 +820,12 @@ class AsyncTopics:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -800,7 +834,7 @@ class AsyncTopics:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.update_topic_timestamp(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
@@ -811,22 +845,23 @@ class AsyncTopics:
 
 class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
     def bookmark_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[None, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/bookmark.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -851,7 +886,8 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -871,7 +907,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def create_topic_timer(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -881,18 +917,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/timer.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -905,22 +942,23 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_specific_posts_from_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TPostsJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/t/{id}/posts.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
             decoder=json_decoder[TPostsJsonResponse],
             error_mapper=raw_error_response,
@@ -928,22 +966,23 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/t/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
             decoder=json_decoder[TJsonResponse],
             error_mapper=raw_error_response,
@@ -957,7 +996,8 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             external_id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -972,7 +1012,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -982,18 +1022,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite-group.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1007,7 +1048,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1017,18 +1058,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1059,7 +1101,8 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
                 ``op_likes``, ``posters``
             ascending: Defaults to ``desc``, add ``ascending=true`` to sort asc
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1093,7 +1136,8 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_username: Value sent with the request.
             period: Enum: ``all``, ``yearly``, ``quarterly``, ``monthly``, ``weekly``, ``daily``
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1108,22 +1152,23 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def remove_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[None, RawError]:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/t/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1136,7 +1181,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def set_notification_level(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1146,18 +1191,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/notifications.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1171,7 +1217,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1181,18 +1227,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/-/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1206,7 +1253,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_topic_status(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1216,18 +1263,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/status.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1241,7 +1289,7 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_topic_timestamp(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1251,18 +1299,19 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/change-timestamp.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -1277,28 +1326,29 @@ class TopicsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
 class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
     async def bookmark_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[None, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/bookmark.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1317,7 +1367,8 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1330,14 +1381,14 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsJsonRequest | PostsJsonRequestDict | None](body),
-            decoder=json_decoder[PostsJsonResponse1],
+            decoder=async_json_decoder[PostsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def create_topic_timer(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1347,71 +1398,74 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/timer.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TTimerJsonRequest | TTimerJsonRequestDict | None](body),
-            decoder=json_decoder[TTimerJsonResponse],
+            decoder=async_json_decoder[TTimerJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_specific_posts_from_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TPostsJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/t/{id}/posts.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
-            decoder=json_decoder[TPostsJsonResponse],
+            decoder=async_json_decoder[TPostsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/t/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
-            decoder=json_decoder[TJsonResponse],
+            decoder=async_json_decoder[TJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1423,7 +1477,8 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             external_id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1431,14 +1486,14 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/t/external_id/{external_id}.json"),
             path_params=[param[str]("external_id", external_id)],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1448,32 +1503,33 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite-group.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None](body),
-            decoder=json_decoder[TInviteGroupJsonResponse],
+            decoder=async_json_decoder[TInviteGroupJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1483,25 +1539,26 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TInviteJsonRequest | TInviteJsonRequestDict | None](body),
-            decoder=json_decoder[TInviteJsonResponse],
+            decoder=async_json_decoder[TInviteJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1525,7 +1582,8 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 ``op_likes``, ``posters``
             ascending: Defaults to ``desc``, add ``ascending=true`` to sort asc
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1538,7 +1596,7 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[int | None]("per_page", per_page),
             ],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
-            decoder=json_decoder[LatestJsonResponse],
+            decoder=async_json_decoder[LatestJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1559,7 +1617,8 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_username: Value sent with the request.
             period: Enum: ``all``, ``yearly``, ``quarterly``, ``monthly``, ``weekly``, ``daily``
             per_page: Maximum number of topics returned, between 1-100
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1568,41 +1627,42 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/top.json"),
             query_params=[param[str | None]("period", period), param[int | None]("per_page", per_page)],
             headers=[param[str]("Api-Key", api_key), param[str]("Api-Username", api_username)],
-            decoder=json_decoder[TopJsonResponse],
+            decoder=async_json_decoder[TopJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def remove_topic(
-        self, id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[None, RawError]:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/t/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def set_notification_level(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1612,32 +1672,33 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/notifications.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TNotificationsJsonRequest | TNotificationsJsonRequestDict | None](body),
-            decoder=json_decoder[TNotificationsJsonResponse],
+            decoder=async_json_decoder[TNotificationsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1647,32 +1708,33 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/-/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TJsonRequest | TJsonRequestDict | None](body),
-            decoder=json_decoder[TJsonResponse1],
+            decoder=async_json_decoder[TJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_topic_status(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1682,32 +1744,33 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/status.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TStatusJsonRequest | TStatusJsonRequestDict | None](body),
-            decoder=json_decoder[TStatusJsonResponse],
+            decoder=async_json_decoder[TStatusJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_topic_timestamp(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -1717,25 +1780,26 @@ class AsyncTopicsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/t/{id}/change-timestamp.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None](body),
-            decoder=json_decoder[TChangeTimestampJsonResponse],
+            decoder=async_json_decoder[TChangeTimestampJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

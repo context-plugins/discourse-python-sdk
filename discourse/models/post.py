@@ -19,4 +19,4 @@ class PostDict(TypedDict):
     post_number: int
     url: str
     category_slug: str
-    topic: Topic | TopicDict
+    topic: TopicDict

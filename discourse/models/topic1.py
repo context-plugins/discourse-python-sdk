@@ -69,4 +69,4 @@ class Topic1Dict(TypedDict):
     category_id: int
     pinned_globally: bool
     featured_link: str | None
-    posters: list[Poster | PosterDict]
+    posters: list[PosterDict]

@@ -57,6 +57,6 @@ class DetailsDict(TypedDict):
     can_banner_topic: NotRequired[bool]
     can_moderate_category: bool
     can_remove_self_id: int
-    participants: NotRequired[list[Participant1 | Participant1Dict]]
-    created_by: CreatedBy | CreatedByDict
-    last_poster: LastPoster | LastPosterDict
+    participants: NotRequired[list[Participant1Dict]]
+    created_by: CreatedByDict
+    last_poster: LastPosterDict

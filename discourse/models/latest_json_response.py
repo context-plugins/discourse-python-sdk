@@ -16,6 +16,6 @@ class LatestJsonResponse(SdkBaseModel):
 
 
 class LatestJsonResponseDict(TypedDict):
-    users: NotRequired[list[User2 | User2Dict]]
+    users: NotRequired[list[User2Dict]]
     primary_groups: NotRequired[list[Any]]
-    topic_list: NotRequired[TopicList4 | TopicList4Dict]
+    topic_list: NotRequired[TopicList4Dict]

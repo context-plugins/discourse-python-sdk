@@ -15,6 +15,6 @@ class GroupsMembersJsonResponse(SdkBaseModel):
 
 
 class GroupsMembersJsonResponseDict(TypedDict):
-    members: list[Member | MemberDict]
-    owners: list[Owner | OwnerDict]
-    meta: Meta | MetaDict
+    members: list[MemberDict]
+    owners: list[OwnerDict]
+    meta: MetaDict

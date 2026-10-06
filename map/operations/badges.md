@@ -36,9 +36,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.badges.delete_badge
 
 - **Route**: `DELETE /admin/badges/{id}.json`
-- **Signature**: `def delete_badge(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def delete_badge(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `None`
 - **Returns (raw)**: `ApiResult[None, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -60,9 +60,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.badges.update_badge
 
 - **Route**: `PUT /admin/badges/{id}.json`
-- **Signature**: `def update_badge(id: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def update_badge(id_: int, *, body: AdminBadgesJsonRequest1 | AdminBadgesJsonRequest1Dict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `AdminBadgesJsonResponse2`
 - **Returns (raw)**: `ApiResult[AdminBadgesJsonResponse2, RawError]`
 - **Error**: `RawError` — **Case B**

@@ -77,5 +77,5 @@ class Topic2Dict(TypedDict):
     pinned_globally: NotRequired[bool]
     featured_link: NotRequired[str | None]
     allowed_user_count: NotRequired[int]
-    posters: NotRequired[list[Poster1 | Poster1Dict]]
-    participants: NotRequired[list[Participant | ParticipantDict]]
+    posters: NotRequired[list[Poster1Dict]]
+    participants: NotRequired[list[ParticipantDict]]

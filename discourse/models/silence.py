@@ -21,4 +21,4 @@ class SilenceDict(TypedDict):
     full_silence_reason: str
     silenced_till: str
     silenced_at: str
-    silenced_by: SilencedBy | SilencedByDict
+    silenced_by: SilencedByDict

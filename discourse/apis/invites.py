@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -46,7 +47,8 @@ class Invites:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -71,7 +73,8 @@ class Invites:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -84,7 +87,7 @@ class Invites:
 
     def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -94,11 +97,12 @@ class Invites:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             invites to a PM
@@ -106,12 +110,12 @@ class Invites:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.invite_group_to_topic(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -121,11 +125,12 @@ class Invites:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -133,7 +138,7 @@ class Invites:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.invite_to_topic(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     @property
@@ -159,7 +164,8 @@ class AsyncInvites:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -186,7 +192,8 @@ class AsyncInvites:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -201,7 +208,7 @@ class AsyncInvites:
 
     async def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -211,11 +218,12 @@ class AsyncInvites:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             invites to a PM
@@ -224,13 +232,13 @@ class AsyncInvites:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.invite_group_to_topic(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
     async def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -240,11 +248,12 @@ class AsyncInvites:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             topic updated
@@ -253,7 +262,7 @@ class AsyncInvites:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.invite_to_topic(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
@@ -277,7 +286,8 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -309,7 +319,8 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -329,7 +340,7 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -339,18 +350,19 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite-group.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -364,7 +376,7 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -374,18 +386,19 @@ class InvitesWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -413,7 +426,8 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -426,7 +440,7 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[InvitesJsonRequest | InvitesJsonRequestDict | None](body),
-            decoder=json_decoder[InvitesJsonResponse],
+            decoder=async_json_decoder[InvitesJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -445,7 +459,8 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -458,14 +473,14 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[InvitesCreateMultipleJsonRequest | InvitesCreateMultipleJsonRequestDict | None](body),
-            decoder=json_decoder[InvitesCreateMultipleJsonResponse],
+            decoder=async_json_decoder[InvitesCreateMultipleJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def invite_group_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -475,32 +490,33 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite-group.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None](body),
-            decoder=json_decoder[TInviteGroupJsonResponse],
+            decoder=async_json_decoder[TInviteGroupJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def invite_to_topic(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -510,25 +526,26 @@ class AsyncInvitesWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/t/{id}/invite.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[TInviteJsonRequest | TInviteJsonRequestDict | None](body),
-            decoder=json_decoder[TInviteJsonResponse],
+            decoder=async_json_decoder[TInviteJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

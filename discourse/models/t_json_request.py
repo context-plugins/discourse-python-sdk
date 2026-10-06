@@ -11,4 +11,4 @@ class TJsonRequest(SdkBaseModel):
 
 
 class TJsonRequestDict(TypedDict):
-    topic: NotRequired[Topic5 | Topic5Dict]
+    topic: NotRequired[Topic5Dict]

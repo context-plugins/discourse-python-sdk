@@ -9,6 +9,8 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_empty_response,
+    async_json_decoder,
     empty_response,
     json_body,
     json_decoder,
@@ -48,7 +50,8 @@ class Posts:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -61,7 +64,7 @@ class Posts:
 
     def delete_post(
         self,
-        id: int,
+        id_: int,
         api_key: str,
         api_username: str,
         *,
@@ -71,11 +74,12 @@ class Posts:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -83,25 +87,26 @@ class Posts:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.delete_post(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
-    def get_post(self, id: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
+    def get_post(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
         response. ``actions_summary`` responses with the id of ``2`` signify a ``like``. If there are no
         ``actions_summary`` items with the id of ``2``, that means there are 0 likes. Other ids likely refer to various
         different flag types.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             single reviewable post
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_post(id, request_options=request_options).unwrap()
+        return self._with_raw_response.get_post(id_, request_options=request_options).unwrap()
 
     def list_posts(
         self, *, before: int | None = None, request_options: RequestOptionsOrDict | None = None
@@ -110,7 +115,8 @@ class Posts:
 
         Args:
             before: Load posts with an id lower than this value. Useful for pagination.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             latest posts
@@ -121,7 +127,7 @@ class Posts:
 
     def lock_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -131,11 +137,12 @@ class Posts:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -143,7 +150,7 @@ class Posts:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.lock_post(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     def perform_post_action(
@@ -160,7 +167,8 @@ class Posts:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -172,24 +180,25 @@ class Posts:
         ).unwrap()
 
     def post_replies(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> list[PostsRepliesJsonResponse]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post replies
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.post_replies(id, request_options=request_options).unwrap()
+        return self._with_raw_response.post_replies(id_, request_options=request_options).unwrap()
 
     def update_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -199,11 +208,12 @@ class Posts:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -211,7 +221,7 @@ class Posts:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.update_post(
-            id, api_key, api_username, body=body, request_options=request_options
+            id_, api_key, api_username, body=body, request_options=request_options
         ).unwrap()
 
     @property
@@ -237,7 +247,8 @@ class AsyncPosts:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -252,7 +263,7 @@ class AsyncPosts:
 
     async def delete_post(
         self,
-        id: int,
+        id_: int,
         api_key: str,
         api_username: str,
         *,
@@ -262,11 +273,12 @@ class AsyncPosts:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -275,26 +287,27 @@ class AsyncPosts:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.delete_post(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
-    async def get_post(self, id: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
+    async def get_post(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
         response. ``actions_summary`` responses with the id of ``2`` signify a ``like``. If there are no
         ``actions_summary`` items with the id of ``2``, that means there are 0 likes. Other ids likely refer to various
         different flag types.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             single reviewable post
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_post(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.get_post(id_, request_options=request_options)).unwrap()
 
     async def list_posts(
         self, *, before: int | None = None, request_options: RequestOptionsOrDict | None = None
@@ -303,7 +316,8 @@ class AsyncPosts:
 
         Args:
             before: Load posts with an id lower than this value. Useful for pagination.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             latest posts
@@ -314,7 +328,7 @@ class AsyncPosts:
 
     async def lock_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -324,11 +338,12 @@ class AsyncPosts:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -337,7 +352,7 @@ class AsyncPosts:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.lock_post(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
@@ -355,7 +370,8 @@ class AsyncPosts:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -369,24 +385,25 @@ class AsyncPosts:
         ).unwrap()
 
     async def post_replies(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> list[PostsRepliesJsonResponse]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post replies
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.post_replies(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.post_replies(id_, request_options=request_options)).unwrap()
 
     async def update_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -396,11 +413,12 @@ class AsyncPosts:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post updated
@@ -409,7 +427,7 @@ class AsyncPosts:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
             await self._with_raw_response.update_post(
-                id, api_key, api_username, body=body, request_options=request_options
+                id_, api_key, api_username, body=body, request_options=request_options
             )
         ).unwrap()
 
@@ -433,7 +451,8 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -453,7 +472,7 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def delete_post(
         self,
-        id: int,
+        id_: int,
         api_key: str,
         api_username: str,
         *,
@@ -463,18 +482,19 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -487,7 +507,7 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_post(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[PostsJsonResponse2, RawError]:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
         response. ``actions_summary`` responses with the id of ``2`` signify a ``like``. If there are no
@@ -495,15 +515,16 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         different flag types.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             decoder=json_decoder[PostsJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -516,7 +537,8 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             before: Load posts with an id lower than this value. Useful for pagination.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -531,7 +553,7 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def lock_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -541,18 +563,19 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/posts/{id}/locked.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -578,7 +601,8 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -597,20 +621,21 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def post_replies(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[list[PostsRepliesJsonResponse], RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/posts/{id}/replies.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             decoder=json_decoder[list[PostsRepliesJsonResponse]],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -618,7 +643,7 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -628,18 +653,19 @@ class PostsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
@@ -667,7 +693,8 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -680,14 +707,14 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsJsonRequest | PostsJsonRequestDict | None](body),
-            decoder=json_decoder[PostsJsonResponse1],
+            decoder=async_json_decoder[PostsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def delete_post(
         self,
-        id: int,
+        id_: int,
         api_key: str,
         api_username: str,
         *,
@@ -697,31 +724,32 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsJsonRequest2 | PostsJsonRequest2Dict | None](body),
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_post(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[PostsJsonResponse2, RawError]:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
         response. ``actions_summary`` responses with the id of ``2`` signify a ``like``. If there are no
@@ -729,16 +757,17 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         different flag types.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[str]("id", id)],
-            decoder=json_decoder[PostsJsonResponse2],
+            path_params=[param[str]("id", id_)],
+            decoder=async_json_decoder[PostsJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -750,7 +779,8 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             before: Load posts with an id lower than this value. Useful for pagination.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -758,14 +788,14 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/posts.json"),
             query_params=[param[int | None]("before", before)],
-            decoder=json_decoder[PostsJsonResponse],
+            decoder=async_json_decoder[PostsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def lock_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -775,25 +805,26 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/posts/{id}/locked.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsLockedJsonRequest | PostsLockedJsonRequestDict | None](body),
-            decoder=json_decoder[PostsLockedJsonResponse],
+            decoder=async_json_decoder[PostsLockedJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -812,7 +843,8 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -825,34 +857,35 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostActionsJsonRequest | PostActionsJsonRequestDict | None](body),
-            decoder=json_decoder[PostActionsJsonResponse],
+            decoder=async_json_decoder[PostActionsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def post_replies(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[list[PostsRepliesJsonResponse], RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/posts/{id}/replies.json"),
-            path_params=[param[str]("id", id)],
-            decoder=json_decoder[list[PostsRepliesJsonResponse]],
+            path_params=[param[str]("id", id_)],
+            decoder=async_json_decoder[list[PostsRepliesJsonResponse]],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_post(
         self,
-        id: str,
+        id_: str,
         api_key: str,
         api_username: str,
         *,
@@ -862,25 +895,26 @@ class AsyncPostsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/posts/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[
                 param[str]("Api-Key", api_key),
                 param[str]("Api-Username", api_username),
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsJsonRequest1 | PostsJsonRequest1Dict | None](body),
-            decoder=json_decoder[PostsJsonResponse3],
+            decoder=async_json_decoder[PostsJsonResponse3],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

@@ -11,4 +11,4 @@ class TagGroupsJsonResponse(SdkBaseModel):
 
 
 class TagGroupsJsonResponseDict(TypedDict):
-    tag_groups: list[TagGroup | TagGroupDict]
+    tag_groups: list[TagGroupDict]

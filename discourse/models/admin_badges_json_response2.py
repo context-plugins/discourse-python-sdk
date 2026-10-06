@@ -13,5 +13,5 @@ class AdminBadgesJsonResponse2(SdkBaseModel):
 
 
 class AdminBadgesJsonResponse2Dict(TypedDict):
-    badge_types: list[BadgeType | BadgeTypeDict]
-    badge: Badge1 | Badge1Dict
+    badge_types: list[BadgeTypeDict]
+    badge: Badge1Dict

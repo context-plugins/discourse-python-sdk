@@ -11,4 +11,4 @@ class TagGroupsJsonResponse1(SdkBaseModel):
 
 
 class TagGroupsJsonResponse1Dict(TypedDict):
-    tag_group: TagGroup1 | TagGroup1Dict
+    tag_group: TagGroup1Dict

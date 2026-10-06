@@ -120,8 +120,8 @@ class CategoryDict(TypedDict):
     allowed_tags: NotRequired[list[Any]]
     allowed_tag_groups: NotRequired[list[Any]]
     allow_global_tags: NotRequired[bool]
-    required_tag_groups: list[RequiredTagGroup | RequiredTagGroupDict]
-    category_setting: NotRequired[CategorySetting | CategorySettingDict]
+    required_tag_groups: list[RequiredTagGroupDict]
+    category_setting: NotRequired[CategorySettingDict]
     category_localizations: NotRequired[list[Any]]
     read_only_banner: str | None
     available_groups: list[Any]
@@ -129,7 +129,7 @@ class CategoryDict(TypedDict):
     auto_close_based_on_last_post: bool
     allow_unlimited_owner_edits_on_first_post: bool
     default_slow_mode_seconds: str | None
-    group_permissions: list[GroupPermission | GroupPermissionDict]
+    group_permissions: list[GroupPermissionDict]
     email_in: str | None
     email_in_allow_strangers: bool
     mailinglist_mirror: bool
@@ -146,4 +146,4 @@ class CategoryDict(TypedDict):
     uploaded_background_dark: str | None
     category_types: NotRequired[Any]
     category_type_settings: NotRequired[Any]
-    available_category_types: NotRequired[list[AvailableCategoryType | AvailableCategoryTypeDict]]
+    available_category_types: NotRequired[list[AvailableCategoryTypeDict]]

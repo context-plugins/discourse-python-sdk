@@ -6,7 +6,7 @@ from typing_extensions import TypedDict
 
 from ..core import SdkBaseModel
 from .poster4 import Poster4, Poster4Dict
-from .tag import Tag, TagDict
+from .tag_model import TagModel, TagModelDict
 
 
 class SuggestedTopic(SdkBaseModel):
@@ -32,7 +32,7 @@ class SuggestedTopic(SdkBaseModel):
     archived: bool
     bookmarked: str | None
     liked: str | None
-    tags: list[Tag]
+    tags: list[TagModel]
     tags_descriptions: Any
     like_count: int
     views: int
@@ -64,10 +64,10 @@ class SuggestedTopicDict(TypedDict):
     archived: bool
     bookmarked: str | None
     liked: str | None
-    tags: list[Tag | TagDict]
+    tags: list[TagModelDict]
     tags_descriptions: Any
     like_count: int
     views: int
     category_id: int
     featured_link: str | None
-    posters: list[Poster4 | Poster4Dict]
+    posters: list[Poster4Dict]

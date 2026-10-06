@@ -14,5 +14,5 @@ class PostStream1(SdkBaseModel):
 
 
 class PostStream1Dict(TypedDict):
-    posts: list[Post4 | Post4Dict]
+    posts: list[Post4Dict]
     stream: list[Any]

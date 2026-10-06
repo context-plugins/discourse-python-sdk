@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -39,34 +40,38 @@ class Admin:
         self._with_raw_response = AdminWithRawResponse(client, server)
 
     def activate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersActivateJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.activate_user(id, request_options=request_options).unwrap()
+        return self._with_raw_response.activate_user(id_, request_options=request_options).unwrap()
 
-    def admin_get_user(self, id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminUsersJsonResponse:
+    def admin_get_user(
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
+    ) -> AdminUsersJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.admin_get_user(id, request_options=request_options).unwrap()
+        return self._with_raw_response.admin_get_user(id_, request_options=request_options).unwrap()
 
     def admin_list_users(
         self,
@@ -91,7 +96,8 @@ class Admin:
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             users response
@@ -134,7 +140,8 @@ class Admin:
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -154,40 +161,42 @@ class Admin:
         ).unwrap()
 
     def anonymize_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersAnonymizeJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.anonymize_user(id, request_options=request_options).unwrap()
+        return self._with_raw_response.anonymize_user(id_, request_options=request_options).unwrap()
 
     def deactivate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersDeactivateJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.deactivate_user(id, request_options=request_options).unwrap()
+        return self._with_raw_response.deactivate_user(id_, request_options=request_options).unwrap()
 
     def delete_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -195,32 +204,34 @@ class Admin:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_user(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.delete_user(id_, body=body, request_options=request_options).unwrap()
 
     def log_out_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersLogOutJsonResponse:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.log_out_user(id, request_options=request_options).unwrap()
+        return self._with_raw_response.log_out_user(id_, request_options=request_options).unwrap()
 
     def refresh_gravatar(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -229,7 +240,8 @@ class Admin:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -240,7 +252,7 @@ class Admin:
 
     def silence_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -248,20 +260,21 @@ class Admin:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.silence_user(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.silence_user(id_, body=body, request_options=request_options).unwrap()
 
     def suspend_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -269,16 +282,17 @@ class Admin:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.suspend_user(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.suspend_user(id_, body=body, request_options=request_options).unwrap()
 
     @property
     def with_raw_response(self) -> AdminWithRawResponse:
@@ -290,36 +304,38 @@ class AsyncAdmin:
         self._with_raw_response = AsyncAdminWithRawResponse(client, server)
 
     async def activate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersActivateJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.activate_user(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.activate_user(id_, request_options=request_options)).unwrap()
 
     async def admin_get_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.admin_get_user(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.admin_get_user(id_, request_options=request_options)).unwrap()
 
     async def admin_list_users(
         self,
@@ -344,7 +360,8 @@ class AsyncAdmin:
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             users response
@@ -389,7 +406,8 @@ class AsyncAdmin:
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -411,40 +429,42 @@ class AsyncAdmin:
         ).unwrap()
 
     async def anonymize_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersAnonymizeJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.anonymize_user(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.anonymize_user(id_, request_options=request_options)).unwrap()
 
     async def deactivate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersDeactivateJsonResponse:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.deactivate_user(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.deactivate_user(id_, request_options=request_options)).unwrap()
 
     async def delete_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -452,32 +472,34 @@ class AsyncAdmin:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.delete_user(id, body=body, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.delete_user(id_, body=body, request_options=request_options)).unwrap()
 
     async def log_out_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminUsersLogOutJsonResponse:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.log_out_user(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.log_out_user(id_, request_options=request_options)).unwrap()
 
     async def refresh_gravatar(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -486,7 +508,8 @@ class AsyncAdmin:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -497,7 +520,7 @@ class AsyncAdmin:
 
     async def silence_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -505,20 +528,21 @@ class AsyncAdmin:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.silence_user(id, body=body, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.silence_user(id_, body=body, request_options=request_options)).unwrap()
 
     async def suspend_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -526,16 +550,17 @@ class AsyncAdmin:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.suspend_user(id, body=body, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.suspend_user(id_, body=body, request_options=request_options)).unwrap()
 
     @property
     def with_raw_response(self) -> AsyncAdminWithRawResponse:
@@ -544,20 +569,21 @@ class AsyncAdmin:
 
 class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
     def activate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersActivateJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/activate.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             decoder=json_decoder[AdminUsersActivateJsonResponse],
             error_mapper=raw_error_response,
@@ -565,20 +591,21 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def admin_get_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/admin/users/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             decoder=json_decoder[AdminUsersJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -607,7 +634,8 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -653,7 +681,8 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -676,20 +705,21 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def anonymize_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/anonymize.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             decoder=json_decoder[AdminUsersAnonymizeJsonResponse],
             error_mapper=raw_error_response,
@@ -697,20 +727,21 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def deactivate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/deactivate.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             decoder=json_decoder[AdminUsersDeactivateJsonResponse],
             error_mapper=raw_error_response,
@@ -719,7 +750,7 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def delete_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -727,16 +758,17 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/admin/users/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersJsonRequest | AdminUsersJsonRequestDict | None](body),
             decoder=json_decoder[AdminUsersJsonResponse1],
@@ -745,20 +777,21 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def log_out_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="POST",
             url_template=self._server.default("/admin/users/{id}/log_out.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             decoder=json_decoder[AdminUsersLogOutJsonResponse],
             error_mapper=raw_error_response,
@@ -772,7 +805,8 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -788,7 +822,7 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def silence_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -796,16 +830,17 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/silence.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None](body),
             decoder=json_decoder[AdminUsersSilenceJsonResponse],
@@ -815,7 +850,7 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def suspend_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -823,16 +858,17 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/suspend.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None](body),
             decoder=json_decoder[AdminUsersSuspendJsonResponse],
@@ -843,42 +879,44 @@ class AdminWithRawResponse(BaseRawResponse[RawClient, Server]):
 
 class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
     async def activate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersActivateJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/activate.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[AdminUsersActivateJsonResponse],
+            decoder=async_json_decoder[AdminUsersActivateJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def admin_get_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/admin/users/{id}.json"),
-            path_params=[param[int]("id", id)],
-            decoder=json_decoder[AdminUsersJsonResponse],
+            path_params=[param[int]("id", id_)],
+            decoder=async_json_decoder[AdminUsersJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -906,7 +944,8 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -922,7 +961,7 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[str | None]("email", email),
                 param[str | None]("ip", ip),
             ],
-            decoder=json_decoder[list[AdminUsersJsonResponse2]],
+            decoder=async_json_decoder[list[AdminUsersJsonResponse2]],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -952,7 +991,8 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             stats: Include user stats information
             email: Filter to the user with this email address
             ip: Filter to users with this IP address
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -969,56 +1009,58 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 param[str | None]("email", email),
                 param[str | None]("ip", ip),
             ],
-            decoder=json_decoder[list[AdminUsersListJsonResponse]],
+            decoder=async_json_decoder[list[AdminUsersListJsonResponse]],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def anonymize_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersAnonymizeJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/anonymize.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[AdminUsersAnonymizeJsonResponse],
+            decoder=async_json_decoder[AdminUsersAnonymizeJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def deactivate_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersDeactivateJsonResponse, RawError]:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/deactivate.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[AdminUsersDeactivateJsonResponse],
+            decoder=async_json_decoder[AdminUsersDeactivateJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def delete_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -1026,40 +1068,42 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/admin/users/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersJsonRequest | AdminUsersJsonRequestDict | None](body),
-            decoder=json_decoder[AdminUsersJsonResponse1],
+            decoder=async_json_decoder[AdminUsersJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def log_out_user(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminUsersLogOutJsonResponse, RawError]:
         """Send a ``POST`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="POST",
             url_template=self._server.default("/admin/users/{id}/log_out.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[AdminUsersLogOutJsonResponse],
+            decoder=async_json_decoder[AdminUsersLogOutJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -1071,7 +1115,8 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -1080,14 +1125,14 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/user_avatar/{username}/refresh_gravatar.json"),
             path_params=[param[str]("username", username)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[UserAvatarRefreshGravatarJsonResponse],
+            decoder=async_json_decoder[UserAvatarRefreshGravatarJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def silence_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -1095,26 +1140,27 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/silence.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None](body),
-            decoder=json_decoder[AdminUsersSilenceJsonResponse],
+            decoder=async_json_decoder[AdminUsersSilenceJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def suspend_user(
         self,
-        id: int,
+        id_: int,
         *,
         body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -1122,19 +1168,20 @@ class AsyncAdminWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/admin/users/{id}/suspend.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None](body),
-            decoder=json_decoder[AdminUsersSuspendJsonResponse],
+            decoder=async_json_decoder[AdminUsersSuspendJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

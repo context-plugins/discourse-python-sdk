@@ -15,4 +15,4 @@ class Poster4(SdkBaseModel):
 class Poster4Dict(TypedDict):
     extras: str
     description: str
-    user: User | UserDict
+    user: UserDict

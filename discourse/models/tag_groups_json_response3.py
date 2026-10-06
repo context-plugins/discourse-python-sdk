@@ -13,4 +13,4 @@ class TagGroupsJsonResponse3(SdkBaseModel):
 
 class TagGroupsJsonResponse3Dict(TypedDict):
     success: NotRequired[str]
-    tag_group: NotRequired[TagGroup2 | TagGroup2Dict]
+    tag_group: NotRequired[TagGroup2Dict]

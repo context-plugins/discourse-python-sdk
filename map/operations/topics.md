@@ -9,9 +9,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.bookmark_topic
 
 - **Route**: `PUT /t/{id}/bookmark.json`
-- **Signature**: `def bookmark_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
+- **Signature**: `def bookmark_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
 - **Returns (parsed)**: `None`
 - **Returns (raw)**: `ApiResult[None, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -35,9 +35,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.create_topic_timer
 
 - **Route**: `POST /t/{id}/timer.json`
-- **Signature**: `def create_topic_timer(id: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def create_topic_timer(id_: str, api_key: str, api_username: str, *, body: TTimerJsonRequest | TTimerJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TTimerJsonResponse`
 - **Returns (raw)**: `ApiResult[TTimerJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -51,9 +51,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.get_specific_posts_from_topic
 
 - **Route**: `GET /t/{id}/posts.json`
-- **Signature**: `def get_specific_posts_from_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
+- **Signature**: `def get_specific_posts_from_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
 - **Returns (parsed)**: `TPostsJsonResponse`
 - **Returns (raw)**: `ApiResult[TPostsJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -65,9 +65,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.get_topic
 
 - **Route**: `GET /t/{id}.json`
-- **Signature**: `def get_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
+- **Signature**: `def get_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
 - **Returns (parsed)**: `TJsonResponse`
 - **Returns (raw)**: `ApiResult[TJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -89,9 +89,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.invite_group_to_topic
 
 - **Route**: `POST /t/{id}/invite-group.json`
-- **Signature**: `def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TInviteGroupJsonResponse`
 - **Returns (raw)**: `ApiResult[TInviteGroupJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -105,9 +105,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.invite_to_topic
 
 - **Route**: `POST /t/{id}/invite.json`
-- **Signature**: `def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TInviteJsonResponse`
 - **Returns (raw)**: `ApiResult[TInviteJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -149,9 +149,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.remove_topic
 
 - **Route**: `DELETE /t/{id}.json`
-- **Signature**: `def remove_topic(id: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
+- **Signature**: `def remove_topic(id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username`
 - **Returns (parsed)**: `None`
 - **Returns (raw)**: `ApiResult[None, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -159,9 +159,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.set_notification_level
 
 - **Route**: `POST /t/{id}/notifications.json`
-- **Signature**: `def set_notification_level(id: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def set_notification_level(id_: str, api_key: str, api_username: str, *, body: TNotificationsJsonRequest | TNotificationsJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TNotificationsJsonResponse`
 - **Returns (raw)**: `ApiResult[TNotificationsJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -175,9 +175,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.update_topic
 
 - **Route**: `PUT /t/-/{id}.json`
-- **Signature**: `def update_topic(id: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def update_topic(id_: str, api_key: str, api_username: str, *, body: TJsonRequest | TJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TJsonResponse1`
 - **Returns (raw)**: `ApiResult[TJsonResponse1, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -191,9 +191,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.update_topic_status
 
 - **Route**: `PUT /t/{id}/status.json`
-- **Signature**: `def update_topic_status(id: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def update_topic_status(id_: str, api_key: str, api_username: str, *, body: TStatusJsonRequest | TStatusJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TStatusJsonResponse`
 - **Returns (raw)**: `ApiResult[TStatusJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -207,9 +207,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.topics.update_topic_timestamp
 
 - **Route**: `PUT /t/{id}/change-timestamp.json`
-- **Signature**: `def update_topic_timestamp(id: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def update_topic_timestamp(id_: str, api_key: str, api_username: str, *, body: TChangeTimestampJsonRequest | TChangeTimestampJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TChangeTimestampJsonResponse`
 - **Returns (raw)**: `ApiResult[TChangeTimestampJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**

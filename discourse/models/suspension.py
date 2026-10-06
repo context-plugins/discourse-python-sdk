@@ -19,4 +19,4 @@ class SuspensionDict(TypedDict):
     full_suspend_reason: str
     suspended_till: str
     suspended_at: str
-    suspended_by: SuspendedBy | SuspendedByDict
+    suspended_by: SuspendedByDict

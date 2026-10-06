@@ -41,9 +41,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.invites.invite_group_to_topic
 
 - **Route**: `POST /t/{id}/invite-group.json`
-- **Signature**: `def invite_group_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def invite_group_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteGroupJsonRequest | TInviteGroupJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TInviteGroupJsonResponse`
 - **Returns (raw)**: `ApiResult[TInviteGroupJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -57,9 +57,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.invites.invite_to_topic
 
 - **Route**: `POST /t/{id}/invite.json`
-- **Signature**: `def invite_to_topic(id: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`, `api_key`, `api_username`
-- **Params**: `id` — path · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
+- **Signature**: `def invite_to_topic(id_: str, api_key: str, api_username: str, *, body: TInviteJsonRequest | TInviteJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`, `api_key`, `api_username`
+- **Params**: `id_` — path `id` · `api_key` — header `Api-Key` · `api_username` — header `Api-Username` · `body` — JSON body
 - **Returns (parsed)**: `TInviteJsonResponse`
 - **Returns (raw)**: `ApiResult[TInviteJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**

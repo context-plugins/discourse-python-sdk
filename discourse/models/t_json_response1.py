@@ -11,4 +11,4 @@ class TJsonResponse1(SdkBaseModel):
 
 
 class TJsonResponse1Dict(TypedDict):
-    basic_topic: NotRequired[BasicTopic | BasicTopicDict]
+    basic_topic: NotRequired[BasicTopicDict]

@@ -17,7 +17,7 @@ class UserBadgesJsonResponse(SdkBaseModel):
 
 
 class UserBadgesJsonResponseDict(TypedDict):
-    badges: NotRequired[list[Badge3 | Badge3Dict]]
-    badge_types: NotRequired[list[BadgeType | BadgeTypeDict]]
-    granted_bies: NotRequired[list[GrantedBy | GrantedByDict]]
-    user_badges: list[UserBadge | UserBadgeDict]
+    badges: NotRequired[list[Badge3Dict]]
+    badge_types: NotRequired[list[BadgeTypeDict]]
+    granted_bies: NotRequired[list[GrantedByDict]]
+    user_badges: list[UserBadgeDict]

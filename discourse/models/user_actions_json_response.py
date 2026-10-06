@@ -11,4 +11,4 @@ class UserActionsJsonResponse(SdkBaseModel):
 
 
 class UserActionsJsonResponseDict(TypedDict):
-    user_actions: list[UserAction | UserActionDict]
+    user_actions: list[UserActionDict]

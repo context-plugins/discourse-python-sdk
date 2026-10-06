@@ -13,5 +13,5 @@ class PostsJsonRequest1(SdkBaseModel):
 
 
 class PostsJsonRequest1Dict(TypedDict):
-    post: NotRequired[Post1 | Post1Dict]
+    post: NotRequired[Post1Dict]
     bypass_bump: NotRequired[bool]

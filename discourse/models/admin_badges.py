@@ -18,7 +18,7 @@ class AdminBadges(SdkBaseModel):
 
 class AdminBadgesDict(TypedDict):
     protected_system_fields: list[Any]
-    triggers: Triggers | TriggersDict
+    triggers: TriggersDict
     badge_ids: list[Any]
     badge_grouping_ids: list[Any]
     badge_type_ids: list[Any]

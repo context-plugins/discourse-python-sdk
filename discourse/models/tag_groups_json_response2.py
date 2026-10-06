@@ -11,4 +11,4 @@ class TagGroupsJsonResponse2(SdkBaseModel):
 
 
 class TagGroupsJsonResponse2Dict(TypedDict):
-    tag_group: NotRequired[TagGroup2 | TagGroup2Dict]
+    tag_group: NotRequired[TagGroup2Dict]

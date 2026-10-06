@@ -15,4 +15,4 @@ class UByExternalJsonResponse(SdkBaseModel):
 
 class UByExternalJsonResponseDict(TypedDict):
     user_badges: list[Any]
-    user: User8 | User8Dict
+    user: User8Dict

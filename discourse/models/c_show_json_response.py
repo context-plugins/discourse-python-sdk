@@ -11,4 +11,4 @@ class CShowJsonResponse(SdkBaseModel):
 
 
 class CShowJsonResponseDict(TypedDict):
-    category: Category | CategoryDict
+    category: CategoryDict

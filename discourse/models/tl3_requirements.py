@@ -69,4 +69,4 @@ class Tl3RequirementsDict(TypedDict):
     min_likes_received_days: int
     num_likes_received_users: int
     min_likes_received_users: int
-    penalty_counts: PenaltyCounts1 | PenaltyCounts1Dict
+    penalty_counts: PenaltyCounts1Dict

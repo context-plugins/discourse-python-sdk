@@ -15,4 +15,4 @@ class UJsonResponse(SdkBaseModel):
 
 class UJsonResponseDict(TypedDict):
     user_badges: list[Any]
-    user: User8 | User8Dict
+    user: User8Dict

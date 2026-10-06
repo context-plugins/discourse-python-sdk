@@ -23,4 +23,4 @@ class TopicList5Dict(TypedDict):
     draft_sequence: NotRequired[int]
     for_period: NotRequired[str]
     per_page: NotRequired[int]
-    topics: NotRequired[list[Topic7 | Topic7Dict]]
+    topics: NotRequired[list[Topic7Dict]]

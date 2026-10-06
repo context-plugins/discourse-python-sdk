@@ -75,4 +75,4 @@ class Topic7Dict(TypedDict):
     op_like_count: NotRequired[int]
     pinned_globally: NotRequired[bool]
     featured_link: NotRequired[str | None]
-    posters: NotRequired[list[Poster6 | Poster6Dict]]
+    posters: NotRequired[list[Poster6Dict]]

@@ -41,5 +41,5 @@ class UploadsJsonResponseDict(TypedDict):
     retain_hours: str | None
     human_filesize: str
     dominant_color: NotRequired[str | None]
-    thumbnail: NotRequired[Thumbnail | ThumbnailDict | None]
-    optimized_video: NotRequired[OptimizedVideo | OptimizedVideoDict | None]
+    thumbnail: NotRequired[ThumbnailDict | None]
+    optimized_video: NotRequired[OptimizedVideoDict | None]

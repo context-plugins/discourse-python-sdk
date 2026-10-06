@@ -7,6 +7,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_decoder,
     raw_error_response,
 )
@@ -23,7 +24,8 @@ class Site:
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -36,7 +38,8 @@ class Site:
         """Can be used to fetch basic info about a site
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -58,7 +61,8 @@ class AsyncSite:
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -73,7 +77,8 @@ class AsyncSite:
         """Can be used to fetch basic info about a site
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -92,7 +97,8 @@ class SiteWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -110,7 +116,8 @@ class SiteWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Can be used to fetch basic info about a site
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -130,14 +137,15 @@ class AsyncSiteWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Can be used to fetch all categories and subcategories
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/site.json"),
-            decoder=json_decoder[SiteJsonResponse],
+            decoder=async_json_decoder[SiteJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -148,14 +156,15 @@ class AsyncSiteWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Can be used to fetch basic info about a site
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/site/basic-info.json"),
-            decoder=json_decoder[SiteBasicInfoJsonResponse],
+            decoder=async_json_decoder[SiteBasicInfoJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

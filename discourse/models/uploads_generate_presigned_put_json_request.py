@@ -21,4 +21,4 @@ class UploadsGeneratePresignedPutJsonRequestDict(TypedDict):
     type_: TypeOrStr
     file_name: str
     file_size: int
-    metadata: NotRequired[Metadata | MetadataDict]
+    metadata: NotRequired[MetadataDict]

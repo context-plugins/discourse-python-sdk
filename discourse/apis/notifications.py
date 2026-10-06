@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -31,7 +32,8 @@ class Notifications:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -50,7 +52,8 @@ class Notifications:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications marked read
@@ -74,7 +77,8 @@ class AsyncNotifications:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -93,7 +97,8 @@ class AsyncNotifications:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications marked read
@@ -116,7 +121,8 @@ class NotificationsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -138,7 +144,8 @@ class NotificationsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -160,14 +167,15 @@ class AsyncNotificationsWithRawResponse(BaseRawResponse[AsyncRawClient, Server])
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/notifications.json"),
-            decoder=json_decoder[NotificationsJsonResponse],
+            decoder=async_json_decoder[NotificationsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -182,7 +190,8 @@ class AsyncNotificationsWithRawResponse(BaseRawResponse[AsyncRawClient, Server])
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -191,7 +200,7 @@ class AsyncNotificationsWithRawResponse(BaseRawResponse[AsyncRawClient, Server])
             url_template=self._server.default("/notifications/mark-read.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[NotificationsMarkReadJsonRequest | NotificationsMarkReadJsonRequestDict | None](body),
-            decoder=json_decoder[NotificationsMarkReadJsonResponse],
+            decoder=async_json_decoder[NotificationsMarkReadJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

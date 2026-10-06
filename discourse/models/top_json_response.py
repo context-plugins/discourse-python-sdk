@@ -16,6 +16,6 @@ class TopJsonResponse(SdkBaseModel):
 
 
 class TopJsonResponseDict(TypedDict):
-    users: NotRequired[list[User1 | User1Dict]]
+    users: NotRequired[list[User1Dict]]
     primary_groups: NotRequired[list[Any]]
-    topic_list: NotRequired[TopicList5 | TopicList5Dict]
+    topic_list: NotRequired[TopicList5Dict]

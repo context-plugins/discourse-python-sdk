@@ -21,4 +21,4 @@ class TopicList2Dict(TypedDict):
     draft_key: NotRequired[str]
     draft_sequence: NotRequired[int]
     per_page: NotRequired[int]
-    topics: NotRequired[list[Topic3 | Topic3Dict]]
+    topics: NotRequired[list[Topic3Dict]]

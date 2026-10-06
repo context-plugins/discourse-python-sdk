@@ -11,4 +11,4 @@ class GroupsJsonRequest(SdkBaseModel):
 
 
 class GroupsJsonRequestDict(TypedDict):
-    group: Group | GroupDict
+    group: GroupDict

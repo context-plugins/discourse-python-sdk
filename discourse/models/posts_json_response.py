@@ -11,4 +11,4 @@ class PostsJsonResponse(SdkBaseModel):
 
 
 class PostsJsonResponseDict(TypedDict):
-    latest_posts: list[LatestPost | LatestPostDict]
+    latest_posts: list[LatestPostDict]

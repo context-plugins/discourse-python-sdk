@@ -89,7 +89,7 @@ class Post3Dict(TypedDict):
     can_wiki: NotRequired[bool]
     read: NotRequired[bool]
     user_title: NotRequired[str | None]
-    actions_summary: NotRequired[list[ActionsSummary6 | ActionsSummary6Dict]]
+    actions_summary: NotRequired[list[ActionsSummary6Dict]]
     moderator: NotRequired[bool]
     admin: NotRequired[bool]
     staff: NotRequired[bool]

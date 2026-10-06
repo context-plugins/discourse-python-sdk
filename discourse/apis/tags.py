@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -39,7 +40,8 @@ class Tags:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             tag group created
@@ -53,7 +55,8 @@ class Tags:
 
         Args:
             name: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -62,25 +65,27 @@ class Tags:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.get_tag(name, request_options=request_options).unwrap()
 
-    def get_tag_group(self, id: str, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse2:
+    def get_tag_group(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse2:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_tag_group(id, request_options=request_options).unwrap()
+        return self._with_raw_response.get_tag_group(id_, request_options=request_options).unwrap()
 
     def list_tag_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             tags
@@ -93,7 +98,8 @@ class Tags:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -104,7 +110,7 @@ class Tags:
 
     def update_tag_group(
         self,
-        id: str,
+        id_: str,
         *,
         body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -112,16 +118,17 @@ class Tags:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Tag group updated
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_tag_group(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options).unwrap()
 
     @property
     def with_raw_response(self) -> TagsWithRawResponse:
@@ -142,7 +149,8 @@ class AsyncTags:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             tag group created
@@ -156,7 +164,8 @@ class AsyncTags:
 
         Args:
             name: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -166,26 +175,28 @@ class AsyncTags:
         return (await self._with_raw_response.get_tag(name, request_options=request_options)).unwrap()
 
     async def get_tag_group(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> TagGroupsJsonResponse2:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_tag_group(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.get_tag_group(id_, request_options=request_options)).unwrap()
 
     async def list_tag_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             tags
@@ -198,7 +209,8 @@ class AsyncTags:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             notifications
@@ -209,7 +221,7 @@ class AsyncTags:
 
     async def update_tag_group(
         self,
-        id: str,
+        id_: str,
         *,
         body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -217,16 +229,19 @@ class AsyncTags:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Tag group updated
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_tag_group(id, body=body, request_options=request_options)).unwrap()
+        return (
+            await self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options)
+        ).unwrap()
 
     @property
     def with_raw_response(self) -> AsyncTagsWithRawResponse:
@@ -244,7 +259,8 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -265,7 +281,8 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             name: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -279,20 +296,21 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_tag_group(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TagGroupsJsonResponse2, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/tag_groups/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             decoder=json_decoder[TagGroupsJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -304,7 +322,8 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -322,7 +341,8 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -336,7 +356,7 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_tag_group(
         self,
-        id: str,
+        id_: str,
         *,
         body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -344,16 +364,17 @@ class TagsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/tag_groups/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None](body),
             decoder=json_decoder[TagGroupsJsonResponse3],
@@ -373,7 +394,8 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -382,7 +404,7 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/tag_groups.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[TagGroupsJsonRequest | TagGroupsJsonRequestDict | None](body),
-            decoder=json_decoder[TagGroupsJsonResponse1],
+            decoder=async_json_decoder[TagGroupsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -394,7 +416,8 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             name: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -402,27 +425,28 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/tag/{name}.json"),
             path_params=[param[str]("name", name)],
-            decoder=json_decoder[TagJsonResponse],
+            decoder=async_json_decoder[TagJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_tag_group(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[TagGroupsJsonResponse2, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/tag_groups/{id}.json"),
-            path_params=[param[str]("id", id)],
-            decoder=json_decoder[TagGroupsJsonResponse2],
+            path_params=[param[str]("id", id_)],
+            decoder=async_json_decoder[TagGroupsJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -433,14 +457,15 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/tag_groups.json"),
-            decoder=json_decoder[TagGroupsJsonResponse],
+            decoder=async_json_decoder[TagGroupsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -451,21 +476,22 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/tags.json"),
-            decoder=json_decoder[TagsJsonResponse],
+            decoder=async_json_decoder[TagsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_tag_group(
         self,
-        id: str,
+        id_: str,
         *,
         body: TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -473,19 +499,20 @@ class AsyncTagsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/tag_groups/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[TagGroupsJsonRequest1 | TagGroupsJsonRequest1Dict | None](body),
-            decoder=json_decoder[TagGroupsJsonResponse3],
+            decoder=async_json_decoder[TagGroupsJsonResponse3],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

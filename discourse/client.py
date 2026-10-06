@@ -22,7 +22,7 @@ from .apis.topics import Topics
 from .apis.uploads import Uploads
 from .apis.users import Users
 from .base_client import DEFAULT_TIMEOUT, BaseDiscourseClient
-from .core import OPERATING_SYSTEM, PYTHON_RUNTIME, HttpClient, HttpxClient, RawClient, param
+from .core import OPERATING_SYSTEM, PYTHON_RUNTIME, HttpClient, Httpx2Client, RawClient, RetryOptionsOrDict, param
 
 
 class DiscourseClient(BaseDiscourseClient[RawClient]):
@@ -31,11 +31,13 @@ class DiscourseClient(BaseDiscourseClient[RawClient]):
         *,
         base_url: str | None = None,
         timeout: float = DEFAULT_TIMEOUT,
+        retry_options: int | RetryOptionsOrDict | None = None,
         custom_http_client: HttpClient | None = None,
     ) -> None:
-        super().__init__(base_url=base_url, timeout=timeout)
+        super().__init__(base_url=base_url, timeout=timeout, retry_options=retry_options)
         self._raw_client = RawClient(
-            http_client=custom_http_client if custom_http_client is not None else HttpxClient(timeout=timeout),
+            http_client=custom_http_client if custom_http_client is not None else Httpx2Client(timeout=timeout),
+            retry_options=self._retry_options,
             global_headers=[
                 param[str]("User-Agent", "DiscourseClient/0.1.0 Python"),
                 param[str]("X-APIMatic-Lang", "Python"),

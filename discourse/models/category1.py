@@ -4,7 +4,7 @@ from typing import Any
 
 from typing_extensions import NotRequired, TypedDict
 
-from ..core import UNSET, Optional, SdkBaseModel
+from ..core import UNSET, Optional, OptionalNullable, SdkBaseModel
 
 
 class Category1(SdkBaseModel):
@@ -48,7 +48,7 @@ class Category1(SdkBaseModel):
     topics_all_time: int
     is_uncategorized: Optional[bool] = UNSET
     subcategory_ids: list[Any]
-    subcategory_list: Optional[list[Any | None]] = UNSET
+    subcategory_list: OptionalNullable[list[Any]] = UNSET
     uploaded_logo: str | None
     uploaded_logo_dark: str | None
     uploaded_background: str | None
@@ -96,7 +96,7 @@ class Category1Dict(TypedDict):
     topics_all_time: int
     is_uncategorized: NotRequired[bool]
     subcategory_ids: list[Any]
-    subcategory_list: NotRequired[list[Any | None]]
+    subcategory_list: NotRequired[list[Any] | None]
     uploaded_logo: str | None
     uploaded_logo_dark: str | None
     uploaded_background: str | None

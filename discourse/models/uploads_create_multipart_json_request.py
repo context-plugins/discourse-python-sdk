@@ -20,4 +20,4 @@ class UploadsCreateMultipartJsonRequestDict(TypedDict):
     upload_type: UploadType1OrStr
     file_name: str
     file_size: int
-    metadata: NotRequired[Metadata | MetadataDict]
+    metadata: NotRequired[MetadataDict]

@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -39,7 +40,8 @@ class PrivateMessages:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -57,7 +59,8 @@ class PrivateMessages:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             private messages
@@ -75,7 +78,8 @@ class PrivateMessages:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             private messages
@@ -107,7 +111,8 @@ class AsyncPrivateMessages:
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             post created
@@ -127,7 +132,8 @@ class AsyncPrivateMessages:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             private messages
@@ -145,7 +151,8 @@ class AsyncPrivateMessages:
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             private messages
@@ -176,7 +183,8 @@ class PrivateMessagesWithRawResponse(BaseRawResponse[RawClient, Server]):
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -201,7 +209,8 @@ class PrivateMessagesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -221,7 +230,8 @@ class PrivateMessagesWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -250,7 +260,8 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
             api_key: Value sent with the request.
             api_username: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -263,7 +274,7 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
                 param[UUID]("Idempotency-Key", uuid4()),
             ],
             body=json_body[PostsJsonRequest | PostsJsonRequestDict | None](body),
-            decoder=json_decoder[PostsJsonResponse1],
+            decoder=async_json_decoder[PostsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -275,7 +286,8 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -283,7 +295,7 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
             http_method="GET",
             url_template=self._server.default("/topics/private-messages-sent/{username}.json"),
             path_params=[param[str]("username", username)],
-            decoder=json_decoder[TopicsPrivateMessagesSentJsonResponse],
+            decoder=async_json_decoder[TopicsPrivateMessagesSentJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -295,7 +307,8 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
 
         Args:
             username: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -303,7 +316,7 @@ class AsyncPrivateMessagesWithRawResponse(BaseRawResponse[AsyncRawClient, Server
             http_method="GET",
             url_template=self._server.default("/topics/private-messages/{username}.json"),
             path_params=[param[str]("username", username)],
-            decoder=json_decoder[TopicsPrivateMessagesJsonResponse],
+            decoder=async_json_decoder[TopicsPrivateMessagesJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

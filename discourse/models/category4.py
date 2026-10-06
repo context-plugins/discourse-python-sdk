@@ -93,7 +93,7 @@ class Category4Dict(TypedDict):
     allowed_tags: NotRequired[list[Any]]
     allowed_tag_groups: NotRequired[list[Any]]
     allow_global_tags: bool
-    required_tag_groups: list[RequiredTagGroup | RequiredTagGroupDict]
+    required_tag_groups: list[RequiredTagGroupDict]
     read_only_banner: str | None
     uploaded_logo: str | None
     uploaded_logo_dark: str | None

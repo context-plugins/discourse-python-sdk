@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -35,7 +36,7 @@ class Groups:
 
     def add_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -43,16 +44,17 @@ class Groups:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.add_group_members(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.add_group_members(id_, body=body, request_options=request_options).unwrap()
 
     def create_group(
         self,
@@ -64,7 +66,8 @@ class Groups:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             group created
@@ -73,26 +76,30 @@ class Groups:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return self._with_raw_response.create_group(body=body, request_options=request_options).unwrap()
 
-    def delete_group(self, id: int, *, request_options: RequestOptionsOrDict | None = None) -> AdminGroupsJsonResponse1:
+    def delete_group(
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
+    ) -> AdminGroupsJsonResponse1:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_group(id, request_options=request_options).unwrap()
+        return self._with_raw_response.delete_group(id_, request_options=request_options).unwrap()
 
     def get_group(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -102,20 +109,21 @@ class Groups:
         return self._with_raw_response.get_group(name, request_options=request_options).unwrap()
 
     def get_group_by_id(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> GroupsByIdJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Use group name instead of id
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response (by id)
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_group_by_id(id, request_options=request_options).unwrap()
+        return self._with_raw_response.get_group_by_id(id_, request_options=request_options).unwrap()
 
     def list_group_members(
         self, name: str, *, request_options: RequestOptionsOrDict | None = None
@@ -124,7 +132,8 @@ class Groups:
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -137,7 +146,8 @@ class Groups:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -148,7 +158,7 @@ class Groups:
 
     def remove_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -156,20 +166,21 @@ class Groups:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.remove_group_members(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.remove_group_members(id_, body=body, request_options=request_options).unwrap()
 
     def update_group(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsJsonRequest | GroupsJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -177,16 +188,17 @@ class Groups:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_group(id, body=body, request_options=request_options).unwrap()
+        return self._with_raw_response.update_group(id_, body=body, request_options=request_options).unwrap()
 
     @property
     def with_raw_response(self) -> GroupsWithRawResponse:
@@ -199,7 +211,7 @@ class AsyncGroups:
 
     async def add_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -207,9 +219,10 @@ class AsyncGroups:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -217,7 +230,7 @@ class AsyncGroups:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
-            await self._with_raw_response.add_group_members(id, body=body, request_options=request_options)
+            await self._with_raw_response.add_group_members(id_, body=body, request_options=request_options)
         ).unwrap()
 
     async def create_group(
@@ -230,7 +243,8 @@ class AsyncGroups:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             group created
@@ -240,27 +254,29 @@ class AsyncGroups:
         return (await self._with_raw_response.create_group(body=body, request_options=request_options)).unwrap()
 
     async def delete_group(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> AdminGroupsJsonResponse1:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.delete_group(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.delete_group(id_, request_options=request_options)).unwrap()
 
     async def get_group(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse:
         """Send a ``GET`` request.
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -270,20 +286,21 @@ class AsyncGroups:
         return (await self._with_raw_response.get_group(name, request_options=request_options)).unwrap()
 
     async def get_group_by_id(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> GroupsByIdJsonResponse:
         """Send a ``GET`` request.
 
         Args:
-            id: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Use group name instead of id
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response (by id)
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_group_by_id(id, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.get_group_by_id(id_, request_options=request_options)).unwrap()
 
     async def list_group_members(
         self, name: str, *, request_options: RequestOptionsOrDict | None = None
@@ -292,7 +309,8 @@ class AsyncGroups:
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -305,7 +323,8 @@ class AsyncGroups:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             response
@@ -316,7 +335,7 @@ class AsyncGroups:
 
     async def remove_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -324,9 +343,10 @@ class AsyncGroups:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -334,12 +354,12 @@ class AsyncGroups:
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
         return (
-            await self._with_raw_response.remove_group_members(id, body=body, request_options=request_options)
+            await self._with_raw_response.remove_group_members(id_, body=body, request_options=request_options)
         ).unwrap()
 
     async def update_group(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsJsonRequest | GroupsJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -347,16 +367,17 @@ class AsyncGroups:
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_group(id, body=body, request_options=request_options)).unwrap()
+        return (await self._with_raw_response.update_group(id_, body=body, request_options=request_options)).unwrap()
 
     @property
     def with_raw_response(self) -> AsyncGroupsWithRawResponse:
@@ -366,7 +387,7 @@ class AsyncGroups:
 class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
     def add_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -374,16 +395,17 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/groups/{id}/members.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None](body),
             decoder=json_decoder[GroupsMembersJsonResponse1],
@@ -401,7 +423,8 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -416,20 +439,21 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def delete_group(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminGroupsJsonResponse1, RawError]:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/admin/groups/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             decoder=json_decoder[AdminGroupsJsonResponse1],
             error_mapper=raw_error_response,
@@ -443,7 +467,8 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -457,20 +482,21 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         )
 
     def get_group_by_id(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[GroupsByIdJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Use group name instead of id
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="GET",
             url_template=self._server.default("/groups/by-id/{id}.json"),
-            path_params=[param[str]("id", id)],
+            path_params=[param[str]("id", id_)],
             decoder=json_decoder[GroupsByIdJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
@@ -483,7 +509,8 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -502,7 +529,8 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -516,7 +544,7 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def remove_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -524,16 +552,17 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/groups/{id}/members.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None](body),
             decoder=json_decoder[GroupsMembersJsonResponse2],
@@ -543,7 +572,7 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
     def update_group(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsJsonRequest | GroupsJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -551,16 +580,17 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/groups/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsJsonRequest | GroupsJsonRequestDict | None](body),
             decoder=json_decoder[GroupsJsonResponse1],
@@ -572,7 +602,7 @@ class GroupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
     async def add_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -580,19 +610,20 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/groups/{id}/members.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None](body),
-            decoder=json_decoder[GroupsMembersJsonResponse1],
+            decoder=async_json_decoder[GroupsMembersJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -607,7 +638,8 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -616,28 +648,29 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/admin/groups.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminGroupsJsonRequest | AdminGroupsJsonRequestDict | None](body),
-            decoder=json_decoder[AdminGroupsJsonResponse],
+            decoder=async_json_decoder[AdminGroupsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def delete_group(
-        self, id: int, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: int, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[AdminGroupsJsonResponse1, RawError]:
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Value sent with the request.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/admin/groups/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=json_decoder[AdminGroupsJsonResponse1],
+            decoder=async_json_decoder[AdminGroupsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -649,7 +682,8 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -657,27 +691,28 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/groups/{name}.json"),
             path_params=[param[str]("name", name)],
-            decoder=json_decoder[GroupsJsonResponse],
+            decoder=async_json_decoder[GroupsJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def get_group_by_id(
-        self, id: str, *, request_options: RequestOptionsOrDict | None = None
+        self, id_: str, *, request_options: RequestOptionsOrDict | None = None
     ) -> ApiResult[GroupsByIdJsonResponse, RawError]:
         """Send a ``GET`` request.
 
         Args:
-            id: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            id_: Use group name instead of id
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/groups/by-id/{id}.json"),
-            path_params=[param[str]("id", id)],
-            decoder=json_decoder[GroupsByIdJsonResponse],
+            path_params=[param[str]("id", id_)],
+            decoder=async_json_decoder[GroupsByIdJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -689,7 +724,8 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             name: Use group name instead of id
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -697,7 +733,7 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/groups/{name}/members.json"),
             path_params=[param[str]("name", name)],
-            decoder=json_decoder[GroupsMembersJsonResponse],
+            decoder=async_json_decoder[GroupsMembersJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -708,21 +744,22 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/groups.json"),
-            decoder=json_decoder[GroupsJsonResponse2],
+            decoder=async_json_decoder[GroupsJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def remove_group_members(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -730,26 +767,27 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``DELETE`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="DELETE",
             url_template=self._server.default("/groups/{id}/members.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsMembersJsonRequest | GroupsMembersJsonRequestDict | None](body),
-            decoder=json_decoder[GroupsMembersJsonResponse2],
+            decoder=async_json_decoder[GroupsMembersJsonResponse2],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
 
     async def update_group(
         self,
-        id: int,
+        id_: int,
         *,
         body: GroupsJsonRequest | GroupsJsonRequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -757,19 +795,20 @@ class AsyncGroupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``PUT`` request.
 
         Args:
-            id: Value sent with the request.
+            id_: Value sent with the request.
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="PUT",
             url_template=self._server.default("/groups/{id}.json"),
-            path_params=[param[int]("id", id)],
+            path_params=[param[int]("id", id_)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GroupsJsonRequest | GroupsJsonRequestDict | None](body),
-            decoder=json_decoder[GroupsJsonResponse1],
+            decoder=async_json_decoder[GroupsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

@@ -11,4 +11,4 @@ class AdminUsersSuspendJsonResponse(SdkBaseModel):
 
 
 class AdminUsersSuspendJsonResponseDict(TypedDict):
-    suspension: Suspension | SuspensionDict
+    suspension: SuspensionDict

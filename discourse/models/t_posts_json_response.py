@@ -12,5 +12,5 @@ class TPostsJsonResponse(SdkBaseModel):
 
 
 class TPostsJsonResponseDict(TypedDict):
-    post_stream: NotRequired[PostStream | PostStreamDict]
+    post_stream: NotRequired[PostStreamDict]
     id: NotRequired[int]

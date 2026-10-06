@@ -9,9 +9,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.activate_user
 
 - **Route**: `PUT /admin/users/{id}/activate.json`
-- **Signature**: `def activate_user(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def activate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminUsersActivateJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersActivateJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -23,9 +23,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.admin_get_user
 
 - **Route**: `GET /admin/users/{id}.json`
-- **Signature**: `def admin_get_user(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def admin_get_user(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminUsersJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -69,9 +69,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.anonymize_user
 
 - **Route**: `PUT /admin/users/{id}/anonymize.json`
-- **Signature**: `def anonymize_user(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def anonymize_user(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminUsersAnonymizeJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersAnonymizeJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -83,9 +83,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.deactivate_user
 
 - **Route**: `PUT /admin/users/{id}/deactivate.json`
-- **Signature**: `def deactivate_user(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def deactivate_user(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminUsersDeactivateJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersDeactivateJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -97,9 +97,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.delete_user
 
 - **Route**: `DELETE /admin/users/{id}.json`
-- **Signature**: `def delete_user(id: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def delete_user(id_: int, *, body: AdminUsersJsonRequest | AdminUsersJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `AdminUsersJsonResponse1`
 - **Returns (raw)**: `ApiResult[AdminUsersJsonResponse1, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -113,9 +113,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.log_out_user
 
 - **Route**: `POST /admin/users/{id}/log_out.json`
-- **Signature**: `def log_out_user(id: int, *, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path
+- **Signature**: `def log_out_user(id_: int, *, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id`
 - **Returns (parsed)**: `AdminUsersLogOutJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersLogOutJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -141,9 +141,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.silence_user
 
 - **Route**: `PUT /admin/users/{id}/silence.json`
-- **Signature**: `def silence_user(id: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def silence_user(id_: int, *, body: AdminUsersSilenceJsonRequest | AdminUsersSilenceJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `AdminUsersSilenceJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersSilenceJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**
@@ -157,9 +157,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 ### client.admin.suspend_user
 
 - **Route**: `PUT /admin/users/{id}/suspend.json`
-- **Signature**: `def suspend_user(id: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
-  - required, positional: `id`
-- **Params**: `id` — path · `body` — JSON body
+- **Signature**: `def suspend_user(id_: int, *, body: AdminUsersSuspendJsonRequest | AdminUsersSuspendJsonRequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+  - required, positional: `id_`
+- **Params**: `id_` — path `id` · `body` — JSON body
 - **Returns (parsed)**: `AdminUsersSuspendJsonResponse`
 - **Returns (raw)**: `ApiResult[AdminUsersSuspendJsonResponse, RawError]`
 - **Error**: `RawError` — **Case B**

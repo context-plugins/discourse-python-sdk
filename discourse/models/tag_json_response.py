@@ -16,6 +16,6 @@ class TagJsonResponse(SdkBaseModel):
 
 
 class TagJsonResponseDict(TypedDict):
-    users: NotRequired[list[User2 | User2Dict]]
+    users: NotRequired[list[User2Dict]]
     primary_groups: NotRequired[list[Any]]
-    topic_list: NotRequired[TopicList3 | TopicList3Dict]
+    topic_list: NotRequired[TopicList3Dict]

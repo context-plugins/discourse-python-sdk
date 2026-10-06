@@ -13,5 +13,5 @@ class TagsJsonResponse(SdkBaseModel):
 
 
 class TagsJsonResponseDict(TypedDict):
-    tags: NotRequired[list[Tag3 | Tag3Dict]]
-    extras: NotRequired[Extras3 | Extras3Dict]
+    tags: NotRequired[list[Tag3Dict]]
+    extras: NotRequired[Extras3Dict]

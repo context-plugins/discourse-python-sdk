@@ -16,6 +16,6 @@ class TopicsPrivateMessagesJsonResponse(SdkBaseModel):
 
 
 class TopicsPrivateMessagesJsonResponseDict(TypedDict):
-    users: NotRequired[list[User1 | User1Dict]]
+    users: NotRequired[list[User1Dict]]
     primary_groups: NotRequired[list[Any]]
-    topic_list: NotRequired[TopicList1 | TopicList1Dict]
+    topic_list: NotRequired[TopicList1Dict]

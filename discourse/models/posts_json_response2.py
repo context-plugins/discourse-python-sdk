@@ -99,7 +99,7 @@ class PostsJsonResponse2Dict(TypedDict):
     user_title: str | None
     bookmarked: bool
     raw: str
-    actions_summary: list[ActionsSummary2 | ActionsSummary2Dict]
+    actions_summary: list[ActionsSummary2Dict]
     moderator: bool
     admin: bool
     staff: bool

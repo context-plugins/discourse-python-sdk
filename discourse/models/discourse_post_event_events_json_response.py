@@ -11,4 +11,4 @@ class DiscoursePostEventEventsJsonResponse(SdkBaseModel):
 
 
 class DiscoursePostEventEventsJsonResponseDict(TypedDict):
-    events: list[Event | EventDict]
+    events: list[EventDict]

@@ -38,7 +38,7 @@ class Event(SdkBaseModel):
     is_public: bool
     is_standalone: bool
     minimal: OptionalNullable[bool] = UNSET
-    raw_invitees: Optional[list[str | None]] = UNSET
+    raw_invitees: OptionalNullable[list[str]] = UNSET
     reminders: Optional[list[Reminder]] = UNSET
     sample_invitees: Optional[list[Any]] = UNSET
     should_display_invitees: bool
@@ -73,11 +73,11 @@ class EventDict(TypedDict):
     duration: NotRequired[str]
     all_day: NotRequired[bool]
     custom_fields: NotRequired[Any | None]
-    post: Post | PostDict
-    occurrences: list[Occurrence | OccurrenceDict]
+    post: PostDict
+    occurrences: list[OccurrenceDict]
     can_act_on_discourse_post_event: bool | None
     can_update_attendance: bool | None
-    creator: NotRequired[Creator | CreatorDict]
+    creator: NotRequired[CreatorDict]
     is_closed: bool
     is_expired: bool
     is_ongoing: bool
@@ -85,8 +85,8 @@ class EventDict(TypedDict):
     is_public: bool
     is_standalone: bool
     minimal: NotRequired[bool | None]
-    raw_invitees: NotRequired[list[str | None]]
-    reminders: NotRequired[list[Reminder | ReminderDict]]
+    raw_invitees: NotRequired[list[str] | None]
+    reminders: NotRequired[list[ReminderDict]]
     sample_invitees: NotRequired[list[Any]]
     should_display_invitees: bool
     stats: NotRequired[Any]

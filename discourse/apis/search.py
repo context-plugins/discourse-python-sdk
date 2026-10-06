@@ -7,6 +7,7 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_json_decoder,
     json_decoder,
     param,
     raw_error_response,
@@ -40,7 +41,8 @@ class Search:
                 curl -i -sS -X GET -G "http://localhost:3000/search.json" \ --data-urlencode 'q=wordpress @scossar #fun
                 after:2020-01-01' ```
             page: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -79,7 +81,8 @@ class AsyncSearch:
                 curl -i -sS -X GET -G "http://localhost:3000/search.json" \ --data-urlencode 'q=wordpress @scossar #fun
                 after:2020-01-01' ```
             page: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -115,7 +118,8 @@ class SearchWithRawResponse(BaseRawResponse[RawClient, Server]):
                 curl -i -sS -X GET -G "http://localhost:3000/search.json" \ --data-urlencode 'q=wordpress @scossar #fun
                 after:2020-01-01' ```
             page: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -151,7 +155,8 @@ class AsyncSearchWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
                 curl -i -sS -X GET -G "http://localhost:3000/search.json" \ --data-urlencode 'q=wordpress @scossar #fun
                 after:2020-01-01' ```
             page: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -159,7 +164,7 @@ class AsyncSearchWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             http_method="GET",
             url_template=self._server.default("/search.json"),
             query_params=[param[str | None]("q", q), param[int | None]("page", page)],
-            decoder=json_decoder[SearchJsonResponse],
+            decoder=async_json_decoder[SearchJsonResponse],
             error_mapper=raw_error_response,
             request_options=request_options,
         )

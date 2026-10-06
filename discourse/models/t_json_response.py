@@ -9,14 +9,14 @@ from .actions_summary8 import ActionsSummary8, ActionsSummary8Dict
 from .details import Details, DetailsDict
 from .post_stream1 import PostStream1, PostStream1Dict
 from .suggested_topic import SuggestedTopic, SuggestedTopicDict
-from .tag import Tag, TagDict
+from .tag_model import TagModel, TagModelDict
 
 
 class TJsonResponse(SdkBaseModel):
     post_stream: PostStream1
     timeline_lookup: list[Any]
     suggested_topics: list[SuggestedTopic]
-    tags: list[Tag]
+    tags: list[TagModel]
     tags_descriptions: Any
     id: int
     title: str
@@ -66,10 +66,10 @@ class TJsonResponse(SdkBaseModel):
 
 
 class TJsonResponseDict(TypedDict):
-    post_stream: PostStream1 | PostStream1Dict
+    post_stream: PostStream1Dict
     timeline_lookup: list[Any]
-    suggested_topics: list[SuggestedTopic | SuggestedTopicDict]
-    tags: list[Tag | TagDict]
+    suggested_topics: list[SuggestedTopicDict]
+    tags: list[TagModelDict]
     tags_descriptions: Any
     id: int
     title: str
@@ -105,7 +105,7 @@ class TJsonResponseDict(TypedDict):
     highest_post_number: int | None
     deleted_by: str | None
     has_deleted: bool
-    actions_summary: list[ActionsSummary8 | ActionsSummary8Dict]
+    actions_summary: list[ActionsSummary8Dict]
     chunk_size: int
     bookmarked: bool
     bookmarks: list[Any]
@@ -115,4 +115,4 @@ class TJsonResponseDict(TypedDict):
     show_read_indicator: bool
     thumbnails: str | None
     slow_mode_enabled_until: str | None
-    details: Details | DetailsDict
+    details: DetailsDict

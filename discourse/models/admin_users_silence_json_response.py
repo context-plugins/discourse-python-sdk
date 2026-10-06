@@ -11,4 +11,4 @@ class AdminUsersSilenceJsonResponse(SdkBaseModel):
 
 
 class AdminUsersSilenceJsonResponseDict(TypedDict):
-    silence: Silence | SilenceDict
+    silence: SilenceDict

@@ -77,4 +77,4 @@ class Topic4Dict(TypedDict):
     category_id: NotRequired[int]
     pinned_globally: NotRequired[bool]
     featured_link: NotRequired[str | None]
-    posters: NotRequired[list[Poster1 | Poster1Dict]]
+    posters: NotRequired[list[Poster1Dict]]

@@ -23,4 +23,4 @@ class TagGroup2Dict(TypedDict):
     tag_names: NotRequired[list[Any]]
     parent_tag_name: NotRequired[list[Any]]
     one_per_topic: NotRequired[bool]
-    permissions: NotRequired[Permissions2 | Permissions2Dict]
+    permissions: NotRequired[Permissions2Dict]

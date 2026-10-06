@@ -27,4 +27,4 @@ class NotificationDict(TypedDict):
     post_number: NotRequired[int | None]
     topic_id: NotRequired[int | None]
     slug: NotRequired[str | None]
-    data: NotRequired[Data | DataDict]
+    data: NotRequired[DataDict]

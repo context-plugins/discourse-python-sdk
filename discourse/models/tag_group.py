@@ -4,13 +4,13 @@ from typing_extensions import TypedDict
 
 from ..core import SdkBaseModel
 from .parent_tag import ParentTag, ParentTagDict
-from .tag import Tag, TagDict
+from .tag_model import TagModel, TagModelDict
 
 
 class TagGroup(SdkBaseModel):
     id: int
     name: str
-    tags: list[Tag]
+    tags: list[TagModel]
     parent_tag: list[ParentTag]
     one_per_topic: bool
     permissions: dict[str, int]
@@ -19,7 +19,7 @@ class TagGroup(SdkBaseModel):
 class TagGroupDict(TypedDict):
     id: int
     name: str
-    tags: list[Tag | TagDict]
-    parent_tag: list[ParentTag | ParentTagDict]
+    tags: list[TagModelDict]
+    parent_tag: list[ParentTagDict]
     one_per_topic: bool
     permissions: dict[str, int]

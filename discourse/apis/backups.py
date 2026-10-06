@@ -9,6 +9,8 @@ from ..core import (
     RawClient,
     RawError,
     RequestOptionsOrDict,
+    async_empty_response,
+    async_json_decoder,
     empty_response,
     json_body,
     json_decoder,
@@ -35,7 +37,8 @@ class Backups:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -52,7 +55,8 @@ class Backups:
         Args:
             filename: Value sent with the request.
             token: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -65,7 +69,8 @@ class Backups:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -79,7 +84,8 @@ class Backups:
 
         Args:
             filename: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -107,7 +113,8 @@ class AsyncBackups:
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -124,7 +131,8 @@ class AsyncBackups:
         Args:
             filename: Value sent with the request.
             token: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -141,7 +149,8 @@ class AsyncBackups:
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -157,7 +166,8 @@ class AsyncBackups:
 
         Args:
             filename: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             success response
@@ -184,7 +194,8 @@ class BackupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -206,7 +217,8 @@ class BackupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         Args:
             filename: Value sent with the request.
             token: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -226,7 +238,8 @@ class BackupsWithRawResponse(BaseRawResponse[RawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -245,7 +258,8 @@ class BackupsWithRawResponse(BaseRawResponse[RawClient, Server]):
 
         Args:
             filename: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -271,7 +285,8 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             body: The request body.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -280,7 +295,7 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/admin/backups.json"),
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[AdminBackupsJsonRequest | AdminBackupsJsonRequestDict | None](body),
-            decoder=json_decoder[AdminBackupsJsonResponse1],
+            decoder=async_json_decoder[AdminBackupsJsonResponse1],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -293,7 +308,8 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         Args:
             filename: Value sent with the request.
             token: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -302,7 +318,7 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/admin/backups/{filename}"),
             path_params=[param[str]("filename", filename)],
             query_params=[param[str]("token", token)],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -313,14 +329,15 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
         """Send a ``GET`` request.
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
         return await self._client.execute(
             http_method="GET",
             url_template=self._server.default("/admin/backups.json"),
-            decoder=json_decoder[list[AdminBackupsJsonResponse]],
+            decoder=async_json_decoder[list[AdminBackupsJsonResponse]],
             error_mapper=raw_error_response,
             request_options=request_options,
         )
@@ -332,7 +349,8 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
 
         Args:
             filename: Value sent with the request.
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -341,7 +359,7 @@ class AsyncBackupsWithRawResponse(BaseRawResponse[AsyncRawClient, Server]):
             url_template=self._server.default("/admin/backups/{filename}"),
             path_params=[param[str]("filename", filename)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
-            decoder=empty_response,
+            decoder=async_empty_response,
             error_mapper=raw_error_response,
             request_options=request_options,
         )

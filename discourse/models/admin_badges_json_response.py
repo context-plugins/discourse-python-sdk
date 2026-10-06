@@ -17,7 +17,7 @@ class AdminBadgesJsonResponse(SdkBaseModel):
 
 
 class AdminBadgesJsonResponseDict(TypedDict):
-    badges: list[Badge | BadgeDict]
-    badge_types: list[BadgeType | BadgeTypeDict]
-    badge_groupings: list[BadgeGrouping | BadgeGroupingDict]
-    admin_badges: AdminBadges | AdminBadgesDict
+    badges: list[BadgeDict]
+    badge_types: list[BadgeTypeDict]
+    badge_groupings: list[BadgeGroupingDict]
+    admin_badges: AdminBadgesDict
