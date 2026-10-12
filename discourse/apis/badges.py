@@ -16,6 +16,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.admin_badges_json_request import AdminBadgesJsonRequest, AdminBadgesJsonRequestDict
 from ..models.admin_badges_json_request1 import AdminBadgesJsonRequest1, AdminBadgesJsonRequest1Dict
@@ -42,7 +43,7 @@ class Badges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.admin_list_badges(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.admin_list_badges(request_options=request_options))
 
     def create_badge(
         self,
@@ -62,7 +63,7 @@ class Badges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_badge(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_badge(body=body, request_options=request_options))
 
     def delete_badge(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> None:
         """Send a ``DELETE`` request.
@@ -77,7 +78,7 @@ class Badges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_badge(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.delete_badge(id_, request_options=request_options))
 
     def list_user_badges(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -94,7 +95,7 @@ class Badges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_user_badges(username, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_user_badges(username, request_options=request_options))
 
     def update_badge(
         self,
@@ -116,7 +117,7 @@ class Badges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_badge(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.update_badge(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> BadgesWithRawResponse:
@@ -141,7 +142,7 @@ class AsyncBadges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.admin_list_badges(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.admin_list_badges(request_options=request_options))
 
     async def create_badge(
         self,
@@ -161,7 +162,7 @@ class AsyncBadges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.create_badge(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.create_badge(body=body, request_options=request_options))
 
     async def delete_badge(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> None:
         """Send a ``DELETE`` request.
@@ -176,7 +177,7 @@ class AsyncBadges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.delete_badge(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.delete_badge(id_, request_options=request_options))
 
     async def list_user_badges(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -193,7 +194,7 @@ class AsyncBadges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_user_badges(username, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_user_badges(username, request_options=request_options))
 
     async def update_badge(
         self,
@@ -215,7 +216,7 @@ class AsyncBadges:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_badge(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.update_badge(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncBadgesWithRawResponse:

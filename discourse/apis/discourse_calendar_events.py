@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.discourse_post_event_events_json_response import DiscoursePostEventEventsJsonResponse
 from ..models.enums.include_details import IncludeDetailsOrStr
@@ -56,16 +57,18 @@ class DiscourseCalendarEvents:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.export_events_ics(
-            category_id=category_id,
-            include_subcategories=include_subcategories,
-            attending_user=attending_user,
-            before=before,
-            after=after,
-            order=order,
-            limit=limit,
-            request_options=request_options,
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.export_events_ics(
+                category_id=category_id,
+                include_subcategories=include_subcategories,
+                attending_user=attending_user,
+                before=before,
+                after=after,
+                order=order,
+                limit=limit,
+                request_options=request_options,
+            ),
+        )
 
     def list_events(
         self,
@@ -101,18 +104,20 @@ class DiscourseCalendarEvents:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_events(
-            include_details=include_details,
-            category_id=category_id,
-            include_subcategories=include_subcategories,
-            post_id=post_id,
-            attending_user=attending_user,
-            before=before,
-            after=after,
-            order=order,
-            limit=limit,
-            request_options=request_options,
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.list_events(
+                include_details=include_details,
+                category_id=category_id,
+                include_subcategories=include_subcategories,
+                post_id=post_id,
+                attending_user=attending_user,
+                before=before,
+                after=after,
+                order=order,
+                limit=limit,
+                request_options=request_options,
+            ),
+        )
 
     @property
     def with_raw_response(self) -> DiscourseCalendarEventsWithRawResponse:
@@ -153,7 +158,7 @@ class AsyncDiscourseCalendarEvents:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.export_events_ics(
                 category_id=category_id,
                 include_subcategories=include_subcategories,
@@ -163,8 +168,8 @@ class AsyncDiscourseCalendarEvents:
                 order=order,
                 limit=limit,
                 request_options=request_options,
-            )
-        ).unwrap()
+            ),
+        )
 
     async def list_events(
         self,
@@ -200,7 +205,7 @@ class AsyncDiscourseCalendarEvents:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.list_events(
                 include_details=include_details,
                 category_id=category_id,
@@ -212,8 +217,8 @@ class AsyncDiscourseCalendarEvents:
                 order=order,
                 limit=limit,
                 request_options=request_options,
-            )
-        ).unwrap()
+            ),
+        )
 
     @property
     def with_raw_response(self) -> AsyncDiscourseCalendarEventsWithRawResponse:

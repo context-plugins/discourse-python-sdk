@@ -10,6 +10,7 @@ from ..core import (
     async_json_decoder,
     json_decoder,
     raw_error_response,
+    unwrap,
 )
 from ..models.site_basic_info_json_response import SiteBasicInfoJsonResponse
 from ..models.site_json_response import SiteJsonResponse
@@ -32,7 +33,7 @@ class Site:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_site(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_site(request_options=request_options))
 
     def get_site_basic_info(self, *, request_options: RequestOptionsOrDict | None = None) -> SiteBasicInfoJsonResponse:
         """Can be used to fetch basic info about a site
@@ -46,7 +47,7 @@ class Site:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_site_basic_info(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_site_basic_info(request_options=request_options))
 
     @property
     def with_raw_response(self) -> SiteWithRawResponse:
@@ -69,7 +70,7 @@ class AsyncSite:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_site(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_site(request_options=request_options))
 
     async def get_site_basic_info(
         self, *, request_options: RequestOptionsOrDict | None = None
@@ -85,7 +86,7 @@ class AsyncSite:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_site_basic_info(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_site_basic_info(request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncSiteWithRawResponse:

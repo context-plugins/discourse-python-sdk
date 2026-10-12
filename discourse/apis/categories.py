@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.c_json_response import CJsonResponse
 from ..models.c_show_json_response import CShowJsonResponse
@@ -48,7 +49,7 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_category(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_category(body=body, request_options=request_options))
 
     def get_category(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
         """Send a ``GET`` request.
@@ -63,7 +64,7 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_category(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_category(id_, request_options=request_options))
 
     def get_site(self, *, request_options: RequestOptionsOrDict | None = None) -> SiteJsonResponse:
         """Can be used to fetch all categories and subcategories
@@ -77,7 +78,7 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_site(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_site(request_options=request_options))
 
     def list_categories(
         self, *, include_subcategories: bool | None = None, request_options: RequestOptionsOrDict | None = None
@@ -94,9 +95,11 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_categories(
-            include_subcategories=include_subcategories, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.list_categories(
+                include_subcategories=include_subcategories, request_options=request_options
+            ),
+        )
 
     def list_category_topics(
         self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -114,7 +117,7 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_category_topics(slug, id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_category_topics(slug, id_, request_options=request_options))
 
     def update_category(
         self,
@@ -136,7 +139,7 @@ class Categories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_category(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.update_category(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> CategoriesWithRawResponse:
@@ -165,7 +168,7 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.create_category(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.create_category(body=body, request_options=request_options))
 
     async def get_category(self, id_: int, *, request_options: RequestOptionsOrDict | None = None) -> CShowJsonResponse:
         """Send a ``GET`` request.
@@ -180,7 +183,7 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_category(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_category(id_, request_options=request_options))
 
     async def get_site(self, *, request_options: RequestOptionsOrDict | None = None) -> SiteJsonResponse:
         """Can be used to fetch all categories and subcategories
@@ -194,7 +197,7 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_site(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_site(request_options=request_options))
 
     async def list_categories(
         self, *, include_subcategories: bool | None = None, request_options: RequestOptionsOrDict | None = None
@@ -211,11 +214,11 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.list_categories(
                 include_subcategories=include_subcategories, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def list_category_topics(
         self, slug: str, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -233,7 +236,7 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_category_topics(slug, id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_category_topics(slug, id_, request_options=request_options))
 
     async def update_category(
         self,
@@ -255,7 +258,7 @@ class AsyncCategories:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_category(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.update_category(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncCategoriesWithRawResponse:

@@ -16,6 +16,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.latest_json_response import LatestJsonResponse
 from ..models.posts_json_request import PostsJsonRequest, PostsJsonRequestDict
@@ -61,9 +62,9 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.bookmark_topic(
-            id_, api_key, api_username, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.bookmark_topic(id_, api_key, api_username, request_options=request_options)
+        )
 
     def create_topic_post_pm(
         self,
@@ -87,9 +88,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_topic_post_pm(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_topic_post_pm(
+                api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def create_topic_timer(
         self,
@@ -115,9 +118,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_topic_timer(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_topic_timer(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def get_specific_posts_from_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -136,9 +141,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_specific_posts_from_topic(
-            id_, api_key, api_username, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.get_specific_posts_from_topic(
+                id_, api_key, api_username, request_options=request_options
+            ),
+        )
 
     def get_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -157,7 +164,7 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_topic(id_, api_key, api_username, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_topic(id_, api_key, api_username, request_options=request_options))
 
     def get_topic_by_external_id(
         self, external_id: str, *, request_options: RequestOptionsOrDict | None = None
@@ -171,7 +178,7 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_topic_by_external_id(external_id, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_topic_by_external_id(external_id, request_options=request_options))
 
     def invite_group_to_topic(
         self,
@@ -197,9 +204,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.invite_group_to_topic(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.invite_group_to_topic(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def invite_to_topic(
         self,
@@ -225,9 +234,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.invite_to_topic(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.invite_to_topic(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def list_latest_topics(
         self,
@@ -256,9 +267,16 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_latest_topics(
-            api_key, api_username, order=order, ascending=ascending, per_page=per_page, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.list_latest_topics(
+                api_key,
+                api_username,
+                order=order,
+                ascending=ascending,
+                per_page=per_page,
+                request_options=request_options,
+            ),
+        )
 
     def list_top_topics(
         self,
@@ -284,9 +302,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_top_topics(
-            api_key, api_username, period=period, per_page=per_page, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.list_top_topics(
+                api_key, api_username, period=period, per_page=per_page, request_options=request_options
+            ),
+        )
 
     def remove_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -305,9 +325,7 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.remove_topic(
-            id_, api_key, api_username, request_options=request_options
-        ).unwrap()
+        return unwrap(self._with_raw_response.remove_topic(id_, api_key, api_username, request_options=request_options))
 
     def set_notification_level(
         self,
@@ -333,9 +351,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.set_notification_level(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.set_notification_level(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def update_topic(
         self,
@@ -361,9 +381,9 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_topic(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.update_topic(id_, api_key, api_username, body=body, request_options=request_options)
+        )
 
     def update_topic_status(
         self,
@@ -389,9 +409,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_topic_status(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.update_topic_status(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def update_topic_timestamp(
         self,
@@ -417,9 +439,11 @@ class Topics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_topic_timestamp(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.update_topic_timestamp(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     @property
     def with_raw_response(self) -> TopicsWithRawResponse:
@@ -447,9 +471,9 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.bookmark_topic(id_, api_key, api_username, request_options=request_options)
-        ).unwrap()
+        )
 
     async def create_topic_post_pm(
         self,
@@ -473,11 +497,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_topic_post_pm(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def create_topic_timer(
         self,
@@ -503,11 +527,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_topic_timer(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def get_specific_posts_from_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -526,11 +550,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.get_specific_posts_from_topic(
                 id_, api_key, api_username, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def get_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -549,9 +573,9 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.get_topic(id_, api_key, api_username, request_options=request_options)
-        ).unwrap()
+        )
 
     async def get_topic_by_external_id(
         self, external_id: str, *, request_options: RequestOptionsOrDict | None = None
@@ -565,9 +589,9 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.get_topic_by_external_id(external_id, request_options=request_options)
-        ).unwrap()
+        )
 
     async def invite_group_to_topic(
         self,
@@ -593,11 +617,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.invite_group_to_topic(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def invite_to_topic(
         self,
@@ -623,11 +647,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.invite_to_topic(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def list_latest_topics(
         self,
@@ -656,7 +680,7 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.list_latest_topics(
                 api_key,
                 api_username,
@@ -664,8 +688,8 @@ class AsyncTopics:
                 ascending=ascending,
                 per_page=per_page,
                 request_options=request_options,
-            )
-        ).unwrap()
+            ),
+        )
 
     async def list_top_topics(
         self,
@@ -691,11 +715,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.list_top_topics(
                 api_key, api_username, period=period, per_page=per_page, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def remove_topic(
         self, id_: str, api_key: str, api_username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -714,9 +738,9 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.remove_topic(id_, api_key, api_username, request_options=request_options)
-        ).unwrap()
+        )
 
     async def set_notification_level(
         self,
@@ -742,11 +766,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.set_notification_level(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def update_topic(
         self,
@@ -772,11 +796,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.update_topic(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def update_topic_status(
         self,
@@ -802,11 +826,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.update_topic_status(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def update_topic_timestamp(
         self,
@@ -832,11 +856,11 @@ class AsyncTopics:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.update_topic_timestamp(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     @property
     def with_raw_response(self) -> AsyncTopicsWithRawResponse:

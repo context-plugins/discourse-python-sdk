@@ -16,6 +16,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.post_actions_json_request import PostActionsJsonRequest, PostActionsJsonRequestDict
 from ..models.post_actions_json_response import PostActionsJsonResponse
@@ -58,9 +59,11 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_topic_post_pm(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_topic_post_pm(
+                api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def delete_post(
         self,
@@ -86,9 +89,9 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_post(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.delete_post(id_, api_key, api_username, body=body, request_options=request_options)
+        )
 
     def get_post(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
@@ -106,7 +109,7 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_post(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_post(id_, request_options=request_options))
 
     def list_posts(
         self, *, before: int | None = None, request_options: RequestOptionsOrDict | None = None
@@ -123,7 +126,7 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_posts(before=before, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_posts(before=before, request_options=request_options))
 
     def lock_post(
         self,
@@ -149,9 +152,9 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.lock_post(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.lock_post(id_, api_key, api_username, body=body, request_options=request_options)
+        )
 
     def perform_post_action(
         self,
@@ -175,9 +178,11 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.perform_post_action(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.perform_post_action(
+                api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def post_replies(
         self, id_: str, *, request_options: RequestOptionsOrDict | None = None
@@ -194,7 +199,7 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.post_replies(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.post_replies(id_, request_options=request_options))
 
     def update_post(
         self,
@@ -220,9 +225,9 @@ class Posts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_post(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.update_post(id_, api_key, api_username, body=body, request_options=request_options)
+        )
 
     @property
     def with_raw_response(self) -> PostsWithRawResponse:
@@ -255,11 +260,11 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_topic_post_pm(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def delete_post(
         self,
@@ -285,11 +290,11 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.delete_post(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def get_post(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> PostsJsonResponse2:
         """This endpoint can be used to get the number of likes on a post using the ``actions_summary`` property in the
@@ -307,7 +312,7 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_post(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_post(id_, request_options=request_options))
 
     async def list_posts(
         self, *, before: int | None = None, request_options: RequestOptionsOrDict | None = None
@@ -324,7 +329,7 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_posts(before=before, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_posts(before=before, request_options=request_options))
 
     async def lock_post(
         self,
@@ -350,11 +355,11 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.lock_post(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def perform_post_action(
         self,
@@ -378,11 +383,11 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.perform_post_action(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def post_replies(
         self, id_: str, *, request_options: RequestOptionsOrDict | None = None
@@ -399,7 +404,7 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.post_replies(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.post_replies(id_, request_options=request_options))
 
     async def update_post(
         self,
@@ -425,11 +430,11 @@ class AsyncPosts:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.update_post(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     @property
     def with_raw_response(self) -> AsyncPostsWithRawResponse:

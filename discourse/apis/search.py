@@ -11,6 +11,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.search_json_response import SearchJsonResponse
 from ..server.server import Server
@@ -49,7 +50,7 @@ class Search:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.search(q=q, page=page, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.search(q=q, page=page, request_options=request_options))
 
     @property
     def with_raw_response(self) -> SearchWithRawResponse:
@@ -89,7 +90,7 @@ class AsyncSearch:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.search(q=q, page=page, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.search(q=q, page=page, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncSearchWithRawResponse:

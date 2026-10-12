@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.posts_json_request import PostsJsonRequest, PostsJsonRequestDict
 from ..models.posts_json_response1 import PostsJsonResponse1
@@ -48,9 +49,11 @@ class PrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_topic_post_pm(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_topic_post_pm(
+                api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def get_user_sent_private_messages(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -67,9 +70,7 @@ class PrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_user_sent_private_messages(
-            username, request_options=request_options
-        ).unwrap()
+        return unwrap(self._with_raw_response.get_user_sent_private_messages(username, request_options=request_options))
 
     def list_user_private_messages(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -86,7 +87,7 @@ class PrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_user_private_messages(username, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_user_private_messages(username, request_options=request_options))
 
     @property
     def with_raw_response(self) -> PrivateMessagesWithRawResponse:
@@ -119,11 +120,11 @@ class AsyncPrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_topic_post_pm(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def get_user_sent_private_messages(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -140,9 +141,9 @@ class AsyncPrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.get_user_sent_private_messages(username, request_options=request_options)
-        ).unwrap()
+        )
 
     async def list_user_private_messages(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -159,9 +160,9 @@ class AsyncPrivateMessages:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.list_user_private_messages(username, request_options=request_options)
-        ).unwrap()
+        )
 
     @property
     def with_raw_response(self) -> AsyncPrivateMessagesWithRawResponse:

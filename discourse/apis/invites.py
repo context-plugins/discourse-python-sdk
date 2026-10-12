@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.invites_create_multiple_json_request import (
     InvitesCreateMultipleJsonRequest,
@@ -55,9 +56,9 @@ class Invites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_invite(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_invite(api_key, api_username, body=body, request_options=request_options)
+        )
 
     def create_multiple_invites(
         self,
@@ -81,9 +82,11 @@ class Invites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_multiple_invites(
-            api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_multiple_invites(
+                api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def invite_group_to_topic(
         self,
@@ -109,9 +112,11 @@ class Invites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.invite_group_to_topic(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.invite_group_to_topic(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     def invite_to_topic(
         self,
@@ -137,9 +142,11 @@ class Invites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.invite_to_topic(
-            id_, api_key, api_username, body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.invite_to_topic(
+                id_, api_key, api_username, body=body, request_options=request_options
+            ),
+        )
 
     @property
     def with_raw_response(self) -> InvitesWithRawResponse:
@@ -172,11 +179,11 @@ class AsyncInvites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_invite(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def create_multiple_invites(
         self,
@@ -200,11 +207,11 @@ class AsyncInvites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_multiple_invites(
                 api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def invite_group_to_topic(
         self,
@@ -230,11 +237,11 @@ class AsyncInvites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.invite_group_to_topic(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def invite_to_topic(
         self,
@@ -260,11 +267,11 @@ class AsyncInvites:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.invite_to_topic(
                 id_, api_key, api_username, body=body, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     @property
     def with_raw_response(self) -> AsyncInvitesWithRawResponse:

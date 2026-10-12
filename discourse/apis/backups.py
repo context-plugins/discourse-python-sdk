@@ -16,6 +16,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.admin_backups_json_request import AdminBackupsJsonRequest, AdminBackupsJsonRequestDict
 from ..models.admin_backups_json_response import AdminBackupsJsonResponse
@@ -45,7 +46,7 @@ class Backups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_backup(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_backup(body=body, request_options=request_options))
 
     def download_backup(
         self, filename: str, token: str, *, request_options: RequestOptionsOrDict | None = None
@@ -63,7 +64,7 @@ class Backups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.download_backup(filename, token, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.download_backup(filename, token, request_options=request_options))
 
     def get_backups(self, *, request_options: RequestOptionsOrDict | None = None) -> list[AdminBackupsJsonResponse]:
         """Send a ``GET`` request.
@@ -77,7 +78,7 @@ class Backups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_backups(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_backups(request_options=request_options))
 
     def send_download_backup_email(self, filename: str, *, request_options: RequestOptionsOrDict | None = None) -> None:
         """Send a ``PUT`` request.
@@ -92,7 +93,7 @@ class Backups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.send_download_backup_email(filename, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.send_download_backup_email(filename, request_options=request_options))
 
     @property
     def with_raw_response(self) -> BackupsWithRawResponse:
@@ -121,7 +122,7 @@ class AsyncBackups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.create_backup(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.create_backup(body=body, request_options=request_options))
 
     async def download_backup(
         self, filename: str, token: str, *, request_options: RequestOptionsOrDict | None = None
@@ -139,9 +140,7 @@ class AsyncBackups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
-            await self._with_raw_response.download_backup(filename, token, request_options=request_options)
-        ).unwrap()
+        return unwrap(await self._with_raw_response.download_backup(filename, token, request_options=request_options))
 
     async def get_backups(
         self, *, request_options: RequestOptionsOrDict | None = None
@@ -157,7 +156,7 @@ class AsyncBackups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_backups(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_backups(request_options=request_options))
 
     async def send_download_backup_email(
         self, filename: str, *, request_options: RequestOptionsOrDict | None = None
@@ -174,9 +173,9 @@ class AsyncBackups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.send_download_backup_email(filename, request_options=request_options)
-        ).unwrap()
+        )
 
     @property
     def with_raw_response(self) -> AsyncBackupsWithRawResponse:

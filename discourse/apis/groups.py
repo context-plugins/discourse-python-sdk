@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.admin_groups_json_request import AdminGroupsJsonRequest, AdminGroupsJsonRequestDict
 from ..models.admin_groups_json_response import AdminGroupsJsonResponse
@@ -54,7 +55,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.add_group_members(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.add_group_members(id_, body=body, request_options=request_options))
 
     def create_group(
         self,
@@ -74,7 +75,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_group(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_group(body=body, request_options=request_options))
 
     def delete_group(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -91,7 +92,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_group(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.delete_group(id_, request_options=request_options))
 
     def get_group(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse:
         """Send a ``GET`` request.
@@ -106,7 +107,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_group(name, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_group(name, request_options=request_options))
 
     def get_group_by_id(
         self, id_: str, *, request_options: RequestOptionsOrDict | None = None
@@ -123,7 +124,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_group_by_id(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_group_by_id(id_, request_options=request_options))
 
     def list_group_members(
         self, name: str, *, request_options: RequestOptionsOrDict | None = None
@@ -140,7 +141,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_group_members(name, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_group_members(name, request_options=request_options))
 
     def list_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse2:
         """Send a ``GET`` request.
@@ -154,7 +155,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_groups(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_groups(request_options=request_options))
 
     def remove_group_members(
         self,
@@ -176,7 +177,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.remove_group_members(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.remove_group_members(id_, body=body, request_options=request_options))
 
     def update_group(
         self,
@@ -198,7 +199,7 @@ class Groups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_group(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.update_group(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> GroupsWithRawResponse:
@@ -229,9 +230,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
-            await self._with_raw_response.add_group_members(id_, body=body, request_options=request_options)
-        ).unwrap()
+        return unwrap(await self._with_raw_response.add_group_members(id_, body=body, request_options=request_options))
 
     async def create_group(
         self,
@@ -251,7 +250,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.create_group(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.create_group(body=body, request_options=request_options))
 
     async def delete_group(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -268,7 +267,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.delete_group(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.delete_group(id_, request_options=request_options))
 
     async def get_group(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse:
         """Send a ``GET`` request.
@@ -283,7 +282,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_group(name, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_group(name, request_options=request_options))
 
     async def get_group_by_id(
         self, id_: str, *, request_options: RequestOptionsOrDict | None = None
@@ -300,7 +299,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_group_by_id(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_group_by_id(id_, request_options=request_options))
 
     async def list_group_members(
         self, name: str, *, request_options: RequestOptionsOrDict | None = None
@@ -317,7 +316,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_group_members(name, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_group_members(name, request_options=request_options))
 
     async def list_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> GroupsJsonResponse2:
         """Send a ``GET`` request.
@@ -331,7 +330,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_groups(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_groups(request_options=request_options))
 
     async def remove_group_members(
         self,
@@ -353,9 +352,9 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.remove_group_members(id_, body=body, request_options=request_options)
-        ).unwrap()
+        )
 
     async def update_group(
         self,
@@ -377,7 +376,7 @@ class AsyncGroups:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.update_group(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.update_group(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncGroupsWithRawResponse:

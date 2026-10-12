@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.admin_users_activate_json_response import AdminUsersActivateJsonResponse
 from ..models.admin_users_anonymize_json_response import AdminUsersAnonymizeJsonResponse
@@ -54,7 +55,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.activate_user(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.activate_user(id_, request_options=request_options))
 
     def admin_get_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -71,7 +72,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.admin_get_user(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.admin_get_user(id_, request_options=request_options))
 
     def admin_list_users(
         self,
@@ -104,16 +105,18 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.admin_list_users(
-            order=order,
-            asc=asc,
-            page=page,
-            show_emails=show_emails,
-            stats=stats,
-            email=email,
-            ip=ip,
-            request_options=request_options,
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.admin_list_users(
+                order=order,
+                asc=asc,
+                page=page,
+                show_emails=show_emails,
+                stats=stats,
+                email=email,
+                ip=ip,
+                request_options=request_options,
+            ),
+        )
 
     def admin_list_users_flag(
         self,
@@ -148,17 +151,19 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.admin_list_users_flag(
-            flag,
-            order=order,
-            asc=asc,
-            page=page,
-            show_emails=show_emails,
-            stats=stats,
-            email=email,
-            ip=ip,
-            request_options=request_options,
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.admin_list_users_flag(
+                flag,
+                order=order,
+                asc=asc,
+                page=page,
+                show_emails=show_emails,
+                stats=stats,
+                email=email,
+                ip=ip,
+                request_options=request_options,
+            ),
+        )
 
     def anonymize_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -175,7 +180,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.anonymize_user(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.anonymize_user(id_, request_options=request_options))
 
     def deactivate_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -192,7 +197,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.deactivate_user(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.deactivate_user(id_, request_options=request_options))
 
     def delete_user(
         self,
@@ -214,7 +219,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.delete_user(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.delete_user(id_, body=body, request_options=request_options))
 
     def log_out_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -231,7 +236,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.log_out_user(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.log_out_user(id_, request_options=request_options))
 
     def refresh_gravatar(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -248,7 +253,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.refresh_gravatar(username, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.refresh_gravatar(username, request_options=request_options))
 
     def silence_user(
         self,
@@ -270,7 +275,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.silence_user(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.silence_user(id_, body=body, request_options=request_options))
 
     def suspend_user(
         self,
@@ -292,7 +297,7 @@ class Admin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.suspend_user(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.suspend_user(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AdminWithRawResponse:
@@ -318,7 +323,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.activate_user(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.activate_user(id_, request_options=request_options))
 
     async def admin_get_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -335,7 +340,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.admin_get_user(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.admin_get_user(id_, request_options=request_options))
 
     async def admin_list_users(
         self,
@@ -368,7 +373,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.admin_list_users(
                 order=order,
                 asc=asc,
@@ -378,8 +383,8 @@ class AsyncAdmin:
                 email=email,
                 ip=ip,
                 request_options=request_options,
-            )
-        ).unwrap()
+            ),
+        )
 
     async def admin_list_users_flag(
         self,
@@ -414,7 +419,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.admin_list_users_flag(
                 flag,
                 order=order,
@@ -425,8 +430,8 @@ class AsyncAdmin:
                 email=email,
                 ip=ip,
                 request_options=request_options,
-            )
-        ).unwrap()
+            ),
+        )
 
     async def anonymize_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -443,7 +448,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.anonymize_user(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.anonymize_user(id_, request_options=request_options))
 
     async def deactivate_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -460,7 +465,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.deactivate_user(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.deactivate_user(id_, request_options=request_options))
 
     async def delete_user(
         self,
@@ -482,7 +487,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.delete_user(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.delete_user(id_, body=body, request_options=request_options))
 
     async def log_out_user(
         self, id_: int, *, request_options: RequestOptionsOrDict | None = None
@@ -499,7 +504,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.log_out_user(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.log_out_user(id_, request_options=request_options))
 
     async def refresh_gravatar(
         self, username: str, *, request_options: RequestOptionsOrDict | None = None
@@ -516,7 +521,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.refresh_gravatar(username, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.refresh_gravatar(username, request_options=request_options))
 
     async def silence_user(
         self,
@@ -538,7 +543,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.silence_user(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.silence_user(id_, body=body, request_options=request_options))
 
     async def suspend_user(
         self,
@@ -560,7 +565,7 @@ class AsyncAdmin:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.suspend_user(id_, body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.suspend_user(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncAdminWithRawResponse:

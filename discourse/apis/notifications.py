@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.notifications_json_response import NotificationsJsonResponse
 from ..models.notifications_mark_read_json_request import (
@@ -40,7 +41,7 @@ class Notifications:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_notifications(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_notifications(request_options=request_options))
 
     def mark_notifications_as_read(
         self,
@@ -60,7 +61,7 @@ class Notifications:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.mark_notifications_as_read(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.mark_notifications_as_read(body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> NotificationsWithRawResponse:
@@ -85,7 +86,7 @@ class AsyncNotifications:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_notifications(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_notifications(request_options=request_options))
 
     async def mark_notifications_as_read(
         self,
@@ -105,9 +106,9 @@ class AsyncNotifications:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.mark_notifications_as_read(body=body, request_options=request_options)
-        ).unwrap()
+        )
 
     @property
     def with_raw_response(self) -> AsyncNotificationsWithRawResponse:

@@ -18,6 +18,7 @@ from ..core import (
     multipart_body,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.enums.upload_type import UploadTypeOrStr
 from ..models.uploads_abort_multipart_json_request import (
@@ -85,7 +86,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.abort_multipart(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.abort_multipart(body=body, request_options=request_options))
 
     def batch_presign_multipart_parts(
         self,
@@ -123,9 +124,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.batch_presign_multipart_parts(
-            body=body, request_options=request_options
-        ).unwrap()
+        return unwrap(self._with_raw_response.batch_presign_multipart_parts(body=body, request_options=request_options))
 
     def complete_external_upload(
         self,
@@ -158,7 +157,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.complete_external_upload(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.complete_external_upload(body=body, request_options=request_options))
 
     def complete_multipart(
         self,
@@ -188,7 +187,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.complete_multipart(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.complete_multipart(body=body, request_options=request_options))
 
     def create_multipart_upload(
         self,
@@ -217,7 +216,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_multipart_upload(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_multipart_upload(body=body, request_options=request_options))
 
     def create_upload(
         self,
@@ -243,9 +242,11 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_upload(
-            upload_type, user_id=user_id, synchronous=synchronous, file=file, request_options=request_options
-        ).unwrap()
+        return unwrap(
+            self._with_raw_response.create_upload(
+                upload_type, user_id=user_id, synchronous=synchronous, file=file, request_options=request_options
+            ),
+        )
 
     def generate_presigned_put(
         self,
@@ -281,7 +282,7 @@ class Uploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.generate_presigned_put(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.generate_presigned_put(body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> UploadsWithRawResponse:
@@ -319,7 +320,7 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.abort_multipart(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.abort_multipart(body=body, request_options=request_options))
 
     async def batch_presign_multipart_parts(
         self,
@@ -357,9 +358,9 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.batch_presign_multipart_parts(body=body, request_options=request_options)
-        ).unwrap()
+        )
 
     async def complete_external_upload(
         self,
@@ -392,9 +393,9 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.complete_external_upload(body=body, request_options=request_options)
-        ).unwrap()
+        )
 
     async def complete_multipart(
         self,
@@ -424,7 +425,7 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.complete_multipart(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.complete_multipart(body=body, request_options=request_options))
 
     async def create_multipart_upload(
         self,
@@ -453,9 +454,7 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
-            await self._with_raw_response.create_multipart_upload(body=body, request_options=request_options)
-        ).unwrap()
+        return unwrap(await self._with_raw_response.create_multipart_upload(body=body, request_options=request_options))
 
     async def create_upload(
         self,
@@ -481,11 +480,11 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
+        return unwrap(
             await self._with_raw_response.create_upload(
                 upload_type, user_id=user_id, synchronous=synchronous, file=file, request_options=request_options
-            )
-        ).unwrap()
+            ),
+        )
 
     async def generate_presigned_put(
         self,
@@ -521,9 +520,7 @@ class AsyncUploads:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
-            await self._with_raw_response.generate_presigned_put(body=body, request_options=request_options)
-        ).unwrap()
+        return unwrap(await self._with_raw_response.generate_presigned_put(body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncUploadsWithRawResponse:

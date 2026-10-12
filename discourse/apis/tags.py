@@ -14,6 +14,7 @@ from ..core import (
     json_decoder,
     param,
     raw_error_response,
+    unwrap,
 )
 from ..models.tag_groups_json_request import TagGroupsJsonRequest, TagGroupsJsonRequestDict
 from ..models.tag_groups_json_request1 import TagGroupsJsonRequest1, TagGroupsJsonRequest1Dict
@@ -48,7 +49,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.create_tag_group(body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.create_tag_group(body=body, request_options=request_options))
 
     def get_tag(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> TagJsonResponse:
         """Send a ``GET`` request.
@@ -63,7 +64,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_tag(name, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_tag(name, request_options=request_options))
 
     def get_tag_group(self, id_: str, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse2:
         """Send a ``GET`` request.
@@ -78,7 +79,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.get_tag_group(id_, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.get_tag_group(id_, request_options=request_options))
 
     def list_tag_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse:
         """Send a ``GET`` request.
@@ -92,7 +93,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_tag_groups(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_tag_groups(request_options=request_options))
 
     def list_tags(self, *, request_options: RequestOptionsOrDict | None = None) -> TagsJsonResponse:
         """Send a ``GET`` request.
@@ -106,7 +107,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.list_tags(request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.list_tags(request_options=request_options))
 
     def update_tag_group(
         self,
@@ -128,7 +129,7 @@ class Tags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options).unwrap()
+        return unwrap(self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> TagsWithRawResponse:
@@ -157,7 +158,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.create_tag_group(body=body, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.create_tag_group(body=body, request_options=request_options))
 
     async def get_tag(self, name: str, *, request_options: RequestOptionsOrDict | None = None) -> TagJsonResponse:
         """Send a ``GET`` request.
@@ -172,7 +173,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_tag(name, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_tag(name, request_options=request_options))
 
     async def get_tag_group(
         self, id_: str, *, request_options: RequestOptionsOrDict | None = None
@@ -189,7 +190,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.get_tag_group(id_, request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.get_tag_group(id_, request_options=request_options))
 
     async def list_tag_groups(self, *, request_options: RequestOptionsOrDict | None = None) -> TagGroupsJsonResponse:
         """Send a ``GET`` request.
@@ -203,7 +204,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_tag_groups(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_tag_groups(request_options=request_options))
 
     async def list_tags(self, *, request_options: RequestOptionsOrDict | None = None) -> TagsJsonResponse:
         """Send a ``GET`` request.
@@ -217,7 +218,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (await self._with_raw_response.list_tags(request_options=request_options)).unwrap()
+        return unwrap(await self._with_raw_response.list_tags(request_options=request_options))
 
     async def update_tag_group(
         self,
@@ -239,9 +240,7 @@ class AsyncTags:
 
         Raises:
             ApiError: If the API responds with an error status code. ``error`` is ``RawError``."""
-        return (
-            await self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options)
-        ).unwrap()
+        return unwrap(await self._with_raw_response.update_tag_group(id_, body=body, request_options=request_options))
 
     @property
     def with_raw_response(self) -> AsyncTagsWithRawResponse:
